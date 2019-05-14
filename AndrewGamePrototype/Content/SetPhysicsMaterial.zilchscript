@@ -1,0 +1,15 @@
+class SetPhysicsMaterial : ZilchComponent
+{
+  
+  [Property]
+  var Material : PhysicsMaterial = PhysicsMaterial.DefaultPhysicsMaterial;
+  
+  function Initialize(init : CogInitializer)
+  {
+    if(this.Owner.Collider != null)
+    {
+      Console.WriteLine("hehe");
+      this.Owner.Collider.Material = this.Material;
+    }
+  }
+}

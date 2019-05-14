@@ -1,0 +1,15 @@
+[Version:1]
+Cog 
+{
+	var Name = "Transform"
+	Transform 
+	{
+		var Translation = Real3{0, 0, 0}
+		var Scale = Real3{1, 1, 1}
+		var Rotation = Quaternion{0, 0, 0, 1}
+	}
+	SetPhysicsMaterial 
+	{
+		var Material = "5c654915ecb4a674:Bouncy"
+	}
+}
