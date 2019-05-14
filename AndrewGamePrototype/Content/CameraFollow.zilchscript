@@ -16,6 +16,7 @@ class CameraFollow : ZilchComponent
 
   function OnLogicUpdate(event : UpdateEvent)
   {
+    //If our target exists
     if(this.Target != null)
     {
       var currentTranslation = this.Owner.Transform.WorldTranslation;
