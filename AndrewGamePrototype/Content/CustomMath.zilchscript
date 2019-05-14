@@ -1,0 +1,19 @@
+class CustomMath : ZilchComponent
+{
+  
+  [Static]
+  //Returns the magnitude of a given vector
+  function Magnitude(vector : Real3) : Real
+  {
+    return Math.Sqrt((vector.X * vector.X) + (vector.Y * vector.Y) + (vector.Z * vector.Z));
+  }
+  
+  
+  [Static]
+  //Returns a vector in the direction of the given angle (angle should be in radians)
+  function DirectionFromAngle(angle : Real) : Real3 
+  {
+    return Real3(Math.Cos(angle), Math.Sin(angle), 0);
+  }
+  
+}

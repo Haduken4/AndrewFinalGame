@@ -1,0 +1,27 @@
+class CameraFollow : ZilchComponent
+{
+  //between 0 and 1
+  [Property]
+  var LerpSpeed : Real = 0.25;
+  
+  //target the camera will move to
+  var Target : Cog = null;
+
+  function Initialize(init : CogInitializer)
+  {
+    //for testing
+    //this.Target = this.Space.FindObjectByName("Player");
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    if(this.Target != null)
+    {
+      var currentTranslation = this.Owner.Transform.WorldTranslation;
+      var targetTranslation = Real3(this.Target.Transform.WorldTranslation.XY, currentTranslation.Z);
+      
+      this.Owner.Transform.WorldTranslation = Math.Lerp(currentTranslation, targetTranslation, this.LerpSpeed);
+    }
+  }
+}

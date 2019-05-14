@@ -1,0 +1,26 @@
+class Health : ZilchComponent
+{
+  //maximum health for the object
+  [Property]
+  var MaxHealth : Real = 10.0;
+  
+  //current health of the object
+  var CurrHealth : Real;
+  
+  function Initialize(init : CogInitializer)
+  {
+    this.CurrHealth = this.MaxHealth;
+  }
+
+  //damages the object
+  //takes the amount of damage to be applied
+  function ApplyDamage(damage : Real)
+  {
+    this.CurrHealth -= damage;
+    if(this.CurrHealth <= 0.0)
+    {
+      this.Owner.Destroy();
+    }
+  }
+  
+}

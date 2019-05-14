@@ -1,0 +1,76 @@
+class ShootVariables
+{
+  //Projectile archetype
+  [Property]
+  var Projectile : Archetype = null;
+  
+  //Amount of projectiles we will fire
+  [Property]
+  var ProjectileCount : Integer = 1;
+  
+  //This is in radians
+  [Property]
+  var SpreadCone : Real = Math.Pi / 4;
+  
+  //How fast the projectile will go when fired (not divided by DT)
+  [Property]
+  var ProjectileSpeed : Real = 100;
+  
+}
+
+class PlayerShooting : ZilchComponent
+{
+  
+  [Property]
+  var Weapon : ShootVariables = ShootVariables();
+  
+  var Random : Random = Random();
+  
+  [Property]
+  var Active : Boolean = true;
+  
+  function Initialize(init : CogInitializer)
+  {
+    //Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    
+    Zero.Connect(this.Space, Events.LeftMouseUp, this.OnLeftMouseUp);
+  }
+
+  function OnLeftMouseUp(event : ViewportMouseEvent)
+  {
+    if(this.Active)
+    {
+      var mousePos = this.Space.FindObjectByName("GameCamera").CameraViewport.ScreenToWorldZPlane(event.Position, 0);
+      
+      var dir = mousePos - this.Owner.Transform.WorldTranslation;
+      
+      var angleToMouse = Math.ATan2(dir.Y, dir.X);
+      
+      
+      
+      if(this.Weapon.Projectile != null)
+      {
+        
+        Console.WriteLine("Happened");
+      
+        for(var i = 0; i < this.Weapon.ProjectileCount; ++i)
+        {
+          var currProjectile = this.Space.CreateAtPosition(this.Weapon.Projectile, this.Owner.Transform.WorldTranslation);
+          
+          var currAngle = angleToMouse + this.Random.Range(-this.Weapon.SpreadCone, this.Weapon.SpreadCone);
+          
+          currProjectile.RigidBody.Velocity = CustomMath.DirectionFromAngle(currAngle) * this.Weapon.ProjectileSpeed;
+          
+        }
+      }
+      
+      //this.Active = false;
+    }
+    
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    
+  }
+}

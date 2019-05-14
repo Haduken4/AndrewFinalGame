@@ -1,0 +1,8 @@
+[Version:1]
+ContentLibrary 
+{
+	var Name = "AndrewGamePrototype"
+	var LibraryId = 0x5c19e63cff1e6201
+	var SourceControlType = ""
+	var ReadOnly = false
+}

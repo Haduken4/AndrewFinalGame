@@ -1,0 +1,61 @@
+class PlayerMovement : ZilchComponent
+{
+  
+  [Property]
+  var MoveSpeed : Real = 250;
+  
+  [Property]
+  var MaxMoveResource : Real = 10;
+  
+  var CurrMoveResource : Real = 10;
+  
+  [Property]
+  var Active : Boolean = false;
+  
+  function Initialize(init : CogInitializer)
+  {
+    this.CurrMoveResource = this.MaxMoveResource;
+    
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    
+    var vel = this.Owner.RigidBody.Velocity;
+    
+    if(this.Active && this.CurrMoveResource > 0)
+    {
+      if(Zero.Keyboard.KeyIsDown(Keys.A))
+      {
+        vel.X = -1 * this.MoveSpeed * event.Dt;
+        this.CurrMoveResource -= event.Dt;
+      }
+      else if(Zero.Keyboard.KeyIsDown(Keys.D))
+      {
+        vel.X = 1 * this.MoveSpeed * event.Dt;
+        this.CurrMoveResource -= event.Dt;
+      }
+      else
+      {
+        vel.X = 0;
+      }
+      
+      this.Owner.RigidBody.Velocity = vel;
+      
+    }
+    else
+    {
+      vel.X = 0;
+    }
+    
+    this.Owner.RigidBody.Velocity = vel;
+    
+  }
+  
+  function Activate()
+  {
+    this.CurrMoveResource = this.MaxMoveResource;
+    this.Active = true;
+  }
+}

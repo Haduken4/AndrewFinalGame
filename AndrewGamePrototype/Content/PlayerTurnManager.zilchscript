@@ -1,0 +1,66 @@
+//Turn states
+enum TurnState{STATEMOVE, STATESHOOT}
+
+class PlayerTurnManager : ZilchComponent
+{
+  
+  var CurrState : TurnState = TurnState.STATEMOVE;
+  
+  var PlayerArray : Array[Cog] = Array[Cog]();
+  
+  var CurrIndex : Integer = 0;
+  
+  var Camera : Cog = null;
+  
+  function Initialize(init : CogInitializer)
+  {
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    
+    this.Camera = this.Space.FindObjectByName("GameCamera");
+    
+    var players = this.Space.FindAllObjectsByName("Player");
+    
+    foreach(var p in players)
+    {
+      this.PlayerArray.Add(p);
+    }
+    
+    this.PlayerArray[this.CurrIndex].PlayerMovement.Activate();
+    
+    this.Camera.CameraFollow.Target = this.PlayerArray[this.CurrIndex];
+    
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    
+    if(Zero.Keyboard.KeyIsPressed(Keys.L))
+    {
+      if(this.CurrState == TurnState.STATEMOVE)
+      {
+        this.PlayerArray[this.CurrIndex].PlayerMovement.Active = false;
+        this.PlayerArray[this.CurrIndex].PlayerShooting.Active = true;
+        this.CurrState = TurnState.STATESHOOT;
+      }
+      else
+      {
+        
+        this.PlayerArray[this.CurrIndex].PlayerShooting.Active = false;
+        
+        this.CurrIndex += 1;
+        
+        if(this.CurrIndex >= this.PlayerArray.Count)
+        {
+          this.CurrIndex = 0;
+        }
+        
+        this.PlayerArray[this.CurrIndex].PlayerMovement.Activate();
+        this.CurrState = TurnState.STATEMOVE;
+        
+        this.Camera.CameraFollow.Target = this.PlayerArray[this.CurrIndex];
+        
+      }
+    }
+    
+  }
+}
