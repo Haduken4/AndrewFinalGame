@@ -4,14 +4,31 @@ class CameraFollow : ZilchComponent
   [Property]
   var LerpSpeed : Real = 0.25;
   
+  [Property]
+  var ResizeSpeed : Real = 1.5;
+  
+  [Property]
+  var MinMaxSize : Real2 = Real2(5, 40);
+  
   //target the camera will move to
   var Target : Cog = null;
-
+  
+  
+  
   function Initialize(init : CogInitializer)
   {
     //for testing
     //this.Target = this.Space.FindObjectByName("Player");
     Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    
+    Zero.Connect(this.Space, Events.MouseScroll, this.OnMouseScroll);
+  }
+
+  function OnMouseScroll(event : ViewportMouseEvent)
+  {
+    this.Owner.Camera.Size += -event.Scroll.Y * this.ResizeSpeed;
+    
+    this.Owner.Camera.Size = Math.Clamp(this.Owner.Camera.Size, this.MinMaxSize.X, this.MinMaxSize.Y);
   }
 
   function OnLogicUpdate(event : UpdateEvent)
