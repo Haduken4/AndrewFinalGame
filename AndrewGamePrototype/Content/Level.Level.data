@@ -38,18 +38,18 @@ Level
 			var HighlightInterval = 10
 			var FollowEditorCamera = false
 		}
-		PlayerTurnManager 
-		{
-		}
 		BouncySpawn 
 		{
 			var MinSpawnX = -20
 			var MaxSpawnX = 20
-			var MaxSpawnY = 20
-			var MinSpawnY = -20
+			var MaxSpawnY = 15
+			var MinSpawnY = 5
 			var MaxSpawnCount = 5
-			var MaxRadiusSize = 10
+			var MaxRadiusSize = 3
 			var MinRadiusSize = 1
+		}
+		PlayerTurnManager 
+		{
 		}
 	}
 	Cog [ContextId:2]
@@ -90,7 +90,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{-1.06937838, -0.951507926, 20}
+			var Translation = Real3{-3.39203215, 1.18408978, 20}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -143,7 +143,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 26.9971371
+			var Size = 36.4423218
 		}
 		EditorCameraController 
 		{
@@ -152,7 +152,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{-1.06937838, -0.951507926, -1.99827682e-07}
+			var LookTarget = Real3{-3.39203215, 1.18408978, -3.01354191e-07}
 			var MoveSensitivity = 1
 		}
 	}
@@ -239,82 +239,6 @@ Level
 	}
 	Cog [ContextId:5]
 	{
-		var Name = "Sprite"
-		Transform 
-		{
-			var Translation = Real3{-7.11296749, -2.51869655, 0}
-			var Scale = Real3{10, 1, 1}
-			var Rotation = Quaternion{0, 0, 0, 1}
-		}
-		Sprite 
-		{
-			var Visible = true
-			var ViewCulling = true
-			var VisibilityEvents = true
-			var OverrideBoundingBox = false
-			var LocalAabbCenter = Real3{0, 0, 0}
-			var LocalAabbHalfExtents = Real3{1, 1, 1}
-			var GroupSortValue = 0
-			var Material = "582c575af53d18c9:AlphaSprite"
-			var VertexColor = Real4{0.178200006, 0.810000002, 0.487782151, 1}
-			var GeometryMode = SpriteGeometryMode.ZPlane
-			var SpriteSource = "5275aa4d802dd6dc:Square"
-			var FlipX = false
-			var FlipY = false
-			var AnimationActive = true
-			var AnimationSpeed = 1
-			var StartFrame = 0
-		}
-		BoxCollider 
-		{
-			var Ghost = false
-			var SendsEvents = true
-			var Material = "4de020863e872da8:DefaultPhysicsMaterial"
-			var CollisionGroup = "4e740859314e5515:DefaultGroup"
-			var Offset = Real3{0, 0, 0}
-			var HalfSize = Real3{0.5, 0.5, 0.5}
-		}
-	}
-	Cog [ContextId:6]
-	{
-		var Name = "Sprite"
-		Transform 
-		{
-			var Translation = Real3{7.92886639, -2.51869559, 0}
-			var Scale = Real3{10, 1, 1}
-			var Rotation = Quaternion{0, 0, 0, 1}
-		}
-		Sprite 
-		{
-			var Visible = true
-			var ViewCulling = true
-			var VisibilityEvents = true
-			var OverrideBoundingBox = false
-			var LocalAabbCenter = Real3{0, 0, 0}
-			var LocalAabbHalfExtents = Real3{1, 1, 1}
-			var GroupSortValue = 0
-			var Material = "582c575af53d18c9:AlphaSprite"
-			var VertexColor = Real4{0.889999986, 0.115700006, 0.278303027, 1}
-			var GeometryMode = SpriteGeometryMode.ZPlane
-			var SpriteSource = "5275aa4d802dd6dc:Square"
-			var FlipX = false
-			var FlipY = false
-			var AnimationActive = true
-			var AnimationSpeed = 1
-			var StartFrame = 0
-		}
-		BoxCollider 
-		{
-			var Ghost = false
-			var SendsEvents = true
-			var Material = "4de020863e872da8:DefaultPhysicsMaterial"
-			var CollisionGroup = "4e740859314e5515:DefaultGroup"
-			var Offset = Real3{0, 0, 0}
-			var HalfSize = Real3{0.5, 0.5, 0.5}
-		}
-	}
-	Cog [ContextId:7]
-	{
 		var Name = "Player"
 		Transform 
 		{
@@ -370,7 +294,7 @@ Level
 		{
 			var Weapon = ShootVariables
 			{
-				var Projectile = "4faa6050b86884ec:DefaultArchetype"
+				var Projectile = "5c0f9844b874aa7c:BulletArchetype"
 				var ProjectileCount = 1
 				var SpreadCone = 0
 				var ProjectileSpeed = 20
@@ -378,7 +302,7 @@ Level
 			var Active = false
 		}
 	}
-	Cog [ContextId:8]
+	Cog [ContextId:6]
 	{
 		var Name = "Player"
 		Transform 
@@ -447,7 +371,7 @@ Level
 			var Active = true
 		}
 	}
-	Cog [ContextId:9]
+	Cog [ContextId:7]
 	{
 		var Name = "TileMap"
 		Transform 
@@ -473,18 +397,9 @@ Level
 		}
 		TileMap 
 		{
-			var Source = "5c47a43eb75a605a:Level_TileMap00"
-			var PaletteName = "5c47a4125df2b29e:GameTilePalette"
+			var Source = "5c0f86e8af7e3102:Level_TileMap00"
+			var PaletteName = "5c0f869da6af70e1:GamePalette"
 			var MeshThickness = 1.20000005
-		}
-	}
-	Cog [InheritId:"5c47ade5661f1d25:BouncyTerrain"][ContextId:10]
-	{
-		Transform 
-		{
-			var Translation = Real3{-4.99305391, -7.2946353, 0.100000001}
-			var Rotation = Quaternion{0, 0, 0, 1}
-			var Scale = Real3{1, 1, 1}
 		}
 	}
 }

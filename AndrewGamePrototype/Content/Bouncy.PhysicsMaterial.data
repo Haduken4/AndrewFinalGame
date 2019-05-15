@@ -1,7 +1,7 @@
 [Version:1]
 PhysicsMaterial 
 {
-	var Restitution = 1
+	var Restitution = 1.25
 	var StaticFriction = 0.5
 	var DynamicFriction = 0.5
 	var Density = 1

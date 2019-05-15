@@ -41,29 +41,32 @@ class BouncySpawn : ZilchComponent
     for(var i = 0; i < spawnCount; ++i)
     {
       //create random sphere
-      var radius = this.RandomGenerator.Range(this.MinRadiusSize, this.MaxRadiusSize);
+      var diameter = this.RandomGenerator.Range(this.MinRadiusSize, this.MaxRadiusSize);
       var posX = this.RandomGenerator.Range(this.MinSpawnX, this.MaxSpawnX);
       var posY = this.RandomGenerator.Range(this.MinSpawnY, this.MaxSpawnY);
+      
+      var radius = diameter / 2.0;
       
       
       //check if valid
       var center = Real3(posX, posY, 0.1);
       var count = 10;
-
+      
+      
       var results = this.Space.PhysicsSpace.CastSphere(Sphere(center, radius), count, CastFilter());
         //if valid, spawn using vars
-      if(results.IsEmpty)
+      while(!results.IsEmpty)
       {
-          //transform - scale and pos
-          var object = this.Space.CreateAtPosition(Archetype.BouncyTerrain, center);
-          object.Transform.Scale = Real3(radius, radius, 1);
-          //collider - radius
-          object.SphereCollider.Radius = radius;
+        posX = this.RandomGenerator.Range(this.MinSpawnX, this.MaxSpawnX);
+        posY = this.RandomGenerator.Range(this.MinSpawnY, this.MaxSpawnY);
+        center = Real3(posX, posY, 0.1);
+        
+        results = this.Space.PhysicsSpace.CastSphere(Sphere(center, radius), count, CastFilter());
+        
       }
-      //if not valid, minus i to try again
-      else{
-        --i;
-      } 
+      //transform - scale and pos
+      var object = this.Space.CreateAtPosition(Archetype.BouncyTerrain, center);
+      object.Transform.Scale = Real3(diameter, diameter, 1);
     }
   }
 }
