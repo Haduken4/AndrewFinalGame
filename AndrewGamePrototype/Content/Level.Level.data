@@ -223,6 +223,8 @@ Level
 		CameraFollow 
 		{
 			var LerpSpeed = 0.25
+			var ResizeSpeed = 1.5
+			var MinMaxSize = Real2{5, 40}
 		}
 	}
 	Cog [ContextId:5]
@@ -230,7 +232,7 @@ Level
 		var Name = "Sprite"
 		Transform 
 		{
-			var Translation = Real3{-7.11296749, -2.11296988, 0}
+			var Translation = Real3{-7.11296749, -2.51869655, 0}
 			var Scale = Real3{10, 1, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
@@ -268,7 +270,7 @@ Level
 		var Name = "Sprite"
 		Transform 
 		{
-			var Translation = Real3{7.92886639, -2.11296988, 0}
+			var Translation = Real3{7.92886639, -2.51869559, 0}
 			var Scale = Real3{10, 1, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
@@ -358,7 +360,7 @@ Level
 		{
 			var Weapon = ShootVariables
 			{
-				var Projectile = "5c654d4fd1bdd295:BulletArchetype"
+				var Projectile = "4faa6050b86884ec:DefaultArchetype"
 				var ProjectileCount = 1
 				var SpreadCone = 0
 				var ProjectileSpeed = 20
@@ -461,8 +463,8 @@ Level
 		}
 		TileMap 
 		{
-			var Source = "5c654940e4aafeb0:Level.Level_TileMap00"
-			var PaletteName = "5c654e29a57e9ebe:GameTilePalette"
+			var Source = "5c47a43eb75a605a:Level_TileMap00"
+			var PaletteName = "5c47a4125df2b29e:GameTilePalette"
 			var MeshThickness = 1.20000005
 		}
 	}
