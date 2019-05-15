@@ -41,6 +41,16 @@ Level
 		PlayerTurnManager 
 		{
 		}
+		BouncySpawn 
+		{
+			var MinSpawnX = -20
+			var MaxSpawnX = 20
+			var MaxSpawnY = 20
+			var MinSpawnY = -20
+			var MaxSpawnCount = 5
+			var MaxRadiusSize = 10
+			var MinRadiusSize = 1
+		}
 	}
 	Cog [ContextId:2]
 	{
@@ -80,7 +90,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{-0.0713436306, -0.44807303, 20}
+			var Translation = Real3{-1.06937838, -0.951507926, 20}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -133,7 +143,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 29.8364544
+			var Size = 26.9971371
 		}
 		EditorCameraController 
 		{
@@ -142,7 +152,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{-0.0713436306, -0.44807303, -1.99827682e-07}
+			var LookTarget = Real3{-1.06937838, -0.951507926, -1.99827682e-07}
 			var MoveSensitivity = 1
 		}
 	}
@@ -466,6 +476,15 @@ Level
 			var Source = "5c47a43eb75a605a:Level_TileMap00"
 			var PaletteName = "5c47a4125df2b29e:GameTilePalette"
 			var MeshThickness = 1.20000005
+		}
+	}
+	Cog [InheritId:"5c47ade5661f1d25:BouncyTerrain"][ContextId:10]
+	{
+		Transform 
+		{
+			var Translation = Real3{-4.99305391, -7.2946353, 0.100000001}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{1, 1, 1}
 		}
 	}
 }

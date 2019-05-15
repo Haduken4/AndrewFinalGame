@@ -1,0 +1,69 @@
+class BouncySpawn : ZilchComponent
+{
+  //the leftmost x position to spawn
+  [Property]
+  var MinSpawnX : Real = -50.0;
+  
+  //the rightmost x position to spawn
+  [Property]
+  var MaxSpawnX : Real = 50.0;
+  
+  //the topmost y position to spawn
+  [Property]
+  var MaxSpawnY : Real = 50.0;
+  
+    //the bottommost y position to spawn
+  [Property]
+  var MinSpawnY : Real = -50.0;
+  
+  
+  //sphere properties
+  
+  //the maximum number of spheres to spawn
+  [Property]
+  var MaxSpawnCount : Integer = 5;
+  
+  //max radius size
+  [Property]
+  var MaxRadiusSize : Real = 10.0;
+  
+  //min radius size
+  [Property]
+  var MinRadiusSize : Real = 1.0;
+  
+  //random number generator
+  var RandomGenerator : Random = Random();
+  
+  function Initialize(init : CogInitializer)
+  {
+    //roll random # of spheres to spawn
+    var spawnCount = this.RandomGenerator.Range(1, this.MaxSpawnCount);
+    for(var i = 0; i < spawnCount; ++i)
+    {
+      //create random sphere
+      var radius = this.RandomGenerator.Range(this.MinRadiusSize, this.MaxRadiusSize);
+      var posX = this.RandomGenerator.Range(this.MinSpawnX, this.MaxSpawnX);
+      var posY = this.RandomGenerator.Range(this.MinSpawnY, this.MaxSpawnY);
+      
+      
+      //check if valid
+      var center = Real3(posX, posY, 0.1);
+      var count = 10;
+
+      var results = this.Space.PhysicsSpace.CastSphere(Sphere(center, radius), count, CastFilter());
+        //if valid, spawn using vars
+      if(results.IsEmpty)
+      {
+          //transform - scale and pos
+          var object = this.Space.CreateAtPosition(Archetype.BouncyTerrain, center);
+          object.Transform.Scale = Real3(radius, radius, 1);
+          //collider - radius
+          object.SphereCollider.Radius = radius;
+      }
+      //if not valid, minus i to try again
+      else{
+        --i;
+      } 
+    }
+  }
+}
