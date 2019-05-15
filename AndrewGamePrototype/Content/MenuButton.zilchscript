@@ -1,0 +1,28 @@
+class MenuButton : ZilchComponent
+{
+  //the level to switch to when pressed
+  [Property]
+  var NextLevel : Level = Level.Level;
+  
+  //if true, quits the game when clicked
+  [Property]
+  var QuitButton : Boolean = false;
+  
+  function Initialize(init : CogInitializer)
+  {
+    Zero.Connect(this.Owner, Events.LeftMouseDown, this.OnLeftMouseDown);
+  }
+
+  function OnLeftMouseDown(event : ViewportMouseEvent)
+  {
+    //quit the game
+    if(this.QuitButton)
+    {
+      this.GameSession.RequestQuit();
+    }
+    //switch levels
+    else{
+      this.Space.LoadLevel(this.NextLevel);
+    }
+  }
+}
