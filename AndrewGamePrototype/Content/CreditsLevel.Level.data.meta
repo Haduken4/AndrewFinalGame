@@ -1,0 +1,11 @@
+[Version:1]
+DataContent 
+{
+	DataBuilder 
+	{
+		var Name = "CreditsLevel"
+		var ResourceId = 0x5c0f9844b87783c6
+		var LoaderType = "Level"
+		var Version = 0
+	}
+}

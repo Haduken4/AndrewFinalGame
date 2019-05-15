@@ -1,0 +1,11 @@
+[Version:1]
+DataContent 
+{
+	DataBuilder 
+	{
+		var Name = "BulletArchetype"
+		var ResourceId = 0x5c0f9844b874aa7c
+		var LoaderType = "Cog"
+		var Version = 0
+	}
+}
