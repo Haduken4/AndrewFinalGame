@@ -1,0 +1,24 @@
+class HudCreator : ZilchComponent
+{
+  //choose the hud level
+  [Property]
+  var HUDLevel : Level = null;
+  var HUDSpace : Space = null;
+  function Initialize(init : CogInitializer)
+  {
+    //this creates a new space
+    this.HUDSpace = this.GameSession.CreateNamedSpace("HudSpace", Archetype.Space);
+    if(this.HUDSpace != null)
+    {
+      this.HUDSpace.LoadLevel(this.HUDLevel);
+    }
+  }
+  function Destroyed()
+  {
+    //make sure hd space is stil there and is not going to be destroyed
+    if(this.HUDSpace != null && !this.HUDSpace.MarkedForDestruction)
+    {
+      this.HUDSpace.Destroy();
+    }
+  }
+}
