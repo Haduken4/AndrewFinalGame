@@ -38,15 +38,19 @@ Level
 			var HighlightInterval = 10
 			var FollowEditorCamera = false
 		}
+		HudCreator 
+		{
+			var HUDLevel = "5c085f8ce87995ce:HUDLevel"
+		}
 		BouncySpawn 
 		{
 			var MinSpawnX = -20
 			var MaxSpawnX = 20
 			var MaxSpawnY = 15
-			var MinSpawnY = 5
-			var MaxSpawnCount = 5
-			var MaxRadiusSize = 3
-			var MinRadiusSize = 1
+			var MinSpawnY = -15
+			var MaxSpawnCount = 15
+			var MinDiameterSize = 1
+			var MaxDiameterSize = 4
 		}
 		PlayerTurnManager 
 		{
@@ -90,7 +94,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{-3.39203215, 1.18408978, 20}
+			var Translation = Real3{-2.92657971, 1.97441876, 20}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -143,7 +147,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 24.4280281
+			var Size = 19.9999714
 		}
 		EditorCameraController 
 		{
@@ -152,7 +156,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{-3.39203215, 1.18408978, -3.01354191e-07}
+			var LookTarget = Real3{-2.92657971, 1.97441876, -2.81008624e-07}
 			var MoveSensitivity = 1
 		}
 	}
@@ -289,6 +293,10 @@ Level
 			var MoveSpeed = 400
 			var MaxMoveResource = 5
 			var Active = true
+		}
+		Health 
+		{
+			var MaxHealth = 10
 		}
 		PlayerShooting 
 		{

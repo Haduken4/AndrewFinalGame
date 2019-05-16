@@ -7,7 +7,7 @@ class HudCreator : ZilchComponent
   function Initialize(init : CogInitializer)
   {
     //this creates a new space
-    this.HUDSpace = this.GameSession.CreateNamedSpace("HudSpace", Archetype.Space);
+    this.HUDSpace = this.GameSession.CreateNamedSpace("HUDSpace", Archetype.Space);
     if(this.HUDSpace != null)
     {
       this.HUDSpace.LoadLevel(this.HUDLevel);

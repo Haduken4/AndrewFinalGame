@@ -276,7 +276,7 @@ Level
 		}
 		MenuButton 
 		{
-			var NextLevel = "5c4754a5f744e5ba:Level"
+			var NextLevel = "5c0f9845b860fa8b:Level"
 			var QuitButton = false
 		}
 		Reactive 
@@ -345,7 +345,7 @@ Level
 		}
 		MenuButton 
 		{
-			var NextLevel = "5c4758a157a49f14:CreditsLevel"
+			var NextLevel = "5c0f9844b87783c6:CreditsLevel"
 			var QuitButton = false
 		}
 		Reactive 
@@ -414,7 +414,7 @@ Level
 		}
 		MenuButton 
 		{
-			var NextLevel = "5c4754a5f744e5ba:Level"
+			var NextLevel = "5c0f9845b860fa8b:Level"
 			var QuitButton = true
 		}
 		Reactive 

@@ -23,25 +23,32 @@ class BouncySpawn : ZilchComponent
   [Property]
   var MaxSpawnCount : Integer = 5;
   
-  //max radius size
-  [Property]
-  var MaxRadiusSize : Real = 10.0;
-  
   //min radius size
   [Property]
-  var MinRadiusSize : Real = 1.0;
+  var MinDiameterSize : Real = 1.0;
+  
+  //max radius size
+  [Property]
+  var MaxDiameterSize : Real = 10.0;
   
   //random number generator
   var RandomGenerator : Random = Random();
   
   function Initialize(init : CogInitializer)
   {
+    
+    
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
     //roll random # of spheres to spawn
     var spawnCount = this.RandomGenerator.Range(1, this.MaxSpawnCount);
     for(var i = 0; i < spawnCount; ++i)
     {
       //create random sphere
-      var diameter = this.RandomGenerator.Range(this.MinRadiusSize, this.MaxRadiusSize);
+      var diameter = this.RandomGenerator.Range(this.MinDiameterSize, this.MaxDiameterSize);
       var posX = this.RandomGenerator.Range(this.MinSpawnX, this.MaxSpawnX);
       var posY = this.RandomGenerator.Range(this.MinSpawnY, this.MaxSpawnY);
       
@@ -52,9 +59,10 @@ class BouncySpawn : ZilchComponent
       var center = Real3(posX, posY, 0.1);
       var count = 10;
       
+      var filter = CastFilter();
       
       var results = this.Space.PhysicsSpace.CastSphere(Sphere(center, radius), count, CastFilter());
-        //if valid, spawn using vars
+      
       while(!results.IsEmpty)
       {
         posX = this.RandomGenerator.Range(this.MinSpawnX, this.MaxSpawnX);
@@ -68,5 +76,7 @@ class BouncySpawn : ZilchComponent
       var object = this.Space.CreateAtPosition(Archetype.BouncyTerrain, center);
       object.Transform.Scale = Real3(diameter, diameter, 1);
     }
+    
+    Zero.Disconnect(this.Space, Events.LogicUpdate, this);
   }
 }

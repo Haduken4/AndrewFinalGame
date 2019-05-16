@@ -1,0 +1,48 @@
+class HUDManager : ZilchComponent
+{
+  
+  var CurrPlayer : Cog = null;
+  
+  var CurrState : TurnState = TurnState.STATEMOVE;
+  
+  var Index : Integer = 1;
+  
+  [Property]
+  var HealthSprite : CogPath = null;
+  [Property]
+  var MoveSprite : CogPath = null;
+  [Property]
+  var StateText : CogPath = null;
+  [Property]
+  var PlayerText : CogPath = null;
+  
+  function Initialize(init : CogInitializer)
+  {
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    
+    if(this.CurrPlayer != null)
+    {
+      var moveSize = 5.0 * (this.CurrPlayer.PlayerMovement.CurrMoveResource / this.CurrPlayer.PlayerMovement.MaxMoveResource);
+      var healthSize = 5.0 * (this.CurrPlayer.Health.CurrHealth / this.CurrPlayer.Health.MaxHealth);
+      
+      this.HealthSprite.Area.Size = Real2(healthSize, 1);
+      this.MoveSprite.Area.Size = Real2(moveSize, 1);
+      
+      if(this.CurrState == TurnState.STATEMOVE)
+      {
+        this.StateText.SpriteText.Text = "Moving";
+      }
+      else
+      {
+        this.StateText.SpriteText.Text = "Shooting";
+      }
+      
+      this.PlayerText.SpriteText.Text = "Player `this.Index`";
+    }
+    
+  }
+}

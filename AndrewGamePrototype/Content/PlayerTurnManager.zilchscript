@@ -12,9 +12,15 @@ class PlayerTurnManager : ZilchComponent
   
   var Camera : Cog = null;
   
+  var HUDManager : HUDManager = null;
+  
   function Initialize(init : CogInitializer)
   {
     Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    
+    var hudSpace = this.GameSession.FindSpaceByName("HUDSpace");
+    
+    this.HUDManager = hudSpace.FindObjectByName("LevelSettings").HUDManager;
     
     this.Camera = this.Space.FindObjectByName("GameCamera");
     
@@ -29,6 +35,8 @@ class PlayerTurnManager : ZilchComponent
     this.PlayerArray[this.CurrIndex].BoxCollider.CollisionGroup = CollisionGroup.CurrentPlayer;
     
     this.Camera.CameraFollow.Target = this.PlayerArray[this.CurrIndex];
+    this.HUDManager.CurrPlayer = this.PlayerArray[this.CurrIndex];
+    this.HUDManager.Index = 1;
     
   }
 
@@ -42,6 +50,7 @@ class PlayerTurnManager : ZilchComponent
         this.PlayerArray[this.CurrIndex].PlayerMovement.Active = false;
         this.PlayerArray[this.CurrIndex].PlayerShooting.Active = true;
         this.CurrState = TurnState.STATESHOOT;
+        this.HUDManager.CurrState = TurnState.STATESHOOT;
       }
       else
       {
@@ -58,8 +67,11 @@ class PlayerTurnManager : ZilchComponent
         
         this.PlayerArray[this.CurrIndex].PlayerMovement.Activate();
         this.CurrState = TurnState.STATEMOVE;
+        this.HUDManager.CurrState = TurnState.STATEMOVE;
         
         this.Camera.CameraFollow.Target = this.PlayerArray[this.CurrIndex];
+        this.HUDManager.CurrPlayer = this.PlayerArray[this.CurrIndex];
+        this.HUDManager.Index = this.CurrIndex + 1;
         
         this.PlayerArray[this.CurrIndex].BoxCollider.CollisionGroup = CollisionGroup.CurrentPlayer;
         

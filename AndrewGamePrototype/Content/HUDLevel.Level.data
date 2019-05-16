@@ -38,8 +38,71 @@ Level
 			var HighlightInterval = 10
 			var FollowEditorCamera = false
 		}
+		HUDManager 
+		{
+			var HealthSprite = CogPath
+			{
+				var Path = ":/PlayerHealth"
+				var ErrorOnResolveToNull = false
+				var ErrorOnPathCantCompute = false
+				var ErrorOnDirectLinkFail = false
+				var UpdateCogOnPathChange = true
+				var UpdatePathOnCogChange = true
+				var UpdateCogOnInitialize = true
+				var ResolvedNullErrorOccurred = false
+				var Cog = 2
+				var PathPreference0 = CogPathPreference.CogRelative
+				var PathPreference1 = CogPathPreference.SpaceRelative
+				var PathPreference2 = CogPathPreference.Absolute
+			}
+			var MoveSprite = CogPath
+			{
+				var Path = ":/PlayerMoveResource"
+				var ErrorOnResolveToNull = false
+				var ErrorOnPathCantCompute = false
+				var ErrorOnDirectLinkFail = false
+				var UpdateCogOnPathChange = true
+				var UpdatePathOnCogChange = true
+				var UpdateCogOnInitialize = true
+				var ResolvedNullErrorOccurred = false
+				var Cog = 3
+				var PathPreference0 = CogPathPreference.CogRelative
+				var PathPreference1 = CogPathPreference.SpaceRelative
+				var PathPreference2 = CogPathPreference.Absolute
+			}
+			var StateText = CogPath
+			{
+				var Path = ":/TurnStateText"
+				var ErrorOnResolveToNull = false
+				var ErrorOnPathCantCompute = false
+				var ErrorOnDirectLinkFail = false
+				var UpdateCogOnPathChange = true
+				var UpdatePathOnCogChange = true
+				var UpdateCogOnInitialize = true
+				var ResolvedNullErrorOccurred = false
+				var Cog = 4
+				var PathPreference0 = CogPathPreference.CogRelative
+				var PathPreference1 = CogPathPreference.SpaceRelative
+				var PathPreference2 = CogPathPreference.Absolute
+			}
+			var PlayerText = CogPath
+			{
+				var Path = ":/PlayerText"
+				var ErrorOnResolveToNull = false
+				var ErrorOnPathCantCompute = false
+				var ErrorOnDirectLinkFail = false
+				var UpdateCogOnPathChange = true
+				var UpdatePathOnCogChange = true
+				var UpdateCogOnInitialize = true
+				var ResolvedNullErrorOccurred = false
+				var Cog = 5
+				var PathPreference0 = CogPathPreference.CogRelative
+				var PathPreference1 = CogPathPreference.SpaceRelative
+				var PathPreference2 = CogPathPreference.Absolute
+			}
+		}
 	}
-	Cog [ContextId:2]
+	Cog [ContextId:6]
 	{
 		var Name = "Renderer"
 		ForwardRenderer 
@@ -72,12 +135,12 @@ Level
 			}
 		}
 	}
-	Cog [ContextId:3]
+	Cog [ContextId:7]
 	{
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{-6.44020796, -1.5104531, 20}
+			var Translation = Real3{-8.71170044, -5.17401028, 20}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -96,7 +159,7 @@ Level
 				var UpdatePathOnCogChange = true
 				var UpdateCogOnInitialize = true
 				var ResolvedNullErrorOccurred = false
-				var Cog = 3
+				var Cog = 7
 				var PathPreference0 = CogPathPreference.CogRelative
 				var PathPreference1 = CogPathPreference.SpaceRelative
 				var PathPreference2 = CogPathPreference.Absolute
@@ -111,7 +174,7 @@ Level
 				var UpdatePathOnCogChange = true
 				var UpdateCogOnInitialize = true
 				var ResolvedNullErrorOccurred = false
-				var Cog = 2
+				var Cog = 6
 				var PathPreference0 = CogPathPreference.CogRelative
 				var PathPreference1 = CogPathPreference.SpaceRelative
 				var PathPreference2 = CogPathPreference.Absolute
@@ -130,7 +193,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 16.3746109
+			var Size = 12.1306276
 		}
 		EditorCameraController 
 		{
@@ -139,11 +202,11 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{-6.44020796, -1.5104531, -2.81510438e-07}
+			var LookTarget = Real3{-8.71170044, -5.17401028, -3.80800742e-07}
 			var MoveSensitivity = 1
 		}
 	}
-	Cog [ContextId:4]
+	Cog [ContextId:8]
 	{
 		var Name = "GameCamera"
 		Transform 
@@ -176,7 +239,7 @@ Level
 				var UpdatePathOnCogChange = true
 				var UpdateCogOnInitialize = true
 				var ResolvedNullErrorOccurred = false
-				var Cog = 4
+				var Cog = 8
 				var PathPreference0 = CogPathPreference.CogRelative
 				var PathPreference1 = CogPathPreference.SpaceRelative
 				var PathPreference2 = CogPathPreference.Absolute
@@ -191,14 +254,14 @@ Level
 				var UpdatePathOnCogChange = true
 				var UpdateCogOnInitialize = true
 				var ResolvedNullErrorOccurred = false
-				var Cog = 2
+				var Cog = 6
 				var PathPreference0 = CogPathPreference.CogRelative
 				var PathPreference1 = CogPathPreference.SpaceRelative
 				var PathPreference2 = CogPathPreference.Absolute
 			}
 			var ResolutionOrAspect = Integer2{1920, 1080}
 			var RenderToViewport = true
-			var ForwardViewportEvents = false
+			var ForwardViewportEvents = true
 			var ViewportScaling = ViewportScaling.Letterbox
 			var MarginColor = Real4{0, 0, 0, 1}
 			var NormalizedSize = Real2{1, 1}
@@ -218,12 +281,176 @@ Level
 			var AttenuationScale = 1
 		}
 	}
+	Cog [ContextId:3]
+	{
+		var Name = "PlayerMoveResource"
+		Transform 
+		{
+			var Translation = Real3{-13, -5.75, 0.100000001}
+			var Scale = Real3{1, 1, 1}
+			var Rotation = Quaternion{0, 0, 0, 1}
+		}
+		Sprite 
+		{
+			var Visible = true
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var OverrideBoundingBox = false
+			var LocalAabbCenter = Real3{0, 0, 0}
+			var LocalAabbHalfExtents = Real3{1, 1, 1}
+			var GroupSortValue = 0
+			var Material = "582c575af53d18c9:AlphaSprite"
+			var VertexColor = Real4{0.88499999, 0.453120023, 0.177000046, 1}
+			var GeometryMode = SpriteGeometryMode.ZPlane
+			var SpriteSource = "5275aa4d802dd6dc:Square"
+			var FlipX = false
+			var FlipY = false
+			var AnimationActive = true
+			var AnimationSpeed = 1
+			var StartFrame = 0
+		}
+		Area 
+		{
+			var Size = Real2{5, 1}
+			var Origin = Location.CenterLeft
+		}
+	}
+	Cog [ContextId:2]
+	{
+		var Name = "PlayerHealth"
+		Transform 
+		{
+			var Translation = Real3{-13, -7, 0.100000001}
+			var Scale = Real3{1, 1, 1}
+			var Rotation = Quaternion{0, 0, 0, 1}
+		}
+		Sprite 
+		{
+			var Visible = true
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var OverrideBoundingBox = false
+			var LocalAabbCenter = Real3{0, 0, 0}
+			var LocalAabbHalfExtents = Real3{1, 1, 1}
+			var GroupSortValue = 0
+			var Material = "582c575af53d18c9:AlphaSprite"
+			var VertexColor = Real4{0.925000012, 0.0370000005, 0.276759982, 1}
+			var GeometryMode = SpriteGeometryMode.ZPlane
+			var SpriteSource = "5275aa4d802dd6dc:Square"
+			var FlipX = false
+			var FlipY = false
+			var AnimationActive = true
+			var AnimationSpeed = 1
+			var StartFrame = 0
+		}
+		Area 
+		{
+			var Size = Real2{5, 1}
+			var Origin = Location.CenterLeft
+		}
+	}
+	Cog [ContextId:9]
+	{
+		var Name = "PlayerMoveResourceEmpty"
+		Transform 
+		{
+			var Translation = Real3{-13, -5.75, 0}
+			var Scale = Real3{1, 1, 1}
+			var Rotation = Quaternion{0, 0, 0, 1}
+		}
+		Sprite 
+		{
+			var Visible = true
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var OverrideBoundingBox = false
+			var LocalAabbCenter = Real3{0, 0, 0}
+			var LocalAabbHalfExtents = Real3{1, 1, 1}
+			var GroupSortValue = 0
+			var Material = "582c575af53d18c9:AlphaSprite"
+			var VertexColor = Real4{0.439999998, 0.42019999, 0.42019999, 1}
+			var GeometryMode = SpriteGeometryMode.ZPlane
+			var SpriteSource = "5275aa4d802dd6dc:Square"
+			var FlipX = false
+			var FlipY = false
+			var AnimationActive = true
+			var AnimationSpeed = 1
+			var StartFrame = 0
+		}
+		Area 
+		{
+			var Size = Real2{5, 1}
+			var Origin = Location.CenterLeft
+		}
+	}
+	Cog [ContextId:10]
+	{
+		var Name = "PlayerHealthEmpty"
+		Transform 
+		{
+			var Translation = Real3{-13, -7, 0}
+			var Scale = Real3{1, 1, 1}
+			var Rotation = Quaternion{0, 0, 0, 1}
+		}
+		Sprite 
+		{
+			var Visible = true
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var OverrideBoundingBox = false
+			var LocalAabbCenter = Real3{0, 0, 0}
+			var LocalAabbHalfExtents = Real3{1, 1, 1}
+			var GroupSortValue = 0
+			var Material = "582c575af53d18c9:AlphaSprite"
+			var VertexColor = Real4{0.439999998, 0.42019999, 0.42019999, 1}
+			var GeometryMode = SpriteGeometryMode.ZPlane
+			var SpriteSource = "5275aa4d802dd6dc:Square"
+			var FlipX = false
+			var FlipY = false
+			var AnimationActive = true
+			var AnimationSpeed = 1
+			var StartFrame = 0
+		}
+		Area 
+		{
+			var Size = Real2{5, 1}
+			var Origin = Location.CenterLeft
+		}
+	}
+	Cog [ContextId:4]
+	{
+		var Name = "TurnStateText"
+		Transform 
+		{
+			var Translation = Real3{-13, -4.5, 0.100000001}
+			var Scale = Real3{1, 1, 1}
+			var Rotation = Quaternion{0, 0, 0, 1}
+		}
+		SpriteText 
+		{
+			var Visible = true
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var OverrideBoundingBox = false
+			var LocalAabbCenter = Real3{0, 0, 0}
+			var LocalAabbHalfExtents = Real3{1, 1, 1}
+			var GroupSortValue = 0
+			var Material = "582c575af53d18c9:AlphaSprite"
+			var VertexColor = Real4{0.444999993, 0.444999993, 0.444999993, 1}
+			var GeometryMode = SpriteGeometryMode.ZPlane
+			var Text = "Moving"
+			var Font = "57343753bb4eaaec:NotoSans-Regular"
+			var FontSize = 100
+			var PixelsPerUnit = 128
+			var TextAlign = TextAlign.Left
+		}
+	}
 	Cog [ContextId:5]
 	{
-		var Name = "Player1MoveResource"
+		var Name = "PlayerText"
 		Transform 
 		{
-			var Translation = Real3{-8.74175644, -1.95197165, 0}
+			var Translation = Real3{-13, -3.5, 0.100000001}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
@@ -237,97 +464,13 @@ Level
 			var LocalAabbHalfExtents = Real3{1, 1, 1}
 			var GroupSortValue = 0
 			var Material = "582c575af53d18c9:AlphaSprite"
-			var VertexColor = Real4{1, 1, 1, 1}
+			var VertexColor = Real4{0.444999993, 0.444999993, 0.444999993, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
-			var Text = "P1 Move Left :"
+			var Text = "Player 1"
 			var Font = "57343753bb4eaaec:NotoSans-Regular"
-			var FontSize = 64
+			var FontSize = 100
 			var PixelsPerUnit = 128
-			var TextAlign = TextAlign.Center
-		}
-	}
-	Cog [ContextId:6]
-	{
-		var Name = "Player2MoveResource"
-		Transform 
-		{
-			var Translation = Real3{-2.75674486, -1.95197165, 0}
-			var Scale = Real3{1, 1, 1}
-			var Rotation = Quaternion{0, 0, 0, 1}
-		}
-		SpriteText 
-		{
-			var Visible = true
-			var ViewCulling = true
-			var VisibilityEvents = true
-			var OverrideBoundingBox = false
-			var LocalAabbCenter = Real3{0, 0, 0}
-			var LocalAabbHalfExtents = Real3{1, 1, 1}
-			var GroupSortValue = 0
-			var Material = "582c575af53d18c9:AlphaSprite"
-			var VertexColor = Real4{1, 1, 1, 1}
-			var GeometryMode = SpriteGeometryMode.ZPlane
-			var Text = "P2 Move Left :"
-			var Font = "57343753bb4eaaec:NotoSans-Regular"
-			var FontSize = 64
-			var PixelsPerUnit = 128
-			var TextAlign = TextAlign.Center
-		}
-	}
-	Cog [ContextId:7]
-	{
-		var Name = "Player2Health"
-		Transform 
-		{
-			var Translation = Real3{-2.75674486, -3.28797483, 0}
-			var Scale = Real3{1, 1, 1}
-			var Rotation = Quaternion{0, 0, 0, 1}
-		}
-		SpriteText 
-		{
-			var Visible = true
-			var ViewCulling = true
-			var VisibilityEvents = true
-			var OverrideBoundingBox = false
-			var LocalAabbCenter = Real3{0, 0, 0}
-			var LocalAabbHalfExtents = Real3{1, 1, 1}
-			var GroupSortValue = 0
-			var Material = "582c575af53d18c9:AlphaSprite"
-			var VertexColor = Real4{1, 1, 1, 1}
-			var GeometryMode = SpriteGeometryMode.ZPlane
-			var Text = "P2 Health :"
-			var Font = "57343753bb4eaaec:NotoSans-Regular"
-			var FontSize = 64
-			var PixelsPerUnit = 128
-			var TextAlign = TextAlign.Center
-		}
-	}
-	Cog [ContextId:8]
-	{
-		var Name = "Player1Health"
-		Transform 
-		{
-			var Translation = Real3{-8.40907097, -3.28797483, 0}
-			var Scale = Real3{1, 1, 1}
-			var Rotation = Quaternion{0, 0, 0, 1}
-		}
-		SpriteText 
-		{
-			var Visible = true
-			var ViewCulling = true
-			var VisibilityEvents = true
-			var OverrideBoundingBox = false
-			var LocalAabbCenter = Real3{0, 0, 0}
-			var LocalAabbHalfExtents = Real3{1, 1, 1}
-			var GroupSortValue = 0
-			var Material = "582c575af53d18c9:AlphaSprite"
-			var VertexColor = Real4{1, 1, 1, 1}
-			var GeometryMode = SpriteGeometryMode.ZPlane
-			var Text = "P1 Health :"
-			var Font = "57343753bb4eaaec:NotoSans-Regular"
-			var FontSize = 64
-			var PixelsPerUnit = 128
-			var TextAlign = TextAlign.Center
+			var TextAlign = TextAlign.Left
 		}
 	}
 }
