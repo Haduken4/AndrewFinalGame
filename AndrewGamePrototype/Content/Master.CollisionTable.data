@@ -1,0 +1,48 @@
+[Version:1]
+CollisionTable 
+{
+	var RegisteredGroups = Array
+	{
+		"4e740859314e5515:DefaultGroup"
+		"5c098e48dce0575f:CurrentPlayer"
+		"5c098e40de85b0fc:PlayerBullet"
+		"5c098e4fdd820ac1:Player"
+	}
+	var CollisionFilters = Array
+	{
+		Object
+		{
+			var TypeA = "5c098e40de85b0fc:PlayerBullet"
+			var TypeB = "5c098e40de85b0fc:PlayerBullet"
+			var SkipResolution = false
+			var SkipDetectingCollision = true
+			var StartEvent = false
+			var EndEvent = false
+			var PersistedEvent = false
+			var PreSolveEvent = false
+		}
+		Object
+		{
+			var TypeA = "5c098e4fdd820ac1:Player"
+			var TypeB = "5c098e4fdd820ac1:Player"
+			var SkipResolution = false
+			var SkipDetectingCollision = false
+			var StartEvent = false
+			var EndEvent = false
+			var PersistedEvent = false
+			var PreSolveEvent = false
+		}
+		Object
+		{
+			var TypeA = "5c098e48dce0575f:CurrentPlayer"
+			var TypeB = "5c098e40de85b0fc:PlayerBullet"
+			var SkipResolution = false
+			var SkipDetectingCollision = true
+			var StartEvent = false
+			var EndEvent = false
+			var PersistedEvent = false
+			var PreSolveEvent = false
+		}
+	}
+	var AutoRegister = true
+}

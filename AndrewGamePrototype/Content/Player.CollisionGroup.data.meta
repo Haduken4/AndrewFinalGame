@@ -1,0 +1,11 @@
+[Version:1]
+DataContent 
+{
+	DataBuilder 
+	{
+		var Name = "Player"
+		var ResourceId = 0x5c098e4fdd820ac1
+		var LoaderType = "CollisionGroup"
+		var Version = 0
+	}
+}

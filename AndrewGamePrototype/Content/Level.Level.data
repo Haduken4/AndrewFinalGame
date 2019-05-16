@@ -143,7 +143,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 36.4423218
+			var Size = 24.4280281
 		}
 		EditorCameraController 
 		{
@@ -267,10 +267,10 @@ Level
 		}
 		BoxCollider 
 		{
-			var Ghost = true
+			var Ghost = false
 			var SendsEvents = true
 			var Material = "4de020863e872da8:DefaultPhysicsMaterial"
-			var CollisionGroup = "4e740859314e5515:DefaultGroup"
+			var CollisionGroup = "5c098e4fdd820ac1:Player"
 			var Offset = Real3{0, 0, 0}
 			var HalfSize = Real3{0.5, 0.5, 0.5}
 		}
@@ -278,8 +278,8 @@ Level
 		{
 			var Velocity = Real3{0, 0, 0}
 			var AngularVelocity = Real3{0, 0, 0}
-			var DynamicState = RigidBodyDynamicState.Static
-			var AllowSleep = true
+			var DynamicState = RigidBodyDynamicState.Dynamic
+			var AllowSleep = false
 			var Asleep = false
 			var RotationLocked = false
 			var Mode2D = Mode2DStates.InheritFromSpace
@@ -335,7 +335,7 @@ Level
 			var Ghost = false
 			var SendsEvents = true
 			var Material = "4de020863e872da8:DefaultPhysicsMaterial"
-			var CollisionGroup = "4e740859314e5515:DefaultGroup"
+			var CollisionGroup = "5c098e4fdd820ac1:Player"
 			var Offset = Real3{0, 0, 0}
 			var HalfSize = Real3{0.5, 0.5, 0.5}
 		}
@@ -344,7 +344,7 @@ Level
 			var Velocity = Real3{0, 0, 0}
 			var AngularVelocity = Real3{0, 0, 0}
 			var DynamicState = RigidBodyDynamicState.Dynamic
-			var AllowSleep = true
+			var AllowSleep = false
 			var Asleep = false
 			var RotationLocked = false
 			var Mode2D = Mode2DStates.InheritFromSpace
@@ -363,12 +363,12 @@ Level
 		{
 			var Weapon = ShootVariables
 			{
-				var Projectile = "null"
+				var Projectile = "5c0f9844b874aa7c:BulletArchetype"
 				var ProjectileCount = 1
-				var SpreadCone = 0.785398185
-				var ProjectileSpeed = 100
+				var SpreadCone = 0
+				var ProjectileSpeed = 15
 			}
-			var Active = true
+			var Active = false
 		}
 	}
 	Cog [ContextId:7]

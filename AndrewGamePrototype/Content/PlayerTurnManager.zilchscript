@@ -26,6 +26,7 @@ class PlayerTurnManager : ZilchComponent
     }
     
     this.PlayerArray[this.CurrIndex].PlayerMovement.Activate();
+    this.PlayerArray[this.CurrIndex].BoxCollider.CollisionGroup = CollisionGroup.CurrentPlayer;
     
     this.Camera.CameraFollow.Target = this.PlayerArray[this.CurrIndex];
     
@@ -46,6 +47,7 @@ class PlayerTurnManager : ZilchComponent
       {
         
         this.PlayerArray[this.CurrIndex].PlayerShooting.Active = false;
+        this.PlayerArray[this.CurrIndex].BoxCollider.CollisionGroup = CollisionGroup.Player;
         
         this.CurrIndex += 1;
         
@@ -58,6 +60,8 @@ class PlayerTurnManager : ZilchComponent
         this.CurrState = TurnState.STATEMOVE;
         
         this.Camera.CameraFollow.Target = this.PlayerArray[this.CurrIndex];
+        
+        this.PlayerArray[this.CurrIndex].BoxCollider.CollisionGroup = CollisionGroup.CurrentPlayer;
         
       }
     }

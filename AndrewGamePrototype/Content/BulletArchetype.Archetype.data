@@ -46,7 +46,7 @@ Cog
 		var Ghost = false
 		var SendsEvents = true
 		var Material = "4de020863e872da8:DefaultPhysicsMaterial"
-		var CollisionGroup = "4e740859314e5515:DefaultGroup"
+		var CollisionGroup = "5c098e40de85b0fc:PlayerBullet"
 		var Offset = Real3{0, 0, 0}
 		var Radius = 0.25
 	}

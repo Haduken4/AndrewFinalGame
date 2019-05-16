@@ -64,7 +64,7 @@ class PlayerShooting : ZilchComponent
         }
       }
       
-      //this.Active = false;
+      this.Active = false;
     }
     
   }
