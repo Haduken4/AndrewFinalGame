@@ -33,6 +33,7 @@ class PlayerTurnManager : ZilchComponent
     foreach(var p in players)
     {
       this.PlayerArray.Add(p);
+      p.PlayerMovement.Index = this.PlayerArray.Count;
     }
     
     this.PlayerArray[this.CurrIndex].PlayerMovement.Activate();
@@ -84,6 +85,13 @@ class PlayerTurnManager : ZilchComponent
         this.PlayerArray[this.CurrIndex].BoxCollider.CollisionGroup = CollisionGroup.CurrentPlayer;
         
       }
+    }
+    
+    if(this.PlayerArray.Count == 1)
+    {
+      this.GameSession.FindSpaceByName("HUDSpace").Destroy();
+      this.GameSession.GameVars.WinningPlayer = this.PlayerArray[0].PlayerMovement.Index;
+      this.Space.LoadLevel(Level.EndScreen);
     }
     
   }

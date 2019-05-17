@@ -9,6 +9,8 @@ class PlayerMovement : ZilchComponent
   
   var CurrMoveResource : Real = 10;
   
+  var Index : Integer = 0;
+  
   [Property]
   var Active : Boolean = false;
   
@@ -17,6 +19,13 @@ class PlayerMovement : ZilchComponent
     this.CurrMoveResource = this.MaxMoveResource;
     
     Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    
+    Zero.Connect(this.Owner, Events.CogDestroy, this.OnCogDestroy);
+  }
+
+  function OnCogDestroy(event : ObjectEvent)
+  {
+    this.LevelSettings.PlayerTurnManager.PlayerArray.RemoveFirst(this.Owner);
   }
 
   function OnLogicUpdate(event : UpdateEvent)

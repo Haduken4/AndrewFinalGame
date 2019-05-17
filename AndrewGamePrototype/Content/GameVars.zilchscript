@@ -1,0 +1,4 @@
+class GameVars : ZilchComponent
+{
+  var WinningPlayer : Integer = -1;
+}

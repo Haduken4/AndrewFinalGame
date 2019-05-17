@@ -147,7 +147,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 26.9971237
+			var Size = 24.4280109
 		}
 		EditorCameraController 
 		{
@@ -296,7 +296,7 @@ Level
 		}
 		Health 
 		{
-			var MaxHealth = 10
+			var MaxHealth = 1
 		}
 		PlayerShooting 
 		{
@@ -366,7 +366,7 @@ Level
 		}
 		Health 
 		{
-			var MaxHealth = 10
+			var MaxHealth = 1
 		}
 		PlayerShooting 
 		{

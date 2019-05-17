@@ -248,7 +248,7 @@ Level
 		}
 		MenuButton 
 		{
-			var NextLevel = "5c47548ae9245cbf:MainMenu"
+			var NextLevel = "5c0f9845b8684b3c:MainMenu"
 			var QuitButton = false
 		}
 		Reactive 
@@ -313,6 +313,9 @@ Level
 			var FontSize = 128
 			var PixelsPerUnit = 128
 			var TextAlign = TextAlign.Center
+		}
+		WinnerText 
+		{
 		}
 	}
 }
