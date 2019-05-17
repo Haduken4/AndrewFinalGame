@@ -29,11 +29,20 @@ class PlayerShooting : ZilchComponent
   [Property]
   var Active : Boolean = true;
   
+  //weapons inventory
+  var Weapons : Array[ShootVariables] = Array[ShootVariables]();
+  
+  //weapon index
+  var CurrWeapon : Integer = 0;
+  
   function Initialize(init : CogInitializer)
   {
-    //Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    this.Weapons.Add(this.Weapon);
+    
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
     
     Zero.Connect(this.Space, Events.LeftMouseUp, this.OnLeftMouseUp);
+
   }
 
   function OnLeftMouseUp(event : ViewportMouseEvent)
@@ -71,6 +80,32 @@ class PlayerShooting : ZilchComponent
 
   function OnLogicUpdate(event : UpdateEvent)
   {
+    if(this.Active)
+    {
+      //go left in weapon array
+      if(Zero.Keyboard.KeyIsPressed(Keys.Q))
+      {
+        --this.CurrWeapon;
+        //wrap to right if out of bounds
+        if(this.CurrWeapon < 0)
+        {
+          this.CurrWeapon = this.Weapons.Count -1;
+        }
+        this.Weapon = this.Weapons[this.CurrWeapon];
+      }
+      //go right in weapon array
+      if(Zero.Keyboard.KeyIsPressed(Keys.E))
+      {
+        ++this.CurrWeapon;
+        //wrap to left if out of bounds
+        if(this.CurrWeapon >= this.Weapons.Count)
+        {
+          this.CurrWeapon = 0;
+          
+        }
+        this.Weapon = this.Weapons[this.CurrWeapon];
+      }
+    }
     
   }
 }
