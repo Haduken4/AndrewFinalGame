@@ -1,5 +1,9 @@
 class ShootVariables
 {
+  //Weapon icon for display
+  [Property]
+  var Icon : SpriteSource = null;
+  
   //Projectile archetype
   [Property]
   var Projectile : Archetype = null;
