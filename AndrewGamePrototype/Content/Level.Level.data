@@ -94,7 +94,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{-2.92657971, 1.97441876, 20}
+			var Translation = Real3{-0.591774344, 0.808185339, 20}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -147,7 +147,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 19.9999714
+			var Size = 26.9971237
 		}
 		EditorCameraController 
 		{
@@ -156,7 +156,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{-2.92657971, 1.97441876, -2.81008624e-07}
+			var LookTarget = Real3{-0.591774344, 0.808185339, -2.81008624e-07}
 			var MoveSensitivity = 1
 		}
 	}
@@ -302,6 +302,7 @@ Level
 		{
 			var Weapon = ShootVariables
 			{
+				var Icon = "null"
 				var Projectile = "5c0f9844b874aa7c:BulletArchetype"
 				var ProjectileCount = 1
 				var SpreadCone = 0
@@ -371,6 +372,7 @@ Level
 		{
 			var Weapon = ShootVariables
 			{
+				var Icon = "null"
 				var Projectile = "5c0f9844b874aa7c:BulletArchetype"
 				var ProjectileCount = 1
 				var SpreadCone = 0
@@ -408,6 +410,15 @@ Level
 			var Source = "5c0f86e8af7e3102:Level_TileMap00"
 			var PaletteName = "5c0f869da6af70e1:GamePalette"
 			var MeshThickness = 1.20000005
+		}
+	}
+	Cog [InheritId:"5c42385b60f4b135:WeaponPickup"][ContextId:8]
+	{
+		Transform 
+		{
+			var Translation = Real3{-3.40336561, -1.66881979, -2.81008624e-07}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{1, 0.5, 1}
 		}
 	}
 }

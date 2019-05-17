@@ -1,0 +1,21 @@
+class ItemPickup : ZilchComponent
+{
+  //weapon variables
+  [Property]
+  var Weapon : ShootVariables = ShootVariables();
+  
+  function Initialize(init : CogInitializer)
+  {
+    Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
+  }
+
+  function OnCollisionStarted(event : CollisionEvent)
+  {
+      if(event.OtherObject.Name == "Player")
+      {
+        event.OtherObject.PlayerShooting.Weapons.Add(this.Weapon);
+        this.Owner.Destroy();
+      }
+  }
+
+}

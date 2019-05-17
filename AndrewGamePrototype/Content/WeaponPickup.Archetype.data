@@ -1,0 +1,60 @@
+[Version:1]
+Cog 
+{
+	var Name = "Weapon"
+	Transform 
+	{
+		var Translation = Real3{-3.24838328, -1.45184362, -2.81008624e-07}
+		var Scale = Real3{1, 0.5, 1}
+		var Rotation = Quaternion{0, 0, 0, 1}
+	}
+	Sprite 
+	{
+		var Visible = true
+		var ViewCulling = true
+		var VisibilityEvents = true
+		var OverrideBoundingBox = false
+		var LocalAabbCenter = Real3{0, 0, 0}
+		var LocalAabbHalfExtents = Real3{1, 1, 1}
+		var GroupSortValue = 0
+		var Material = "582c575af53d18c9:AlphaSprite"
+		var VertexColor = Real4{0.281175017, 0.606808305, 0.814999998, 1}
+		var GeometryMode = SpriteGeometryMode.ZPlane
+		var SpriteSource = "5586f579ca73ecc2:SquareBordered"
+		var FlipX = false
+		var FlipY = false
+		var AnimationActive = true
+		var AnimationSpeed = 1
+		var StartFrame = 0
+	}
+	BoxCollider 
+	{
+		var Ghost = false
+		var SendsEvents = true
+		var Material = "4de020863e872da8:DefaultPhysicsMaterial"
+		var CollisionGroup = "4e740859314e5515:DefaultGroup"
+		var Offset = Real3{0, 0, 0}
+		var HalfSize = Real3{0.5, 0.5, 0.5}
+	}
+	RigidBody 
+	{
+		var Velocity = Real3{0, 0, 0}
+		var AngularVelocity = Real3{0, 0, 0}
+		var DynamicState = RigidBodyDynamicState.Dynamic
+		var AllowSleep = true
+		var Asleep = false
+		var RotationLocked = false
+		var Mode2D = Mode2DStates.InheritFromSpace
+	}
+	ItemPickup 
+	{
+		var Weapon = ShootVariables
+		{
+			var Icon = "null"
+			var Projectile = "5c0f9844b874aa7c:BulletArchetype"
+			var ProjectileCount = 1
+			var SpreadCone = 0.785398185
+			var ProjectileSpeed = 100
+		}
+	}
+}
