@@ -3,21 +3,25 @@ enum TurnState{STATEMOVE, STATESHOOT}
 
 class PlayerTurnManager : ZilchComponent
 {
-  
   var CurrState : TurnState = TurnState.STATEMOVE;
   
+  //Stores all the players on the level
   var PlayerArray : Array[Cog] = Array[Cog]();
   
+  //The current index of the player array we are on
   var CurrIndex : Integer = 0;
   
+  //The camera of this level
   var Camera : Cog = null;
   
+  //Stores the hud manager on the hud space
   var HUDManager : HUDManager = null;
   
   function Initialize(init : CogInitializer)
   {
     Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
     
+    //Set cog variables and the player array
     var hudSpace = this.GameSession.FindSpaceByName("HUDSpace");
     
     this.HUDManager = hudSpace.FindObjectByName("LevelSettings").HUDManager;
@@ -43,8 +47,10 @@ class PlayerTurnManager : ZilchComponent
   function OnLogicUpdate(event : UpdateEvent)
   {
     
+    //If the player presses L, this ends the current state
     if(Zero.Keyboard.KeyIsPressed(Keys.L))
     {
+      //If we are currently on the move state, we only need to change to the shoot state
       if(this.CurrState == TurnState.STATEMOVE)
       {
         this.PlayerArray[this.CurrIndex].PlayerMovement.Active = false;
@@ -52,6 +58,7 @@ class PlayerTurnManager : ZilchComponent
         this.CurrState = TurnState.STATESHOOT;
         this.HUDManager.CurrState = TurnState.STATESHOOT;
       }
+      //If we are currently on the shoot state, we need to progress to the next player and activate their movement
       else
       {
         
@@ -69,6 +76,7 @@ class PlayerTurnManager : ZilchComponent
         this.CurrState = TurnState.STATEMOVE;
         this.HUDManager.CurrState = TurnState.STATEMOVE;
         
+        //Update the camerafollow and hudmanager
         this.Camera.CameraFollow.Target = this.PlayerArray[this.CurrIndex];
         this.HUDManager.CurrPlayer = this.PlayerArray[this.CurrIndex];
         this.HUDManager.Index = this.CurrIndex + 1;
