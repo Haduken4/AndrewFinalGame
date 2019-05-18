@@ -17,6 +17,12 @@ class PlayerTurnManager : ZilchComponent
   //Stores the hud manager on the hud space
   var HUDManager : HUDManager = null;
   
+  //How much time per Phase
+  [Property]
+  var TimerPerPhase : Real = 30;
+  
+  //timer
+  var Timer : Real = 0;
   function Initialize(init : CogInitializer)
   {
     Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
@@ -49,9 +55,11 @@ class PlayerTurnManager : ZilchComponent
 
   function OnLogicUpdate(event : UpdateEvent)
   {
+    //what makes the timer go up
+    this.Timer += event.Dt;
     
     //If the player presses L, this ends the current state
-    if(Zero.Keyboard.KeyIsPressed(Keys.L))
+    if(Zero.Keyboard.KeyIsPressed(Keys.L) || this.Timer >= this.TimerPerPhase)
     {
       //If we are currently on the move state, we only need to change to the shoot state
       if(this.CurrState == TurnState.STATEMOVE)
@@ -60,6 +68,8 @@ class PlayerTurnManager : ZilchComponent
         this.PlayerArray[this.CurrIndex].PlayerShooting.Active = true;
         this.CurrState = TurnState.STATESHOOT;
         this.HUDManager.CurrState = TurnState.STATESHOOT;
+        //resets the timer for the shooting phase
+        this.Timer = 0;
       }
       //If we are currently on the shoot state, we need to progress to the next player and activate their movement
       else
@@ -86,9 +96,17 @@ class PlayerTurnManager : ZilchComponent
         
         this.PlayerArray[this.CurrIndex].BoxCollider.CollisionGroup = CollisionGroup.CurrentPlayer;
         
+        //resets the timer for the next player
+        this.Timer = 0;
+        
         this.HUDManager.UpdateWeapons();
         
       }
+    }
+    
+    if(this.Timer >= this.TimerPerPhase)
+    {
+      
     }
     
     if(this.PlayerArray.Count == 1)
