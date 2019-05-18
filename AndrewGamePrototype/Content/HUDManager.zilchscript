@@ -16,6 +16,13 @@ class HUDManager : ZilchComponent
   [Property]
   var PlayerText : CogPath = null;
   
+  [Property]
+  var WeaponDisplayLeft : CogPath = null;
+  [Property]
+  var WeaponDisplayCenter : CogPath = null;
+  [Property]
+  var WeaponDisplayRight : CogPath = null;
+  
   function Initialize(init : CogInitializer)
   {
     Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
@@ -42,6 +49,46 @@ class HUDManager : ZilchComponent
       }
       
       this.PlayerText.SpriteText.Text = "Player `this.Index`";
+      
+    }
+    
+  }
+  
+  
+  function UpdateWeapons()
+  {
+    if(this.CurrPlayer != null)
+    {
+      var weaponIndex = this.CurrPlayer.PlayerShooting.CurrWeapon;
+      var count = this.CurrPlayer.PlayerShooting.Weapons.Count;
+      
+      if(count == 1)
+      {
+        this.WeaponDisplayLeft.Sprite.SpriteSource = this.CurrPlayer.PlayerShooting.Weapons[0].Icon;
+        this.WeaponDisplayCenter.Sprite.SpriteSource = this.CurrPlayer.PlayerShooting.Weapons[0].Icon;
+        this.WeaponDisplayRight.Sprite.SpriteSource = this.CurrPlayer.PlayerShooting.Weapons[0].Icon;
+        return;
+        
+      }
+      
+      if(weaponIndex == 0)
+      {
+        this.WeaponDisplayLeft.Sprite.SpriteSource = this.CurrPlayer.PlayerShooting.Weapons[count - 1].Icon;
+        this.WeaponDisplayCenter.Sprite.SpriteSource = this.CurrPlayer.PlayerShooting.Weapons[weaponIndex].Icon;
+        this.WeaponDisplayRight.Sprite.SpriteSource = this.CurrPlayer.PlayerShooting.Weapons[weaponIndex + 1].Icon;
+      }
+      else if(weaponIndex == count - 1)
+      {
+        this.WeaponDisplayLeft.Sprite.SpriteSource = this.CurrPlayer.PlayerShooting.Weapons[weaponIndex - 1].Icon;
+        this.WeaponDisplayCenter.Sprite.SpriteSource = this.CurrPlayer.PlayerShooting.Weapons[weaponIndex].Icon;
+        this.WeaponDisplayRight.Sprite.SpriteSource = this.CurrPlayer.PlayerShooting.Weapons[0].Icon;
+      }
+      else
+      {
+        this.WeaponDisplayLeft.Sprite.SpriteSource = this.CurrPlayer.PlayerShooting.Weapons[weaponIndex - 1].Icon;
+        this.WeaponDisplayCenter.Sprite.SpriteSource = this.CurrPlayer.PlayerShooting.Weapons[weaponIndex].Icon;
+        this.WeaponDisplayRight.Sprite.SpriteSource = this.CurrPlayer.PlayerShooting.Weapons[weaponIndex + 1].Icon;
+      }
     }
     
   }

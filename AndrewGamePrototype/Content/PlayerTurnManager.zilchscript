@@ -43,6 +43,8 @@ class PlayerTurnManager : ZilchComponent
     this.HUDManager.CurrPlayer = this.PlayerArray[this.CurrIndex];
     this.HUDManager.Index = 1;
     
+    this.HUDManager.UpdateWeapons();
+    
   }
 
   function OnLogicUpdate(event : UpdateEvent)
@@ -83,6 +85,8 @@ class PlayerTurnManager : ZilchComponent
         this.HUDManager.Index = this.CurrIndex + 1;
         
         this.PlayerArray[this.CurrIndex].BoxCollider.CollisionGroup = CollisionGroup.CurrentPlayer;
+        
+        this.HUDManager.UpdateWeapons();
         
       }
     }
