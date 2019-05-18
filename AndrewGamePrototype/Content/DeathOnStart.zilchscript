@@ -1,0 +1,26 @@
+class DeathOnStart : ZilchComponent
+{
+  
+  var Delay : Boolean = false;
+  
+  function Initialize(init : CogInitializer)
+  {
+    //destroy object after colissions
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
+  }
+
+  function OnCollisionStarted(event : CollisionEvent)
+  {
+    Console.WriteLine("Collided");
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    if(this.Delay)
+    {
+      this.Owner.Destroy();
+    }
+    this.Delay = true;
+  }
+}

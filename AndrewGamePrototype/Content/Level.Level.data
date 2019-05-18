@@ -94,7 +94,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{-0.591774344, 0.808185339, 20}
+			var Translation = Real3{-5.04447269, 3.7847724, 20}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -147,7 +147,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 24.4280109
+			var Size = 14.8163404
 		}
 		EditorCameraController 
 		{
@@ -156,7 +156,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{-0.591774344, 0.808185339, -2.81008624e-07}
+			var LookTarget = Real3{-5.04447269, 3.7847724, -3.29931879e-07}
 			var MoveSensitivity = 1
 		}
 	}
@@ -306,7 +306,7 @@ Level
 				var Projectile = "5c0f9844b874aa7c:BulletArchetype"
 				var ProjectileCount = 1
 				var SpreadCone = 0
-				var ProjectileSpeed = 20
+				var ProjectileSpeed = 30
 			}
 			var Active = false
 		}
@@ -376,7 +376,7 @@ Level
 				var Projectile = "5c0f9844b874aa7c:BulletArchetype"
 				var ProjectileCount = 1
 				var SpreadCone = 0
-				var ProjectileSpeed = 15
+				var ProjectileSpeed = 30
 			}
 			var Active = false
 		}
@@ -412,11 +412,22 @@ Level
 			var MeshThickness = 1.20000005
 		}
 	}
-	Cog [InheritId:"5c42385b60f4b135:WeaponPickup"][ContextId:8]
+	Cog [InheritId:"5cbf45c9f4ae80b7:PlantWeaponPickup"][ContextId:8]
 	{
+		var Name = "PlantWeapon"
 		Transform 
 		{
 			var Translation = Real3{-3.40336561, -1.66881979, -2.81008624e-07}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{1, 0.5, 1}
+		}
+	}
+	Cog [InheritId:"5cbf4710572ae165:ExplosionWeaponPickup"][ContextId:9]
+	{
+		var Name = "ExplosionWeapon"
+		Transform 
+		{
+			var Translation = Real3{-10.9848814, -1.40454125, -2.81008624e-07}
 			var Rotation = Quaternion{0, 0, 0, 1}
 			var Scale = Real3{1, 0.5, 1}
 		}

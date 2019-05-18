@@ -1,0 +1,11 @@
+[Version:1]
+DataContent 
+{
+	DataBuilder 
+	{
+		var Name = "PlantArchetype"
+		var ResourceId = 0x5cbf42d047af2e95
+		var LoaderType = "Cog"
+		var Version = 0
+	}
+}

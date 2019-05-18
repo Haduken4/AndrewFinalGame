@@ -15,6 +15,9 @@ class ItemPickup : ZilchComponent
       {
         event.OtherObject.PlayerShooting.Weapons.Add(this.Weapon);
         this.Owner.Destroy();
+        Console.WriteLine(this.Weapon.Projectile);
+        Console.WriteLine(this.Weapon.ProjectileSpeed);
+        Console.WriteLine(this.Weapon.SpreadCone);
       }
   }
 

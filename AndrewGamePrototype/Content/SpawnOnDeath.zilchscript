@@ -1,0 +1,34 @@
+class SpawnOnDeath : ZilchComponent
+{
+  //the archetype to spawn when this one dies
+  [Property]
+  var ObjectToSpawn : Archetype = null;
+  
+  //if the object should be spawned with an offset
+  [Property]
+  var OffsetSpawn : Boolean = false;
+  
+  function Initialize(init : CogInitializer)
+  {
+   //destroy owner on collide
+    Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
+     //when the owner is destroyed
+    Zero.Connect(this.Owner, Events.CogDestroy, this.OnCogDestroy);
+  }
+
+  function OnCollisionStarted(event : CollisionEvent)
+  {
+    this.Owner.Destroy();
+  }
+
+  function OnCogDestroy(event : ObjectEvent)
+  {
+
+    var object = this.Space.CreateAtPosition(this.ObjectToSpawn, this.Owner.Transform.WorldTranslation - Real3(0, this.Owner.Transform.Scale.Y / 2, 0));
+    if(this.OffsetSpawn)
+    {
+      object.Transform.WorldTranslation += Real3(0, object.Transform.Scale.Y / 2.0, 0);
+    }
+    
+  }
+}

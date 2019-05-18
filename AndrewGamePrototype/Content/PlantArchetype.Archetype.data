@@ -1,11 +1,11 @@
 [Version:1]
 Cog 
 {
-	var Name = "PlantWeapon"
+	var Name = "Plant"
 	Transform 
 	{
-		var Translation = Real3{-3.40336561, -1.66881979, -2.81008624e-07}
-		var Scale = Real3{1, 0.5, 1}
+		var Translation = Real3{-13.1649752, 7.75378132, -2.81008624e-07}
+		var Scale = Real3{1, 2, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
 	Sprite 
@@ -18,7 +18,7 @@ Cog
 		var LocalAabbHalfExtents = Real3{1, 1, 1}
 		var GroupSortValue = 0
 		var Material = "582c575af53d18c9:AlphaSprite"
-		var VertexColor = Real4{0.186133444, 0.629999995, 0.053550005, 1}
+		var VertexColor = Real4{0.0742500424, 0.824999988, 0.329504967, 1}
 		var GeometryMode = SpriteGeometryMode.ZPlane
 		var SpriteSource = "5586f579ca73ecc2:SquareBordered"
 		var FlipX = false
@@ -36,25 +36,8 @@ Cog
 		var Offset = Real3{0, 0, 0}
 		var HalfSize = Real3{0.5, 0.5, 0.5}
 	}
-	RigidBody 
+	Health 
 	{
-		var Velocity = Real3{0, 0, 0}
-		var AngularVelocity = Real3{0, 0, 0}
-		var DynamicState = RigidBodyDynamicState.Dynamic
-		var AllowSleep = true
-		var Asleep = false
-		var RotationLocked = false
-		var Mode2D = Mode2DStates.InheritFromSpace
-	}
-	ItemPickup 
-	{
-		var Weapon = ShootVariables
-		{
-			var Icon = "null"
-			var Projectile = "5cbf3f95da5fd0a8:PlantBulletArchetype"
-			var ProjectileCount = 1
-			var SpreadCone = 0
-			var ProjectileSpeed = 20
-		}
+		var MaxHealth = 5
 	}
 }

@@ -4,6 +4,9 @@ class DamageOnCollide : ZilchComponent
   [Property]
   var Damage : Real = 1.0;
   
+  [Property]
+  var DestroyMe : Boolean = true;
+  
   function Initialize(init : CogInitializer)
   {
     Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
@@ -11,11 +14,18 @@ class DamageOnCollide : ZilchComponent
 
   function OnCollisionStarted(event : CollisionEvent)
   {
-    //damage other object
-    if(event.OtherObject.Health != null)
+    
+    if(!this.Owner.MarkedForDestruction)
     {
-      event.OtherObject.Health.ApplyDamage(this.Damage);
-      this.Owner.Destroy();
+      //damage other object
+      if(event.OtherObject.Health != null)
+      {
+        event.OtherObject.Health.ApplyDamage(this.Damage);
+        if(this.DestroyMe)
+        {
+          this.Owner.Destroy();
+        }
+      }
     }
   }
 }
