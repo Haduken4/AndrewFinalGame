@@ -100,9 +100,54 @@ Level
 				var PathPreference1 = CogPathPreference.SpaceRelative
 				var PathPreference2 = CogPathPreference.Absolute
 			}
+			var WeaponDisplayLeft = CogPath
+			{
+				var Path = ":/WeaponDisplay1"
+				var ErrorOnResolveToNull = false
+				var ErrorOnPathCantCompute = false
+				var ErrorOnDirectLinkFail = false
+				var UpdateCogOnPathChange = true
+				var UpdatePathOnCogChange = true
+				var UpdateCogOnInitialize = true
+				var ResolvedNullErrorOccurred = false
+				var Cog = 6
+				var PathPreference0 = CogPathPreference.CogRelative
+				var PathPreference1 = CogPathPreference.SpaceRelative
+				var PathPreference2 = CogPathPreference.Absolute
+			}
+			var WeaponDisplayCenter = CogPath
+			{
+				var Path = ":/WeaponDisplay2"
+				var ErrorOnResolveToNull = false
+				var ErrorOnPathCantCompute = false
+				var ErrorOnDirectLinkFail = false
+				var UpdateCogOnPathChange = true
+				var UpdatePathOnCogChange = true
+				var UpdateCogOnInitialize = true
+				var ResolvedNullErrorOccurred = false
+				var Cog = 7
+				var PathPreference0 = CogPathPreference.CogRelative
+				var PathPreference1 = CogPathPreference.SpaceRelative
+				var PathPreference2 = CogPathPreference.Absolute
+			}
+			var WeaponDisplayRight = CogPath
+			{
+				var Path = ":/WeaponDisplay3"
+				var ErrorOnResolveToNull = false
+				var ErrorOnPathCantCompute = false
+				var ErrorOnDirectLinkFail = false
+				var UpdateCogOnPathChange = true
+				var UpdatePathOnCogChange = true
+				var UpdateCogOnInitialize = true
+				var ResolvedNullErrorOccurred = false
+				var Cog = 8
+				var PathPreference0 = CogPathPreference.CogRelative
+				var PathPreference1 = CogPathPreference.SpaceRelative
+				var PathPreference2 = CogPathPreference.Absolute
+			}
 		}
 	}
-	Cog [ContextId:6]
+	Cog [ContextId:9]
 	{
 		var Name = "Renderer"
 		ForwardRenderer 
@@ -135,7 +180,7 @@ Level
 			}
 		}
 	}
-	Cog [ContextId:7]
+	Cog [ContextId:10]
 	{
 		var Name = "EditorCamera"
 		Transform 
@@ -159,7 +204,7 @@ Level
 				var UpdatePathOnCogChange = true
 				var UpdateCogOnInitialize = true
 				var ResolvedNullErrorOccurred = false
-				var Cog = 7
+				var Cog = 10
 				var PathPreference0 = CogPathPreference.CogRelative
 				var PathPreference1 = CogPathPreference.SpaceRelative
 				var PathPreference2 = CogPathPreference.Absolute
@@ -174,7 +219,7 @@ Level
 				var UpdatePathOnCogChange = true
 				var UpdateCogOnInitialize = true
 				var ResolvedNullErrorOccurred = false
-				var Cog = 6
+				var Cog = 9
 				var PathPreference0 = CogPathPreference.CogRelative
 				var PathPreference1 = CogPathPreference.SpaceRelative
 				var PathPreference2 = CogPathPreference.Absolute
@@ -193,7 +238,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 9.93172455
+			var Size = 12.1306343
 		}
 		EditorCameraController 
 		{
@@ -206,7 +251,7 @@ Level
 			var MoveSensitivity = 1
 		}
 	}
-	Cog [ContextId:8]
+	Cog [ContextId:11]
 	{
 		var Name = "GameCamera"
 		Transform 
@@ -239,7 +284,7 @@ Level
 				var UpdatePathOnCogChange = true
 				var UpdateCogOnInitialize = true
 				var ResolvedNullErrorOccurred = false
-				var Cog = 8
+				var Cog = 11
 				var PathPreference0 = CogPathPreference.CogRelative
 				var PathPreference1 = CogPathPreference.SpaceRelative
 				var PathPreference2 = CogPathPreference.Absolute
@@ -254,7 +299,7 @@ Level
 				var UpdatePathOnCogChange = true
 				var UpdateCogOnInitialize = true
 				var ResolvedNullErrorOccurred = false
-				var Cog = 6
+				var Cog = 9
 				var PathPreference0 = CogPathPreference.CogRelative
 				var PathPreference1 = CogPathPreference.SpaceRelative
 				var PathPreference2 = CogPathPreference.Absolute
@@ -349,7 +394,7 @@ Level
 			var Origin = Location.CenterLeft
 		}
 	}
-	Cog [ContextId:9]
+	Cog [ContextId:12]
 	{
 		var Name = "PlayerMoveResourceEmpty"
 		Transform 
@@ -383,7 +428,7 @@ Level
 			var Origin = Location.CenterLeft
 		}
 	}
-	Cog [ContextId:10]
+	Cog [ContextId:13]
 	{
 		var Name = "PlayerHealthEmpty"
 		Transform 
@@ -473,12 +518,12 @@ Level
 			var TextAlign = TextAlign.Left
 		}
 	}
-	Cog [ContextId:11]
+	Cog [ContextId:6]
 	{
 		var Name = "WeaponDisplay1"
 		Transform 
 		{
-			var Translation = Real3{-11.5999994, 10, 0.100000001}
+			var Translation = Real3{-11.0999994, 8, 0.100000001}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
@@ -502,12 +547,12 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:12]
+	Cog [ContextId:7]
 	{
 		var Name = "WeaponDisplay2"
 		Transform 
 		{
-			var Translation = Real3{-10, 10, 0.100000001}
+			var Translation = Real3{-9.5, 8, 0.100000001}
 			var Scale = Real3{1.5, 1.5, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
@@ -531,12 +576,12 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:13]
+	Cog [ContextId:14]
 	{
 		var Name = "WeaponDisplayText"
 		Transform 
 		{
-			var Translation = Real3{-10, 11.5999994, 0.100000001}
+			var Translation = Real3{-9.5, 9.59999943, 0.100000001}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
@@ -559,12 +604,12 @@ Level
 			var TextAlign = TextAlign.Center
 		}
 	}
-	Cog [ContextId:14]
+	Cog [ContextId:8]
 	{
 		var Name = "WeaponDisplay3"
 		Transform 
 		{
-			var Translation = Real3{-8.40000057, 10, 0.100000001}
+			var Translation = Real3{-7.90000057, 8, 0.100000001}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}

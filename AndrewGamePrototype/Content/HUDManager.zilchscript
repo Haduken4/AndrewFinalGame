@@ -61,6 +61,10 @@ class HUDManager : ZilchComponent
     {
       var weaponIndex = this.CurrPlayer.PlayerShooting.CurrWeapon;
       var count = this.CurrPlayer.PlayerShooting.Weapons.Count;
+      if(count == 0)
+      {
+        return;
+      }
       
       if(count == 1)
       {

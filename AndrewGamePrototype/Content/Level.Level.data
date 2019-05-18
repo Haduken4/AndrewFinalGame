@@ -47,7 +47,7 @@ Level
 			var MinSpawnX = -20
 			var MaxSpawnX = 20
 			var MaxSpawnY = 15
-			var MinSpawnY = -15
+			var MinSpawnY = 5
 			var MaxSpawnCount = 15
 			var MinDiameterSize = 1
 			var MaxDiameterSize = 4
@@ -94,7 +94,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{-5.04447269, 3.7847724, 20}
+			var Translation = Real3{3.00061607, 3.65226507, 20}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -147,7 +147,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 14.8163404
+			var Size = 29.8364334
 		}
 		EditorCameraController 
 		{
@@ -156,7 +156,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{-5.04447269, 3.7847724, -3.29931879e-07}
+			var LookTarget = Real3{3.00061607, 3.65226507, 2.17300791e-08}
 			var MoveSensitivity = 1
 		}
 	}
@@ -302,7 +302,7 @@ Level
 		{
 			var Weapon = ShootVariables
 			{
-				var Icon = "null"
+				var Icon = "5586f1922250b073:CircleBordered"
 				var Projectile = "5c0f9844b874aa7c:BulletArchetype"
 				var ProjectileCount = 1
 				var SpreadCone = 0
@@ -372,7 +372,7 @@ Level
 		{
 			var Weapon = ShootVariables
 			{
-				var Icon = "null"
+				var Icon = "5274db4c2e7c11f9:Circle"
 				var Projectile = "5c0f9844b874aa7c:BulletArchetype"
 				var ProjectileCount = 1
 				var SpreadCone = 0

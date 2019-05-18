@@ -50,7 +50,7 @@ Cog
 	{
 		var Weapon = ShootVariables
 		{
-			var Icon = "null"
+			var Icon = "59a4f6f4a01bac09:SoftCircle"
 			var Projectile = "5cbf47e05bde41ed:ExplosionBulletArchetype"
 			var ProjectileCount = 1
 			var SpreadCone = 0

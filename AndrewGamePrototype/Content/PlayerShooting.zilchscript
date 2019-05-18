@@ -46,6 +46,8 @@ class PlayerShooting : ZilchComponent
     Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
     
     Zero.Connect(this.Space, Events.LeftMouseUp, this.OnLeftMouseUp);
+    
+    this.GameSession.FindSpaceByName("HUDSpace").FindObjectByName("LevelSettings").HUDManager.UpdateWeapons();
 
   }
 

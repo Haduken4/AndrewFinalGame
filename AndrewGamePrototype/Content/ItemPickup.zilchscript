@@ -18,6 +18,7 @@ class ItemPickup : ZilchComponent
         Console.WriteLine(this.Weapon.Projectile);
         Console.WriteLine(this.Weapon.ProjectileSpeed);
         Console.WriteLine(this.Weapon.SpreadCone);
+        this.GameSession.FindSpaceByName("HUDSpace").FindObjectByName("LevelSettings").HUDManager.UpdateWeapons();
       }
   }
 
