@@ -8,6 +8,9 @@ class SpawnOnDeath : ZilchComponent
   [Property]
   var OffsetSpawn : Boolean = false;
   
+  [Property]
+  var SpawnOffset : Real = 0;
+  
   function Initialize(init : CogInitializer)
   {
    //destroy owner on collide
@@ -15,6 +18,7 @@ class SpawnOnDeath : ZilchComponent
      //when the owner is destroyed
     Zero.Connect(this.Owner, Events.CogDestroy, this.OnCogDestroy);
   }
+
 
   function OnCollisionStarted(event : CollisionEvent)
   {
@@ -24,7 +28,8 @@ class SpawnOnDeath : ZilchComponent
   function OnCogDestroy(event : ObjectEvent)
   {
 
-    var object = this.Space.CreateAtPosition(this.ObjectToSpawn, this.Owner.Transform.WorldTranslation - Real3(0, this.Owner.Transform.Scale.Y / 2, 0));
+    var object = this.Space.CreateAtPosition(this.ObjectToSpawn, this.Owner.Transform.WorldTranslation - 
+      Real3(0, this.Owner.Transform.Scale.Y * this.SpawnOffset, 0));
     if(this.OffsetSpawn)
     {
       object.Transform.WorldTranslation += Real3(0, object.Transform.Scale.Y / 2.0, 0);

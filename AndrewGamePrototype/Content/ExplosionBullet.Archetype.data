@@ -1,11 +1,11 @@
 [Version:1]
 Cog 
 {
-	var Name = "Explosion"
+	var Name = "Bullet"
 	Transform 
 	{
-		var Translation = Real3{0, 0, 0}
-		var Scale = Real3{3, 3, 1}
+		var Translation = Real3{-14.4693508, 4.78833675, 0}
+		var Scale = Real3{0.5, 0.5, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
 	Sprite 
@@ -18,7 +18,7 @@ Cog
 		var LocalAabbHalfExtents = Real3{1, 1, 1}
 		var GroupSortValue = 0
 		var Material = "582c575af53d18c9:AlphaSprite"
-		var VertexColor = Real4{1, 0, 0, 0.175000012}
+		var VertexColor = Real4{0.795000017, 0.0516750216, 0.0516750216, 1}
 		var GeometryMode = SpriteGeometryMode.ZPlane
 		var SpriteSource = "5274db4c2e7c11f9:Circle"
 		var FlipX = false
@@ -27,31 +27,34 @@ Cog
 		var AnimationSpeed = 1
 		var StartFrame = 0
 	}
+	RigidBody 
+	{
+		var Velocity = Real3{0, 0, 0}
+		var AngularVelocity = Real3{0, 0, 0}
+		var DynamicState = RigidBodyDynamicState.Dynamic
+		var AllowSleep = true
+		var Asleep = false
+		var RotationLocked = false
+		var Mode2D = Mode2DStates.InheritFromSpace
+	}
+	DamageOnCollide 
+	{
+		var Damage = 0
+		var DestroyMe = true
+	}
 	SphereCollider 
 	{
 		var Ghost = false
 		var SendsEvents = true
 		var Material = "4de020863e872da8:DefaultPhysicsMaterial"
-		var CollisionGroup = "4e740859314e5515:DefaultGroup"
+		var CollisionGroup = "5c098e40de85b0fc:PlayerBullet"
 		var Offset = Real3{0, 0, 0}
-		var Radius = 0.5
+		var Radius = 0.25
 	}
-	DamageOnCollide 
+	SpawnOnDeath 
 	{
-		var Damage = 10
-		var DestroyMe = false
-	}
-	DeathOnStart 
-	{
-	}
-	RigidBody 
-	{
-		var Velocity = Real3{0, 0, 0}
-		var AngularVelocity = Real3{0, 0, 0}
-		var DynamicState = RigidBodyDynamicState.Kinematic
-		var AllowSleep = true
-		var Asleep = false
-		var RotationLocked = false
-		var Mode2D = Mode2DStates.InheritFromSpace
+		var ObjectToSpawn = "5cbf479d4e8e1d82:Explosion"
+		var OffsetSpawn = false
+		var SpawnOffset = 0
 	}
 }

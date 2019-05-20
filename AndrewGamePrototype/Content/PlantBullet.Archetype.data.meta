@@ -3,8 +3,8 @@ DataContent
 {
 	DataBuilder 
 	{
-		var Name = "ExplosionBulletArchetype"
-		var ResourceId = 0x5cbf47e05bde41ed
+		var Name = "PlantBullet"
+		var ResourceId = 0x5cbf3f95da5fd0a8
 		var LoaderType = "Cog"
 		var Version = 0
 	}
