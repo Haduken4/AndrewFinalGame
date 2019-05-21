@@ -19,7 +19,7 @@ class ShootVariables
   //How fast the projectile will go when fired (not divided by DT)
   [Property]
   var ProjectileSpeed : Real = 100;
-  
+
 }
 
 class PlayerShooting : ZilchComponent
@@ -38,6 +38,10 @@ class PlayerShooting : ZilchComponent
   
   //weapon index
   var CurrWeapon : Integer = 0;
+  
+  var Timer : Real = 0;
+  
+  var BTimer : Boolean = false;
   
   function Initialize(init : CogInitializer)
   {
@@ -76,10 +80,11 @@ class PlayerShooting : ZilchComponent
           
           currProjectile.RigidBody.Velocity = CustomMath.DirectionFromAngle(currAngle) * this.Weapon.ProjectileSpeed;
           
+          this.Space.FindObjectByName("GameCamera").CameraFollow.Target = currProjectile;
+          
         }
       }
       
-      this.Active = false;
     }
     
   }
@@ -110,13 +115,11 @@ class PlayerShooting : ZilchComponent
         if(this.CurrWeapon >= this.Weapons.Count)
         {
           this.CurrWeapon = 0;
-          
         }
         this.Weapon = this.Weapons[this.CurrWeapon];
         
         this.GameSession.FindSpaceByName("HUDSpace").FindObjectByName("LevelSettings").HUDManager.UpdateWeapons();
       }
     }
-    
   }
 }
