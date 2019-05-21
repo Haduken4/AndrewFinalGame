@@ -11,6 +11,9 @@ class SpawnOnDeath : ZilchComponent
   [Property]
   var SpawnOffset : Real = 0;
   
+  [Property]
+  var DIE : Boolean = false;
+  
   function Initialize(init : CogInitializer)
   {
    //destroy owner on collide
@@ -22,7 +25,10 @@ class SpawnOnDeath : ZilchComponent
 
   function OnCollisionStarted(event : CollisionEvent)
   {
-    this.Owner.Destroy();
+    if(this.DIE)
+    {
+      this.Owner.Destroy();
+    }
   }
 
   function OnCogDestroy(event : ObjectEvent)

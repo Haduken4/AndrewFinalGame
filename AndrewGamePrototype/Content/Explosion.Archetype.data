@@ -54,6 +54,12 @@ Cog
 	DeathOnStart 
 	{
 	}
+	SpawnOnDeath 
+	{
+		var ObjectToSpawn = "5c833623faefda32:ExplosionParticles"
+		var OffsetSpawn = false
+		var SpawnOffset = 0
+	}
 	Hierarchy 
 	{
 	}

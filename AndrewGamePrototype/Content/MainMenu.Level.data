@@ -239,7 +239,7 @@ Level
 			var Material = "582c575af53d18c9:AlphaSprite"
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
-			var Text = "Wizard Shooty Thingy"
+			var Text = "Brogs"
 			var Font = "57343753bb4eaaec:NotoSans-Regular"
 			var FontSize = 128
 			var PixelsPerUnit = 128

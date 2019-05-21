@@ -4,7 +4,7 @@ Cog
 	var Name = "ExplosionParticles"
 	Transform 
 	{
-		var Translation = Real3{0, 0, 0}
+		var Translation = Real3{-7.36171389, 7.08937216, 0}
 		var Scale = Real3{1, 1, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
@@ -65,7 +65,7 @@ Cog
 	}
 	ParticleColorAnimator 
 	{
-		var TimeGradient = "50a5ee1707f0fb60:DefaultColorGradient"
+		var TimeGradient = "5c8340b49205864d:FireColor"
 		var VelocityGradient = "null"
 		var MaxParticleSpeed = 5
 	}
