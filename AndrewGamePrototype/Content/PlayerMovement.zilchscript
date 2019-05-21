@@ -16,7 +16,7 @@ class PlayerMovement : ZilchComponent
   var CurrMoveResource : Real = 10;
   
   //Whether our movement is locked (used with jumping)
-  var LockMovement : Boolean = false;
+  var LockMovement : Boolean = true;
   
   //Whether the mouse is down (used to draw debug line)
   var MouseIsDown : Boolean = false;
@@ -54,7 +54,7 @@ class PlayerMovement : ZilchComponent
   function OnLeftMouseUp(event : ViewportMouseEvent)
   {
     //If we can jump
-    if(this.Active && this.CurrMoveResource > this.MaxMoveResource / 2)
+    if(this.Active && this.CurrMoveResource > this.MaxMoveResource / 2 && !this.LockMovement)
     {
       var mousePos = event.ToWorldZPlane(0);
       var dirToAngle = Math.Normalize(mousePos - this.Owner.Transform.WorldTranslation);

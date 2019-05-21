@@ -148,7 +148,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 19.9999714
+			var Size = 13.4063873
 		}
 		EditorCameraController 
 		{
@@ -292,8 +292,9 @@ Level
 		PlayerMovement 
 		{
 			var MoveSpeed = 400
+			var JumpSpeed = 10
 			var MaxMoveResource = 5
-			var Active = true
+			var Active = false
 		}
 		Health 
 		{
@@ -362,6 +363,7 @@ Level
 		PlayerMovement 
 		{
 			var MoveSpeed = 400
+			var JumpSpeed = 10
 			var MaxMoveResource = 5
 			var Active = false
 		}
