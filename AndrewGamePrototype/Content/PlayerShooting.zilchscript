@@ -33,15 +33,19 @@ class PlayerShooting : ZilchComponent
   [Property]
   var Active : Boolean = true;
   
+  var CurrProjectile : Cog = null;
+  
   //weapons inventory
   var Weapons : Array[ShootVariables] = Array[ShootVariables]();
   
   //weapon index
   var CurrWeapon : Integer = 0;
-  
+
+  //timer for the bullet
   var Timer : Real = 0;
   
-  var BTimer : Boolean = false;
+  //bool that should turn on when a bullet is fired
+  var BBool : Boolean = false;
   
   function Initialize(init : CogInitializer)
   {
@@ -74,13 +78,16 @@ class PlayerShooting : ZilchComponent
       
         for(var i = 0; i < this.Weapon.ProjectileCount; ++i)
         {
-          var currProjectile = this.Space.CreateAtPosition(this.Weapon.Projectile, this.Owner.Transform.WorldTranslation);
+          this.CurrProjectile = this.Space.CreateAtPosition(this.Weapon.Projectile, this.Owner.Transform.WorldTranslation);
           
           var currAngle = angleToMouse + this.Random.Range(-this.Weapon.SpreadCone, this.Weapon.SpreadCone);
           
-          currProjectile.RigidBody.Velocity = CustomMath.DirectionFromAngle(currAngle) * this.Weapon.ProjectileSpeed;
+          this.CurrProjectile.RigidBody.Velocity = CustomMath.DirectionFromAngle(currAngle) * this.Weapon.ProjectileSpeed;
           
-          this.Space.FindObjectByName("GameCamera").CameraFollow.Target = currProjectile;
+          this.Space.FindObjectByName("GameCamera").CameraFollow.Target = this.CurrProjectile;
+          
+          this.BBool = true;
+          
           
         }
       }
@@ -119,6 +126,16 @@ class PlayerShooting : ZilchComponent
         this.Weapon = this.Weapons[this.CurrWeapon];
         
         this.GameSession.FindSpaceByName("HUDSpace").FindObjectByName("LevelSettings").HUDManager.UpdateWeapons();
+      }
+    }
+    if(this.BBool && this.CurrProjectile == null)
+    {
+      this.Timer += event.Dt;
+      if(this.Timer > 3)
+      {
+        this.LevelSettings.PlayerTurnManager.TurnBool = true;
+        this.Timer = 0;
+        this.BBool = false;
       }
     }
   }
