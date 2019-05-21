@@ -185,7 +185,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{-7.59123135, 9.29023075, 20}
+			var Translation = Real3{-9.31503773, -5.61758423, 20}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -238,7 +238,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 12.1306343
+			var Size = 6.02390051
 		}
 		EditorCameraController 
 		{
@@ -247,7 +247,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{-7.59123135, 9.29023075, -3.31823372e-07}
+			var LookTarget = Real3{-9.31503773, -5.61758423, -4.07173502e-07}
 			var MoveSensitivity = 1
 		}
 	}
@@ -624,6 +624,35 @@ Level
 			var GroupSortValue = 0
 			var Material = "582c575af53d18c9:AlphaSprite"
 			var VertexColor = Real4{1, 1, 1, 1}
+			var GeometryMode = SpriteGeometryMode.ZPlane
+			var SpriteSource = "5586f579ca73ecc2:SquareBordered"
+			var FlipX = false
+			var FlipY = false
+			var AnimationActive = true
+			var AnimationSpeed = 1
+			var StartFrame = 0
+		}
+	}
+	Cog [ContextId:15]
+	{
+		var Name = "Sprite"
+		Transform 
+		{
+			var Translation = Real3{-10.5, -5.75, 0.200000003}
+			var Scale = Real3{0.100000001, 1, 1}
+			var Rotation = Quaternion{0, 0, 0, 1}
+		}
+		Sprite 
+		{
+			var Visible = true
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var OverrideBoundingBox = false
+			var LocalAabbCenter = Real3{0, 0, 0}
+			var LocalAabbHalfExtents = Real3{1, 1, 1}
+			var GroupSortValue = 0
+			var Material = "582c575af53d18c9:AlphaSprite"
+			var VertexColor = Real4{0.0521500111, 0.745000005, 0.0798641518, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var SpriteSource = "5586f579ca73ecc2:SquareBordered"
 			var FlipX = false

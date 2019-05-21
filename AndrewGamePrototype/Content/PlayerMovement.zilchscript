@@ -1,16 +1,30 @@
 class PlayerMovement : ZilchComponent
 {
-  
+  //How fast we move left/right
   [Property]
   var MoveSpeed : Real = 250;
   
+  //How fast we jump
+  [Property]
+  var JumpSpeed : Real = 10;
+  
+  //How much we can move per turn
   [Property]
   var MaxMoveResource : Real = 10;
   
+  //How much more we can move this turn
   var CurrMoveResource : Real = 10;
   
+  //Whether our movement is locked (used with jumping)
+  var LockMovement : Boolean = false;
+  
+  //Whether the mouse is down (used to draw debug line)
+  var MouseIsDown : Boolean = false;
+  
+  //Used to track winning player
   var Index : Integer = 0;
   
+  //whether we active
   [Property]
   var Active : Boolean = false;
   
@@ -18,13 +32,62 @@ class PlayerMovement : ZilchComponent
   {
     this.CurrMoveResource = this.MaxMoveResource;
     
+    //Connect stuff
     Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
     
+    Zero.Connect(this.Space, Events.LeftMouseDown, this.OnLeftMouseDown);
+    Zero.Connect(this.Space, Events.LeftMouseUp, this.OnLeftMouseUp);
+    
     Zero.Connect(this.Owner, Events.CogDestroy, this.OnCogDestroy);
+    Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
+  }
+
+  function OnCollisionStarted(event : CollisionEvent)
+  {
+    //if we hit the floor
+    if(event.FirstPoint.WorldPoint.Y < this.Owner.Transform.WorldTranslation.Y)
+    {
+      this.LockMovement = false;
+    }
+  }
+
+  function OnLeftMouseUp(event : ViewportMouseEvent)
+  {
+    //If we can jump
+    if(this.Active && this.CurrMoveResource > this.MaxMoveResource / 2)
+    {
+      var mousePos = event.ToWorldZPlane(0);
+      var dirToAngle = Math.Normalize(mousePos - this.Owner.Transform.WorldTranslation);
+      
+      var angleToMouse = Math.ATan2(dirToAngle.Y, dirToAngle.X);
+      
+      var dirToMouse = CustomMath.DirectionFromAngle(angleToMouse);
+      
+      this.Owner.RigidBody.Velocity += dirToMouse * this.JumpSpeed;
+      
+      this.CurrMoveResource -= this.MaxMoveResource / 2;
+      
+      this.LockMovement = true;
+      
+      this.MouseIsDown = false;
+      
+    }
+    
+  }
+
+  function OnLeftMouseDown(event : ViewportMouseEvent)
+  {
+    //If we can jump
+    if(this.Active && this.CurrMoveResource > this.MaxMoveResource / 2)
+    {
+      this.MouseIsDown = true;
+      
+    }
   }
 
   function OnCogDestroy(event : ObjectEvent)
   {
+    //when we die remove us from the turn manager
     this.LevelSettings.PlayerTurnManager.PlayerArray.RemoveFirst(this.Owner);
   }
 
@@ -33,35 +96,59 @@ class PlayerMovement : ZilchComponent
     
     var vel = this.Owner.RigidBody.Velocity;
     
-    if(this.Active && this.CurrMoveResource > 0)
+    //If our movement isn't locked, move left/right/nowhere
+    if(!this.LockMovement)
     {
-      if(Zero.Keyboard.KeyIsDown(Keys.A))
+      if(this.Active && this.CurrMoveResource > 0)
       {
-        vel.X = -1 * this.MoveSpeed * event.Dt;
-        this.CurrMoveResource -= event.Dt;
-      }
-      else if(Zero.Keyboard.KeyIsDown(Keys.D))
-      {
-        vel.X = 1 * this.MoveSpeed * event.Dt;
-        this.CurrMoveResource -= event.Dt;
+        if(Zero.Keyboard.KeyIsDown(Keys.A))
+        {
+          vel.X = -1 * this.MoveSpeed * event.Dt;
+          this.CurrMoveResource -= event.Dt;
+        }
+        else if(Zero.Keyboard.KeyIsDown(Keys.D))
+        {
+          vel.X = 1 * this.MoveSpeed * event.Dt;
+          this.CurrMoveResource -= event.Dt;
+        }
+        else
+        {
+          vel.X = 0;
+        }
+        
+        this.Owner.RigidBody.Velocity = vel;
+        
       }
       else
       {
         vel.X = 0;
       }
-      
-      this.Owner.RigidBody.Velocity = vel;
-      
-    }
-    else
-    {
-      vel.X = 0;
     }
     
     this.Owner.RigidBody.Velocity = vel;
     
+    //If the mouse is down, draw a debug line
+    if(this.MouseIsDown)
+    {
+      var mousePos = Zero.Mouse.ClientPosition;
+      var screenMousePos = this.Space.FindObjectByName("GameCamera").CameraViewport.ScreenToWorldZPlane(mousePos, 0);
+      
+      var dirToAngle = Math.Normalize(screenMousePos - this.Owner.Transform.WorldTranslation);
+      
+      var angleToMouse = Math.ATan2(dirToAngle.Y, dirToAngle.X);
+      
+      var dirToMouse = CustomMath.DirectionFromAngle(angleToMouse);
+      
+      var debugLine = DebugLine(this.Owner.Transform.WorldTranslation, this.Owner.Transform.WorldTranslation + dirToMouse * 5);
+      
+      debugLine.Color = Real4(1, 0, 1, 1);
+      
+      DebugDraw.Add(debugLine);
+    }
+    
   }
   
+  //Activate our movement
   function Activate()
   {
     this.CurrMoveResource = this.MaxMoveResource;
