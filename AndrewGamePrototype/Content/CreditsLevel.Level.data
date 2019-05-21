@@ -600,35 +600,7 @@ Level
 		var Name = "Names"
 		Transform 
 		{
-			var Translation = Real3{-12.5, 0.631865501, 0}
-			var Scale = Real3{1, 1, 1}
-			var Rotation = Quaternion{0, 0, 0, 1}
-		}
-		SpriteText 
-		{
-			var Visible = true
-			var ViewCulling = true
-			var VisibilityEvents = true
-			var OverrideBoundingBox = false
-			var LocalAabbCenter = Real3{0, 0, 0}
-			var LocalAabbHalfExtents = Real3{1, 1, 1}
-			var GroupSortValue = 0
-			var Material = "582c575af53d18c9:AlphaSprite"
-			var VertexColor = Real4{1, 1, 1, 1}
-			var GeometryMode = SpriteGeometryMode.ZPlane
-			var Text = "Michelle Ip"
-			var Font = "57343753bb4eaaec:NotoSans-Regular"
-			var FontSize = 80
-			var PixelsPerUnit = 128
-			var TextAlign = TextAlign.Left
-		}
-	}
-	Cog [ContextId:19]
-	{
-		var Name = "Names"
-		Transform 
-		{
-			var Translation = Real3{-12.5, -0.248711109, 0}
+			var Translation = Real3{-12.5, 0.562742352, 0}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
@@ -651,12 +623,12 @@ Level
 			var TextAlign = TextAlign.Left
 		}
 	}
-	Cog [ContextId:20]
+	Cog [ContextId:19]
 	{
 		var Name = "Names"
 		Transform 
 		{
-			var Translation = Real3{-12.5, -1.24871111, 0}
+			var Translation = Real3{-12.5, -0.437257648, 0}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
@@ -679,12 +651,12 @@ Level
 			var TextAlign = TextAlign.Left
 		}
 	}
-	Cog [ContextId:21]
+	Cog [ContextId:20]
 	{
 		var Name = "Names"
 		Transform 
 		{
-			var Translation = Real3{-12.5, -2.24871111, 0}
+			var Translation = Real3{-12.5, -1.43725765, 0}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
@@ -707,12 +679,12 @@ Level
 			var TextAlign = TextAlign.Left
 		}
 	}
-	Cog [ContextId:22]
+	Cog [ContextId:21]
 	{
 		var Name = "Names"
 		Transform 
 		{
-			var Translation = Real3{-12.5, -3.24871111, 0}
+			var Translation = Real3{-12.5, -2.43725777, 0}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
@@ -735,12 +707,12 @@ Level
 			var TextAlign = TextAlign.Left
 		}
 	}
-	Cog [ContextId:23]
+	Cog [ContextId:22]
 	{
 		var Name = "Names"
 		Transform 
 		{
-			var Translation = Real3{-12.5, -4.24871111, 0}
+			var Translation = Real3{-12.5, -3.43725777, 0}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
@@ -763,12 +735,12 @@ Level
 			var TextAlign = TextAlign.Left
 		}
 	}
-	Cog [ContextId:24]
+	Cog [ContextId:23]
 	{
 		var Name = "Names"
 		Transform 
 		{
-			var Translation = Real3{-12.5, -6.74871111, 0}
+			var Translation = Real3{-12.5, -5.93725777, 0}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
@@ -791,12 +763,12 @@ Level
 			var TextAlign = TextAlign.Left
 		}
 	}
-	Cog [ContextId:25]
+	Cog [ContextId:24]
 	{
 		var Name = "Names"
 		Transform 
 		{
-			var Translation = Real3{-12.5, -5.74871111, 0}
+			var Translation = Real3{-12.5, -4.93725777, 0}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
@@ -819,12 +791,12 @@ Level
 			var TextAlign = TextAlign.Left
 		}
 	}
-	Cog [ContextId:26]
+	Cog [ContextId:25]
 	{
 		var Name = "Names"
 		Transform 
 		{
-			var Translation = Real3{-12.5, -7.74871111, 0}
+			var Translation = Real3{-12.5, -6.93725777, 0}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
@@ -847,7 +819,7 @@ Level
 			var TextAlign = TextAlign.Left
 		}
 	}
-	Cog [ContextId:27]
+	Cog [ContextId:26]
 	{
 		var Name = "DigiLogo"
 		Transform 
