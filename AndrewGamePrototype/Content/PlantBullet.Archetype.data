@@ -4,7 +4,7 @@ Cog
 	var Name = "Bullet"
 	Transform 
 	{
-		var Translation = Real3{-12.3928862, 4.70130396, 0}
+		var Translation = Real3{0, 0, 0}
 		var Scale = Real3{0.5, 0.5, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
@@ -56,5 +56,10 @@ Cog
 		var ObjectToSpawn = "5cbf42d047af2e95:Plant"
 		var OffsetSpawn = true
 		var SpawnOffset = 0.5
+		var DIE = false
+	}
+	TimedDeath 
+	{
+		var Timer = 5
 	}
 }

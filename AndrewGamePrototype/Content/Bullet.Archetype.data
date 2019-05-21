@@ -40,6 +40,7 @@ Cog
 	DamageOnCollide 
 	{
 		var Damage = 1
+		var DestroyMe = true
 	}
 	SphereCollider 
 	{
@@ -49,5 +50,9 @@ Cog
 		var CollisionGroup = "5c098e40de85b0fc:PlayerBullet"
 		var Offset = Real3{0, 0, 0}
 		var Radius = 0.25
+	}
+	TimedDeath 
+	{
+		var Timer = 5
 	}
 }

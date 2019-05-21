@@ -32,7 +32,7 @@ Cog
 		var Ghost = false
 		var SendsEvents = true
 		var Material = "4de020863e872da8:DefaultPhysicsMaterial"
-		var CollisionGroup = "4e740859314e5515:DefaultGroup"
+		var CollisionGroup = "5c306556261f6375:Pickup"
 		var Offset = Real3{0, 0, 0}
 		var HalfSize = Real3{0.5, 0.5, 0.5}
 	}
@@ -51,7 +51,7 @@ Cog
 		var Weapon = ShootVariables
 		{
 			var Icon = "59a4f6f4a01bac09:SoftCircle"
-			var Projectile = "5cbf47e05bde41ed:ExplosionBulletArchetype"
+			var Projectile = "5cbf47e05bde41ed:ExplosionBullet"
 			var ProjectileCount = 1
 			var SpreadCone = 0
 			var ProjectileSpeed = 20

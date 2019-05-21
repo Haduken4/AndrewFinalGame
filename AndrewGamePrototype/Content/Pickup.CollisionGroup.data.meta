@@ -1,0 +1,11 @@
+[Version:1]
+DataContent 
+{
+	DataBuilder 
+	{
+		var Name = "Pickup"
+		var ResourceId = 0x5c306556261f6375
+		var LoaderType = "CollisionGroup"
+		var Version = 0
+	}
+}

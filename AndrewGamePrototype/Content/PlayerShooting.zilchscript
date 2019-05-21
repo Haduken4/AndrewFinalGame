@@ -128,6 +128,12 @@ class PlayerShooting : ZilchComponent
         this.GameSession.FindSpaceByName("HUDSpace").FindObjectByName("LevelSettings").HUDManager.UpdateWeapons();
       }
     }
+    
+    if(Zero.Keyboard.KeyIsPressed(Keys.L) && this.BBool)
+    {
+      this.BBool = false;
+    }
+    
     if(this.BBool && this.CurrProjectile == null)
     {
       this.Timer += event.Dt;

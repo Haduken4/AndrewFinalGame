@@ -148,7 +148,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 13.4063873
+			var Size = 19.9999714
 		}
 		EditorCameraController 
 		{
@@ -298,14 +298,14 @@ Level
 		}
 		Health 
 		{
-			var MaxHealth = 1
+			var MaxHealth = 5
 		}
 		PlayerShooting 
 		{
 			var Weapon = ShootVariables
 			{
-				var Icon = "5586f1922250b073:CircleBordered"
-				var Projectile = "5c0f9844b874aa7c:BulletArchetype"
+				var Icon = "5274db4c2e7c11f9:Circle"
+				var Projectile = "5c0f9844b874aa7c:Bullet"
 				var ProjectileCount = 1
 				var SpreadCone = 0
 				var ProjectileSpeed = 30
@@ -369,14 +369,14 @@ Level
 		}
 		Health 
 		{
-			var MaxHealth = 1
+			var MaxHealth = 5
 		}
 		PlayerShooting 
 		{
 			var Weapon = ShootVariables
 			{
 				var Icon = "5274db4c2e7c11f9:Circle"
-				var Projectile = "5c0f9844b874aa7c:BulletArchetype"
+				var Projectile = "5c0f9844b874aa7c:Bullet"
 				var ProjectileCount = 1
 				var SpreadCone = 0
 				var ProjectileSpeed = 30
