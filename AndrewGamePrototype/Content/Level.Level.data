@@ -241,6 +241,12 @@ Level
 			var ResizeSpeed = 1.5
 			var MinMaxSize = Real2{5, 40}
 		}
+		ScreenShake 
+		{
+			var ShakeDuration = 1
+			var ShakeMagnitude = 0.699999988
+			var ShakeEnabled = false
+		}
 	}
 	Cog [ContextId:5]
 	{
@@ -305,7 +311,7 @@ Level
 			var Weapon = ShootVariables
 			{
 				var Icon = "5274db4c2e7c11f9:Circle"
-				var Projectile = "5c0f9844b874aa7c:Bullet"
+				var Projectile = "5c0f9844b874aa7c:BulletArchetype"
 				var ProjectileCount = 1
 				var SpreadCone = 0
 				var ProjectileSpeed = 30
@@ -376,7 +382,7 @@ Level
 			var Weapon = ShootVariables
 			{
 				var Icon = "5274db4c2e7c11f9:Circle"
-				var Projectile = "5c0f9844b874aa7c:Bullet"
+				var Projectile = "5c0f9844b874aa7c:BulletArchetype"
 				var ProjectileCount = 1
 				var SpreadCone = 0
 				var ProjectileSpeed = 30

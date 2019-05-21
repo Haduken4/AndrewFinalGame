@@ -1,0 +1,9 @@
+[Version:1]
+TextContent 
+{
+	ZilchScriptBuilder 
+	{
+		var Name = "DeathOnStart"
+		var ResourceId = 0x5c8462682625f93c
+	}
+}

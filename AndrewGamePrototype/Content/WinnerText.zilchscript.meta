@@ -1,0 +1,9 @@
+[Version:1]
+TextContent 
+{
+	ZilchScriptBuilder 
+	{
+		var Name = "WinnerText"
+		var ResourceId = 0x5c846268262ab77a
+	}
+}

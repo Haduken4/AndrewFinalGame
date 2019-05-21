@@ -1,0 +1,48 @@
+class ScreenShake : ZilchComponent
+{
+  [Property]
+  var ShakeDuration : Real = 100;
+  [Property]
+  var ShakeMagnitude : Real = 0.7;
+  [Property]
+  var ShakeEnabled : Boolean = true;
+  var InitialPosition : Real3;
+  var RandomGenerator : Random = Random();
+  function Initialize(init : CogInitializer)
+  {
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    this.InitialPosition = this.Owner.Transform.Translation;
+  }
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    if(this.ShakeEnabled)
+    {
+      var randx = this.RandomGenerator.Range(0,1);
+      var randy = this.RandomGenerator.Range(0,1);
+      // get initial position
+
+      if(this.ShakeDuration > 0)
+      {
+        // set camera to a random position
+        this.Owner.Transform.Translation = Real3(this.InitialPosition.X + randx * this.ShakeMagnitude, 
+          this.InitialPosition.Y + randy * this.ShakeMagnitude, this.InitialPosition.Z);
+        this.ShakeDuration -= event.Dt;
+      }
+      else
+      {
+        // set timer to 0
+        this.ShakeDuration = 0;
+        // reset camera's position to the initial position
+        this.Owner.Transform.Translation = this.InitialPosition;
+        this.ShakeEnabled = false;
+      }
+    }
+  }
+  
+  // shake the screen for a given duration
+  function TriggerScreenShake(t : Real)
+  {
+    this.ShakeDuration = t;
+    this.ShakeEnabled = true;
+  }
+}
