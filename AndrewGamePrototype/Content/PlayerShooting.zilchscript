@@ -19,7 +19,14 @@ class ShootVariables
   //How fast the projectile will go when fired (not divided by DT)
   [Property]
   var ProjectileSpeed : Real = 100;
-
+  
+  //how much varition in speed you want for each bullet
+  [Property]
+  var SpeedVarition : Real = 0;
+  
+  //If you want the bullets to have varition in speed
+  [Property]
+  var SpreadBool : Boolean = false;
 }
 
 class PlayerShooting : ZilchComponent
@@ -43,6 +50,9 @@ class PlayerShooting : ZilchComponent
 
   //timer for the bullet
   var Timer : Real = 0;
+  
+  //turn this bool on for a timer to start
+  var TBool : Boolean = false;
   
   //bool that should turn on when a bullet is fired
   var BBool : Boolean = false;
@@ -78,6 +88,7 @@ class PlayerShooting : ZilchComponent
       
         for(var i = 0; i < this.Weapon.ProjectileCount; ++i)
         {
+            var randSpeed : Real = 0;
           this.CurrProjectile = this.Space.CreateAtPosition(this.Weapon.Projectile, this.Owner.Transform.WorldTranslation);
           
           var currAngle = angleToMouse + this.Random.Range(-this.Weapon.SpreadCone, this.Weapon.SpreadCone);
@@ -87,9 +98,9 @@ class PlayerShooting : ZilchComponent
           this.Space.FindObjectByName("GameCamera").CameraFollow.Target = this.CurrProjectile;
           
           this.BBool = true;
-          
-          
         }
+        
+        this.Active = false;
       }
       
     }
@@ -134,14 +145,20 @@ class PlayerShooting : ZilchComponent
       this.BBool = false;
     }
     
+    if(this.TBool)
+    {
+        this.Timer += event.Dt;
+    }
+    
     if(this.BBool && this.CurrProjectile == null)
     {
-      this.Timer += event.Dt;
+      this.TBool = true;
       if(this.Timer > 3)
       {
         this.LevelSettings.PlayerTurnManager.TurnBool = true;
-        this.Timer = 0;
         this.BBool = false;
+        this.TBool = false;
+        this.Timer = 0;
       }
     }
   }
