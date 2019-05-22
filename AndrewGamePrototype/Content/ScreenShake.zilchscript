@@ -4,10 +4,13 @@ class ScreenShake : ZilchComponent
   var ShakeDuration : Real = 100;
   [Property]
   var ShakeMagnitude : Real = 100;
-  [Property]
-  var ShakeEnabled : Boolean = true;
+
+  var ShakeEnabled : Boolean = false;
+  
   var InitialPosition : Real3;
+  
   var RandomGenerator : Random = Random();
+  
   function Initialize(init : CogInitializer)
   {
     Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
@@ -19,7 +22,6 @@ class ScreenShake : ZilchComponent
     {
       var randx = this.RandomGenerator.Range(0,1);
       var randy = this.RandomGenerator.Range(0,1);
-      // get initial position
 
       if(this.ShakeDuration > 0)
       {
@@ -30,11 +32,9 @@ class ScreenShake : ZilchComponent
       }
       else
       {
-        // set timer to 0
+        // reset
         this.ShakeDuration = 0;
-        // reset camera's position to the initial position
-        this.Owner.Transform.Translation = this.InitialPosition;
-        //this.ShakeEnabled = false;
+        this.ShakeEnabled = false;
       }
     }
   }
@@ -43,5 +43,6 @@ class ScreenShake : ZilchComponent
   {
     this.ShakeDuration = t;
     this.ShakeEnabled = true;
+    this.InitialPosition = this.Owner.Transform.WorldTranslation;
   }
 }
