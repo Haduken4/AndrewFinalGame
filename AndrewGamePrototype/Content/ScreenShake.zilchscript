@@ -1,3 +1,9 @@
+/*************************
+Authors: Tsering Ngoche
+Date Created: 5/22/19
+Brief: Shakes screen
+*************************/
+
 class ScreenShake : ZilchComponent
 {
   [Property]
