@@ -51,8 +51,9 @@ Cog
 		var Offset = Real3{0, 0, 0}
 		var Radius = 0.25
 	}
-	TimedDeath 
+	BulletTimeout 
 	{
-		var Timer = 5
+		var TimeoutDestroyTimer = 1
+		var MinimumSpeed = 1
 	}
 }
