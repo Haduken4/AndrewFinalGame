@@ -148,7 +148,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 22.1033859
+			var Size = 12.1306019
 		}
 		EditorCameraController 
 		{
@@ -245,7 +245,6 @@ Level
 		{
 			var ShakeDuration = 1
 			var ShakeMagnitude = 0.699999988
-			var ShakeEnabled = false
 		}
 	}
 	Cog [ContextId:5]
@@ -445,43 +444,16 @@ Level
 			var Scale = Real3{1, 0.5, 1}
 		}
 	}
-	Cog [ContextId:10]
+	Cog [InheritId:"5c85da8abb1395cf:WeaponSpawner"][ContextId:10]
 	{
-		var Name = "Sprite"
 		Transform 
 		{
-			var Translation = Real3{-0.287870467, 5.50629616, 3.14779136e-08}
-			var Scale = Real3{1, 1, 1}
+			var Translation = Real3{0, 5.48553467, 3.14779136e-08}
 			var Rotation = Quaternion{0, 0, 0, 1}
-		}
-		Sprite 
-		{
-			var Visible = true
-			var ViewCulling = true
-			var VisibilityEvents = true
-			var OverrideBoundingBox = false
-			var LocalAabbCenter = Real3{0, 0, 0}
-			var LocalAabbHalfExtents = Real3{1, 1, 1}
-			var GroupSortValue = 0
-			var Material = "582c575af53d18c9:AlphaSprite"
-			var VertexColor = Real4{1, 1, 1, 1}
-			var GeometryMode = SpriteGeometryMode.ZPlane
-			var SpriteSource = "5586f579ca73ecc2:SquareBordered"
-			var FlipX = false
-			var FlipY = false
-			var AnimationActive = true
-			var AnimationSpeed = 1
-			var StartFrame = 0
-		}
-		ItemSpawn 
-		{
-			var Chance = 30
-			var WeaponToSpawn = Array[Archetype]
-			{
-			}
+			var Scale = Real3{1, 1, 1}
 		}
 	}
-	Cog [InheritId:"5c0415760765b67e:ClusterWeapon"][ContextId:11]
+	Cog [InheritId:"5c85d7cd169955b2:ClusterWeaponPickup"][ContextId:11]
 	{
 		var Name = "ClusterWeapon"
 		Transform 

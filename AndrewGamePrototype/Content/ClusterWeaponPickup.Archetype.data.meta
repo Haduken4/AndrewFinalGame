@@ -1,0 +1,11 @@
+[Version:1]
+DataContent 
+{
+	DataBuilder 
+	{
+		var Name = "ClusterWeaponPickup"
+		var ResourceId = 0x5c85d7cd169955b2
+		var LoaderType = "Cog"
+		var Version = 0
+	}
+}
