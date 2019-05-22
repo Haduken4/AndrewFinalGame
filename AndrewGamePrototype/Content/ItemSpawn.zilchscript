@@ -1,0 +1,39 @@
+class ItemSpawn : ZilchComponent
+{
+  //percentage chance to spawn (0 - 100)
+  [Property]
+  var Chance : Integer = 30;
+  
+  [Property]
+  var WeaponToSpawn : Array[Archetype] = Array[Archetype](10, Archetype.ExplosionWeaponPickup);
+  
+  //random number generator
+  var RandomGenerator : Random = Random();
+  
+  function Initialize(init : CogInitializer)
+  {
+    var childCount = this.Owner.ChildrenArray.Count;
+    
+      
+    var spawn = this.RandomGenerator.Range(0, 100);
+    
+    if(spawn <= this.Chance)
+    {
+      var childToSpawn = this.RandomGenerator.Range(0, childCount - 1);
+      for(var i = 0; i < childCount; ++i)
+      {
+        if(i != childToSpawn)
+        {
+          this.Owner.ChildrenArray[i].Destroy();
+        }
+      }
+    }
+    else{
+      for(var i = 0; i < childCount; ++i)
+      {
+        this.Owner.ChildrenArray[i].Destroy();
+      }
+    }
+  }
+
+}
