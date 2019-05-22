@@ -1,0 +1,57 @@
+class BulletTimeout : ZilchComponent
+{
+  //When we are "timing out" this should tick down
+  [Property]
+  var TimeoutDestroyTimer : Real = 3;
+  
+  //Minimum speed we have to move at before we are "timing out"
+  [Property]
+  var MinimumSpeed : Real = 0.5;
+  
+  var LastFrameVelocity : Real3 = Real3();
+  
+  var Timer : Real = 3;
+  
+  function Initialize(init : CogInitializer)
+  {
+    this.Timer = this.TimeoutDestroyTimer;
+    
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+  }
+  
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    //Cast a ray to check if there is anything below us (if there isn't we are likely over empty space and outside of the level)
+    var ray = Ray(this.Owner.Transform.WorldTranslation, Real3(0, -1, 0));
+    var filter = CastFilter();
+    filter.IgnoreCog = this.Owner;
+    var results = this.Space.PhysicsSpace.CastRay(ray, 10, filter);
+    
+    var lastMag = CustomMath.Magnitude(this.LastFrameVelocity);
+    var currMag = CustomMath.Magnitude(this.Owner.RigidBody.Velocity);
+    
+    var isFastEnough = lastMag >= this.MinimumSpeed && currMag >= this.MinimumSpeed;
+    
+    //If there is nothing below us, decrement the timer, otherwise reset it
+    if(results.IsEmpty || !isFastEnough)
+    {
+      this.Timer -= event.Dt;
+    }
+    else
+    {
+      this.Timer = this.TimeoutDestroyTimer;
+    }
+    
+    
+    
+    //If we are moving too slow or the timer is at 0, we have "timed out" and should be destroyed
+    if(this.Timer <= 0)
+    {
+      this.Owner.Destroy();
+    }
+    
+    this.LastFrameVelocity = this.Owner.RigidBody.Velocity;
+    
+    
+  }
+}
