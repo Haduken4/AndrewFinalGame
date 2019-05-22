@@ -20,21 +20,22 @@ class ShootVariables
   [Property]
   var ProjectileSpeed : Real = 100;
   
-  //how much varition in speed you want for each bullet
+  //how much variation in speed you want for each bullet
   [Property]
-  var SpeedVarition : Real = 0;
+  var SpeedVariation : Real = 0;
   
-  //If you want the bullets to have varition in speed
+  //If you want the bullets to have variation in speed
   [Property]
-  var SpreadBool : Boolean = false;
+  var SpeedBool : Boolean = false;
 }
 
 class PlayerShooting : ZilchComponent
 {
-  
+  //Starting weapon
   [Property]
   var Weapon : ShootVariables = ShootVariables();
   
+  //Random functions
   var Random : Random = Random();
   
   [Property]
@@ -59,6 +60,7 @@ class PlayerShooting : ZilchComponent
   
   function Initialize(init : CogInitializer)
   {
+    //Add the starting weapon to the inventory
     this.Weapons.Add(this.Weapon);
     
     Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
@@ -71,35 +73,41 @@ class PlayerShooting : ZilchComponent
 
   function OnLeftMouseUp(event : ViewportMouseEvent)
   {
+    //checks if we are currently allowed to fire
     if(this.Active)
     {
+      //gets the mouse position to know where to fire the bullet
       var mousePos = this.Space.FindObjectByName("GameCamera").CameraViewport.ScreenToWorldZPlane(event.Position, 0);
-      
+      //gets the direction of the mouse
       var dir = mousePos - this.Owner.Transform.WorldTranslation;
-      
+
       var angleToMouse = Math.ATan2(dir.Y, dir.X);
-      
       
       
       if(this.Weapon.Projectile != null)
       {
-        
+
         Console.WriteLine("Happened");
-      
+        //loop for how many bullets you want fired
         for(var i = 0; i < this.Weapon.ProjectileCount; ++i)
         {
-            var randSpeed : Real = 0;
+          var randVel : Real = 1;
+          if(this.Weapon.SpeedBool)
+          {
+            randVel = this.Random.Range(1,this.Weapon.SpeedVariation);
+          }
+          //create the projectile at the position
           this.CurrProjectile = this.Space.CreateAtPosition(this.Weapon.Projectile, this.Owner.Transform.WorldTranslation);
-          
+          //Determine the angle 
           var currAngle = angleToMouse + this.Random.Range(-this.Weapon.SpreadCone, this.Weapon.SpreadCone);
-          
-          this.CurrProjectile.RigidBody.Velocity = CustomMath.DirectionFromAngle(currAngle) * this.Weapon.ProjectileSpeed;
-          
+          //this giving the bullet belocity and what direction
+          this.CurrProjectile.RigidBody.Velocity = CustomMath.DirectionFromAngle(currAngle) * this.Weapon.ProjectileSpeed * randVel;
+          //Tells the camera to follow 
           this.Space.FindObjectByName("GameCamera").CameraFollow.Target = this.CurrProjectile;
-          
+          //this turns on the bool so that the current projectile will be tracked
           this.BBool = true;
         }
-        
+        //this sets the active bool to false so that you can not shoot again this phase
         this.Active = false;
       }
       
@@ -144,20 +152,25 @@ class PlayerShooting : ZilchComponent
     {
       this.BBool = false;
     }
-    
+    //toggle this if you want a timer
     if(this.TBool)
     {
         this.Timer += event.Dt;
     }
-    
+    //this is for switchign after the bullet gets destroyed
     if(this.BBool && this.CurrProjectile == null)
     {
+      //turns on the timer bool
       this.TBool = true;
+      //waits till the timer is goes above 3 secvonds
       if(this.Timer > 3)
       {
+        //changes whos turn it is
         this.LevelSettings.PlayerTurnManager.TurnBool = true;
+        //turn off the bools
         this.BBool = false;
         this.TBool = false;
+        //reset the timer
         this.Timer = 0;
       }
     }

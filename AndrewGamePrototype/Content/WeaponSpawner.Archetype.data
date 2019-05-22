@@ -1,0 +1,64 @@
+[Version:1]
+Cog 
+{
+	var Name = "WeaponSpawner"
+	Transform 
+	{
+		var Translation = Real3{0, 5.48553467, 3.14779136e-08}
+		var Scale = Real3{1, 1, 1}
+		var Rotation = Quaternion{0, 0, 0, 1}
+	}
+	Sprite 
+	{
+		var Visible = false
+		var ViewCulling = true
+		var VisibilityEvents = true
+		var OverrideBoundingBox = false
+		var LocalAabbCenter = Real3{0, 0, 0}
+		var LocalAabbHalfExtents = Real3{1, 1, 1}
+		var GroupSortValue = 0
+		var Material = "582c575af53d18c9:AlphaSprite"
+		var VertexColor = Real4{1, 1, 1, 1}
+		var GeometryMode = SpriteGeometryMode.ZPlane
+		var SpriteSource = "5586f579ca73ecc2:SquareBordered"
+		var FlipX = false
+		var FlipY = false
+		var AnimationActive = true
+		var AnimationSpeed = 1
+		var StartFrame = 0
+	}
+	ItemSpawn 
+	{
+		var Chance = 30
+	}
+	Hierarchy 
+	{
+		Cog [Id:0x5c85d945c11d8dae][InheritId:"5cbf4710572ae165:ExplosionWeaponPickup"]
+		{
+			Transform 
+			{
+				var Translation = Real3{0, 0, 0.100000001}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 0.5, 1}
+			}
+		}
+		Cog [Id:0x5c85d945c11d8def][InheritId:"5cbf45c9f4ae80b7:PlantWeaponPickup"]
+		{
+			Transform 
+			{
+				var Translation = Real3{0, 0, 0.100000001}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 0.5, 1}
+			}
+		}
+		Cog [Id:0x5c85d945c11d8e1d][InheritId:"5c85d7cd169955b2:ClusterWeaponPickup"]
+		{
+			Transform 
+			{
+				var Translation = Real3{0, 0, 0.100000001}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 0.5, 1}
+			}
+		}
+	}
+}
