@@ -20,21 +20,22 @@ class ShootVariables
   [Property]
   var ProjectileSpeed : Real = 100;
   
-  //how much varition in speed you want for each bullet
+  //how much variation in speed you want for each bullet
   [Property]
-  var SpeedVarition : Real = 0;
+  var SpeedVariation : Real = 0;
   
-  //If you want the bullets to have varition in speed
+  //If you want the bullets to have variation in speed
   [Property]
   var SpreadBool : Boolean = false;
 }
 
 class PlayerShooting : ZilchComponent
 {
-  
+  //Starting weapon
   [Property]
   var Weapon : ShootVariables = ShootVariables();
   
+  //Random functions
   var Random : Random = Random();
   
   [Property]
@@ -59,6 +60,7 @@ class PlayerShooting : ZilchComponent
   
   function Initialize(init : CogInitializer)
   {
+    //Add the starting weapon to the inventory
     this.Weapons.Add(this.Weapon);
     
     Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
@@ -71,7 +73,7 @@ class PlayerShooting : ZilchComponent
 
   function OnLeftMouseUp(event : ViewportMouseEvent)
   {
-    //checks if there is a bullet
+    //checks if we are currently allowed to fire
     if(this.Active)
     {
       //gets the mouse position to know where to fire the bullet
@@ -92,16 +94,16 @@ class PlayerShooting : ZilchComponent
         {
           //create the projectile at the position
           this.CurrProjectile = this.Space.CreateAtPosition(this.Weapon.Projectile, this.Owner.Transform.WorldTranslation);
-          //this is for the spread of the weapon
+          //Determine the angle 
           var currAngle = angleToMouse + this.Random.Range(-this.Weapon.SpreadCone, this.Weapon.SpreadCone);
           //this giving the bullet belocity and what direction
           this.CurrProjectile.RigidBody.Velocity = CustomMath.DirectionFromAngle(currAngle) * this.Weapon.ProjectileSpeed;
-          //this finds the camera and locks on once the bullet is shot
+          //Tells the camera to follow 
           this.Space.FindObjectByName("GameCamera").CameraFollow.Target = this.CurrProjectile;
-          //this turns on the bool so that after the bullet gets destroyed it can switch players
+          //this turns on the bool so that the current projectile will be tracked
           this.BBool = true;
         }
-        //this sets the active bool to false so that you can shoot multiply shots
+        //this sets the active bool to false so that you can not shoot again this phase
         this.Active = false;
       }
       
