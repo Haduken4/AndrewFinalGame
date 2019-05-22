@@ -71,12 +71,14 @@ class PlayerShooting : ZilchComponent
 
   function OnLeftMouseUp(event : ViewportMouseEvent)
   {
+    //checks if there is a bullet
     if(this.Active)
     {
+      //gets the mouse position to know where to fire the bullet
       var mousePos = this.Space.FindObjectByName("GameCamera").CameraViewport.ScreenToWorldZPlane(event.Position, 0);
-      
+      //gets the direction of the mouse
       var dir = mousePos - this.Owner.Transform.WorldTranslation;
-      
+
       var angleToMouse = Math.ATan2(dir.Y, dir.X);
       
       
@@ -85,21 +87,21 @@ class PlayerShooting : ZilchComponent
       {
         
         Console.WriteLine("Happened");
-      
+        //loop for how many bullets you want fired
         for(var i = 0; i < this.Weapon.ProjectileCount; ++i)
         {
-            var randSpeed : Real = 0;
+          //create the projectile at the position
           this.CurrProjectile = this.Space.CreateAtPosition(this.Weapon.Projectile, this.Owner.Transform.WorldTranslation);
-          
+          //this is for the spread of the weapon
           var currAngle = angleToMouse + this.Random.Range(-this.Weapon.SpreadCone, this.Weapon.SpreadCone);
-          
+          //this giving the bullet belocity and what direction
           this.CurrProjectile.RigidBody.Velocity = CustomMath.DirectionFromAngle(currAngle) * this.Weapon.ProjectileSpeed;
-          
+          //this finds the camera and locks on once the bullet is shot
           this.Space.FindObjectByName("GameCamera").CameraFollow.Target = this.CurrProjectile;
-          
+          //this turns on the bool so that after the bullet gets destroyed it can switch players
           this.BBool = true;
         }
-        
+        //this sets the active bool to false so that you can shoot multiply shots
         this.Active = false;
       }
       
@@ -144,20 +146,25 @@ class PlayerShooting : ZilchComponent
     {
       this.BBool = false;
     }
-    
+    //toggle this if you want a timer
     if(this.TBool)
     {
         this.Timer += event.Dt;
     }
-    
+    //this is for switchign after the bullet gets destroyed
     if(this.BBool && this.CurrProjectile == null)
     {
+      //turns on the timer bool
       this.TBool = true;
+      //waits till the timer is goes above 3 secvonds
       if(this.Timer > 3)
       {
+        //changes whos turn it is
         this.LevelSettings.PlayerTurnManager.TurnBool = true;
+        //turn off the bools
         this.BBool = false;
         this.TBool = false;
+        //reset the timer
         this.Timer = 0;
       }
     }
