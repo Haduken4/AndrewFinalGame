@@ -3,7 +3,7 @@ class ScreenShake : ZilchComponent
   [Property]
   var ShakeDuration : Real = 100;
   [Property]
-  var ShakeMagnitude : Real = 0.7;
+  var ShakeMagnitude : Real = 100;
   [Property]
   var ShakeEnabled : Boolean = true;
   var InitialPosition : Real3;
@@ -34,11 +34,10 @@ class ScreenShake : ZilchComponent
         this.ShakeDuration = 0;
         // reset camera's position to the initial position
         this.Owner.Transform.Translation = this.InitialPosition;
-        this.ShakeEnabled = false;
+        //this.ShakeEnabled = false;
       }
     }
   }
-  
   // shake the screen for a given duration
   function TriggerScreenShake(t : Real)
   {
