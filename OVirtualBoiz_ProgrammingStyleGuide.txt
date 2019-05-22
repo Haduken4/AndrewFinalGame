@@ -1,0 +1,48 @@
+OVirtual Boiz Style Guide:
+
+Naming: Try to be as concise but descriptive as possible. If a name is over 5 words or so vague that only you would know what it means,
+	it's probably going to be hard to understand for others reading your code.
+
+Newlines: newlines periodically between unrelated or large blocks of code are necessary. For example:
+
+	this is incorrect:
+
+		int i = 0;
+		unsigned j = 11;
+		if(i == j)
+		{
+			j -= 1;
+		}
+
+	this is correct:
+
+		int i = 0;
+		unsigned j = 11;
+
+		if(i == j)
+		{
+			j -= 1;
+		}
+
+	that example may have been a bit small scale but if you need help further understanding what I mean here, ask me.
+	(for a couple more cases where you would put newlines, always before and after loops, always before and after if/else chains,
+	 always before and after switch statements, always before and after function declarations/definitions)
+
+If Statements: always put curly brackets for if statements, one line or otherwise. additionally, the opening curly bracket should always
+	       be on the next line.
+
+Commenting: File headers should always state your name, the date you created the script, the names of any other people who worked on the
+	    script, and a brief description of what the script does. If a script already had a file header, there is no need to rewrite it,
+	    just add your name to the author(s) section.
+
+	    Function headers are required for every function, preferrably for the declaration.
+
+	    Any particularly complex block of code should be commented so it is clear what it's doing. If you're not sure if your code needs to be
+	    commented, ask me or one of the other programmers.
+
+	    Don't overcomment; if something can be easily understood because it is simple or the names of the variables used are intuitive, there is
+	    no need to comment. My main reason for wanting to avoid overcommenting is because it can make the code look cluttered and can actually
+	    make it harder to read/understand.
+
+	    I know that I don't always comment very well so if you see a script that I wrote but didn't comment, let me know and I'll get on it.
+
