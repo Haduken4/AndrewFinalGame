@@ -315,6 +315,8 @@ Level
 				var ProjectileCount = 1
 				var SpreadCone = 0
 				var ProjectileSpeed = 30
+				var SpeedVariation = 0
+				var SpeedBool = false
 			}
 			var Active = false
 		}
@@ -386,6 +388,8 @@ Level
 				var ProjectileCount = 1
 				var SpreadCone = 0
 				var ProjectileSpeed = 30
+				var SpeedVariation = 0
+				var SpeedBool = false
 			}
 			var Active = false
 		}
@@ -475,6 +479,16 @@ Level
 			var WeaponToSpawn = Array[Archetype]
 			{
 			}
+		}
+	}
+	Cog [InheritId:"5c0415760765b67e:ClusterWeapon"][ContextId:11]
+	{
+		var Name = "ClusterWeapon"
+		Transform 
+		{
+			var Translation = Real3{-5.52409554, -1.66881979, -2.81008624e-07}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{1, 0.5, 1}
 		}
 	}
 }
