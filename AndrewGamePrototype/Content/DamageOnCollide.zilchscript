@@ -14,7 +14,6 @@ class DamageOnCollide : ZilchComponent
 
   function OnCollisionStarted(event : CollisionEvent)
   {
-    
     if(!this.Owner.MarkedForDestruction)
     {
       //damage other object
@@ -23,6 +22,7 @@ class DamageOnCollide : ZilchComponent
         event.OtherObject.Health.ApplyDamage(this.Damage);
         if(this.DestroyMe)
         {
+          this.Space.FindObjectByName("GameCamera").ScreenShake.ShakeDuration = 0.1;
           this.Owner.Destroy();
         }
       }
