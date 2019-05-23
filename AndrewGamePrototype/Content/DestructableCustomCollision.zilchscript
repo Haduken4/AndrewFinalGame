@@ -1,0 +1,207 @@
+/*****
+Filename: DestructableCustomCollision.zilchscript
+Author(s): Bar Ben-zvi
+Date Created: 5/23/2019
+Brief: Handles custom collision for destructable terrain, only things with the CustomCollisionVariables script will be
+       handled
+*****/
+class DestructableCustomCollision : ZilchComponent
+{
+  
+  //Arrays to store destruction
+  var DestructionCenterArray : Array[Real3] = Array[Real3](/*1, Real3(-1.5, 1, 0)*/);
+  var DestructionRadiusArray : Array[Real] = Array[Real](/*1, 5*/);
+  
+  
+  function Initialize(init : CogInitializer)
+  {
+    //Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
+    Zero.Connect(this.Owner, Events.CollisionPersisted, this.OnCollisionPersisted);
+  }
+
+  function OnCollisionPersisted(event : CollisionEvent)
+  {
+    //If the other object can handle custom collision
+    if(event.OtherObject.CustomCollisionVariables != null)
+    {
+      if(event.OtherObject.BoxCollider != null)
+      {
+        this.CheckCollisionRectangle(event.OtherObject);
+      }
+      else if(event.OtherObject.SphereCollider != null)
+      {
+        this.CheckCollisionCircle(event.OtherObject);
+      }
+    }
+  }
+
+  function OnCollisionStarted(event : CollisionEvent)
+  {
+    //If the other object can handle custom collision
+    if(event.OtherObject.CustomCollisionVariables != null)
+    {
+      if(event.OtherObject.BoxCollider != null)
+      {
+        this.CheckCollisionRectangle(event.OtherObject);
+      }
+      else if(event.OtherObject.SphereCollider != null)
+      {
+        this.CheckCollisionCircle(event.OtherObject);
+      }
+    }
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+  }
+  
+  //Checks and resolves collision with a rectangle collider
+  function CheckCollisionRectangle(object : Cog)
+  {
+    //Store corners of the rectangle
+    var cornerArray : Array[Real3] = Array[Real3]();
+    
+    //Using extents to get the corners
+    var objExtents = object.Transform.WorldScale.XY / 2.0;
+    
+    cornerArray.Add(Real3(object.Transform.WorldTranslation.XY + objExtents, 0));
+    cornerArray.Add(Real3(object.Transform.WorldTranslation.XY - objExtents, 0));
+    cornerArray.Add(Real3(object.Transform.WorldTranslation.X + objExtents.X, object.Transform.WorldTranslation.Y - objExtents.Y, 0));
+    cornerArray.Add(Real3(object.Transform.WorldTranslation.X - objExtents.X, object.Transform.WorldTranslation.Y + objExtents.Y, 0));
+    
+    //Array that stores whether each corner is colliding (if any of these remain true, we are "colliding")
+    var colliding = Array[Boolean](4, true);
+    
+    //Loop through each corner
+    for(var i = 0; i < 4; ++i)
+    {
+      //Loop through each destruction circle
+      for(var j = 0; j < this.DestructionCenterArray.Count; ++j)
+      {
+        var distance = Math.Distance(cornerArray[i], this.DestructionCenterArray[j]);
+        
+        if(distance <= this.DestructionRadiusArray[j])
+        {
+          colliding[i] = false;
+        }
+      }
+      
+    }
+    
+    //Check collisions
+    for(var i = 0; i < 4; ++i)
+    {
+      if(colliding[i])
+      {
+        
+        //If this point isn't actually colliding with our collider, we can ignore it
+        if(!this.IsPointColliding(cornerArray[i]))
+        {
+          continue;
+        }
+        
+        //If the other object explodes, explode it
+        if(object.CustomCollisionVariables.Explodes)
+        {
+          this.DestructionCenterArray.Add(object.Transform.WorldTranslation);
+          this.DestructionRadiusArray.Add(object.CustomCollisionVariables.ExplosionRadius);
+          
+          object.Destroy();
+        }
+        
+        object.Transform.WorldTranslation = object.CustomCollisionVariables.LastFramePos;
+      }
+    }
+    
+  }
+  
+  //Checks and resolves collision with a circle collider
+  function CheckCollisionCircle(object : Cog)
+  {
+    var objRad = object.SphereCollider.WorldRadius;
+    var colliding = true;
+    
+    for(var i = 0; i < this.DestructionCenterArray.Count; ++i)
+    {
+      var translation = Real3(object.Transform.WorldTranslation.XY, 0);
+      
+      var distance = Math.Distance(translation, this.DestructionCenterArray[i]);
+      
+      //If the other object is completely encompassed by one of the "destroyed" circles, it isn't colliding
+      if(distance + objRad <= this.DestructionRadiusArray[i])
+      {
+        colliding = false;
+      }
+    }
+    
+    
+    
+    
+    if(colliding)
+    {
+      
+      //Get a direction directly away from us
+      var dir = Math.Normalize(object.Transform.WorldTranslation - this.Owner.Transform.WorldTranslation);
+      
+      
+      //Check if the furthest point away on the circle from us is colliding with us at all
+      if(!this.IsPointColliding(object.Transform.WorldTranslation + (dir * objRad)))
+      {
+        return;
+      }
+      
+      //If the other object explodes, explode it
+      if(object.CustomCollisionVariables.Explodes)
+      {
+        this.DestructionCenterArray.Add(object.Transform.WorldTranslation);
+        this.DestructionRadiusArray.Add(object.CustomCollisionVariables.ExplosionRadius);
+        
+        //Spawn a display
+        var display = this.Space.CreateAtPosition(Archetype.DestructionDisplay, object.Transform.WorldTranslation + Real3(0, 0, 0.1));
+        
+        display.Transform.WorldScale = Real3(Real2(2, 2) * object.CustomCollisionVariables.ExplosionRadius, 1);
+        
+        object.Destroy();
+      }
+      
+      //Reset pos to last frame pos
+      object.Transform.WorldTranslation = object.CustomCollisionVariables.LastFramePos;
+      
+      
+      
+    }
+    
+  }
+  
+  //Checks if a specific point is colliding with our overall collider (doesn't take destruction into account)
+  function IsPointColliding(point : Real3) : Boolean
+  {
+    //If we have a sphere collider
+    if(this.Owner.SphereCollider != null)
+    {
+      var dist = Math.Distance(point, this.Owner.Transform.WorldTranslation);
+      
+      if(dist > this.Owner.SphereCollider.WorldRadius)
+      {
+        return false;
+      }
+    }
+    //If we have a box collider
+    else if(this.Owner.BoxCollider != null)
+    {
+      var extents = this.Owner.Transform.WorldScale * this.Owner.BoxCollider.HalfSize;
+      var ownerPos = this.Owner.Transform.WorldTranslation;
+      
+      //If the point is outside of our collider
+      if(point.X > ownerPos.X + extents.X || point.X < ownerPos.X - extents.X || point.Y > ownerPos.Y + extents.Y || point.Y < ownerPos.Y - extents.Y)
+      {
+        return false;
+      }
+    }
+    
+    //If we haven't returned anything yet, then this point is colliding with us
+    return true;
+  }
+  
+}

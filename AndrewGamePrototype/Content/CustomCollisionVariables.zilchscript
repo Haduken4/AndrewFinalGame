@@ -1,0 +1,23 @@
+class CustomCollisionVariables : ZilchComponent
+{
+  //If this is true, we will explode on destructable terrain
+  [Property]
+  var Explodes : Boolean = false;
+  
+  //Radius of our explosion if we explode
+  [Property]
+  var ExplosionRadius : Real = 5;
+  
+  //Stores our position from the last frame
+  var LastFramePos : Real3 = Real3();
+  
+  function Initialize(init : CogInitializer)
+  {
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    this.LastFramePos = this.Owner.Transform.WorldTranslation;
+  }
+}

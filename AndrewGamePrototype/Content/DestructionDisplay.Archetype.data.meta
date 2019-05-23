@@ -1,0 +1,11 @@
+[Version:1]
+DataContent 
+{
+	DataBuilder 
+	{
+		var Name = "DestructionDisplay"
+		var ResourceId = 0x5c32cc50406a56f8
+		var LoaderType = "Cog"
+		var Version = 0
+	}
+}
