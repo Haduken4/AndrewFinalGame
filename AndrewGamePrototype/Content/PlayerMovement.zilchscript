@@ -45,7 +45,7 @@ class PlayerMovement : ZilchComponent
   function OnCollisionStarted(event : CollisionEvent)
   {
     //if we hit the floor
-    if(event.FirstPoint.WorldPoint.Y < this.Owner.Transform.WorldTranslation.Y)
+    if(event.FirstPoint.WorldPoint.Y < this.Owner.Transform.WorldTranslation.Y && event.OtherObject.Collider.CollisionGroup != CollisionGroup.Destructable)
     {
       this.LockMovement = false;
     }
