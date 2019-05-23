@@ -1,0 +1,30 @@
+class LobBulletBehavior : ZilchComponent
+{
+  var Timer: Real = 0;
+  [Property]
+  var DropInterval : Real;
+  var CurrProjectile : Cog;
+  [Property]
+  var DroppedProjectile : Archetype = null;
+  [Property]
+  var DropCount : Real = 3;
+  function Initialize(init : CogInitializer)
+  {
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    this.CurrProjectile = this.Space.FindObjectByName("ExplosionBullet");
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    this.Timer += event.Dt;
+    if(this.Timer > 0.5 && this.DropCount > 0)
+    {
+      this.Timer = 0;
+      this.DropCount -= 1;
+      //create the projectile at the position
+      this.CurrProjectile = this.Space.CreateAtPosition(this.DroppedProjectile, this.Owner.Transform.WorldTranslation);
+      //give the bullet downward velocity
+      this.CurrProjectile.RigidBody.Velocity = Real3(0, -10, 0);
+    }
+  }
+}
