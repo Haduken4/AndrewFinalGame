@@ -148,7 +148,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 22.1033859
+			var Size = 26.9971313
 		}
 		EditorCameraController 
 		{
@@ -253,7 +253,7 @@ Level
 		Transform 
 		{
 			var Translation = Real3{-7.44769573, -0.69037652, 0}
-			var Scale = Real3{1, 1, 1}
+			var Scale = Real3{2, 2, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
 		Sprite 
@@ -268,7 +268,7 @@ Level
 			var Material = "582c575af53d18c9:AlphaSprite"
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
-			var SpriteSource = "5586f579ca73ecc2:SquareBordered"
+			var SpriteSource = "5c873dd1f1306e67:IdleFrogAni_0"
 			var FlipX = false
 			var FlipY = false
 			var AnimationActive = true
@@ -326,7 +326,7 @@ Level
 		Transform 
 		{
 			var Translation = Real3{8.34727573, -0.69037652, 0}
-			var Scale = Real3{1, 1, 1}
+			var Scale = Real3{2, 2, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
 		Sprite 
@@ -341,7 +341,7 @@ Level
 			var Material = "582c575af53d18c9:AlphaSprite"
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
-			var SpriteSource = "5586f579ca73ecc2:SquareBordered"
+			var SpriteSource = "5c873dadf480ed3f:RecoloredIdleFrogAni_0"
 			var FlipX = false
 			var FlipY = false
 			var AnimationActive = true
@@ -469,6 +469,16 @@ Level
 		Transform 
 		{
 			var Translation = Real3{-5.52409554, -1.66881979, -2.81008624e-07}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{1, 0.5, 1}
+		}
+	}
+	Cog [InheritId:"5c872030213e749b:RockWeapon"][ContextId:13]
+	{
+		var Name = "RockWeapon"
+		Transform 
+		{
+			var Translation = Real3{-7.68713903, -1.58501816, 0}
 			var Rotation = Quaternion{0, 0, 0, 1}
 			var Scale = Real3{1, 0.5, 1}
 		}
