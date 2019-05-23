@@ -1,0 +1,62 @@
+[Version:1]
+Cog 
+{
+	var Name = "RockWeapon"
+	Transform 
+	{
+		var Translation = Real3{-6.55527067, 8.14065552, 0}
+		var Scale = Real3{1, 0.5, 1}
+		var Rotation = Quaternion{0, 0, 0, 1}
+	}
+	Sprite 
+	{
+		var Visible = true
+		var ViewCulling = true
+		var VisibilityEvents = true
+		var OverrideBoundingBox = false
+		var LocalAabbCenter = Real3{0, 0, 0}
+		var LocalAabbHalfExtents = Real3{1, 1, 1}
+		var GroupSortValue = 0
+		var Material = "582c575af53d18c9:AlphaSprite"
+		var VertexColor = Real4{0.717647076, 0.717647076, 0.717647076, 1}
+		var GeometryMode = SpriteGeometryMode.ZPlane
+		var SpriteSource = "5586f579ca73ecc2:SquareBordered"
+		var FlipX = false
+		var FlipY = false
+		var AnimationActive = true
+		var AnimationSpeed = 1
+		var StartFrame = 0
+	}
+	BoxCollider 
+	{
+		var Ghost = false
+		var SendsEvents = true
+		var Material = "4de020863e872da8:DefaultPhysicsMaterial"
+		var CollisionGroup = "5c306556261f6375:Pickup"
+		var Offset = Real3{0, 0, 0}
+		var HalfSize = Real3{0.5, 0.5, 0.5}
+	}
+	RigidBody 
+	{
+		var Velocity = Real3{0, 0, 0}
+		var AngularVelocity = Real3{0, 0, 0}
+		var DynamicState = RigidBodyDynamicState.Dynamic
+		var AllowSleep = true
+		var Asleep = false
+		var RotationLocked = false
+		var Mode2D = Mode2DStates.InheritFromSpace
+	}
+	ItemPickup 
+	{
+		var Weapon = ShootVariables
+		{
+			var Icon = "59a4f6f4a01bac09:SoftCircle"
+			var Projectile = "5c87217748a4fa65:RockBullet"
+			var ProjectileCount = 1
+			var SpreadCone = 0
+			var ProjectileSpeed = 20
+			var SpeedVariation = 0
+			var SpeedBool = false
+		}
+	}
+}
