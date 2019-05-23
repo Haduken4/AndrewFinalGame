@@ -1,0 +1,4 @@
+Size and Ratios: 8x8, 16x16, 32x32
+Aspect Ratio: 1;1, 1;2, 2;1
+Number of Sprites: 14
+Number of Animations: 10
