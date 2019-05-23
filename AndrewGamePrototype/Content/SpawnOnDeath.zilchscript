@@ -27,6 +27,7 @@ class SpawnOnDeath : ZilchComponent
   {
     if(this.DIE)
     {
+      this.Space.FindObjectByName("GameCamera").ScreenShake.TriggerScreenShake(0.1);
       this.Owner.Destroy();
     }
   }
