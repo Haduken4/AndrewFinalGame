@@ -4,7 +4,7 @@ Cog
 	var Name = "ClusterWeapon"
 	Transform 
 	{
-		var Translation = Real3{-5.52409554, -1.66881979, -2.81008624e-07}
+		var Translation = Real3{-5.52409554, -1.66881979, 0}
 		var Scale = Real3{1, 0.5, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}

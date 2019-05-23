@@ -58,6 +58,8 @@ class PlayerShooting : ZilchComponent
   //bool that should turn on when a bullet is fired
   var BBool : Boolean = false;
   
+  var BulletArray : Array[Cog] = Array[Cog]();
+  
   function Initialize(init : CogInitializer)
   {
     //Add the starting weapon to the inventory
@@ -106,6 +108,11 @@ class PlayerShooting : ZilchComponent
           this.Space.FindObjectByName("GameCamera").CameraFollow.Target = this.CurrProjectile;
           //this turns on the bool so that the current projectile will be tracked
           this.BBool = true;
+          this.BulletArray.Add(this.CurrProjectile);
+        }
+        foreach(var x : Cog in this.BulletArray)
+        {
+          Console.WriteLine(x.Transform.Translation);
         }
         //this sets the active bool to false so that you can not shoot again this phase
         this.Active = false;
@@ -157,8 +164,9 @@ class PlayerShooting : ZilchComponent
     {
         this.Timer += event.Dt;
     }
+    
     //this is for switchign after the bullet gets destroyed
-    if(this.BBool && this.CurrProjectile == null)
+    if(this.BBool && this.BulletArray == null)
     {
       //turns on the timer bool
       this.TBool = true;
@@ -170,9 +178,44 @@ class PlayerShooting : ZilchComponent
         //turn off the bools
         this.BBool = false;
         this.TBool = false;
+        this.BulletArray.Clear();
         //reset the timer
         this.Timer = 0;
       }
     }
   }
+  //this function gets where the camera should be
+  /*function CameraPosition()
+  {
+    //these vars are to keep track of the highest and lowest points of the bullets
+    var lowX : Real = this.BulletArray[0].Transform.Translation.X;
+    var highX : Real = this.BulletArray[0].Transform.Translation.X;
+    var lowY : Real = this.BulletArray[0].Transform.Translation.Y;
+    var highY : Real = this.BulletArray[0].Transform.Translation.Y;
+    var total : Real3 = Real3(0,0,0);
+    foreach(var x : Cog in this.BulletArray)
+    {
+      if(x.Transform.Translation.X < lowX)
+      {
+        lowX = x.Transform.Translation.X;
+      }
+      if(x.Transform.Translation.X > highX)
+      {
+        highX = x.Transform.Translation.X;
+      }
+      if(x.Transform.Translation.X < lowY)
+      {
+        lowY = x.Transform.Translation.X;
+      }
+      if(x.Transform.Translation.X > highY)
+      {
+        highY = x.Transform.Translation.X;
+      }
+    }
+    total.X = (lowX + highX) / 2;
+    total.Y = (lowY + highY) / 2;
+    total.X = Math.Abs(highX);
+    total.Y = Math.Abs(highY);
+    this.Space.FindObjectByName("GameCamera").Transform.Translation = total;
+  }*/
 }
