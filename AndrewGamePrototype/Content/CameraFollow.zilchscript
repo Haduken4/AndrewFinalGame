@@ -13,8 +13,6 @@ class CameraFollow : ZilchComponent
   //target the camera will move to
   var Target : Cog = null;
   
-  
-  
   function Initialize(init : CogInitializer)
   {
     //for testing
@@ -33,6 +31,19 @@ class CameraFollow : ZilchComponent
 
   function OnLogicUpdate(event : UpdateEvent)
   {
+    /*
+    var i : Integer = 0;
+    //loop through the array
+    for(i; i < this.GameSession.GameVars.BulletArray.Count; ++i)
+    {
+      //get rid of any nullls
+      if(this.GameSession.GameVars.BulletArray[i] == null)
+      {
+        this.GameSession.GameVars.BulletArray.RemoveAt(i);
+      }      
+      this.CameraPosition();
+    }
+    */
     //If our target exists
     if(this.Target != null)
     {
@@ -42,4 +53,39 @@ class CameraFollow : ZilchComponent
       this.Owner.Transform.WorldTranslation = Math.Lerp(currentTranslation, targetTranslation, this.LerpSpeed);
     }
   }
+  /*//this function gets where the camera should be
+  function CameraPosition()
+  {
+    //these vars are to keep track of the highest and lowest points of the bullets
+    var lowX : Real = this.GameSession.GameVars.BulletArray[0].Transform.Translation.X;
+    var highX : Real = this.GameSession.GameVars.BulletArray[0].Transform.Translation.X;
+    var lowY : Real = this.GameSession.GameVars.BulletArray[0].Transform.Translation.Y;
+    var highY : Real = this.GameSession.GameVars.BulletArray[0].Transform.Translation.Y;
+    var total : Real3 = Real3(0,0,10);
+    
+    //find the lowest and highest x and y values
+    foreach(var x : Cog in this.GameSession.GameVars.BulletArray)
+    {
+      if(x.Transform.Translation.X < lowX)
+      {
+        lowX = x.Transform.Translation.X;
+      }
+      if(x.Transform.Translation.X > highX)
+      {
+        highX = x.Transform.Translation.X;
+      }
+      if(x.Transform.Translation.X < lowY)
+      {
+        lowY = x.Transform.Translation.X;
+      }
+      if(x.Transform.Translation.X > highY)
+      {
+        highY = x.Transform.Translation.X;
+      }
+    }
+    //get the middle of the x and y
+    total.X = (lowX + highX) / 2;
+    total.Y = (lowY + highY) / 2;
+    this.Space.FindObjectByName("GameCamera").Transform.Translation = total;
+  }*/
 }

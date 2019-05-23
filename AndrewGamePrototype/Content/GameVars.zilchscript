@@ -1,4 +1,5 @@
 class GameVars : ZilchComponent
 {
   var WinningPlayer : Integer = -1;
+  var BulletArray : Array[Cog] = Array[Cog]();
 }
