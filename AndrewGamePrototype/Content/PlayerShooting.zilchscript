@@ -65,10 +65,21 @@ class PlayerShooting : ZilchComponent
     
     Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
     
+    Zero.Connect(this.Space, Events.LeftMouseDown, this.OnLeftMouseDown);
     Zero.Connect(this.Space, Events.LeftMouseUp, this.OnLeftMouseUp);
     
     this.GameSession.FindSpaceByName("HUDSpace").FindObjectByName("LevelSettings").HUDManager.UpdateWeapons();
 
+  }
+
+  function OnLeftMouseDown(event : ViewportMouseEvent)
+  {
+    //create cast circle
+    if(this.Active)
+    {
+      var object =this.Space.Create(Archetype.CastCircle);
+      object.CursorFollow.RotateObject = this.Owner;
+    }
   }
 
   function OnLeftMouseUp(event : ViewportMouseEvent)
@@ -76,6 +87,9 @@ class PlayerShooting : ZilchComponent
     //checks if we are currently allowed to fire
     if(this.Active)
     {
+      //remove cast circle
+      this.Space.FindObjectByName("CastCircle").Destroy();
+      
       //gets the mouse position to know where to fire the bullet
       var mousePos = this.Space.FindObjectByName("GameCamera").CameraViewport.ScreenToWorldZPlane(event.Position, 0);
       //gets the direction of the mouse
@@ -147,6 +161,7 @@ class PlayerShooting : ZilchComponent
         
         this.GameSession.FindSpaceByName("HUDSpace").FindObjectByName("LevelSettings").HUDManager.UpdateWeapons();
       }
+
     }
     
     if(Zero.Keyboard.KeyIsPressed(Keys.L) && this.BBool)
