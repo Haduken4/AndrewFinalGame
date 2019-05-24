@@ -71,15 +71,22 @@ class CameraFollow : ZilchComponent
   //this function gets where the camera should be
   function CameraPosition()
   {
-    if(this.GameSession.GameVars.BulletArray.Count == 1)
-    {
-      
-    }
+    var farX : Real = 0;
+    var farY : Real = 0;
     //find the lowest and highest x and y values
     foreach(var x : Cog in this.GameSession.GameVars.BulletArray)
     {
       if(x != null)
       {
+        //this is to get the farthest point from the camera in order to resize the camera to fit all of the bullets
+        if(x.Transform.Translation.X > farX)
+        {
+          farX = x.Transform.Translation.X;
+        }
+        if(x.Transform.Translation.Y > farY)
+        {
+          farY = x.Transform.Translation.Y;
+        }
         this.Total.X += x.Transform.Translation.X;
         this.Total.Y += x.Transform.Translation.Y;
       }
@@ -91,14 +98,13 @@ class CameraFollow : ZilchComponent
     var targetTranslation = Real3(this.Total.XY, this.Total.Z);
     //find the greatest distane from the two poitns and set the camera size to that
     this.Owner.Transform.WorldTranslation = Math.Lerp(currentTranslation, targetTranslation, this.LerpSpeed);
-    if(Math.Abs(this.Total.X) > Math.Abs(this.Total.Y) && this.GameSession.GameVars.BulletArray.Count != 0)
+    if(Math.Abs(farX) > Math.Abs(farY) && this.GameSession.GameVars.BulletArray.Count != 0)
     {
-      this.Owner.Camera.Size = Math.Abs(this.Owner.Transform.Translation.X - this.Total.X) + this.MinCamSize;
+      this.Owner.Camera.Size = Math.Abs(this.Owner.Transform.Translation.X - farX) + this.MinCamSize;
     }
     else
     {
-      this.Owner.Camera.Size = Math.Abs(this.Owner.Transform.Translation.Y - this.Total.Y) + this.MinCamSize;
+      this.Owner.Camera.Size = Math.Abs(this.Owner.Transform.Translation.Y - farY) + this.MinCamSize;
     }
-          Console.WriteLine(this.Owner.Camera.Size);
   }
 }
