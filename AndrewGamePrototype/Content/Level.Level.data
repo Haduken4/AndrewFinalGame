@@ -268,7 +268,7 @@ Level
 			var Material = "582c575af53d18c9:AlphaSprite"
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
-			var SpriteSource = "5c873dd1f1306e67:IdleFrogAni_0"
+			var SpriteSource = "5c87392b79c648f6:AttackFrogAni_0"
 			var FlipX = false
 			var FlipY = false
 			var AnimationActive = true
