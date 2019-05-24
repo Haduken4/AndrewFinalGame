@@ -53,7 +53,7 @@ Cog
 			var Icon = "5275aa4d802dd6dc:Square"
 			var Projectile = "5c0f9844b874aa7c:Bullet"
 			var ProjectileCount = 5
-			var SpreadCone = 0.5
+			var SpreadCone = 1
 			var ProjectileSpeed = 20
 			var SpeedVariation = 1.5
 			var SpeedBool = true

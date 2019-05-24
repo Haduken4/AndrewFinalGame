@@ -70,7 +70,7 @@ class PlayerTurnManager : ZilchComponent
       //If we are currently on the shoot state, we need to progress to the next player and activate their movement
       else
       {
-        
+      
         this.PlayerArray[this.CurrIndex].PlayerShooting.Active = false;
         this.PlayerArray[this.CurrIndex].BoxCollider.CollisionGroup = CollisionGroup.Player;
         
@@ -106,3 +106,4 @@ class PlayerTurnManager : ZilchComponent
     
   }
 }
+ 

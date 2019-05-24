@@ -10,8 +10,14 @@ class CameraFollow : ZilchComponent
   [Property]
   var MinMaxSize : Real2 = Real2(5, 40);
   
+  //this is for when the camera is following spread and what the default size should be when adjusting to the spread
+  [Property]
+  var MinCamSize : Real = 20;
+  
   //target the camera will move to
   var Target : Cog = null;
+  
+  var Total : Real3 = Real3(0,0,10);
   
   function Initialize(init : CogInitializer)
   {
@@ -31,61 +37,68 @@ class CameraFollow : ZilchComponent
 
   function OnLogicUpdate(event : UpdateEvent)
   {
-    /*
+    Console.WriteLine(this.Owner.Transform.Translation);
     var i : Integer = 0;
+  
     //loop through the array
     for(i; i < this.GameSession.GameVars.BulletArray.Count; ++i)
     {
-      //get rid of any nullls
+      //get rid of any nulls
       if(this.GameSession.GameVars.BulletArray[i] == null)
       {
         this.GameSession.GameVars.BulletArray.RemoveAt(i);
-      }      
+      }
+    }
+    if(this.GameSession.GameVars.BulletArray.Count != 0)
+    {
+      this.Total = Real3(0,0,10);
       this.CameraPosition();
     }
-    */
-    //If our target exists
-    if(this.Target != null)
+    else
     {
-      var currentTranslation = this.Owner.Transform.WorldTranslation;
-      var targetTranslation = Real3(this.Target.Transform.WorldTranslation.XY, currentTranslation.Z);
-      
-      this.Owner.Transform.WorldTranslation = Math.Lerp(currentTranslation, targetTranslation, this.LerpSpeed);
+      this.Owner.Camera.Size = 20;
+      //If our target exists
+      if(this.Target != null)
+      {
+        var currentTranslation = this.Owner.Transform.WorldTranslation;
+        var targetTranslation = Real3(this.Target.Transform.WorldTranslation.XY, currentTranslation.Z);
+        
+        this.Owner.Transform.WorldTranslation = Math.Lerp(currentTranslation, targetTranslation, this.LerpSpeed);
+      }
     }
   }
-  /*//this function gets where the camera should be
+  
+  //this function gets where the camera should be
   function CameraPosition()
   {
-    //these vars are to keep track of the highest and lowest points of the bullets
-    var lowX : Real = this.GameSession.GameVars.BulletArray[0].Transform.Translation.X;
-    var highX : Real = this.GameSession.GameVars.BulletArray[0].Transform.Translation.X;
-    var lowY : Real = this.GameSession.GameVars.BulletArray[0].Transform.Translation.Y;
-    var highY : Real = this.GameSession.GameVars.BulletArray[0].Transform.Translation.Y;
-    var total : Real3 = Real3(0,0,10);
-    
+    if(this.GameSession.GameVars.BulletArray.Count == 1)
+    {
+      
+    }
     //find the lowest and highest x and y values
     foreach(var x : Cog in this.GameSession.GameVars.BulletArray)
     {
-      if(x.Transform.Translation.X < lowX)
+      if(x != null)
       {
-        lowX = x.Transform.Translation.X;
-      }
-      if(x.Transform.Translation.X > highX)
-      {
-        highX = x.Transform.Translation.X;
-      }
-      if(x.Transform.Translation.X < lowY)
-      {
-        lowY = x.Transform.Translation.X;
-      }
-      if(x.Transform.Translation.X > highY)
-      {
-        highY = x.Transform.Translation.X;
+        this.Total.X += x.Transform.Translation.X;
+        this.Total.Y += x.Transform.Translation.Y;
       }
     }
+    
     //get the middle of the x and y
-    total.X = (lowX + highX) / 2;
-    total.Y = (lowY + highY) / 2;
-    this.Space.FindObjectByName("GameCamera").Transform.Translation = total;
-  }*/
+    this.Total.XY /= this.GameSession.GameVars.BulletArray.Count;
+    var currentTranslation = this.Owner.Transform.WorldTranslation;
+    var targetTranslation = Real3(this.Total.XY, this.Total.Z);
+    //find the greatest distane from the two poitns and set the camera size to that
+    this.Owner.Transform.WorldTranslation = Math.Lerp(currentTranslation, targetTranslation, this.LerpSpeed);
+    if(Math.Abs(this.Total.X) > Math.Abs(this.Total.Y) && this.GameSession.GameVars.BulletArray.Count != 0)
+    {
+      this.Owner.Camera.Size = Math.Abs(this.Owner.Transform.Translation.X - this.Total.X) + this.MinCamSize;
+    }
+    else
+    {
+      this.Owner.Camera.Size = Math.Abs(this.Owner.Transform.Translation.Y - this.Total.Y) + this.MinCamSize;
+    }
+          Console.WriteLine(this.Owner.Camera.Size);
+  }
 }
