@@ -3,6 +3,8 @@ class Health : ZilchComponent
   //maximum health for the object
   [Property]
   var MaxHealth : Real = 10.0;
+  [Property]
+  var DamagedSprite : SpriteSource;
   
   //current health of the object
   var CurrHealth : Real;
@@ -17,6 +19,8 @@ class Health : ZilchComponent
   function ApplyDamage(damage : Real)
   {
     this.CurrHealth -= damage;
+    //switch to damaged sprite and then back to idle animation in animation handler
+    this.Owner.Sprite.SpriteSource = this.DamagedSprite;
     if(this.CurrHealth <= 0.0)
     {
       this.Owner.Destroy();
