@@ -58,6 +58,9 @@ class PlayerShooting : ZilchComponent
   //bool that should turn on when a bullet is fired
   var BBool : Boolean = false;
   
+  var MaxAimDist : Real = 5.0;
+  
+  
   function Initialize(init : CogInitializer)
   {
     //Add the starting weapon to the inventory
@@ -88,7 +91,10 @@ class PlayerShooting : ZilchComponent
     if(this.Active)
     {
       //remove cast circle
-      this.Space.FindObjectByName("CastCircle").Destroy();
+      if(this.Space.FindObjectByName("CastCircle") != null)
+      {
+        this.Space.FindObjectByName("CastCircle").Destroy();
+      }
       
       //gets the mouse position to know where to fire the bullet
       var mousePos = this.Space.FindObjectByName("GameCamera").CameraViewport.ScreenToWorldZPlane(event.Position, 0);
@@ -97,6 +103,12 @@ class PlayerShooting : ZilchComponent
 
       var angleToMouse = Math.ATan2(dir.Y, dir.X);
       
+      //velocity based on mouse dist
+      var power = 1.0;
+      if(CustomMath.Magnitude(dir) < this.MaxAimDist)
+      {
+        power = CustomMath.Magnitude(dir) / this.MaxAimDist;
+      }
       
       if(this.Weapon.Projectile != null)
       {
@@ -114,8 +126,8 @@ class PlayerShooting : ZilchComponent
           this.CurrProjectile = this.Space.CreateAtPosition(this.Weapon.Projectile, this.Owner.Transform.WorldTranslation);
           //Determine the angle 
           var currAngle = angleToMouse + this.Random.Range(-this.Weapon.SpreadCone, this.Weapon.SpreadCone);
-          //this giving the bullet belocity and what direction
-          this.CurrProjectile.RigidBody.Velocity = CustomMath.DirectionFromAngle(currAngle) * this.Weapon.ProjectileSpeed * randVel;
+          //this giving the bullet velocity and what direction
+          this.CurrProjectile.RigidBody.Velocity = CustomMath.DirectionFromAngle(currAngle) * this.Weapon.ProjectileSpeed * randVel * power;
           //Tells the camera to follow 
           //this.Space.FindObjectByName("GameCamera").CameraFollow.Target = this.CurrProjectile;
           //this turns on the bool so that the current projectile will be tracked
@@ -161,7 +173,28 @@ class PlayerShooting : ZilchComponent
         
         this.GameSession.FindSpaceByName("HUDSpace").FindObjectByName("LevelSettings").HUDManager.UpdateWeapons();
       }
-
+      //draw aiming line
+      if(Zero.Mouse.IsButtonDown(MouseButtons.Left))
+      {
+        var mousePos = Zero.Mouse.ClientPosition;
+        var screenMousePos = this.Space.FindObjectByName("GameCamera").CameraViewport.ScreenToWorldZPlane(mousePos, 0);
+        
+        var distToMouse = screenMousePos - this.Owner.Transform.WorldTranslation;
+        var dirToAngle = Math.Normalize(distToMouse);
+        var angleToMouse = Math.ATan2(dirToAngle.Y, dirToAngle.X);
+        var dirToMouse = CustomMath.DirectionFromAngle(angleToMouse);
+       
+       if(CustomMath.Magnitude(distToMouse) > this.MaxAimDist)
+       {
+         distToMouse = Math.Normalize(distToMouse) * this.MaxAimDist;
+       }
+        
+        var debugLine = DebugLine(this.Owner.Transform.WorldTranslation, this.Owner.Transform.WorldTranslation + distToMouse);
+        
+        debugLine.Color = Real4(1, 1, 1, 1);
+        
+        DebugDraw.Add(debugLine);
+      }
     }
     
     if(Zero.Keyboard.KeyIsPressed(Keys.L) && this.BBool)
