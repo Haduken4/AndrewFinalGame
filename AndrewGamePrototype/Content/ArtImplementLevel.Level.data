@@ -42,19 +42,9 @@ Level
 		{
 			var HUDLevel = "5c085f8ce87995ce:HUDLevel"
 		}
-		BouncySpawn 
-		{
-			var MinSpawnX = -20
-			var MaxSpawnX = 20
-			var MaxSpawnY = 15
-			var MinSpawnY = 5
-			var MaxSpawnCount = 15
-			var MinDiameterSize = 1
-			var MaxDiameterSize = 4
-		}
 		PlayerTurnManager 
 		{
-			var TimerPerPhase = 15
+			var TimerPerPhase = 30
 		}
 	}
 	Cog [ContextId:2]
@@ -95,7 +85,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{1.67590904, 2.14744616, 20}
+			var Translation = Real3{0, 0, 20}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -148,7 +138,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 26.9971313
+			var Size = 19.9999905
 		}
 		EditorCameraController 
 		{
@@ -157,7 +147,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{1.67590904, 2.14744616, 3.14779136e-08}
+			var LookTarget = Real3{0, 0, 0}
 			var MoveSensitivity = 1
 		}
 	}
@@ -243,20 +233,20 @@ Level
 		}
 		ScreenShake 
 		{
-			var ShakeDuration = 1
-			var ShakeMagnitude = 0.699999988
+			var ShakeDuration = 100
+			var ShakeMagnitude = 100
 		}
 	}
 	Cog [ContextId:5]
 	{
-		var Name = "Player"
+		var Name = "TileMap"
 		Transform 
 		{
-			var Translation = Real3{-7.44769573, -0.69037652, 0}
-			var Scale = Real3{2, 2, 1}
+			var Translation = Real3{0, 0, 0}
+			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
-		Sprite 
+		MultiSprite 
 		{
 			var Visible = true
 			var ViewCulling = true
@@ -268,56 +258,14 @@ Level
 			var Material = "582c575af53d18c9:AlphaSprite"
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
-			var SpriteSource = "5c87392b79c648f6:AttackFrogAni_0"
-			var FlipX = false
-			var FlipY = false
 			var AnimationActive = true
 			var AnimationSpeed = 1
-			var StartFrame = 0
 		}
-		BoxCollider 
+		TileMap 
 		{
-			var Ghost = false
-			var SendsEvents = true
-			var Material = "4de020863e872da8:DefaultPhysicsMaterial"
-			var CollisionGroup = "5c098e4fdd820ac1:Player"
-			var Offset = Real3{0, 0, 0}
-			var HalfSize = Real3{0.5, 0.5, 0.5}
-		}
-		RigidBody 
-		{
-			var Velocity = Real3{0, 0, 0}
-			var AngularVelocity = Real3{0, 0, 0}
-			var DynamicState = RigidBodyDynamicState.Dynamic
-			var AllowSleep = false
-			var Asleep = false
-			var RotationLocked = false
-			var Mode2D = Mode2DStates.InheritFromSpace
-		}
-		PlayerMovement 
-		{
-			var MoveSpeed = 400
-			var JumpSpeed = 10
-			var MaxMoveResource = 5
-			var Active = false
-		}
-		Health 
-		{
-			var MaxHealth = 5
-		}
-		PlayerShooting 
-		{
-			var Weapon = ShootVariables
-			{
-				var Icon = "5274db4c2e7c11f9:Circle"
-				var Projectile = "5c0f9844b874aa7c:Bullet"
-				var ProjectileCount = 1
-				var SpreadCone = 0
-				var ProjectileSpeed = 30
-				var SpeedVariation = 0
-				var SpeedBool = false
-			}
-			var Active = false
+			var Source = "5c872e5e04db0ba2:ArtImplementLevel_TileMap00"
+			var PaletteName = ""
+			var MeshThickness = 1.20000005
 		}
 	}
 	Cog [ContextId:6]
@@ -325,8 +273,8 @@ Level
 		var Name = "Player"
 		Transform 
 		{
-			var Translation = Real3{8.34727573, -0.69037652, 0}
-			var Scale = Real3{2, 2, 1}
+			var Translation = Real3{-7.44769573, -0.481171489, 0}
+			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
 		Sprite 
@@ -341,7 +289,7 @@ Level
 			var Material = "582c575af53d18c9:AlphaSprite"
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
-			var SpriteSource = "5c873dadf480ed3f:RecoloredIdleFrogAni_0"
+			var SpriteSource = "5586f579ca73ecc2:SquareBordered"
 			var FlipX = false
 			var FlipY = false
 			var AnimationActive = true
@@ -395,14 +343,14 @@ Level
 	}
 	Cog [ContextId:7]
 	{
-		var Name = "TileMap"
+		var Name = "Player"
 		Transform 
 		{
-			var Translation = Real3{0, 0, 0}
+			var Translation = Real3{8.34727573, -0.481171489, 0}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
-		MultiSprite 
+		Sprite 
 		{
 			var Visible = true
 			var ViewCulling = true
@@ -414,73 +362,56 @@ Level
 			var Material = "582c575af53d18c9:AlphaSprite"
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
+			var SpriteSource = "5586f579ca73ecc2:SquareBordered"
+			var FlipX = false
+			var FlipY = false
 			var AnimationActive = true
 			var AnimationSpeed = 1
+			var StartFrame = 0
 		}
-		TileMap 
+		BoxCollider 
 		{
-			var Source = "5c0f86e8af7e3102:Level_TileMap00"
-			var PaletteName = "5c0f869da6af70e1:GamePalette"
-			var MeshThickness = 1.20000005
+			var Ghost = false
+			var SendsEvents = true
+			var Material = "4de020863e872da8:DefaultPhysicsMaterial"
+			var CollisionGroup = "5c098e4fdd820ac1:Player"
+			var Offset = Real3{0, 0, 0}
+			var HalfSize = Real3{0.5, 0.5, 0.5}
 		}
-	}
-	Cog [InheritId:"5cbf45c9f4ae80b7:PlantWeaponPickup"][ContextId:8]
-	{
-		var Name = "PlantWeapon"
-		Transform 
+		RigidBody 
 		{
-			var Translation = Real3{-3.40336561, -1.66881979, -2.81008624e-07}
-			var Rotation = Quaternion{0, 0, 0, 1}
-			var Scale = Real3{1, 0.5, 1}
+			var Velocity = Real3{0, 0, 0}
+			var AngularVelocity = Real3{0, 0, 0}
+			var DynamicState = RigidBodyDynamicState.Dynamic
+			var AllowSleep = false
+			var Asleep = false
+			var RotationLocked = false
+			var Mode2D = Mode2DStates.InheritFromSpace
 		}
-	}
-	Cog [InheritId:"5cbf4710572ae165:ExplosionWeaponPickup"][ContextId:9]
-	{
-		var Name = "ExplosionWeapon"
-		Transform 
+		PlayerMovement 
 		{
-			var Translation = Real3{-10.9848814, -1.40454125, -2.81008624e-07}
-			var Rotation = Quaternion{0, 0, 0, 1}
-			var Scale = Real3{1, 0.5, 1}
+			var MoveSpeed = 400
+			var JumpSpeed = 10
+			var MaxMoveResource = 5
+			var Active = false
 		}
-	}
-	Cog [InheritId:"5c85ed4daa32760c:LobWeapon"][ContextId:10]
-	{
-		var Name = "LobWeapon"
-		Transform 
+		Health 
 		{
-			var Translation = Real3{-8.95988083, -1.40454125, -2.81008624e-07}
-			var Rotation = Quaternion{0, 0, 0, 1}
-			var Scale = Real3{1, 0.5, 1}
+			var MaxHealth = 5
 		}
-	}
-	Cog [InheritId:"5c85da8abb1395cf:WeaponSpawner"][ContextId:11]
-	{
-		Transform 
+		PlayerShooting 
 		{
-			var Translation = Real3{0, 5.48553467, 3.14779136e-08}
-			var Rotation = Quaternion{0, 0, 0, 1}
-			var Scale = Real3{1, 1, 1}
-		}
-	}
-	Cog [InheritId:"5c85d7cd169955b2:ClusterWeaponPickup"][ContextId:12]
-	{
-		var Name = "ClusterWeapon"
-		Transform 
-		{
-			var Translation = Real3{-5.52409554, -1.66881979, -2.81008624e-07}
-			var Rotation = Quaternion{0, 0, 0, 1}
-			var Scale = Real3{1, 0.5, 1}
-		}
-	}
-	Cog [InheritId:"5c872030213e749b:RockWeapon"][ContextId:13]
-	{
-		var Name = "RockWeapon"
-		Transform 
-		{
-			var Translation = Real3{-7.68713903, -1.58501816, 0}
-			var Rotation = Quaternion{0, 0, 0, 1}
-			var Scale = Real3{1, 0.5, 1}
+			var Weapon = ShootVariables
+			{
+				var Icon = "5274db4c2e7c11f9:Circle"
+				var Projectile = "5c0f9844b874aa7c:Bullet"
+				var ProjectileCount = 1
+				var SpreadCone = 0
+				var ProjectileSpeed = 30
+				var SpeedVariation = 0
+				var SpeedBool = false
+			}
+			var Active = false
 		}
 	}
 }

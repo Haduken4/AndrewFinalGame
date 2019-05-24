@@ -1,0 +1,11 @@
+[Version:1]
+DataContent 
+{
+	DataBuilder 
+	{
+		var Name = "ArtImplementLevel"
+		var ResourceId = 0x5c872e74010a1bce
+		var LoaderType = "Level"
+		var Version = 0
+	}
+}

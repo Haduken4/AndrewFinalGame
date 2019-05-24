@@ -4,8 +4,8 @@ Cog
 	var Name = "Bullet"
 	Transform 
 	{
-		var Translation = Real3{0, 0, 0}
-		var Scale = Real3{0.5, 0.5, 1}
+		var Translation = Real3{-10.3554211, 4.66270638, 0}
+		var Scale = Real3{2, 2, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
 	Sprite 
@@ -18,9 +18,9 @@ Cog
 		var LocalAabbHalfExtents = Real3{1, 1, 1}
 		var GroupSortValue = 0
 		var Material = "582c575af53d18c9:AlphaSprite"
-		var VertexColor = Real4{1, 1, 1, 1}
+		var VertexColor = Real4{0.717647076, 0.717647076, 0.717647076, 1}
 		var GeometryMode = SpriteGeometryMode.ZPlane
-		var SpriteSource = "5c873553fbb52bbf:ExplosionShotSpriteSheet_0"
+		var SpriteSource = "5274db4c2e7c11f9:Circle"
 		var FlipX = false
 		var FlipY = false
 		var AnimationActive = true
@@ -50,13 +50,6 @@ Cog
 		var CollisionGroup = "5c098e40de85b0fc:PlayerBullet"
 		var Offset = Real3{0, 0, 0}
 		var Radius = 0.25
-	}
-	SpawnOnDeath 
-	{
-		var ObjectToSpawn = "5cbf479d4e8e1d82:Explosion"
-		var OffsetSpawn = false
-		var SpawnOffset = 0
-		var DIE = true
 	}
 	TimedDeath 
 	{

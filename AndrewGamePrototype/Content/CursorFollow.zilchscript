@@ -1,0 +1,36 @@
+/*************************
+Authors: Nicole Smith
+Date Created: 5/23/19
+Brief: Rotates the object in the direction of the cursor
+*************************/
+
+class CursorFollow : ZilchComponent
+{
+  //object to rotate around
+  [Property]
+  var RotateObject : Cog = null;
+  
+  //distance from this object to the owner
+  [Property]
+  var RotateDist : Real = 5.0;
+  
+  function Initialize(init : CogInitializer)
+  {
+    //Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    //gets the mouse position to know where to aim
+    var mousePos = Zero.Mouse.ClientPosition;
+    var screenMousePos = this.Space.FindObjectByName("GameCamera").CameraViewport.ScreenToWorldZPlane(mousePos, 0);
+    
+    //gets the direction of the mouse
+    var dir = Math.Normalize(screenMousePos - this.Owner.Transform.WorldTranslation);
+    //gets angle to the mouse
+    var angleToMouse = Math.ATan2(dir.Y, dir.X);
+    
+    this.Owner.Transform.WorldTranslation = this.Owner.Transform.WorldTranslation + (dir * this.RotateDist);
+    this.Owner.Transform.SetEulerAnglesXYZ(0, 0, angleToMouse);
+  }
+}
