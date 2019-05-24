@@ -1,0 +1,19 @@
+[Version:1]
+DataContent 
+{
+	DataBuilder 
+	{
+		var Name = "RockBullet"
+		var ResourceId = 0x5c87217748a4fa65
+		var LoaderType = "Cog"
+		var Version = 0
+	}
+	ContentTags 
+	{
+		var Tags = Array
+		{
+			"Archetype"
+			"Cog"
+		}
+	}
+}
