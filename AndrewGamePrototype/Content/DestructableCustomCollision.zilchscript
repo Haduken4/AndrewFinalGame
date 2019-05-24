@@ -9,8 +9,8 @@ class DestructableCustomCollision : ZilchComponent
 {
   
   //Arrays to store destruction
-  var DestructionCenterArray : Array[Real3] = Array[Real3](/*1, Real3(-1.5, 1, 0)*/);
-  var DestructionRadiusArray : Array[Real] = Array[Real](/*1, 5*/);
+  var DestructionCenterArray : Array[Real3] = Array[Real3]();
+  var DestructionRadiusArray : Array[Real] = Array[Real]();
   
   
   function Initialize(init : CogInitializer)
@@ -60,18 +60,62 @@ class DestructableCustomCollision : ZilchComponent
   function CheckCollisionRectangle(object : Cog)
   {
     //Store corners of the rectangle
-    var cornerArray : Array[Real3] = Array[Real3]();
+    //var cornerArray : Array[Real3] = Array[Real3]();
     
     //Using extents to get the corners
-    var objExtents = object.Transform.WorldScale.XY / 2.0;
+    //var objExtents = object.Transform.WorldScale.XY / 2.0;
     
-    cornerArray.Add(Real3(object.Transform.WorldTranslation.XY + objExtents, 0));
+    
+    /*cornerArray.Add(Real3(object.Transform.WorldTranslation.XY + objExtents, 0));
     cornerArray.Add(Real3(object.Transform.WorldTranslation.XY - objExtents, 0));
     cornerArray.Add(Real3(object.Transform.WorldTranslation.X + objExtents.X, object.Transform.WorldTranslation.Y - objExtents.Y, 0));
-    cornerArray.Add(Real3(object.Transform.WorldTranslation.X - objExtents.X, object.Transform.WorldTranslation.Y + objExtents.Y, 0));
+    cornerArray.Add(Real3(object.Transform.WorldTranslation.X - objExtents.X, object.Transform.WorldTranslation.Y + objExtents.Y, 0));*/
+    
+    //Go through each contact
+    foreach(var contact in object.BoxCollider.Contacts)
+    {
+      //If the contact is this object, check contact points to see if we're colliding
+      if(contact.OtherObject == this.Owner)
+      {
+        var collidingArray = Array[Boolean](contact.ContactPointCount, true);
+        var index = 0;
+        
+        foreach(var point in contact.ContactPoints)
+        {
+          for(var i = 0; i < this.DestructionCenterArray.Count; ++i)
+          {
+            var distance = Math.Distance(point.WorldPoint, this.DestructionCenterArray[i]);
+          
+            if(distance <= this.DestructionRadiusArray[i])
+            {
+              collidingArray[index] = false;
+            }
+          }
+          ++index;
+        }
+        
+        for(var i = 0; i < collidingArray.Count; ++i)
+        {
+          if(collidingArray[i])
+          {
+            //If the other object explodes, explode it
+            if(object.CustomCollisionVariables.Explodes)
+            {
+              this.DestructionCenterArray.Add(object.Transform.WorldTranslation);
+              this.DestructionRadiusArray.Add(object.CustomCollisionVariables.ExplosionRadius);
+              
+              object.Destroy();
+            }
+            
+            object.Transform.WorldTranslation = object.CustomCollisionVariables.LastFramePos;
+          }
+        }
+        
+      }
+    }
     
     //Array that stores whether each corner is colliding (if any of these remain true, we are "colliding")
-    var colliding = Array[Boolean](4, true);
+    /*var colliding = Array[Boolean](4, true);
     
     //Loop through each corner
     for(var i = 0; i < 4; ++i)
@@ -112,14 +156,28 @@ class DestructableCustomCollision : ZilchComponent
         
         object.Transform.WorldTranslation = object.CustomCollisionVariables.LastFramePos;
       }
-    }
+    }*/
+    
+    /*if(colliding)
+    {
+      //If the other object explodes, explode it
+      if(object.CustomCollisionVariables.Explodes)
+      {
+        this.DestructionCenterArray.Add(object.Transform.WorldTranslation);
+        this.DestructionRadiusArray.Add(object.CustomCollisionVariables.ExplosionRadius);
+        
+        object.Destroy();
+      }
+      
+      object.Transform.WorldTranslation = object.CustomCollisionVariables.LastFramePos;
+    }*/
     
   }
   
   //Checks and resolves collision with a circle collider
   function CheckCollisionCircle(object : Cog)
   {
-    var objRad = object.SphereCollider.WorldRadius;
+    /*var objRad = object.SphereCollider.WorldRadius;
     var colliding = true;
     
     for(var i = 0; i < this.DestructionCenterArray.Count; ++i)
@@ -170,12 +228,59 @@ class DestructableCustomCollision : ZilchComponent
       
       
       
+    }*/
+    
+    foreach(var contact in object.SphereCollider.Contacts)
+    {
+      //If the contact is this object, check contact points to see if we're colliding
+      if(contact.OtherObject == this.Owner)
+      {
+        var collidingArray = Array[Boolean](contact.ContactPointCount, true);
+        var index = 0;
+        
+        foreach(var point in contact.ContactPoints)
+        {
+          for(var i = 0; i < this.DestructionCenterArray.Count; ++i)
+          {
+            var distance = Math.Distance(point.WorldPoint, this.DestructionCenterArray[i]);
+          
+            if(distance <= this.DestructionRadiusArray[i])
+            {
+              collidingArray[index] = false;
+            }
+          }
+          ++index;
+        }
+        
+        for(var i = 0; i < collidingArray.Count; ++i)
+        {
+          if(collidingArray[i])
+          {
+            //If the other object explodes, explode it
+            if(object.CustomCollisionVariables.Explodes)
+            {
+              this.DestructionCenterArray.Add(object.Transform.WorldTranslation);
+              this.DestructionRadiusArray.Add(object.CustomCollisionVariables.ExplosionRadius);
+              
+              //Spawn a display
+              var display = this.Space.CreateAtPosition(Archetype.DestructionDisplay, object.Transform.WorldTranslation + Real3(0, 0, 0.1));
+              
+              display.Transform.WorldScale = Real3(Real2(2, 2) * object.CustomCollisionVariables.ExplosionRadius, 1);
+              
+              object.Destroy();
+            }
+            
+            object.Transform.WorldTranslation = object.CustomCollisionVariables.LastFramePos;
+          }
+        }
+        
+      }
     }
     
   }
   
   //Checks if a specific point is colliding with our overall collider (doesn't take destruction into account)
-  function IsPointColliding(point : Real3) : Boolean
+  /*function IsPointColliding(point : Real3) : Boolean
   {
     //If we have a sphere collider
     if(this.Owner.SphereCollider != null)
@@ -202,6 +307,6 @@ class DestructableCustomCollision : ZilchComponent
     
     //If we haven't returned anything yet, then this point is colliding with us
     return true;
-  }
+  }*/
   
 }
