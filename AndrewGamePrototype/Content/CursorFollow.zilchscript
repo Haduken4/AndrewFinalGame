@@ -8,15 +8,19 @@ class CursorFollow : ZilchComponent
 {
   //object to rotate around
   [Property]
+  var RotatePlayerIndex : Integer = 0;
+  
   var RotateObject : Cog = null;
   
   //distance from this object to the owner
   [Property]
-  var RotateDist : Real = 5.0;
+  var RotateDist : Real = 1.0;
   
   function Initialize(init : CogInitializer)
   {
-    //Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    this.RotateObject = this.LevelSettings.PlayerTurnManager.PlayerArray[this.RotatePlayerIndex];
+    
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
   }
 
   function OnLogicUpdate(event : UpdateEvent)
@@ -26,11 +30,11 @@ class CursorFollow : ZilchComponent
     var screenMousePos = this.Space.FindObjectByName("GameCamera").CameraViewport.ScreenToWorldZPlane(mousePos, 0);
     
     //gets the direction of the mouse
-    var dir = Math.Normalize(screenMousePos - this.Owner.Transform.WorldTranslation);
+    var dir = Math.Normalize(screenMousePos - this.RotateObject.Transform.WorldTranslation);
     //gets angle to the mouse
     var angleToMouse = Math.ATan2(dir.Y, dir.X);
     
-    this.Owner.Transform.WorldTranslation = this.Owner.Transform.WorldTranslation + (dir * this.RotateDist);
+    this.Owner.Transform.WorldTranslation = this.RotateObject.Transform.WorldTranslation + (dir * this.RotateDist);
     this.Owner.Transform.SetEulerAnglesXYZ(0, 0, angleToMouse);
   }
 }
