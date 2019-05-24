@@ -10,10 +10,14 @@ class CameraFollow : ZilchComponent
   [Property]
   var MinMaxSize : Real2 = Real2(5, 40);
   
+  //this is for when the camera is following spread and what the default size should be when adjusting to the spread
+  [Property]
+  var MinCamSize : Real = 20;
+  
   //target the camera will move to
   var Target : Cog = null;
   
-  var Total : Real3 = Real3(0,0,0);
+  var Total : Real3 = Real3(0,0,10);
   
   function Initialize(init : CogInitializer)
   {
@@ -33,8 +37,9 @@ class CameraFollow : ZilchComponent
 
   function OnLogicUpdate(event : UpdateEvent)
   {
-    /*var i : Integer = 0;
-    
+    Console.WriteLine(this.Owner.Transform.Translation);
+    var i : Integer = 0;
+  
     //loop through the array
     for(i; i < this.GameSession.GameVars.BulletArray.Count; ++i)
     {
@@ -44,13 +49,14 @@ class CameraFollow : ZilchComponent
         this.GameSession.GameVars.BulletArray.RemoveAt(i);
       }
     }
-    if(this.GameSession.GameVars.BulletArray.Count > 0)
+    if(this.GameSession.GameVars.BulletArray.Count != 0)
     {
-      Console.WriteLine(this.GameSession.GameVars.BulletArray.Count);
+      this.Total = Real3(0,0,10);
       this.CameraPosition();
     }
     else
-    {*/
+    {
+      this.Owner.Camera.Size = 20;
       //If our target exists
       if(this.Target != null)
       {
@@ -59,63 +65,40 @@ class CameraFollow : ZilchComponent
         
         this.Owner.Transform.WorldTranslation = Math.Lerp(currentTranslation, targetTranslation, this.LerpSpeed);
       }
-    /*}*/
+    }
   }
   
   //this function gets where the camera should be
-  /*function CameraPosition()
+  function CameraPosition()
   {
-    //these vars are to keep track of the highest and lowest points of the bullets
-    var lowX : Real = 0;
-    var highX : Real = 0;
-    var lowY : Real = 0;
-    var highY : Real = 0;
-    var total : Real3 = Real3(0,0,10);
-    
+    if(this.GameSession.GameVars.BulletArray.Count == 1)
+    {
+      
+    }
     //find the lowest and highest x and y values
     foreach(var x : Cog in this.GameSession.GameVars.BulletArray)
     {
       if(x != null)
       {
-        if(x.Transform.Translation.X < lowX)
-        {
-          lowX = x.Transform.Translation.X;
-        }
-        if(x.Transform.Translation.X > highX)
-        {
-          highX = x.Transform.Translation.X;
-        }
-        if(x.Transform.Translation.X < lowY)
-        {
-          lowY = x.Transform.Translation.X;
-        }
-        if(x.Transform.Translation.X > highY)
-        {
-          highY = x.Transform.Translation.X;
-        }
+        this.Total.X += x.Transform.Translation.X;
+        this.Total.Y += x.Transform.Translation.Y;
       }
     }
     
     //get the middle of the x and y
-    this.Total.X = (lowX + highX) / 2;
-    this.Total.Y = (lowY + highY) / 2;
-    Console.WriteLine("total `this.Total`");
+    this.Total.XY /= this.GameSession.GameVars.BulletArray.Count;
     var currentTranslation = this.Owner.Transform.WorldTranslation;
     var targetTranslation = Real3(this.Total.XY, this.Total.Z);
-    this.Owner.Transform.WorldTranslation = Math.Lerp(currentTranslation, targetTranslation, this.LerpSpeed);
-    
     //find the greatest distane from the two poitns and set the camera size to that
-    if(Math.Abs(total.X) > Math.Abs(total.Y) && this.GameSession.GameVars.BulletArray.Count != 0)
+    this.Owner.Transform.WorldTranslation = Math.Lerp(currentTranslation, targetTranslation, this.LerpSpeed);
+    if(Math.Abs(this.Total.X) > Math.Abs(this.Total.Y) && this.GameSession.GameVars.BulletArray.Count != 0)
     {
-      this.Owner.Camera.Size = this.Owner.Transform.Translation.X - Math.Abs(total.X);
-    }
-    else if(Math.Abs(total.X) < Math.Abs(total.Y) && this.GameSession.GameVars.BulletArray.Count != 0)
-    {
-      this.Owner.Camera.Size = this.Owner.Transform.Translation.Y - Math.Abs(total.Y);
+      this.Owner.Camera.Size = Math.Abs(this.Owner.Transform.Translation.X - this.Total.X) + this.MinCamSize;
     }
     else
     {
-      this.Owner.Camera.Size = 20;
+      this.Owner.Camera.Size = Math.Abs(this.Owner.Transform.Translation.Y - this.Total.Y) + this.MinCamSize;
     }
-  }*/
+          Console.WriteLine(this.Owner.Camera.Size);
+  }
 }

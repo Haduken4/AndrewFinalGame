@@ -117,7 +117,7 @@ class PlayerShooting : ZilchComponent
           //this giving the bullet belocity and what direction
           this.CurrProjectile.RigidBody.Velocity = CustomMath.DirectionFromAngle(currAngle) * this.Weapon.ProjectileSpeed * randVel;
           //Tells the camera to follow 
-          this.Space.FindObjectByName("GameCamera").CameraFollow.Target = this.CurrProjectile;
+          //this.Space.FindObjectByName("GameCamera").CameraFollow.Target = this.CurrProjectile;
           //this turns on the bool so that the current projectile will be tracked
           this.BBool = true;
           this.GameSession.GameVars.BulletArray.Add(this.CurrProjectile);
@@ -175,7 +175,7 @@ class PlayerShooting : ZilchComponent
     }
     
     //this is for switchign after the bullet gets destroyed
-    if(this.BBool && this.CurrProjectile == null)
+    if(this.BBool && this.GameSession.GameVars.BulletArray.Count == 0)
     {
       //turns on the timer bool
       this.TBool = true;
@@ -187,7 +187,6 @@ class PlayerShooting : ZilchComponent
         //turn off the bools
         this.BBool = false;
         this.TBool = false;
-        this.GameSession.GameVars.BulletArray.Clear();
         //reset the timer
         this.Timer = 0;
       }
