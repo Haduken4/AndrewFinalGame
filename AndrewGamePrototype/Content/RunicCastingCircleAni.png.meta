@@ -1,0 +1,20 @@
+[Version:1]
+ImageContent 
+{
+	SpriteSourceBuilder 
+	{
+		var Name = "RunicCastingCircleAni"
+		var ResourceId = 0x5c87342adab4288b
+		var FrameSizeX = 1246
+		var FrameSizeY = 509
+		var FrameCount = 1
+		var FrameDelay = 0.0833333358
+		var OriginX = 623
+		var OriginY = 254
+		var PixelsPerUnit = 64
+		var Sampling = SpriteSampling.Linear
+		var Looping = true
+		var Slices = Real4{0, 0, 0, 0}
+		var Fill = SpriteFill.Stretch
+	}
+}
