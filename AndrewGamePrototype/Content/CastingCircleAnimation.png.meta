@@ -1,0 +1,20 @@
+[Version:1]
+ImageContent 
+{
+	SpriteSourceBuilder 
+	{
+		var Name = "CastingCircleAnimation"
+		var ResourceId = 0x5c8737d36b2e3721
+		var FrameSizeX = 600
+		var FrameSizeY = 1018
+		var FrameCount = 1
+		var FrameDelay = 0.0833333358
+		var OriginX = 300
+		var OriginY = 509
+		var PixelsPerUnit = 64
+		var Sampling = SpriteSampling.Linear
+		var Looping = true
+		var Slices = Real4{0, 0, 0, 0}
+		var Fill = SpriteFill.Stretch
+	}
+}
