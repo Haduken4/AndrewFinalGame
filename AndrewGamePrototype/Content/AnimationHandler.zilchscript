@@ -16,7 +16,10 @@ class AnimationHandler : ZilchComponent
   function OnLogicUpdate(event : UpdateEvent)
   {
     // check to see if health drops, if it did, run damaged sprite once 
-    
+    if(this.LastHealth - this.Owner.Health.CurrHealth > 0.01)
+    {
+      
+    }
     // check to see if a bullet was shot, if so, run attacking sprite once
     // else, if the current sprite is not the idle sprite set it
   }
