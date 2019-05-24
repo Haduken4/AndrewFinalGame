@@ -19,10 +19,13 @@ class CameraFollow : ZilchComponent
   
   var Total : Real3 = Real3(0,0,10);
   
+  var CurrentSize : Real;
+  
   function Initialize(init : CogInitializer)
   {
     //for testing
     //this.Target = this.Space.FindObjectByName("Player");
+    this.CurrentSize = this.Owner.Camera.Size;
     Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
     
     Zero.Connect(this.Space, Events.MouseScroll, this.OnMouseScroll);
@@ -30,9 +33,9 @@ class CameraFollow : ZilchComponent
 
   function OnMouseScroll(event : ViewportMouseEvent)
   {
-    this.Owner.Camera.Size += -event.Scroll.Y * this.ResizeSpeed;
+    this.CurrentSize += -event.Scroll.Y * this.ResizeSpeed;
     
-    this.Owner.Camera.Size = Math.Clamp(this.Owner.Camera.Size, this.MinMaxSize.X, this.MinMaxSize.Y);
+    this.CurrentSize= Math.Clamp(this.CurrentSize, this.MinMaxSize.X, this.MinMaxSize.Y);
   }
 
   function OnLogicUpdate(event : UpdateEvent)
@@ -56,7 +59,7 @@ class CameraFollow : ZilchComponent
     }
     else
     {
-      this.Owner.Camera.Size = 20;
+      this.Owner.Camera.Size = this.CurrentSize;
       //If our target exists
       if(this.Target != null)
       {
