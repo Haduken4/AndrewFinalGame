@@ -148,7 +148,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 44.5107117
+			var Size = 24.4280109
 		}
 		EditorCameraController 
 		{
@@ -305,6 +305,7 @@ Level
 		Health 
 		{
 			var MaxHealth = 5
+			var DamagedSprite = "5c887addee65a779:DamagedFrogAni"
 		}
 		PlayerShooting 
 		{
@@ -378,6 +379,7 @@ Level
 		Health 
 		{
 			var MaxHealth = 5
+			var DamagedSprite = "null"
 		}
 		PlayerShooting 
 		{
