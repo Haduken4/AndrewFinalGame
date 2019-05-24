@@ -6,9 +6,6 @@ Brief: Rotates the object in the direction of the cursor
 
 class CursorFollow : ZilchComponent
 {
-  //object to rotate around
-  [Property]
-  var RotatePlayerIndex : Integer = 0;
   
   var RotateObject : Cog = null;
   
@@ -18,7 +15,6 @@ class CursorFollow : ZilchComponent
   
   function Initialize(init : CogInitializer)
   {
-    this.RotateObject = this.LevelSettings.PlayerTurnManager.PlayerArray[this.RotatePlayerIndex];
     
     Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
   }

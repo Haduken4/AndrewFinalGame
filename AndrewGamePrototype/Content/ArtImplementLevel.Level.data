@@ -414,13 +414,4 @@ Level
 			var Active = false
 		}
 	}
-	Cog [InheritId:"5c8737bd6ccd943e:CastCircle"][ContextId:8]
-	{
-		Transform 
-		{
-			var Translation = Real3{-4.83336353, 0, 0}
-			var Rotation = Quaternion{0, 0, 0, 1}
-			var Scale = Real3{0.400000006, 0.400000006, 1}
-		}
-	}
 }
