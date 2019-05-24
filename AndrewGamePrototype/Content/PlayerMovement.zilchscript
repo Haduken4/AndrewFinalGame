@@ -12,6 +12,10 @@ class PlayerMovement : ZilchComponent
   [Property]
   var MaxMoveResource : Real = 10;
   
+  //sound for the jumping
+  [Property]
+  var SoundToPlay : SoundCue = null;
+  
   //How much more we can move this turn
   var CurrMoveResource : Real = 10;
   
@@ -66,6 +70,8 @@ class PlayerMovement : ZilchComponent
       this.Owner.RigidBody.Velocity += dirToMouse * this.JumpSpeed;
       
       this.CurrMoveResource -= this.MaxMoveResource / 2;
+      
+      this.Space.SoundSpace.PlayCue(this.SoundToPlay);
       
       this.LockMovement = true;
       

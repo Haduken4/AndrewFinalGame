@@ -41,6 +41,12 @@ class PlayerShooting : ZilchComponent
   [Property]
   var Active : Boolean = true;
   
+  [Property]
+  var SoundToPlay : SoundCue = null;
+  
+  [Property]
+  var RuneSound : SoundCue = null;
+  
   var CurrProjectile : Cog = null;
   
   //weapons inventory
@@ -80,6 +86,7 @@ class PlayerShooting : ZilchComponent
     //create cast circle
     if(this.Active)
     {
+      this.Space.SoundSpace.PlayCue(this.RuneSound);
       var object =this.Space.Create(Archetype.CastCircle);
       object.CursorFollow.RotateObject = this.Owner;
     }
@@ -109,7 +116,7 @@ class PlayerShooting : ZilchComponent
       {
         power = CustomMath.Magnitude(dir) / this.MaxAimDist;
       }
-      
+      this.Space.SoundSpace.PlayCue(this.SoundToPlay);
       if(this.Weapon.Projectile != null)
       {
 
