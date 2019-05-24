@@ -58,7 +58,7 @@ Cog
 	}
 	CustomCollisionVariables 
 	{
-		var Explodes = true
+		var Explodes = false
 		var ExplosionRadius = 1.5
 	}
 }

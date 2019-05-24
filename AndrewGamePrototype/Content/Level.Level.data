@@ -420,7 +420,7 @@ Level
 		TileMap 
 		{
 			var Source = "5c0f86e8af7e3102:Level_TileMap00"
-			var PaletteName = "5c0f869da6af70e1:GamePalette"
+			var PaletteName = "5c8731477f2661e0:BranchCenter"
 			var MeshThickness = 1.20000005
 		}
 	}
