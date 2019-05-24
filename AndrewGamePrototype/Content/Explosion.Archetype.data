@@ -59,6 +59,8 @@ Cog
 		var ObjectToSpawn = "5c833623faefda32:ExplosionParticles"
 		var OffsetSpawn = false
 		var SpawnOffset = 0
+		var DIE = false
+		var SoundToPlay = "5c57355bc3baef3f:Particles"
 	}
 	Hierarchy 
 	{

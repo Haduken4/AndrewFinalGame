@@ -10,6 +10,9 @@ class ScreenShake : ZilchComponent
   var ShakeDuration : Real = 100;
   [Property]
   var ShakeMagnitude : Real = 100;
+  
+  [Property]
+  var SoundToPlay : SoundCue = SoundCue.Screenshake;
 
   var ShakeEnabled : Boolean = false;
   
@@ -31,6 +34,7 @@ class ScreenShake : ZilchComponent
 
       if(this.ShakeDuration > 0)
       {
+        this.Space.SoundSpace.PlayCue(this.SoundToPlay);
         // set camera to a random position
         this.Owner.Transform.Translation = Real3(this.InitialPosition.X + randx * this.ShakeMagnitude, 
           this.InitialPosition.Y + randy * this.ShakeMagnitude, this.InitialPosition.Z);
