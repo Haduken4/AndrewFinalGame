@@ -61,7 +61,7 @@ class DestructableCustomCollision : ZilchComponent
   {
     
     //////////////////////////////////////////////////////////////////////////////
-    // CONTACT POINTS
+    // CONTACT POINTS (PROBABLY BETTER, CURRENTLY NOT WORKING)
     //////////////////////////////////////////////////////////////////////////////
     
     //Go through each contact
@@ -108,7 +108,7 @@ class DestructableCustomCollision : ZilchComponent
     }*/
     
     //////////////////////////////////////////////////////////////////////////////
-    // EXTENT BASED POINTS
+    // EXTENT BASED POINTS (MAYBE BETTER THAN CONTACT POINTS?)
     //////////////////////////////////////////////////////////////////////////////
     
     //Store corners of the rectangle
@@ -193,17 +193,27 @@ class DestructableCustomCollision : ZilchComponent
   {
     
     //////////////////////////////////////////////////////////////////////////////
-    // RADIUS BASED
+    // RADIUS BASED (BETTER THAN CONTACT POINTS FOR NOW)
     //////////////////////////////////////////////////////////////////////////////
     
     var objRad = object.SphereCollider.WorldRadius;
     var colliding = true;
+    var translation = Real3(object.Transform.WorldTranslation.XY, 0);
+    
+    var closestIndex = 0;
+    
     
     for(var i = 0; i < this.DestructionCenterArray.Count; ++i)
     {
-      var translation = Real3(object.Transform.WorldTranslation.XY, 0);
       
       var distance = Math.Distance(translation, this.DestructionCenterArray[i]);
+      
+      var currClosestDist = Math.Distance(translation, this.DestructionCenterArray[closestIndex]);
+      
+      if(distance - this.DestructionRadiusArray[i] < currClosestDist - this.DestructionRadiusArray[closestIndex])
+      {
+        closestIndex = i;
+      }
       
       //If the other object is completely encompassed by one of the "destroyed" circles, it isn't colliding
       if(distance + objRad <= this.DestructionRadiusArray[i])
@@ -213,19 +223,20 @@ class DestructableCustomCollision : ZilchComponent
     }
     
     
-    
-    
     if(colliding)
     {
       
-      //Get a direction directly away from us
-      var dir = Math.Normalize(object.Transform.WorldTranslation - this.Owner.Transform.WorldTranslation);
-      
-      
-      //Check if the furthest point away on the circle from us and the center of the circle are colliding with us at all
-      if(!this.IsPointColliding(object.Transform.WorldTranslation + (dir * objRad)) && !this.IsPointColliding(object.Transform.WorldTranslation))
+      if(this.DestructionCenterArray.Count != 0)
       {
-        return;
+        //Get a direction directly away from the closest circle
+        var dir = Math.Normalize(this.DestructionCenterArray[closestIndex] - this.Owner.Transform.WorldTranslation);
+        
+        
+        //Check if the furthest point away on the circle from us and the center of the circle are colliding with us at all
+        if(!this.IsPointColliding(this.DestructionCenterArray[closestIndex] + (dir * objRad)))
+        {
+          return;
+        }
       }
       
       //If the other object explodes, explode it
