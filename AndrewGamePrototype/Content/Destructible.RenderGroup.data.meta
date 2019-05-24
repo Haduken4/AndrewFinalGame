@@ -1,0 +1,18 @@
+[Version:1]
+DataContent 
+{
+	DataBuilder 
+	{
+		var Name = "Destructible"
+		var ResourceId = 0x5c8879ffd08e351a
+		var LoaderType = "RenderGroup"
+		var Version = 0
+	}
+	ContentTags 
+	{
+		var Tags = Array
+		{
+			"RenderGroup"
+		}
+	}
+}

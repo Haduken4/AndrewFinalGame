@@ -4,7 +4,7 @@ Cog
 	var Name = "Sprite"
 	Transform 
 	{
-		var Translation = Real3{-7.52717209, 1.20009804, 0}
+		var Translation = Real3{-5.0865736, 0.377409339, 0}
 		var Scale = Real3{1, 1, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
@@ -17,10 +17,10 @@ Cog
 		var LocalAabbCenter = Real3{0, 0, 0}
 		var LocalAabbHalfExtents = Real3{1, 1, 1}
 		var GroupSortValue = 0
-		var Material = "582c575af53d18c9:AlphaSprite"
+		var Material = "5c887a59b0b6bceb:DestructionSprite"
 		var VertexColor = Real4{0.610000014, 0.274500012, 0.274500012, 0.5}
 		var GeometryMode = SpriteGeometryMode.ZPlane
-		var SpriteSource = "5274db4c2e7c11f9:Circle"
+		var SpriteSource = "5275aa4d802dd6dc:Square"
 		var FlipX = false
 		var FlipY = false
 		var AnimationActive = true
