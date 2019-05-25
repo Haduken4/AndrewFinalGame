@@ -204,10 +204,6 @@ class PlayerShooting : ZilchComponent
       }
     }
     
-    if(Zero.Keyboard.KeyIsPressed(Keys.L) && this.BBool)
-    {
-      this.BBool = false;
-    }
     //toggle this if you want a timer
     if(this.TBool)
     {
