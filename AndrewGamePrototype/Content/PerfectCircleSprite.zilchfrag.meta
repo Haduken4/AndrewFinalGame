@@ -1,0 +1,9 @@
+[Version:1]
+TextContent 
+{
+	ZilchFragmentBuilder 
+	{
+		var Name = "PerfectCircleSprite"
+		var ResourceId = 0x5c887a24b4c99f7e
+	}
+}

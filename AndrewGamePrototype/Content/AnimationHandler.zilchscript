@@ -7,20 +7,47 @@ class AnimationHandler : ZilchComponent
   [Property]
   var AttackSprite : SpriteSource;
   var LastHealth : Real;
+  var BulletBool : Boolean;
   function Initialize(init : CogInitializer)
   {
-    //Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
     this.LastHealth = this.Owner.Health.MaxHealth;
+    this.BulletBool = true;
   }
 
   function OnLogicUpdate(event : UpdateEvent)
   {
+    if(this.Owner.PlayerShooting.BBool == false)
+    {
+      this.BulletBool = true;
+    }
     // check to see if health drops, if it did, run damaged sprite once 
     if(this.LastHealth - this.Owner.Health.CurrHealth > 0.01)
     {
-      
+      // set active sprite to the damaged animation
+      this.Owner.Sprite.SpriteSource = this.DamagedSprite;
+      // update the current health
+      this.LastHealth = this.Owner.Health.CurrHealth;
     }
     // check to see if a bullet was shot, if so, run attacking sprite once
+    else if(this.BulletBool && this.Owner.PlayerShooting.BBool)
+    {
+      this.BulletBool = false;
+      // run attack animation
+      this.Owner.Sprite.SpriteSource = this.AttackSprite;
+    }
     // else, if the current sprite is not the idle sprite set it
+    else if(this.Owner.Sprite.SpriteSource != this.IdleSprite)
+    {
+      // logic can be cleaned up
+      if(this.Owner.Sprite.CurrentFrame == 3 && this.Owner.Sprite.SpriteSource == this.DamagedSprite)
+      {
+        this.Owner.Sprite.SpriteSource = this.IdleSprite;
+      }
+      else if(this.Owner.Sprite.CurrentFrame == 4 && this.Owner.Sprite.SpriteSource == this.AttackSprite)
+      {
+        this.Owner.Sprite.SpriteSource = this.IdleSprite;
+      }
+    }
   }
 }

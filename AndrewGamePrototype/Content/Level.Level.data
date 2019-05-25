@@ -246,6 +246,7 @@ Level
 		{
 			var ShakeDuration = 1
 			var ShakeMagnitude = 0.699999988
+			var SoundToPlay = "null"
 		}
 	}
 	Cog [ContextId:5]
@@ -300,12 +301,12 @@ Level
 			var MoveSpeed = 400
 			var JumpSpeed = 10
 			var MaxMoveResource = 5
+			var SoundToPlay = "5c57355bc3ba7392:Jump"
 			var Active = false
 		}
 		Health 
 		{
 			var MaxHealth = 5
-			var DamagedSprite = "5c887addee65a779:DamagedFrogAni"
 		}
 		PlayerShooting 
 		{
@@ -320,6 +321,8 @@ Level
 				var SpeedBool = false
 			}
 			var Active = false
+			var SoundToPlay = "5c57371855e8f80d:Attack"
+			var RuneSound = "5c57355bc3b8bad5:Runecircle"
 		}
 	}
 	Cog [ContextId:6]
@@ -374,12 +377,12 @@ Level
 			var MoveSpeed = 400
 			var JumpSpeed = 10
 			var MaxMoveResource = 5
+			var SoundToPlay = "5c57355bc3ba7392:Jump"
 			var Active = false
 		}
 		Health 
 		{
 			var MaxHealth = 5
-			var DamagedSprite = "null"
 		}
 		PlayerShooting 
 		{
@@ -394,6 +397,8 @@ Level
 				var SpeedBool = false
 			}
 			var Active = false
+			var SoundToPlay = "5c57371855e8f80d:Attack"
+			var RuneSound = "5c57355bc3b8bad5:Runecircle"
 		}
 	}
 	Cog [ContextId:7]

@@ -1,0 +1,21 @@
+[Pixel]
+struct PerfectCircleSprite
+{
+  [FragmentInput][StageInput]
+  var Uv : Real2;
+  [FragmentInput][StageInput]
+  var UvAux : Real2;
+  
+  [FragmentInput][Output]
+  var Color : Real4;
+  
+  
+  function Main()
+  {
+    var ndc = 2 * this.UvAux - Real2.One;
+    var r = Math.Sqrt(ndc.X * ndc.X + ndc.Y * ndc.Y);
+    
+    if (r > 1)
+      Shader.Discard();
+  }
+}

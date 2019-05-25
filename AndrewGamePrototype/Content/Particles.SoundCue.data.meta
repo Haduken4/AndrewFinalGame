@@ -1,0 +1,11 @@
+[Version:1]
+DataContent 
+{
+	DataBuilder 
+	{
+		var Name = "Particles"
+		var ResourceId = 0x5c57355bc3baef3f
+		var LoaderType = "SoundCue"
+		var Version = 0
+	}
+}

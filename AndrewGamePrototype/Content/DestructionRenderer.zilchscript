@@ -1,0 +1,336 @@
+// Does indirect and direct lighting calculations when rendering opaque objects.
+// Direct lighting in ForwardPass only accounts for a single directional light.
+[RunInEditor]
+class DestructionRenderer : ZilchComponent
+{
+  // If DebugDraw RenderGroups are drawn in edit mode.
+  [Property] var EditorDebugDraw : Boolean = true;
+  // If DebugDraw RenderGroups are drawn in play mode.
+  [Property] var GameDebugDraw : Boolean = true;
+  
+  [Property]
+  // For debug purposes, should Destruction objects be drawn as if they were normal sprites?
+  var RenderDestructionNormally : Boolean = false;
+  [Property]
+  // For debug purposes, should Destructible objects be drawn as if they were normal sprites?
+  var RenderDestructibleNormally : Boolean = false;
+  
+  // Toggles diffuse light output.
+  [Property] var RenderDiffuse : Boolean = true;
+  // Toggles specular light output.
+  [Property] var RenderSpecular : Boolean = true;
+  // If skybox should be used for the background, uses ClearColor for background if false.
+  [Property] var RenderSkybox : Boolean = true;
+  // Cubemap Texture to use for indirect lighting and/or scene background. Undefined behavior if null or not a cubemap.
+  [Property] var Skybox : Texture = Texture.SimpleSkybox;
+  // Color for the background if not using the skybox.
+  [Property] var ClearColor : Real4 = Real4(0.0, 0.0, 0.0, 1.0);
+  
+  [Property]
+  var TopColor : Real4 = Colors.Black;
+  [Property]
+  var BottomColor : Real4 = Real4(0.1, 0.25, 0.5, 1);
+  [Property]
+  var Top : Real = 0;
+  [Property]
+  var Bottom : Real = 1;
+  [Property]
+  var Exponent : Real = 1;
+  
+  // Toggles output of dynamic area lights.
+  [Property] var DirectLighting : Boolean = true;
+  // Toggles output of the image-based lighting pass that uses the skybox.
+  [Property] var IndirectLighting : Boolean = true;
+  // Arbitrary scalar for the output of IndirectLighting.
+  [Property] var IndirectIntensity : Real = 1.0;
+  // If a filmic tonemap should be used when converting lighting results from linear to gamma for monitor display.
+  [Property] var ToneMap : Boolean = true;
+  // Path to object with DirectionalLight component to use for direct lighting.
+  [Property] var DirectionalLight : CogPath = CogPath();
+
+  function Initialize(init : CogInitializer)
+  {
+    Zero.Connect(this.Owner, Events.RenderTasksUpdate, this.OnRenderTasksUpdate);
+  }
+
+  function OnRenderTasksUpdate(event : RenderTasksEvent)
+  {
+    var viewportSize = event.ViewportSize;
+    var final = event.GetFinalTarget(viewportSize, TextureFormat.RGBA8);
+    
+    var colorTarget = event.GetRenderTarget(viewportSize, TextureFormat.RGBA16f);
+    
+    
+    /////////////////
+    // Choose a depth target with a stencil
+    /////////////////
+    var depthTarget = event.GetRenderTarget(viewportSize, TextureFormat.Depth24Stencil8);
+    /////////////////////////////////////////////////////////////////////////////
+    
+    var clearColor = Math.Pow(this.ClearColor, Real4(2.2.XXX, 1.0));
+    
+    
+    /////////////////
+    // Clear the stencil to 0
+    /////////////////
+    event.AddRenderTaskClearTarget(colorTarget, depthTarget, clearColor, 1.0, 0);
+    /////////////////////////////////////////////////////////////////////////////
+    
+    
+    if (this.RenderSkybox)
+    {
+      var skybox = Skybox();
+      skybox.Skybox = this.Skybox;
+    
+      event.AddRenderTaskPostProcess(colorTarget, skybox);
+    }
+    
+    var forwardSettings = RenderSettings();
+    forwardSettings.ColorTarget = colorTarget;
+    forwardSettings.DepthTarget = depthTarget;
+    forwardSettings.CullMode = CullMode.BackFace;
+    forwardSettings.DepthSettings.DepthMode = DepthMode.Write;
+    forwardSettings.DepthSettings.DepthCompareFunc = TextureCompareFunc.LessEqual;
+    
+    // Get state of directional light
+    var activeLight = false;
+    var lightShadows = false;
+    var light = this.DirectionalLight.Cog;
+    if (light != null && light.DirectionalLight != null)
+    {
+      activeLight = true;
+      lightShadows = light.ShadowRenderer != null;
+    }
+    
+    if (activeLight && lightShadows)
+    {
+      var forwardPassShadows = ForwardPassShadows();
+      forwardPassShadows.EnvironmentBrdfLut = Texture.EnvironmentBrdfLut;
+      forwardPassShadows.DitherTexture = Texture.BlueNoise;
+      forwardPassShadows.Skybox = this.Skybox;
+      forwardPassShadows.IndirectIntensity = this.IndirectIntensity;
+      forwardPassShadows.RenderDiffuse = this.RenderDiffuse;
+      forwardPassShadows.RenderSpecular = this.RenderSpecular;
+      
+      forwardPassShadows.DirectLightColor = light.DirectionalLight.LightColor.XYZ;
+      forwardPassShadows.DirectLightDirection = light.DirectionalLight.LightDirection;
+      forwardPassShadows.DirectLightIntensity = light.DirectionalLight.LightIntensity;
+      
+      forwardPassShadows.LightTransform = light.ShadowRenderer.LightTransform;
+      forwardPassShadows.ShadowBuffer = light.ShadowRenderer.ShadowBuffer;
+      forwardPassShadows.NormalOffsetBias = light.ShadowRenderer.NormalOffsetBias;
+      
+      forwardPassShadows.DirectLightIntensity *= this.DirectLighting as Real;
+      forwardPassShadows.IndirectIntensity *= this.IndirectLighting as Real;
+      
+      event.AddRenderTaskRenderPass(forwardSettings, RenderGroup.Opaque, forwardPassShadows);
+      
+      forwardSettings.CullMode = CullMode.Disabled;
+      event.AddRenderTaskRenderPass(forwardSettings, RenderGroup.OpaqueDoubleSided, forwardPassShadows);
+    }
+    else
+    {
+      var forwardPass = ForwardPass();
+      forwardPass.EnvironmentBrdfLut = Texture.EnvironmentBrdfLut;
+      forwardPass.DitherTexture = Texture.BlueNoise;
+      forwardPass.Skybox = this.Skybox;
+      forwardPass.IndirectIntensity = this.IndirectIntensity;
+      forwardPass.RenderDiffuse = this.RenderDiffuse;
+      forwardPass.RenderSpecular = this.RenderSpecular;
+      
+      forwardPass.DirectLightIntensity = 0.0;
+      
+      if (activeLight)
+      {
+        forwardPass.DirectLightColor = light.DirectionalLight.LightColor.XYZ;
+        forwardPass.DirectLightDirection = light.DirectionalLight.LightDirection;
+        forwardPass.DirectLightIntensity = light.DirectionalLight.LightIntensity;
+      }
+      
+      forwardPass.DirectLightIntensity *= this.DirectLighting as Real;
+      forwardPass.IndirectIntensity *= this.IndirectLighting as Real;
+      
+      event.AddRenderTaskRenderPass(forwardSettings, RenderGroup.Opaque, forwardPass);
+      
+      forwardSettings.CullMode = CullMode.Disabled;
+      event.AddRenderTaskRenderPass(forwardSettings, RenderGroup.OpaqueDoubleSided, forwardPass);
+    }
+    
+    // Additive materials
+    var alphaSettings = RenderSettings();
+    alphaSettings.ColorTarget = colorTarget;
+    alphaSettings.DepthTarget = depthTarget;
+    alphaSettings.CullMode = CullMode.Disabled;
+    alphaSettings.BlendSettings.BlendMode = BlendMode.Separate;
+    alphaSettings.BlendSettings.BlendEquation = BlendEquation.Add;
+    alphaSettings.BlendSettings.SourceFactor = BlendFactor.SourceAlpha;
+    alphaSettings.BlendSettings.DestFactor = BlendFactor.One;
+    alphaSettings.BlendSettings.SourceFactorAlpha = BlendFactor.One;
+    alphaSettings.BlendSettings.DestFactorAlpha = BlendFactor.One;
+    alphaSettings.DepthSettings.DepthMode = DepthMode.Read;
+    alphaSettings.DepthSettings.DepthCompareFunc = TextureCompareFunc.LessEqual;
+    event.AddRenderTaskRenderPass(alphaSettings, RenderGroup.AdditiveBlend, ColorOutput());
+    
+    // Bloom
+    if (this.Owner.Bloom != null)
+      this.Owner.Bloom.AddRenderTasks(event, colorTarget);
+    
+    // Bring final lighting to gamma space for monitor display
+    this.LinearToGamma(event, colorTarget, final);
+    
+    // Alpha materials
+    alphaSettings.ColorTarget = final;
+    alphaSettings.BlendSettings.DestFactor = BlendFactor.InvSourceAlpha;
+    
+    //
+    ///////
+    ///////////
+    // NOTES /////
+    ////////////////
+    /////////////////
+    // We begin our magic after the AdditiveBlend group is rendered, and after bloom and
+    // the color curve are applied.
+    // 
+    // Every render pass needs a RenderSettings object to refer to for settings telling
+    // it how to render a render group. Note that, above, the AdditiveBlend group was
+    // rendered with a RenderSettings called "alphaSettings". Then, you can see that this
+    // same alphaSettings is modified a bit so that it can be used for the AlphaBlend
+    // group. (This is just a bit of a shortcut; you could just as well use two different
+    // RenderSettings objects.)
+    // 
+    // What we're doing here is we're making a copy of alphaSettings after it has been
+    // modified for use in rendering the AlphaBlend group, because we want our stuff to
+    // be rendered with the same settings as AlphaBlend, with some exceptions we're going
+    // to address now.
+    
+    // Here's the part where we make the copy of the alphaSettings.
+    var destructionSettings = RenderSettings(alphaSettings);
+    // At this point, the variable known as destructionSettings is a perfect duplicate of
+    // the variable known as alphaSettings.
+    
+    // Here's what we're changing:
+    // 
+    // The destruction objects do not need to be seen by the player, so they never need
+    // to be drawn to a color target. They only need to be drawn to the depth target,
+    // which includes the stencil buffer that we really need. Thus, we can potentially
+    // improve performance by asking the engine to skip drawing the Destruction group to
+    // a color target by setting destructionSettings.ColorTarget to null:
+    destructionSettings.ColorTarget = null;
+    // 
+    // Next, we want to be able to write to the stencil buffer, so we need to set the
+    // stencil mode to Enabled:
+    destructionSettings.DepthSettings.StencilMode = StencilMode.Enabled;
+    // 
+    // And when we render these destruction objects, we always want to write to the
+    // stencil buffer, no matter what (as opposed to only writing to the stencil buffer
+    // when, say, the value present in the buffer is greater than some other value, or
+    // something like that). So, we set the stencil comparison function to Always:
+    destructionSettings.DepthSettings.StencilCompareFunc = TextureCompareFunc.Always;
+    // 
+    // And what do we want to do to the stencil buffer when we render destruction
+    // objects? We want to increment it by 1 -- a way of saying, "hey, at least one
+    // destruction object has been drawn in this pixel":
+    destructionSettings.DepthSettings.DepthPassOp = StencilOp.Increment;
+    
+    // Next, we make another copy of the alphaSettings, this time to be used by the
+    // destructible terrain group.
+    var destructibleSettings = RenderSettings(alphaSettings);
+    
+    // These are the differences that it will take:
+    // 
+    // First, of course, we want to use the stencil buffer -- this time to read, not to
+    // write -- so we set the stencil mode to Enabled:
+    destructibleSettings.DepthSettings.StencilMode = StencilMode.Enabled;
+    // 
+    // We configure this RenderSettings object to say that the Destructible group
+    // should only be rendered if the stencil comparison function shows that the value
+    // in the stencil buffer for this pixel is equal to zero. Note that nowhere are we
+    // explicitly mentioning the number 0 here; there's a value that it uses that is zero
+    // by default, but we could change it if we wanted it to be something different.
+    destructibleSettings.DepthSettings.StencilCompareFunc = TextureCompareFunc.Equal;
+    
+    // That's it for the render settings preparations. Now we can proceed with actual
+    // render passes!
+    
+    // Here, we can begin by rendering anything that we've placed in the "background"
+    // group. Right now there is nothing there, but the way that this pipeline is set up
+    // at the moment, we can't sort destructible stuff together with non-destructibles.
+    // If you end up wanting to do that, and you can't figure out how to do it yourself,
+    // feel free to ask me for help.
+    // 
+    // In any case, this is just a normal boring render pass on a normal render group,
+    // using normal boring RenderSettings (you can see that it's using alphaSettings),
+    // but it just happens to be drawn before the other stuff.
+    event.AddRenderTaskRenderPass(alphaSettings, RenderGroup.Background, ColorOutput());
+    
+    // Okay, now, we need to draw the destruction objects first, so that they have a
+    // chance to modify the stencil buffer. So, we render the Destruction group using the
+    // destructionSettings RenderSettings object. Because we don't actually need to see
+    // the pixels of these objects -- we just need them to write to the stencil buffer --
+    // we can render using a NoPixelOutput render pass, which is just a minor optimization
+    // to avoid doing work that doesn't need to be done.
+    if (!this.RenderDestructionNormally)
+      event.AddRenderTaskRenderPass(destructionSettings, RenderGroup.Destruction, NoPixelOutput());
+    // After rendering the destruction objects, we can render the Destructible group using
+    // the destructibleSettings RenderSettings object. We just use a normal ColorOutput
+    // render pass object for it.
+    if (!this.RenderDestructibleNormally)
+      event.AddRenderTaskRenderPass(destructibleSettings, RenderGroup.Destructible, ColorOutput());
+    
+    // Finally, for debug purposes or whatnot, we have a chance to draw the Destruction
+    // and Destructible groups using the alphaSettings RenderSettings and a basic
+    // ColorOutput render pass.
+    if (this.RenderDestructibleNormally)
+      event.AddRenderTaskRenderPass(alphaSettings, RenderGroup.Destructible, ColorOutput());
+    if (this.RenderDestructionNormally)
+      event.AddRenderTaskRenderPass(alphaSettings, RenderGroup.Destruction, ColorOutput());
+    
+    // After all of that, we finally render everything else, in the default AlphaBlend group:
+    event.AddRenderTaskRenderPass(alphaSettings, RenderGroup.AlphaBlend, ColorOutput());
+    
+    this.DrawDebugObjects(event, final, depthTarget);
+  }
+  
+  function LinearToGamma(event : RenderTasksEvent, inputBuffer : RenderTarget, outputBuffer : RenderTarget)
+  {
+    if (this.ToneMap)
+    {
+      var filmicToneMap = FilmicTonemap();
+      filmicToneMap.Texture = inputBuffer.Texture;
+      event.AddRenderTaskPostProcess(outputBuffer, filmicToneMap);
+    }
+    else
+    {
+      var toGamma = ToGamma();
+      toGamma.Texture = inputBuffer.Texture;
+      event.AddRenderTaskPostProcess(outputBuffer, toGamma);
+    }
+  }
+  
+  function DrawDebugObjects(event : RenderTasksEvent, color : RenderTarget, depth : RenderTarget)
+  {
+    if (!this.EditorDebugDraw && this.Space.IsEditorMode || !this.GameDebugDraw && !this.Space.IsEditorMode)
+      return;
+    
+    var debugSettings = RenderSettings();
+    debugSettings.ColorTarget = color;
+    debugSettings.DepthTarget = depth;
+    
+    debugSettings.CullMode = CullMode.Disabled;
+    
+    debugSettings.BlendSettings.BlendMode = BlendMode.Separate;
+    debugSettings.BlendSettings.BlendEquation = BlendEquation.Add;
+    debugSettings.BlendSettings.SourceFactor = BlendFactor.SourceAlpha;
+    debugSettings.BlendSettings.DestFactor = BlendFactor.InvSourceAlpha;
+    debugSettings.BlendSettings.SourceFactorAlpha = BlendFactor.One;
+    debugSettings.BlendSettings.DestFactorAlpha = BlendFactor.One;
+    
+    debugSettings.DepthSettings.DepthMode = DepthMode.Read;
+    debugSettings.DepthSettings.DepthCompareFunc = TextureCompareFunc.LessEqual;
+    
+    event.AddRenderTaskRenderPass(debugSettings, RenderGroup.DebugDraw, ColorOutput());
+    
+    debugSettings.DepthSettings.DepthMode = DepthMode.Disabled;
+    event.AddRenderTaskRenderPass(debugSettings, RenderGroup.DebugDrawOnTop, ColorOutput());
+  }
+}
