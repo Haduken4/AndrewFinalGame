@@ -58,7 +58,7 @@ Level
 			var RenderDestructibleNormally = false
 			var RenderDiffuse = true
 			var RenderSpecular = true
-			var RenderSkybox = false
+			var RenderSkybox = true
 			var Skybox = "5822dec85e380cf1:SimpleSkybox"
 			var ClearColor = Real4{0, 0, 0, 1}
 			var TopColor = Real4{0, 0, 0, 1}
@@ -145,7 +145,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 22.1034069
+			var Size = 19.9999905
 		}
 		EditorCameraController 
 		{
@@ -292,6 +292,7 @@ Level
 			var MoveSpeed = 400
 			var JumpSpeed = 10
 			var MaxMoveResource = 5
+			var SoundToPlay = "null"
 			var Active = false
 		}
 		Health 
@@ -311,6 +312,8 @@ Level
 				var SpeedBool = false
 			}
 			var Active = false
+			var SoundToPlay = "null"
+			var RuneSound = "null"
 		}
 		CustomCollisionVariables 
 		{
@@ -370,6 +373,7 @@ Level
 			var MoveSpeed = 400
 			var JumpSpeed = 10
 			var MaxMoveResource = 5
+			var SoundToPlay = "null"
 			var Active = false
 		}
 		Health 
@@ -389,6 +393,8 @@ Level
 				var SpeedBool = false
 			}
 			var Active = false
+			var SoundToPlay = "null"
+			var RuneSound = "null"
 		}
 	}
 	Cog [ContextId:7]
