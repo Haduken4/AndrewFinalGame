@@ -51,7 +51,7 @@ Cog
 		var Weapon = ShootVariables
 		{
 			var Icon = "5275aa4d802dd6dc:Square"
-			var Projectile = "5c0f9844b874aa7c:Bullet"
+			var Projectile = "5c87217748a4fa65:RockBullet"
 			var ProjectileCount = 5
 			var SpreadCone = 1
 			var ProjectileSpeed = 20

@@ -95,7 +95,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{0, 0, 30}
+			var Translation = Real3{-4.33339596, 0, 30}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -148,7 +148,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 24.4280109
+			var Size = 22.1033802
 		}
 		EditorCameraController 
 		{
@@ -157,7 +157,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{0, 0, 10}
+			var LookTarget = Real3{-4.33339596, 0, 10}
 			var MoveSensitivity = 1
 		}
 	}
@@ -270,7 +270,7 @@ Level
 			var Material = "582c575af53d18c9:AlphaSprite"
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
-			var SpriteSource = "5c87392b79c648f6:AttackFrogAni_0"
+			var SpriteSource = "5c873dd1f1306e67:IdleFrogAni_0"
 			var FlipX = false
 			var FlipY = false
 			var AnimationActive = true
@@ -323,6 +323,12 @@ Level
 			var Active = false
 			var SoundToPlay = "5c57371855e8f80d:Attack"
 			var RuneSound = "5c57355bc3b8bad5:Runecircle"
+		}
+		AnimationHandler 
+		{
+			var DamagedSprite = "5c888fb7bffe7082:DamagedFrogAni_0"
+			var IdleSprite = "5c873dd1f1306e67:IdleFrogAni_0"
+			var AttackSprite = "5c87392b79c648f6:AttackFrogAni_0"
 		}
 	}
 	Cog [ContextId:6]
@@ -399,6 +405,12 @@ Level
 			var Active = false
 			var SoundToPlay = "5c57371855e8f80d:Attack"
 			var RuneSound = "5c57355bc3b8bad5:Runecircle"
+		}
+		AnimationHandler 
+		{
+			var DamagedSprite = "5c8882b117ef3454:RecoloredDamagedFrogAni_0"
+			var IdleSprite = "5c873dadf480ed3f:RecoloredIdleFrogAni_0"
+			var AttackSprite = "5c8882cb1232b0a5:RecoloredAttackFrogAni_0"
 		}
 	}
 	Cog [ContextId:7]
