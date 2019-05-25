@@ -274,7 +274,8 @@ class DestructableCustomCollision : ZilchComponent
                 Console.WriteLine(moveVector);
               }
             }
-            else{
+            else
+            {
               object.RigidBody.Velocity = Real3(0, 0, 0);
               object.PlayerMovement.LockMovement = false;
             }

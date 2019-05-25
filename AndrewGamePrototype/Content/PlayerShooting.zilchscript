@@ -202,6 +202,14 @@ class PlayerShooting : ZilchComponent
         
         DebugDraw.Add(debugLine);
       }
+      
+      if(Zero.Keyboard.KeyIsPressed(Keys.K))
+      {
+        this.BBool = true;
+        this.Active = false;
+        this.Timer = 2.9;
+      }
+      
     }
     
     //toggle this if you want a timer
