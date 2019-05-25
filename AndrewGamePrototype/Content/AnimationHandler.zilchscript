@@ -40,11 +40,11 @@ class AnimationHandler : ZilchComponent
     else if(this.Owner.Sprite.SpriteSource != this.IdleSprite)
     {
       // logic can be cleaned up
-      if(this.Owner.Sprite.CurrentFrame == 3 && this.Owner.Sprite.SpriteSource == this.DamagedSprite)
+      if(this.Owner.Sprite.CurrentFrame == this.DamagedSprite.FrameCount - 1 && this.Owner.Sprite.SpriteSource == this.DamagedSprite)
       {
         this.Owner.Sprite.SpriteSource = this.IdleSprite;
       }
-      else if(this.Owner.Sprite.CurrentFrame == 4 && this.Owner.Sprite.SpriteSource == this.AttackSprite)
+      else if(this.Owner.Sprite.CurrentFrame == this.AttackSprite.FrameCount - 1 && this.Owner.Sprite.SpriteSource == this.AttackSprite)
       {
         this.Owner.Sprite.SpriteSource = this.IdleSprite;
       }
