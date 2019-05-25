@@ -2,7 +2,7 @@
 SoundCue 
 {
 	var PlayMode = SoundPlayMode.Single
-	var Volume = 1
+	var Volume = 0.98999995
 	var UseDecibelVariation = false
 	var VolumeVariation = 0
 	var DecibelVariation = 0
@@ -30,6 +30,10 @@ SoundCue
 	}
 	var SoundTags = Array
 	{
+		Object
+		{
+			var SoundTag = "551c2d5a29ce571d:DefaultSoundTag"
+		}
 	}
 	var Attenuator = "57ca8a6ad262efe5:DefaultNoAttenuation"
 }
