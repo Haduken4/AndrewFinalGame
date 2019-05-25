@@ -40,7 +40,7 @@ class CameraFollow : ZilchComponent
 
   function OnLogicUpdate(event : UpdateEvent)
   {
-    Console.WriteLine(this.Owner.Transform.Translation);
+    //Console.WriteLine(this.Owner.Transform.Translation);
     var i : Integer = 0;
   
     //loop through the array

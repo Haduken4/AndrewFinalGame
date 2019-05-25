@@ -8,8 +8,13 @@ class CustomCollisionVariables : ZilchComponent
   [Property]
   var ExplosionRadius : Real = 5;
   
+  //Highest gradient we can scale
+  [Property]
+  var MaxSlope : Real = 30.0;
+  
   //Stores our position from the last frame
   var LastFramePos : Real3 = Real3();
+  
   
   function Initialize(init : CogInitializer)
   {

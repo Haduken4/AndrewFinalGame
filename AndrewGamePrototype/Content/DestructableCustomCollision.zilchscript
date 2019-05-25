@@ -179,13 +179,105 @@ class DestructableCustomCollision : ZilchComponent
         
         if(CustomMath.Magnitude(object.RigidBody.Velocity) != 0)
         {
-          object.RigidBody.Velocity = Real3(0, 0, 0);
+          //object.RigidBody.Velocity = Real3(0, 0, 0);
           object.Transform.WorldTranslation = object.CustomCollisionVariables.LastFramePos;
           
           //Handle player specific collision resolution
           if(object.PlayerMovement != null)
           {
-            object.PlayerMovement.LockMovement = false;
+            
+            //moving left and colliding below
+            if(object.RigidBody.Velocity.X < 0 && i == 1  && object.PlayerMovement.LockMovement == false)
+            {
+              Console.WriteLine("Moving left");
+              //since the player moved, move to new position
+              //check nearest circle
+              var nearestRadius = 1000.0;
+              var nearestCircle = -1;
+              for(var j = 0; j < this.DestructionCenterArray.Count; ++j)
+              {
+                if(Math.Distance(extentPoints[i], this.DestructionCenterArray[j]) < nearestRadius)
+                {
+                  nearestRadius = Math.Distance(extentPoints[i], this.DestructionCenterArray[j]);
+                  nearestCircle = j;
+                }
+              }
+              
+              //find the slope of the circle at the collision point
+              var radiusVector = extentPoints[i] - this.DestructionCenterArray[nearestCircle];
+              //Console.WriteLine(extentPoints[i]);
+              //Console.WriteLine(Real3(object.Transform.WorldTranslation.XY - objExtents, 0));
+              
+              var tangentVector = Real3(radiusVector.Y, -radiusVector.X, 0);
+              var slope = Math.ATan2(tangentVector.Y, tangentVector.X);
+              radiusVector = Math.Normalize(radiusVector) * this.DestructionRadiusArray[nearestCircle];
+              //Console.WriteLine(180 - Math.ToDegrees(slope));
+              
+              //check if its not too steep
+              if((180 - Math.ToDegrees(slope)) <=  object.CustomCollisionVariables.MaxSlope)
+              {
+                //move object
+                var tangentPoint = this.DestructionCenterArray[nearestCircle] + radiusVector;
+                var moveVector = tangentPoint - Real3(object.CustomCollisionVariables.LastFramePos.XY - objExtents, 0);
+                if(moveVector.Y > 0)
+                {
+                  object.Transform.WorldTranslation += moveVector;
+                }
+                else
+                {
+                  object.Transform.WorldTranslation += Real3(moveVector.X, 0, 0);
+                }
+                //Console.WriteLine(moveVector);
+              }
+            }
+            //if moving to the right and colliding at the bottom
+            else if(object.RigidBody.Velocity.X > 0 && i == 2 && object.PlayerMovement.LockMovement == false)
+            {
+              Console.WriteLine("Moving right");
+              //since the player moved, move to new position
+              //check nearest circle
+              var nearestRadius = 1000.0;
+              var nearestCircle = -1;
+              for(var j = 0; j < this.DestructionCenterArray.Count; ++j)
+              {
+                if(Math.Distance(extentPoints[i], this.DestructionCenterArray[j]) < nearestRadius)
+                {
+                  nearestRadius = Math.Distance(extentPoints[i], this.DestructionCenterArray[j]);
+                  nearestCircle = j;
+                }
+              }
+              
+              //find the slope of the circle at the collision point
+              var radiusVector = extentPoints[i] - this.DestructionCenterArray[nearestCircle];
+              Console.WriteLine(extentPoints[i]);
+              Console.WriteLine(Real3(object.Transform.WorldTranslation.XY - objExtents, 0));
+              
+              var tangentVector = Real3(-radiusVector.Y, radiusVector.X, 0);
+              var slope = Math.ATan2(tangentVector.Y, tangentVector.X);
+              radiusVector = Math.Normalize(radiusVector) * this.DestructionRadiusArray[nearestCircle];
+              Console.WriteLine(slope);
+              
+              //check if its not too steep
+              if(Math.ToDegrees(slope) <=  object.CustomCollisionVariables.MaxSlope)
+              {
+                //move object
+                var tangentPoint = this.DestructionCenterArray[nearestCircle] + radiusVector;
+                var moveVector = tangentPoint - Real3(object.Transform.WorldTranslation.X + objExtents.X, object.Transform.WorldTranslation.Y - objExtents.Y, 0);
+                if(moveVector.Y > 0)
+                {
+                  object.Transform.WorldTranslation += moveVector;
+                }
+                else
+                {
+                  object.Transform.WorldTranslation += Real3(moveVector.X, 0, 0);
+                }
+                Console.WriteLine(moveVector);
+              }
+            }
+            else{
+              object.RigidBody.Velocity = Real3(0, 0, 0);
+              object.PlayerMovement.LockMovement = false;
+            }
           }
         }
         
