@@ -181,6 +181,12 @@ class DestructableCustomCollision : ZilchComponent
         {
           object.RigidBody.Velocity = Real3(0, 0, 0);
           object.Transform.WorldTranslation = object.CustomCollisionVariables.LastFramePos;
+          
+          //Handle player specific collision resolution
+          if(object.PlayerMovement != null)
+          {
+            object.PlayerMovement.LockMovement = false;
+          }
         }
         
       }
