@@ -1,0 +1,20 @@
+[Version:1]
+BinaryContent 
+{
+	BinaryBuilder 
+	{
+		var Name = "RockMesh"
+		var ResourceId = 0x5c3e0deb6e32fc57
+		var LoaderType = "MultiConvexMesh"
+		var Version = 0
+		var FilterTag = ""
+		var ResourceOwner = ""
+	}
+	ContentTags 
+	{
+		var Tags = Array
+		{
+			"MultiConvexMesh"
+		}
+	}
+}

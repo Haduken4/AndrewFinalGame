@@ -437,6 +437,20 @@ class DestructableCustomCollision : ZilchComponent
         return false;
       }
     }
+    else if(this.Owner.MultiConvexMeshCollider != null)
+    {
+      var results = this.Space.PhysicsSpace.CastSphere(Sphere(point, 0.01), 20, CastFilter());
+      
+      foreach(var collision in results)
+      {
+        if(collision.ObjectHit == this.Owner)
+        {
+          return true;
+        }
+      }
+      
+      return false;
+    }
     
     //If we haven't returned anything yet, then this point is colliding with us
     return true;
