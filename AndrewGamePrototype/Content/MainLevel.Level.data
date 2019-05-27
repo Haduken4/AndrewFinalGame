@@ -60,15 +60,22 @@ Level
 	Cog [ContextId:2]
 	{
 		var Name = "Renderer"
-		ForwardRenderer 
+		DestructionRenderer 
 		{
 			var EditorDebugDraw = true
 			var GameDebugDraw = true
+			var RenderDestructionNormally = false
+			var RenderDestructibleNormally = false
 			var RenderDiffuse = true
 			var RenderSpecular = true
-			var RenderSkybox = false
+			var RenderSkybox = true
 			var Skybox = "5822dec85e380cf1:SimpleSkybox"
 			var ClearColor = Real4{0, 0, 0, 1}
+			var TopColor = Real4{0, 0, 0, 1}
+			var BottomColor = Real4{0.100000001, 0.25, 0.5, 1}
+			var Top = 0
+			var Bottom = 1
+			var Exponent = 1
 			var DirectLighting = true
 			var IndirectLighting = true
 			var IndirectIntensity = 1
@@ -95,7 +102,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{-10.1972227, -3.63117599, 20}
+			var Translation = Real3{-1.47473311, 4.56410265, 20}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -148,7 +155,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 60.0832863
+			var Size = 40.2750397
 		}
 		EditorCameraController 
 		{
@@ -157,7 +164,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{-10.1972227, -3.63117599, 0}
+			var LookTarget = Real3{-1.47473311, 4.56410265, 3.81272059e-07}
 			var MoveSensitivity = 1
 		}
 	}
