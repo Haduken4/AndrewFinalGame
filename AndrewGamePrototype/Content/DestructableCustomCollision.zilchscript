@@ -187,7 +187,7 @@ class DestructableCustomCollision : ZilchComponent
           {
             
             //moving left and colliding below
-            if(object.RigidBody.Velocity.X < 0 && i == 1  && object.PlayerMovement.LockMovement == false)
+            if(object.RigidBody.Velocity.X < 0 && i == 1  && object.PlayerMovement.LockMovement == false && this.DestructionCenterArray.Count > 0)
             {
               Console.WriteLine("Moving left");
               //since the player moved, move to new position
@@ -231,7 +231,7 @@ class DestructableCustomCollision : ZilchComponent
               }
             }
             //if moving to the right and colliding at the bottom
-            else if(object.RigidBody.Velocity.X > 0 && i == 2 && object.PlayerMovement.LockMovement == false)
+            else if(object.RigidBody.Velocity.X > 0 && i == 2 && object.PlayerMovement.LockMovement == false && this.DestructionCenterArray.Count > 0)
             {
               Console.WriteLine("Moving right");
               //since the player moved, move to new position

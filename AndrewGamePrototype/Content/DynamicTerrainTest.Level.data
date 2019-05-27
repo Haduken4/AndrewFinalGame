@@ -145,7 +145,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 32.9744339
+			var Size = 12.1306248
 		}
 		EditorCameraController 
 		{
@@ -509,6 +509,39 @@ Level
 		}
 		DestructableCustomCollision 
 		{
+		}
+	}
+	Cog [ContextId:10]
+	{
+		var Name = "PropertyArray"
+		Transform 
+		{
+			var Translation = Real3{-9.04191685, 4.67026281, -3.95234878e-07}
+			var Scale = Real3{1, 1, 1}
+			var Rotation = Quaternion{0, 0, 0, 1}
+		}
+		Sprite 
+		{
+			var Visible = true
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var OverrideBoundingBox = false
+			var LocalAabbCenter = Real3{0, 0, 0}
+			var LocalAabbHalfExtents = Real3{1, 1, 1}
+			var GroupSortValue = 0
+			var Material = "582c575af53d18c9:AlphaSprite"
+			var VertexColor = Real4{1, 1, 1, 1}
+			var GeometryMode = SpriteGeometryMode.ZPlane
+			var SpriteSource = "5586f579ca73ecc2:SquareBordered"
+			var FlipX = false
+			var FlipY = false
+			var AnimationActive = true
+			var AnimationSpeed = 1
+			var StartFrame = 0
+		}
+		PropertyArrayTest 
+		{
+			var ToAdd = 0
 		}
 	}
 }
