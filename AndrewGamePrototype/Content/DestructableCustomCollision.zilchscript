@@ -325,7 +325,7 @@ class DestructableCustomCollision : ZilchComponent
     if(colliding)
     {
       
-      if(this.DestructionCenterArray.Count != 0)
+      /*if(this.DestructionCenterArray.Count != 0)
       {
         //Get a direction directly away from the closest circle
         var dir = Math.Normalize(this.DestructionCenterArray[closestIndex] - this.Owner.Transform.WorldTranslation);
@@ -334,9 +334,10 @@ class DestructableCustomCollision : ZilchComponent
         //Check if the furthest point away on the circle from us and the center of the circle are colliding with us at all
         if(!this.IsPointColliding(this.DestructionCenterArray[closestIndex] + (dir * objRad)))
         {
+          Console.WriteLine("why");
           return;
         }
-      }
+      }*/
       
       //If the other object explodes, explode it
       if(object.CustomCollisionVariables.Explodes)

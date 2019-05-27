@@ -92,7 +92,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{-2.21763086, 2.46240592, 20}
+			var Translation = Real3{-9.04191685, 4.67026281, 20}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -145,7 +145,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 14.8163624
+			var Size = 32.9744339
 		}
 		EditorCameraController 
 		{
@@ -154,7 +154,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{-2.21763086, 2.46240592, -9.69358851e-08}
+			var LookTarget = Real3{-9.04191685, 4.67026281, -3.95234878e-07}
 			var MoveSensitivity = 1
 		}
 	}
