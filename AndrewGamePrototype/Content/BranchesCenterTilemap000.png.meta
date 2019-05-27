@@ -15,6 +15,6 @@ ImageContent
 		var Sampling = SpriteSampling.Nearest
 		var Looping = true
 		var Slices = Real4{0, 0, 0, 0}
-		var Fill = SpriteFill.Stretch
+		var Fill = SpriteFill.Tiled
 	}
 }

@@ -95,7 +95,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{1.66667211, 0, 20}
+			var Translation = Real3{-10.1972227, -3.63117599, 20}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -148,7 +148,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 49.1919861
+			var Size = 60.0832863
 		}
 		EditorCameraController 
 		{
@@ -157,7 +157,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{1.66667211, 0, 0}
+			var LookTarget = Real3{-10.1972227, -3.63117599, 0}
 			var MoveSensitivity = 1
 		}
 	}
@@ -266,7 +266,7 @@ Level
 			var LocalAabbCenter = Real3{0, 0, 0}
 			var LocalAabbHalfExtents = Real3{1, 1, 1}
 			var GroupSortValue = 0
-			var Material = "582c575af53d18c9:AlphaSprite"
+			var Material = "5c888481afad634e:BackgroundSprite"
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var SpriteSource = "5c777e549c258059:BackgroundImage"
@@ -295,7 +295,7 @@ Level
 			var LocalAabbCenter = Real3{0, 0, 0}
 			var LocalAabbHalfExtents = Real3{1, 1, 1}
 			var GroupSortValue = 0
-			var Material = "582c575af53d18c9:AlphaSprite"
+			var Material = "5c888481afad634e:BackgroundSprite"
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var SpriteSource = "5c777e549c2748e9:BackgroundBranch"
@@ -488,7 +488,7 @@ Level
 		Transform 
 		{
 			var Translation = Real3{0.208045959, -7.29312849, 0}
-			var Scale = Real3{70, 10, 1}
+			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
 		Sprite 
@@ -500,10 +500,10 @@ Level
 			var LocalAabbCenter = Real3{0, 0, 0}
 			var LocalAabbHalfExtents = Real3{1, 1, 1}
 			var GroupSortValue = 0
-			var Material = "582c575af53d18c9:AlphaSprite"
+			var Material = "5c887ab691cc6823:DestructibleSprite"
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
-			var SpriteSource = "5275aa4d802dd6dc:Square"
+			var SpriteSource = "5c87317045d7a76d:BranchesCenterTilemap000"
 			var FlipX = false
 			var FlipY = false
 			var AnimationActive = true
@@ -517,20 +517,68 @@ Level
 			var Material = "4de020863e872da8:DefaultPhysicsMaterial"
 			var CollisionGroup = "4e740859314e5515:DefaultGroup"
 			var Offset = Real3{0, 0, 0}
-			var HalfSize = Real3{0.5, 0.5, 0.5}
-		}
-		RigidBody 
-		{
-			var Velocity = Real3{0, 0, 0}
-			var AngularVelocity = Real3{0, 0, 0}
-			var DynamicState = RigidBodyDynamicState.Static
-			var AllowSleep = true
-			var Asleep = false
-			var RotationLocked = false
-			var Mode2D = Mode2DStates.InheritFromSpace
+			var HalfSize = Real3{25, 5, 0.5}
 		}
 		DestructableCustomCollision 
 		{
+		}
+		Area 
+		{
+			var Size = Real2{50, 10}
+			var Origin = Location.Center
+		}
+	}
+	Cog [InheritId:"5c0f9844b874aa7c:Bullet"][ContextId:10]
+	{
+		Transform 
+		{
+			var Translation = Real3{-15.9076891, 9.36647797, -4.99000168}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.5, 0.5, 1}
+		}
+	}
+	Cog [ContextId:11]
+	{
+		var Name = "BulletArea"
+		Transform 
+		{
+			var Translation = Real3{-12.7505064, 9.90505314, 0}
+			var Scale = Real3{1, 1, 1}
+			var Rotation = Quaternion{0, 0, 0, 1}
+		}
+		Sprite 
+		{
+			var Visible = true
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var OverrideBoundingBox = false
+			var LocalAabbCenter = Real3{0, 0, 0}
+			var LocalAabbHalfExtents = Real3{1, 1, 1}
+			var GroupSortValue = 0
+			var Material = "582c575af53d18c9:AlphaSprite"
+			var VertexColor = Real4{1, 1, 1, 0}
+			var GeometryMode = SpriteGeometryMode.ZPlane
+			var SpriteSource = "5274db4c2e7c11f9:Circle"
+			var FlipX = false
+			var FlipY = false
+			var AnimationActive = true
+			var AnimationSpeed = 1
+			var StartFrame = 0
+		}
+		SphereCollider 
+		{
+			var Ghost = false
+			var SendsEvents = true
+			var Material = "4de020863e872da8:DefaultPhysicsMaterial"
+			var CollisionGroup = "4e740859314e5515:DefaultGroup"
+			var Offset = Real3{0, 0, 0}
+			var Radius = 0.5
+		}
+		CustomCollisionVariables 
+		{
+			var Explodes = true
+			var ExplosionRadius = 5
+			var MaxSlope = 30
 		}
 	}
 }

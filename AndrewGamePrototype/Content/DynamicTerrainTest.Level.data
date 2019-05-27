@@ -145,7 +145,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 12.1306248
+			var Size = 18.0967598
 		}
 		EditorCameraController 
 		{
@@ -542,6 +542,15 @@ Level
 		PropertyArrayTest 
 		{
 			var ToAdd = 0
+		}
+	}
+	Cog [InheritId:"5c32cc1e52394947:TestBullet"][ContextId:11]
+	{
+		Transform 
+		{
+			var Translation = Real3{-10.369669, 4.67026281, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.5, 0.5, 1}
 		}
 	}
 }
