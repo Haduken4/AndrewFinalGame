@@ -1,0 +1,38 @@
+class PropertyArrayTest : ZilchComponent
+{
+  
+  [Display]
+  var RealArray : Array[Real] = Array[Real]();
+  
+  [Property]
+  var ToAdd : Real = 0;
+  
+  
+  function Initialize(init : CogInitializer)
+  {
+    //Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+  }
+  
+  
+  [Display]
+  function AddToArray()
+  {
+    this.RealArray.Add(this.ToAdd);
+  }
+  
+  [Display]
+  function ClearArray()
+  {
+    this.RealArray.Clear();
+  }
+  
+  [Display]
+  function DisplayArray()
+  {
+    Console.WriteLine(this.RealArray);
+  }
+}
