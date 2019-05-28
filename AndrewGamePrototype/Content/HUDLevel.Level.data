@@ -185,7 +185,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{-9.31639576, -5.50824356, 20}
+			var Translation = Real3{13.1462946, 5.81412935, 20}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -238,7 +238,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 24.4281616
+			var Size = 9.93178368
 		}
 		EditorCameraController 
 		{
@@ -247,7 +247,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{-9.31639576, -5.50824356, -2.20636679e-07}
+			var LookTarget = Real3{13.1462946, 5.81412935, -2.20636679e-07}
 			var MoveSensitivity = 1
 		}
 	}
@@ -331,7 +331,7 @@ Level
 		var Name = "PlayerMoveResource"
 		Transform 
 		{
-			var Translation = Real3{-11.9864912, -8.81629944, 0.100000001}
+			var Translation = Real3{-15.8385601, -8.81629944, 0.100000001}
 			var Scale = Real3{0.854924619, 1.81679869, 1}
 			var Rotation = Quaternion{0, 0, 0.707106769, 0.707106829}
 		}
@@ -365,7 +365,7 @@ Level
 		var Name = "PlayerHealth"
 		Transform 
 		{
-			var Translation = Real3{-9.51334, -8.68257523, 0.100000001}
+			var Translation = Real3{-13.3654089, -8.68257523, 0.100000001}
 			var Scale = Real3{0.817241132, 1.90947747, 1}
 			var Rotation = Quaternion{0, 0, 0.707106769, 0.707106888}
 		}
@@ -399,7 +399,7 @@ Level
 		var Name = "TurnStateText"
 		Transform 
 		{
-			var Translation = Real3{-13, -2.75, 0.100000001}
+			var Translation = Real3{-16, -2.25, 0.100000001}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
@@ -427,7 +427,7 @@ Level
 		var Name = "PlayerText"
 		Transform 
 		{
-			var Translation = Real3{-13, -1.75, 0.100000001}
+			var Translation = Real3{-16, -0.5, 0.100000001}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
@@ -455,8 +455,8 @@ Level
 		var Name = "WeaponDisplay1"
 		Transform 
 		{
-			var Translation = Real3{-11.0999994, 8, 0.100000001}
-			var Scale = Real3{1, 1, 1}
+			var Translation = Real3{10.9940033, 5.55571079, 0.100000001}
+			var Scale = Real3{0.5, 0.5, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
 		Sprite 
@@ -484,8 +484,8 @@ Level
 		var Name = "WeaponDisplay2"
 		Transform 
 		{
-			var Translation = Real3{-9.5, 8, 0.100000001}
-			var Scale = Real3{1.5, 1.5, 1}
+			var Translation = Real3{13, 5.99303484, 0.100000001}
+			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
 		Sprite 
@@ -513,7 +513,7 @@ Level
 		var Name = "WeaponDisplayText"
 		Transform 
 		{
-			var Translation = Real3{-9.5, 9.59999943, 0.100000001}
+			var Translation = Real3{13, 8.5, 0.100000001}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
@@ -541,8 +541,8 @@ Level
 		var Name = "WeaponDisplay3"
 		Transform 
 		{
-			var Translation = Real3{-7.90000057, 8, 0.100000001}
-			var Scale = Real3{1, 1, 1}
+			var Translation = Real3{14.9912338, 5.56411743, 0.100000001}
+			var Scale = Real3{0.5, 0.5, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
 		Sprite 
@@ -596,39 +596,10 @@ Level
 	}
 	Cog [ContextId:14]
 	{
-		var Name = "Sprite"
-		Transform 
-		{
-			var Translation = Real3{-9.5, 8.5, -0.100000001}
-			var Scale = Real3{5, 3, 1}
-			var Rotation = Quaternion{0, 0, 0, 1}
-		}
-		Sprite 
-		{
-			var Visible = true
-			var ViewCulling = true
-			var VisibilityEvents = true
-			var OverrideBoundingBox = false
-			var LocalAabbCenter = Real3{0, 0, 0}
-			var LocalAabbHalfExtents = Real3{1, 1, 1}
-			var GroupSortValue = 0
-			var Material = "582c575af53d18c9:AlphaSprite"
-			var VertexColor = Real4{0.475000024, 0.475000024, 0.475000024, 0.300000012}
-			var GeometryMode = SpriteGeometryMode.ZPlane
-			var SpriteSource = "5275aa4d802dd6dc:Square"
-			var FlipX = false
-			var FlipY = false
-			var AnimationActive = true
-			var AnimationSpeed = 1
-			var StartFrame = 0
-		}
-	}
-	Cog [ContextId:15]
-	{
 		var Name = "SpriteText"
 		Transform 
 		{
-			var Translation = Real3{-10.5255156, -6.31804562, 0.25}
+			var Translation = Real3{-14.3775845, -6.31804562, 0.25}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
@@ -651,12 +622,12 @@ Level
 			var TextAlign = TextAlign.Left
 		}
 	}
-	Cog [ContextId:16]
+	Cog [ContextId:15]
 	{
 		var Name = "SpriteText"
 		Transform 
 		{
-			var Translation = Real3{-12.8549194, -6.25, 0.25}
+			var Translation = Real3{-16.7069893, -6.25, 0.25}
 			var Scale = Real3{0.564592421, 0.688994646, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
@@ -679,12 +650,41 @@ Level
 			var TextAlign = TextAlign.Left
 		}
 	}
+	Cog [ContextId:16]
+	{
+		var Name = "HUDMeter"
+		Transform 
+		{
+			var Translation = Real3{-15.8641977, -5.85624599, 1}
+			var Scale = Real3{4, 4, 1}
+			var Rotation = Quaternion{0, 0, 0, 1}
+		}
+		Sprite 
+		{
+			var Visible = true
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var OverrideBoundingBox = false
+			var LocalAabbCenter = Real3{0, 0, 0}
+			var LocalAabbHalfExtents = Real3{1, 1, 1}
+			var GroupSortValue = 0
+			var Material = "582c575af53d18c9:AlphaSprite"
+			var VertexColor = Real4{1, 1, 1, 1}
+			var GeometryMode = SpriteGeometryMode.ZPlane
+			var SpriteSource = "5cb6e042ebea72b6:HUDMeter"
+			var FlipX = false
+			var FlipY = false
+			var AnimationActive = true
+			var AnimationSpeed = 1
+			var StartFrame = 0
+		}
+	}
 	Cog [ContextId:17]
 	{
 		var Name = "HUDMeter"
 		Transform 
 		{
-			var Translation = Real3{-12.0121288, -5.85624599, 1}
+			var Translation = Real3{-13.3641977, -5.85624599, 1}
 			var Scale = Real3{4, 4, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
@@ -710,11 +710,11 @@ Level
 	}
 	Cog [ContextId:18]
 	{
-		var Name = "HUDMeter"
+		var Name = "HUDPlayerDisplay"
 		Transform 
 		{
-			var Translation = Real3{-9.51212883, -5.85624599, 1}
-			var Scale = Real3{4, 4, 1}
+			var Translation = Real3{-14.6048794, -0.493224263, 0}
+			var Scale = Real3{1.5, 1.5, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
 		Sprite 
@@ -729,7 +729,152 @@ Level
 			var Material = "582c575af53d18c9:AlphaSprite"
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
-			var SpriteSource = "5cb6e042ebea72b6:HUDMeter"
+			var SpriteSource = "5cb6efa771199fa4:HUDPlayerDisplay"
+			var FlipX = false
+			var FlipY = false
+			var AnimationActive = true
+			var AnimationSpeed = 1
+			var StartFrame = 0
+		}
+	}
+	Cog [ContextId:19]
+	{
+		var Name = "HUDPlayerDisplay"
+		Transform 
+		{
+			var Translation = Real3{-14.6048794, -2.24322414, 0}
+			var Scale = Real3{1.5, 1.5, 1}
+			var Rotation = Quaternion{0, 0, 0, 1}
+		}
+		Sprite 
+		{
+			var Visible = true
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var OverrideBoundingBox = false
+			var LocalAabbCenter = Real3{0, 0, 0}
+			var LocalAabbHalfExtents = Real3{1, 1, 1}
+			var GroupSortValue = 0
+			var Material = "582c575af53d18c9:AlphaSprite"
+			var VertexColor = Real4{1, 1, 1, 1}
+			var GeometryMode = SpriteGeometryMode.ZPlane
+			var SpriteSource = "5cb6efa771199fa4:HUDPlayerDisplay"
+			var FlipX = false
+			var FlipY = false
+			var AnimationActive = true
+			var AnimationSpeed = 1
+			var StartFrame = 0
+		}
+	}
+	Cog [ContextId:20]
+	{
+		var Name = "HUDWeaponDisplay"
+		Transform 
+		{
+			var Translation = Real3{12.9972715, 6.04667091, 0}
+			var Scale = Real3{2, 2, 3}
+			var Rotation = Quaternion{0, 0, 0, 1}
+		}
+		Sprite 
+		{
+			var Visible = true
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var OverrideBoundingBox = false
+			var LocalAabbCenter = Real3{0, 0, 0}
+			var LocalAabbHalfExtents = Real3{1, 1, 1}
+			var GroupSortValue = 0
+			var Material = "582c575af53d18c9:AlphaSprite"
+			var VertexColor = Real4{1, 1, 1, 1}
+			var GeometryMode = SpriteGeometryMode.ZPlane
+			var SpriteSource = "5cb6efb47f1889ca:HUDWeaponDisplay"
+			var FlipX = false
+			var FlipY = false
+			var AnimationActive = true
+			var AnimationSpeed = 1
+			var StartFrame = 0
+		}
+	}
+	Cog [ContextId:21]
+	{
+		var Name = "HUDWeaponDisplay"
+		Transform 
+		{
+			var Translation = Real3{10.9972715, 5.54667091, 0}
+			var Scale = Real3{1.5, 1.5, 3}
+			var Rotation = Quaternion{0, 0, 0, 1}
+		}
+		Sprite 
+		{
+			var Visible = true
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var OverrideBoundingBox = false
+			var LocalAabbCenter = Real3{0, 0, 0}
+			var LocalAabbHalfExtents = Real3{1, 1, 1}
+			var GroupSortValue = 0
+			var Material = "582c575af53d18c9:AlphaSprite"
+			var VertexColor = Real4{1, 1, 1, 1}
+			var GeometryMode = SpriteGeometryMode.ZPlane
+			var SpriteSource = "5cb6efb47f1889ca:HUDWeaponDisplay"
+			var FlipX = false
+			var FlipY = false
+			var AnimationActive = true
+			var AnimationSpeed = 1
+			var StartFrame = 0
+		}
+	}
+	Cog [ContextId:22]
+	{
+		var Name = "HUDWeaponDisplay"
+		Transform 
+		{
+			var Translation = Real3{14.9972715, 5.54667091, 0}
+			var Scale = Real3{1.5, 1.5, 3}
+			var Rotation = Quaternion{0, 0, 0, 1}
+		}
+		Sprite 
+		{
+			var Visible = true
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var OverrideBoundingBox = false
+			var LocalAabbCenter = Real3{0, 0, 0}
+			var LocalAabbHalfExtents = Real3{1, 1, 1}
+			var GroupSortValue = 0
+			var Material = "582c575af53d18c9:AlphaSprite"
+			var VertexColor = Real4{1, 1, 1, 1}
+			var GeometryMode = SpriteGeometryMode.ZPlane
+			var SpriteSource = "5cb6efb47f1889ca:HUDWeaponDisplay"
+			var FlipX = false
+			var FlipY = false
+			var AnimationActive = true
+			var AnimationSpeed = 1
+			var StartFrame = 0
+		}
+	}
+	Cog [ContextId:23]
+	{
+		var Name = "HUDPlayerDisplay"
+		Transform 
+		{
+			var Translation = Real3{13, 8.5, 0}
+			var Scale = Real3{1.5, 1.5, 1}
+			var Rotation = Quaternion{0, 0, 0, 1}
+		}
+		Sprite 
+		{
+			var Visible = true
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var OverrideBoundingBox = false
+			var LocalAabbCenter = Real3{0, 0, 0}
+			var LocalAabbHalfExtents = Real3{1, 1, 1}
+			var GroupSortValue = 0
+			var Material = "582c575af53d18c9:AlphaSprite"
+			var VertexColor = Real4{1, 1, 1, 1}
+			var GeometryMode = SpriteGeometryMode.ZPlane
+			var SpriteSource = "5cb6efa771199fa4:HUDPlayerDisplay"
 			var FlipX = false
 			var FlipY = false
 			var AnimationActive = true

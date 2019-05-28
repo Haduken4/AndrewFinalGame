@@ -4,8 +4,8 @@ Cog
 	var Name = "CastCircle"
 	Transform 
 	{
-		var Translation = Real3{-4.83336353, 0, 0}
-		var Scale = Real3{0.400000006, 0.400000006, 1}
+		var Translation = Real3{0, 0, 0}
+		var Scale = Real3{1, 1, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
 	Sprite 
@@ -20,7 +20,7 @@ Cog
 		var Material = "582c575af53d18c9:AlphaSprite"
 		var VertexColor = Real4{0.829999983, 0.0664000511, 0.0664000511, 1}
 		var GeometryMode = SpriteGeometryMode.ZPlane
-		var SpriteSource = "5c873daa391991b4:CastingCircleAnimation_1"
+		var SpriteSource = "5cb6ed9f25373883:CastingCircleAnimation_0"
 		var FlipX = false
 		var FlipY = false
 		var AnimationActive = true
