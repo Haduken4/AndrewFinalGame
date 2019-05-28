@@ -11,8 +11,11 @@ class ScreenShake : ZilchComponent
   [Property]
   var ShakeMagnitude : Real = 100;
 
+  [Property]
+  var SoundToPlay : SoundCue = null;
+
   var ShakeEnabled : Boolean = false;
-  
+
   var InitialPosition : Real3;
   
   var RandomGenerator : Random = Random();
@@ -31,10 +34,11 @@ class ScreenShake : ZilchComponent
 
       if(this.ShakeDuration > 0)
       {
+          this.Space.SoundSpace.PlayCue(this.SoundToPlay);
         this.Space.SoundSpace.PlayCue(SoundCue.Screenshake);
         // set camera to a random position
         this.Owner.Transform.Translation = Real3(this.InitialPosition.X + randx * this.ShakeMagnitude, 
-          this.InitialPosition.Y + randy * this.ShakeMagnitude, this.InitialPosition.Z);
+        this.InitialPosition.Y + randy * this.ShakeMagnitude, this.InitialPosition.Z);
         this.ShakeDuration -= event.Dt;
       }
       else
@@ -43,7 +47,6 @@ class ScreenShake : ZilchComponent
         this.ShakeDuration = 0;
         // update the screenshake's initial position while the timer is not running
         this.InitialPosition = this.Owner.Transform.Translation;
-
       }
     }
   }

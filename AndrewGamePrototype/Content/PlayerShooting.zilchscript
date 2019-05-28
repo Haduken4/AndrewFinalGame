@@ -27,6 +27,9 @@ class ShootVariables
   //If you want the bullets to have variation in speed
   [Property]
   var SpeedBool : Boolean = false;
+  
+  [Property]
+  var ShootSound : SoundCue = null;
 }
 
 class PlayerShooting : ZilchComponent
@@ -40,9 +43,6 @@ class PlayerShooting : ZilchComponent
   
   [Property]
   var Active : Boolean = true;
-  
-  [Property]
-  var SoundToPlay : SoundCue = null;
   
   [Property]
   var RuneSound : SoundCue = null;
@@ -116,7 +116,7 @@ class PlayerShooting : ZilchComponent
       {
         power = CustomMath.Magnitude(dir) / this.MaxAimDist;
       }
-      this.Space.SoundSpace.PlayCue(this.SoundToPlay);
+      this.Space.SoundSpace.PlayCue(this.Weapon.ShootSound);
       if(this.Weapon.Projectile != null)
       {
 

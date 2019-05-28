@@ -4,7 +4,7 @@ Cog
 	var Name = "LobWeapon"
 	Transform 
 	{
-		var Translation = Real3{0, 0, 0}
+		var Translation = Real3{-8.95988083, -1.40454125, -2.81008624e-07}
 		var Scale = Real3{1, 0.5, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
@@ -57,6 +57,7 @@ Cog
 			var ProjectileSpeed = 20
 			var SpeedVariation = 0
 			var SpeedBool = false
+			var ShootSound = "5c57371855e8f80d:Attack"
 		}
 	}
 }
