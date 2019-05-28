@@ -1,0 +1,20 @@
+class DeathAfterAni : ZilchComponent
+{
+  [Dependency]
+  var Sprite : Sprite;
+  
+  function Initialize(init : CogInitializer)
+  {
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    //Check to see if its on the owner last frame
+    if(this.Sprite.CurrentFrame == this.Sprite.SpriteSource.FrameCount -1)
+    {
+      //Destroy owner
+      this.Owner.Destroy();
+    }
+  }
+}

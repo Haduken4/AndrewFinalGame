@@ -53,10 +53,11 @@ Cog
 	}
 	SpawnOnDeath 
 	{
-		var ObjectToSpawn = "5cbf479d4e8e1d82:Explosion"
+		var ObjectToSpawn = "5cb6e021f919fc3f:ExplosionCircular"
 		var OffsetSpawn = false
 		var SpawnOffset = 0
 		var DIE = true
+		var SoundToPlay = "null"
 	}
 	TimedDeath 
 	{
