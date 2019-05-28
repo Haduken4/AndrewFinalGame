@@ -1,0 +1,88 @@
+[Version:1]
+Cog 
+{
+	var Name = "ItemFruit"
+	Transform 
+	{
+		var Translation = Real3{-7.33341885, 2.16668177, 10}
+		var Scale = Real3{1, 1, 1}
+		var Rotation = Quaternion{0, 0, 0, 1}
+	}
+	Sprite 
+	{
+		var Visible = true
+		var ViewCulling = true
+		var VisibilityEvents = true
+		var OverrideBoundingBox = false
+		var LocalAabbCenter = Real3{0, 0, 0}
+		var LocalAabbHalfExtents = Real3{1, 1, 1}
+		var GroupSortValue = 0
+		var Material = "582c575af53d18c9:AlphaSprite"
+		var VertexColor = Real4{1, 1, 1, 1}
+		var GeometryMode = SpriteGeometryMode.ZPlane
+		var SpriteSource = "5c8dbe6f9c688a2a:TinyFruit"
+		var FlipX = false
+		var FlipY = false
+		var AnimationActive = true
+		var AnimationSpeed = 1
+		var StartFrame = 0
+	}
+	ItemPickup 
+	{
+		var Weapon = ShootVariables
+		{
+			var Icon = "null"
+			var Projectile = "null"
+			var ProjectileCount = 1
+			var SpreadCone = 0.785398185
+			var ProjectileSpeed = 100
+			var SpeedVariation = 0
+			var SpeedBool = false
+		}
+	}
+	Hierarchy 
+	{
+		Cog [Id:0x5c8dc41044df8680]
+		{
+			var Name = "WeaponSpawn"
+			Transform 
+			{
+				var Translation = Real3{0, -0.666669965, 0}
+				var Scale = Real3{1, 1, 1}
+				var Rotation = Quaternion{0, 0, 0, 1}
+			}
+			Sprite 
+			{
+				var Visible = true
+				var ViewCulling = true
+				var VisibilityEvents = true
+				var OverrideBoundingBox = false
+				var LocalAabbCenter = Real3{0, 0, 0}
+				var LocalAabbHalfExtents = Real3{1, 1, 1}
+				var GroupSortValue = 0
+				var Material = "582c575af53d18c9:AlphaSprite"
+				var VertexColor = Real4{1, 1, 1, 1}
+				var GeometryMode = SpriteGeometryMode.ZPlane
+				var SpriteSource = "5586f579ca73ecc2:SquareBordered"
+				var FlipX = false
+				var FlipY = false
+				var AnimationActive = true
+				var AnimationSpeed = 1
+				var StartFrame = 0
+			}
+			ItemSpawn 
+			{
+				var ToAdd = ShootVariables
+				{
+					var Icon = "null"
+					var Projectile = "null"
+					var ProjectileCount = 1
+					var SpreadCone = 0.785398185
+					var ProjectileSpeed = 100
+					var SpeedVariation = 0
+					var SpeedBool = false
+				}
+			}
+		}
+	}
+}
