@@ -4,7 +4,7 @@ Cog
 	var Name = "Explosion"
 	Transform 
 	{
-		var Translation = Real3{-16.2496281, 3.20146036, 0}
+		var Translation = Real3{0, 0, 0}
 		var Scale = Real3{3, 3, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
@@ -56,7 +56,7 @@ Cog
 	}
 	SpawnOnDeath 
 	{
-		var ObjectToSpawn = "5c833623faefda32:ExplosionParticles"
+		var ObjectToSpawn = "5cb6e021f919fc3f:ExplosionCircular"
 		var OffsetSpawn = false
 		var SpawnOffset = 0
 		var DIE = false

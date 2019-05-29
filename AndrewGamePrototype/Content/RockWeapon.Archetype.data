@@ -4,7 +4,7 @@ Cog
 	var Name = "RockWeapon"
 	Transform 
 	{
-		var Translation = Real3{-6.55527067, 8.14065552, 0}
+		var Translation = Real3{-7.68713903, -1.58501816, 0}
 		var Scale = Real3{1, 0.5, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
@@ -57,6 +57,7 @@ Cog
 			var ProjectileSpeed = 20
 			var SpeedVariation = 0
 			var SpeedBool = false
+			var ShootSound = "5c528ff8af1f2fae:Frogrunes"
 		}
 	}
 }

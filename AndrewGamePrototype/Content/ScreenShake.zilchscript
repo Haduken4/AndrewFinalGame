@@ -12,7 +12,7 @@ class ScreenShake : ZilchComponent
   var ShakeMagnitude : Real = 100;
 
   [Property]
-  var SoundToPlay : SoundCue = null;
+  var SoundToPlay : SoundCue = null; 
 
   var ShakeEnabled : Boolean = false;
 

@@ -102,7 +102,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{-20.881485, -0.261853695, 19.5576591}
+			var Translation = Real3{12.9193134, 1.70966864, 21.1585636}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{-0.0340181589, -0.0235457812, -0.000801671296, 0.999143481}
 		}
@@ -155,7 +155,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 29.8369179
+			var Size = 44.5114441
 		}
 		EditorCameraController 
 		{
@@ -164,7 +164,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0.0680683479
 			var HorizontalAngle = 0.0471231788
-			var LookTarget = Real3{-19.9415512, -1.62216973, -0.37387374}
+			var LookTarget = Real3{13.8592463, 0.349352598, 1.22702992}
 			var MoveSensitivity = 1
 		}
 	}
@@ -367,6 +367,7 @@ Level
 			var JumpSpeed = 10
 			var MaxMoveResource = 5
 			var SoundToPlay = "5c57355bc3ba7392:Jump"
+			var JumpAnimation = "5c5298f4542290d6:CloudSwoosh"
 			var Active = false
 		}
 		Health 
@@ -384,9 +385,9 @@ Level
 				var ProjectileSpeed = 30
 				var SpeedVariation = 0
 				var SpeedBool = false
+				var ShootSound = "null"
 			}
 			var Active = false
-			var SoundToPlay = "5c57371855e8f80d:Attack"
 			var RuneSound = "5c57355bc3b8bad5:Runecircle"
 		}
 		AnimationHandler 
@@ -400,6 +401,9 @@ Level
 			var Explodes = false
 			var ExplosionRadius = 5
 			var MaxSlope = 30
+		}
+		Hierarchy 
+		{
 		}
 	}
 	Cog [ContextId:8]
@@ -455,6 +459,7 @@ Level
 			var JumpSpeed = 10
 			var MaxMoveResource = 5
 			var SoundToPlay = "5c57355bc3ba7392:Jump"
+			var JumpAnimation = "5c5298f4542290d6:CloudSwoosh"
 			var Active = false
 		}
 		Health 
@@ -472,9 +477,9 @@ Level
 				var ProjectileSpeed = 30
 				var SpeedVariation = 0
 				var SpeedBool = false
+				var ShootSound = "null"
 			}
 			var Active = false
-			var SoundToPlay = "5c57371855e8f80d:Attack"
 			var RuneSound = "5c57355bc3b8bad5:Runecircle"
 		}
 		AnimationHandler 
