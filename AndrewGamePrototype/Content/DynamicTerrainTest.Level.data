@@ -99,7 +99,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{-7.04335451, 0.220722497, 20}
+			var Translation = Real3{-5.37667227, 2.22073984, 20}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -152,7 +152,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 8.13140202
+			var Size = 22.1034279
 		}
 		EditorCameraController 
 		{
@@ -161,7 +161,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{-7.04335451, 0.220722497, -3.07874899e-07}
+			var LookTarget = Real3{-5.37667227, 2.22073984, -3.07874899e-07}
 			var MoveSensitivity = 1
 		}
 	}
@@ -433,7 +433,7 @@ Level
 		}
 		TileMap 
 		{
-			var Source = "5c3acb3c48c142c2:DynamicTerrainTest_TileMap06"
+			var Source = "5c8f0965da72e90b:DynamicTerrainTest_TileMap07"
 			var PaletteName = "5c0f869da6af70e1:GamePalette"
 			var MeshThickness = 1.20000005
 		}
