@@ -48,7 +48,7 @@ Level
 			var MaxSpawnX = 20
 			var MaxSpawnY = 15
 			var MinSpawnY = 5
-			var MaxSpawnCount = 15
+			var MaxSpawnCount = 0
 			var MinDiameterSize = 1
 			var MaxDiameterSize = 4
 		}
@@ -60,15 +60,22 @@ Level
 	Cog [ContextId:2]
 	{
 		var Name = "Renderer"
-		ForwardRenderer 
+		DestructionRenderer 
 		{
 			var EditorDebugDraw = true
 			var GameDebugDraw = true
+			var RenderDestructionNormally = false
+			var RenderDestructibleNormally = false
 			var RenderDiffuse = true
 			var RenderSpecular = true
-			var RenderSkybox = false
+			var RenderSkybox = true
 			var Skybox = "5822dec85e380cf1:SimpleSkybox"
 			var ClearColor = Real4{0, 0, 0, 1}
+			var TopColor = Real4{0, 0, 0, 1}
+			var BottomColor = Real4{0.100000001, 0.25, 0.5, 1}
+			var Top = 0
+			var Bottom = 1
+			var Exponent = 1
 			var DirectLighting = true
 			var IndirectLighting = true
 			var IndirectIntensity = 1
@@ -95,7 +102,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{-5.16672945, 1.5000118, 30}
+			var Translation = Real3{-10.9171629, -2.16556072, 30}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -148,7 +155,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 14.8163443
+			var Size = 10.9762154
 		}
 		EditorCameraController 
 		{
@@ -157,7 +164,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{-5.16672945, 1.5000118, 10}
+			var LookTarget = Real3{-10.9171629, -2.16556072, 10}
 			var MoveSensitivity = 1
 		}
 	}
@@ -246,6 +253,7 @@ Level
 		{
 			var ShakeDuration = 1
 			var ShakeMagnitude = 0.699999988
+			var SoundToPlay = "null"
 		}
 	}
 	Cog [ContextId:5]
@@ -318,9 +326,9 @@ Level
 				var ProjectileSpeed = 30
 				var SpeedVariation = 0
 				var SpeedBool = false
+				var ShootSound = "null"
 			}
 			var Active = false
-			var SoundToPlay = "5c57371855e8f80d:Attack"
 			var RuneSound = "5c57355bc3b8bad5:Runecircle"
 		}
 		AnimationHandler 
@@ -400,9 +408,9 @@ Level
 				var ProjectileSpeed = 30
 				var SpeedVariation = 0
 				var SpeedBool = false
+				var ShootSound = "null"
 			}
 			var Active = false
-			var SoundToPlay = "5c57371855e8f80d:Attack"
 			var RuneSound = "5c57355bc3b8bad5:Runecircle"
 		}
 		AnimationHandler 
@@ -443,70 +451,11 @@ Level
 			var MeshThickness = 1.20000005
 		}
 	}
-	Cog [InheritId:"5cbf45c9f4ae80b7:PlantWeaponPickup"][ContextId:8]
-	{
-		var Name = "PlantWeapon"
-		Transform 
-		{
-			var Translation = Real3{-3.40336561, -1.66881979, -2.81008624e-07}
-			var Rotation = Quaternion{0, 0, 0, 1}
-			var Scale = Real3{1, 0.5, 1}
-		}
-	}
-	Cog [InheritId:"5cbf4710572ae165:ExplosionWeaponPickup"][ContextId:9]
-	{
-		var Name = "ExplosionWeapon"
-		Transform 
-		{
-			var Translation = Real3{-10.9848814, -1.40454125, -2.81008624e-07}
-			var Rotation = Quaternion{0, 0, 0, 1}
-			var Scale = Real3{1, 0.5, 1}
-		}
-	}
-	Cog [InheritId:"5c85ed4daa32760c:LobWeapon"][ContextId:10]
-	{
-		var Name = "LobWeapon"
-		Transform 
-		{
-			var Translation = Real3{-8.95988083, -1.40454125, -2.81008624e-07}
-			var Rotation = Quaternion{0, 0, 0, 1}
-			var Scale = Real3{1, 0.5, 1}
-		}
-	}
-	Cog [InheritId:"5c85da8abb1395cf:WeaponSpawner"][ContextId:11]
+	Cog [InheritId:"5c85da8abb1395cf:WeaponSpawner"][ContextId:8]
 	{
 		Transform 
 		{
-			var Translation = Real3{0, 5.48553467, 3.14779136e-08}
-			var Rotation = Quaternion{0, 0, 0, 1}
-			var Scale = Real3{1, 1, 1}
-		}
-	}
-	Cog [InheritId:"5c85d7cd169955b2:ClusterWeaponPickup"][ContextId:12]
-	{
-		var Name = "ClusterWeapon"
-		Transform 
-		{
-			var Translation = Real3{-5.52409554, -1.66881979, -2.81008624e-07}
-			var Rotation = Quaternion{0, 0, 0, 1}
-			var Scale = Real3{1, 0.5, 1}
-		}
-	}
-	Cog [InheritId:"5c872030213e749b:RockWeapon"][ContextId:13]
-	{
-		var Name = "RockWeapon"
-		Transform 
-		{
-			var Translation = Real3{-7.68713903, -1.58501816, 0}
-			var Rotation = Quaternion{0, 0, 0, 1}
-			var Scale = Real3{1, 0.5, 1}
-		}
-	}
-	Cog [InheritId:"5c8dc3dda3ed8a7c:ItemFruit"][ContextId:14]
-	{
-		Transform 
-		{
-			var Translation = Real3{-7.33341885, 2.16668177, 10}
+			var Translation = Real3{-3.62151599, 0.061029911, 0}
 			var Rotation = Quaternion{0, 0, 0, 1}
 			var Scale = Real3{1, 1, 1}
 		}

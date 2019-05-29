@@ -1,0 +1,31 @@
+class SpawnPickups : ZilchComponent
+{
+  //the y value to spawn the fruit
+  [Property]
+  var SpawnY : Real = 30.0;
+  
+  //chance to spawn at the start of each turn (0 - 100)
+  [Property]
+  var Chance : Real = 10.0;
+  
+  //the min x value to spawn the fruit
+  [Property]
+  var MinSpawnX : Real = -50.0;
+  
+  //the max x value to spawn the fruit
+  [Property]
+  var MaxSpawnX : Real = 50.0;
+  
+  var RandomGenerator : Random = Random();
+
+  function SpawnItems()
+  {
+    var currChance = this.RandomGenerator.RangeInclusiveMax(0, 100);
+    //spawn pickup
+    if(currChance < this.Chance)
+    {
+      var xPos = this.RandomGenerator.Range(this.MinSpawnX, this.MaxSpawnX);
+      this.Space.CreateAtPosition(Archetype.WeaponSpawner, Real3(xPos, this.SpawnY, 0));
+    }
+  }
+}

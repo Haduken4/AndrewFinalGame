@@ -1,36 +1,28 @@
+/*************************
+Authors: Nicole Smith
+Date Created: 5/28/19
+Brief: Chooses a weapon to spawn
+*************************/
+
 class ItemSpawn : ZilchComponent
 {  
-  [Display]
-  var WeaponArray : Array[ShootVariables] = Array[ShootVariables]();
-  
-  [Property]
-  var ToAdd : ShootVariables = null;
-  
   //random number generator
   var RandomGenerator : Random = Random();
   
   function Initialize(init : CogInitializer)
   {
-    var itemToSpawn = this.RandomGenerator.RangeExclusiveMax(0, this.WeaponArray.Count);
-    var fruit = this.Space.CreateAtPosition(Archetype.ItemFruit, this.Owner.Transform.WorldTranslation);
-    fruit.ItemPickup.Weapon = this.WeaponArray[itemToSpawn];
-  }
-
-  [Display]
-  function AddToArray()
-  {
-    this.WeaponArray.Add(this.ToAdd);
-  }
-  
-  [Display]
-  function ClearArray()
-  {
-    this.WeaponArray.Clear();
-  }
-  
-  [Display]
-  function DisplayArray()
-  {
-    Console.WriteLine(this.WeaponArray);
+    
+    var childCount = this.Owner.ChildrenArray.Count;
+    var spawn = this.RandomGenerator.RangeExclusiveMax(0, childCount);
+    
+    
+    for(var i = 0; i < childCount; ++i)
+    {
+      if(i != spawn)
+      {
+        //Console.WriteLine(this.Owner.ChildrenArray[i].Name);
+        this.Owner.ChildrenArray[i].Destroy();
+      }
+    }
   }
 }

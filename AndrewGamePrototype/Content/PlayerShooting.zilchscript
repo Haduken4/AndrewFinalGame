@@ -32,6 +32,8 @@ class ShootVariables
   var ShootSound : SoundCue = null;
 }
 
+
+
 class PlayerShooting : ZilchComponent
 {
   //Starting weapon
