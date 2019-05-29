@@ -115,33 +115,36 @@ class DestructableCustomCollision : ZilchComponent
     var extentPoints : Array[Real3] = Array[Real3]();
     
     //Using extents to get the corners
-    var objExtents = object.Transform.WorldScale.XY / 2.0;
+    var objExtents = object.BoxCollider.HalfSize.XY * object.Transform.WorldScale.XY;
+    
+    var offset = object.BoxCollider.Offset * object.Transform.WorldScale;
+    
     
     //Corners
-    extentPoints.Add(Real3(object.Transform.WorldTranslation.XY + objExtents, 0));
-    extentPoints.Add(Real3(object.Transform.WorldTranslation.XY - objExtents, 0));
-    extentPoints.Add(Real3(object.Transform.WorldTranslation.X + objExtents.X, object.Transform.WorldTranslation.Y - objExtents.Y, 0));
-    extentPoints.Add(Real3(object.Transform.WorldTranslation.X - objExtents.X, object.Transform.WorldTranslation.Y + objExtents.Y, 0));
+    extentPoints.Add(Real3(object.Transform.WorldTranslation.XY + objExtents, 0) + offset);
+    extentPoints.Add(Real3(object.Transform.WorldTranslation.XY - objExtents, 0) + offset);
+    extentPoints.Add(Real3(object.Transform.WorldTranslation.X + objExtents.X, object.Transform.WorldTranslation.Y - objExtents.Y, 0) + offset);
+    extentPoints.Add(Real3(object.Transform.WorldTranslation.X - objExtents.X, object.Transform.WorldTranslation.Y + objExtents.Y, 0) + offset);
     
     //Sides
-    extentPoints.Add(Real3(object.Transform.WorldTranslation.X - objExtents.X, object.Transform.WorldTranslation.Y + objExtents.Y * 0.5, 0));
-    extentPoints.Add(Real3(object.Transform.WorldTranslation.X - objExtents.X, object.Transform.WorldTranslation.Y - objExtents.Y * 0.5, 0));
-    extentPoints.Add(Real3(object.Transform.WorldTranslation.X + objExtents.X, object.Transform.WorldTranslation.Y + objExtents.Y * 0.5, 0));
-    extentPoints.Add(Real3(object.Transform.WorldTranslation.X + objExtents.X, object.Transform.WorldTranslation.Y - objExtents.Y * 0.5, 0));
-    extentPoints.Add(Real3(object.Transform.WorldTranslation.X - objExtents.X, object.Transform.WorldTranslation.Y + objExtents.Y * 0.25, 0));
-    extentPoints.Add(Real3(object.Transform.WorldTranslation.X - objExtents.X, object.Transform.WorldTranslation.Y - objExtents.Y * 0.25, 0));
-    extentPoints.Add(Real3(object.Transform.WorldTranslation.X + objExtents.X, object.Transform.WorldTranslation.Y + objExtents.Y * 0.25, 0));
-    extentPoints.Add(Real3(object.Transform.WorldTranslation.X + objExtents.X, object.Transform.WorldTranslation.Y - objExtents.Y * 0.25, 0));
+    extentPoints.Add(Real3(object.Transform.WorldTranslation.X - objExtents.X, object.Transform.WorldTranslation.Y + objExtents.Y * 0.5, 0) + offset);
+    extentPoints.Add(Real3(object.Transform.WorldTranslation.X - objExtents.X, object.Transform.WorldTranslation.Y - objExtents.Y * 0.5, 0) + offset);
+    extentPoints.Add(Real3(object.Transform.WorldTranslation.X + objExtents.X, object.Transform.WorldTranslation.Y + objExtents.Y * 0.5, 0) + offset);
+    extentPoints.Add(Real3(object.Transform.WorldTranslation.X + objExtents.X, object.Transform.WorldTranslation.Y - objExtents.Y * 0.5, 0) + offset);
+    extentPoints.Add(Real3(object.Transform.WorldTranslation.X - objExtents.X, object.Transform.WorldTranslation.Y + objExtents.Y * 0.25, 0) + offset);
+    extentPoints.Add(Real3(object.Transform.WorldTranslation.X - objExtents.X, object.Transform.WorldTranslation.Y - objExtents.Y * 0.25, 0) + offset);
+    extentPoints.Add(Real3(object.Transform.WorldTranslation.X + objExtents.X, object.Transform.WorldTranslation.Y + objExtents.Y * 0.25, 0) + offset);
+    extentPoints.Add(Real3(object.Transform.WorldTranslation.X + objExtents.X, object.Transform.WorldTranslation.Y - objExtents.Y * 0.25, 0) + offset);
     
     //Top/bottom
-    extentPoints.Add(Real3(object.Transform.WorldTranslation.X + objExtents.X * 0.5, object.Transform.WorldTranslation.Y + objExtents.Y, 0));
-    extentPoints.Add(Real3(object.Transform.WorldTranslation.X - objExtents.X * 0.5, object.Transform.WorldTranslation.Y + objExtents.Y, 0));
-    extentPoints.Add(Real3(object.Transform.WorldTranslation.X + objExtents.X * 0.5, object.Transform.WorldTranslation.Y - objExtents.Y, 0));
-    extentPoints.Add(Real3(object.Transform.WorldTranslation.X - objExtents.X * 0.5, object.Transform.WorldTranslation.Y - objExtents.Y, 0));
-    extentPoints.Add(Real3(object.Transform.WorldTranslation.X + objExtents.X * 0.25, object.Transform.WorldTranslation.Y + objExtents.Y, 0));
-    extentPoints.Add(Real3(object.Transform.WorldTranslation.X - objExtents.X * 0.25, object.Transform.WorldTranslation.Y + objExtents.Y, 0));
-    extentPoints.Add(Real3(object.Transform.WorldTranslation.X + objExtents.X * 0.25, object.Transform.WorldTranslation.Y - objExtents.Y, 0));
-    extentPoints.Add(Real3(object.Transform.WorldTranslation.X - objExtents.X * 0.25, object.Transform.WorldTranslation.Y - objExtents.Y, 0));
+    extentPoints.Add(Real3(object.Transform.WorldTranslation.X + objExtents.X * 0.5, object.Transform.WorldTranslation.Y + objExtents.Y, 0) + offset);
+    extentPoints.Add(Real3(object.Transform.WorldTranslation.X - objExtents.X * 0.5, object.Transform.WorldTranslation.Y + objExtents.Y, 0) + offset);
+    extentPoints.Add(Real3(object.Transform.WorldTranslation.X + objExtents.X * 0.5, object.Transform.WorldTranslation.Y - objExtents.Y, 0) + offset);
+    extentPoints.Add(Real3(object.Transform.WorldTranslation.X - objExtents.X * 0.5, object.Transform.WorldTranslation.Y - objExtents.Y, 0) + offset);
+    extentPoints.Add(Real3(object.Transform.WorldTranslation.X + objExtents.X * 0.25, object.Transform.WorldTranslation.Y + objExtents.Y, 0) + offset);
+    extentPoints.Add(Real3(object.Transform.WorldTranslation.X - objExtents.X * 0.25, object.Transform.WorldTranslation.Y + objExtents.Y, 0) + offset);
+    extentPoints.Add(Real3(object.Transform.WorldTranslation.X + objExtents.X * 0.25, object.Transform.WorldTranslation.Y - objExtents.Y, 0) + offset);
+    extentPoints.Add(Real3(object.Transform.WorldTranslation.X - objExtents.X * 0.25, object.Transform.WorldTranslation.Y - objExtents.Y, 0) + offset);
     
     //Array that stores whether each corner is colliding (if any of these remain true, we are "colliding")
     var colliding = Array[Boolean](extentPoints.Count, true);
@@ -187,15 +190,44 @@ class DestructableCustomCollision : ZilchComponent
         
         if(CustomMath.Magnitude(object.RigidBody.Velocity) != 0)
         {
-          //object.RigidBody.Velocity = Real3(0, 0, 0);
-          object.Transform.WorldTranslation = object.CustomCollisionVariables.LastFramePos;
+          var dBox = DebugBox(object.Transform.WorldTranslation + offset, objExtents);
+          
+          dBox.Filled = true;
+          dBox.Color = Real4(0.3, 0.8, 0.3, 1.0);
+          
+          DebugDraw.Add(dBox);
+          
+          var newVel = object.RigidBody.Velocity;
+          var newTra = object.Transform.WorldTranslation;
+          
+          for(var j = 0; j < extentPoints.Count; ++j)
+          {
+            if(this.IsPointColliding(extentPoints[j]))
+            {
+              if(j > 3 && j < 12)
+              {
+                newVel.X = 0;
+                newTra.X = object.CustomCollisionVariables.LastFramePos.X;
+              }
+              else if(j >= 12)
+              {
+                newVel.Y = 0;
+                newTra.Y = object.CustomCollisionVariables.LastFramePos.Y;
+              }
+            }
+          }
+          
+          var origVel = object.RigidBody.Velocity;
+          
+          object.Transform.WorldTranslation = newTra;
+          object.RigidBody.Velocity = newVel;
           
           //Handle player specific collision resolution
           if(object.PlayerMovement != null)
           {
             
             //moving left and colliding below
-            if(object.RigidBody.Velocity.X < 0 && i == 1  && object.PlayerMovement.LockMovement == false && this.DestructionCenterArray.Count > 0)
+            if(origVel.X < 0 && i == 1  && object.PlayerMovement.LockMovement == false && this.DestructionCenterArray.Count > 0)
             {
               Console.WriteLine("Moving left");
               //since the player moved, move to new position
@@ -239,7 +271,7 @@ class DestructableCustomCollision : ZilchComponent
               }
             }
             //if moving to the right and colliding at the bottom
-            else if(object.RigidBody.Velocity.X > 0 && i == 2 && object.PlayerMovement.LockMovement == false && this.DestructionCenterArray.Count > 0)
+            else if(origVel.X > 0 && i == 2 && object.PlayerMovement.LockMovement == false && this.DestructionCenterArray.Count > 0)
             {
               Console.WriteLine("Moving right");
               //since the player moved, move to new position
@@ -284,7 +316,6 @@ class DestructableCustomCollision : ZilchComponent
             }
             else
             {
-              object.RigidBody.Velocity = Real3(0, 0, 0);
               object.PlayerMovement.LockMovement = false;
             }
           }
