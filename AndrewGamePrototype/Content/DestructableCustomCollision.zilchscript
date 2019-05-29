@@ -117,7 +117,7 @@ class DestructableCustomCollision : ZilchComponent
     //Using extents to get the corners
     var objExtents = object.BoxCollider.HalfSize.XY * object.Transform.WorldScale.XY;
     
-    var offset = Real3(0, 0, 0)/*object.BoxCollider.Offset * object.Transform.WorldScale*/;
+    var offset = object.BoxCollider.Offset * object.Transform.WorldScale;
     
     
     //Corners
