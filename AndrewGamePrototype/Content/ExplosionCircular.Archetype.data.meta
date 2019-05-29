@@ -1,0 +1,11 @@
+[Version:1]
+DataContent 
+{
+	DataBuilder 
+	{
+		var Name = "ExplosionCircular"
+		var ResourceId = 0x5cb6e021f919fc3f
+		var LoaderType = "Cog"
+		var Version = 0
+	}
+}

@@ -46,15 +46,22 @@ Level
 		{
 			var MinSpawnX = -50
 			var MaxSpawnX = 50
-			var MaxSpawnY = 50
-			var MinSpawnY = -50
+			var MaxSpawnY = 20
+			var MinSpawnY = 8
 			var MaxSpawnCount = 5
 			var MinDiameterSize = 1
-			var MaxDiameterSize = 10
+			var MaxDiameterSize = 2.5
 		}
 		PlayerTurnManager 
 		{
 			var TimerPerPhase = 30
+		}
+		SpawnPickups 
+		{
+			var SpawnY = 20
+			var Chance = 10
+			var MinSpawnX = -50
+			var MaxSpawnX = 50
 		}
 	}
 	Cog [ContextId:2]
@@ -102,7 +109,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{-1.47473311, 4.56410265, 20}
+			var Translation = Real3{-1.60449874, -0.161584198, 20.0631409}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -155,7 +162,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 40.2750397
+			var Size = 12.1307898
 		}
 		EditorCameraController 
 		{
@@ -164,7 +171,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{-1.47473311, 4.56410265, 3.81272059e-07}
+			var LookTarget = Real3{-1.60449874, -0.161584198, 0.0631404594}
 			var MoveSensitivity = 1
 		}
 	}
@@ -253,6 +260,7 @@ Level
 		{
 			var ShakeDuration = 100
 			var ShakeMagnitude = 100
+			var SoundToPlay = "null"
 		}
 	}
 	Cog [ContextId:5]
@@ -260,7 +268,7 @@ Level
 		var Name = "BackgroundImage"
 		Transform 
 		{
-			var Translation = Real3{-0.0577573776, 0.282960415, -5}
+			var Translation = Real3{-0.0577573776, 75.532959, -5}
 			var Scale = Real3{2, 1, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
@@ -289,7 +297,7 @@ Level
 		var Name = "BackgroundBranch"
 		Transform 
 		{
-			var Translation = Real3{-19.9348927, 3.88967109, -4.99500084}
+			var Translation = Real3{-19.9348927, 79.1396713, -4.99500084}
 			var Scale = Real3{20, 20, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
@@ -334,7 +342,7 @@ Level
 			var Material = "582c575af53d18c9:AlphaSprite"
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
-			var SpriteSource = "5c873dd1f1306e67:IdleFrogAni_0"
+			var SpriteSource = "5cb6f101e7f06210:IdleFrogAni_1"
 			var FlipX = false
 			var FlipY = false
 			var AnimationActive = true
@@ -347,8 +355,8 @@ Level
 			var SendsEvents = true
 			var Material = "4de020863e872da8:DefaultPhysicsMaterial"
 			var CollisionGroup = "5c098e4fdd820ac1:Player"
-			var Offset = Real3{0, 0, 0}
-			var HalfSize = Real3{0.5, 0.5, 0.5}
+			var Offset = Real3{0, -0.125, 0}
+			var HalfSize = Real3{0.375, 0.425000012, 0.5}
 		}
 		RigidBody 
 		{
@@ -366,6 +374,7 @@ Level
 			var JumpSpeed = 10
 			var MaxMoveResource = 5
 			var SoundToPlay = "5c57355bc3ba7392:Jump"
+			var JumpAnimation = "5c5298f4542290d6:CloudSwoosh"
 			var Active = false
 		}
 		Health 
@@ -383,22 +392,25 @@ Level
 				var ProjectileSpeed = 30
 				var SpeedVariation = 0
 				var SpeedBool = false
+				var ShootSound = "null"
 			}
 			var Active = false
-			var SoundToPlay = "5c57371855e8f80d:Attack"
 			var RuneSound = "5c57355bc3b8bad5:Runecircle"
 		}
 		AnimationHandler 
 		{
-			var DamagedSprite = "5c888fb7bffe7082:DamagedFrogAni_0"
-			var IdleSprite = "5c873dd1f1306e67:IdleFrogAni_0"
-			var AttackSprite = "5c87392b79c648f6:AttackFrogAni_0"
+			var DamagedSprite = "5cb6f128fae6c77d:DamagedFrogAni_1"
+			var IdleSprite = "5cb6f101e7f06210:IdleFrogAni_1"
+			var AttackSprite = "5cb6f5b261811ed7:AttackFrogAni_1"
 		}
 		CustomCollisionVariables 
 		{
 			var Explodes = false
 			var ExplosionRadius = 5
 			var MaxSlope = 30
+		}
+		Hierarchy 
+		{
 		}
 	}
 	Cog [ContextId:8]
@@ -454,6 +466,7 @@ Level
 			var JumpSpeed = 10
 			var MaxMoveResource = 5
 			var SoundToPlay = "5c57355bc3ba7392:Jump"
+			var JumpAnimation = "5c5298f4542290d6:CloudSwoosh"
 			var Active = false
 		}
 		Health 
@@ -471,9 +484,9 @@ Level
 				var ProjectileSpeed = 30
 				var SpeedVariation = 0
 				var SpeedBool = false
+				var ShootSound = "null"
 			}
 			var Active = false
-			var SoundToPlay = "5c57371855e8f80d:Attack"
 			var RuneSound = "5c57355bc3b8bad5:Runecircle"
 		}
 		AnimationHandler 
@@ -491,12 +504,12 @@ Level
 	}
 	Cog [ContextId:9]
 	{
-		var Name = "Sprite"
+		var Name = "Leaf"
 		Transform 
 		{
-			var Translation = Real3{0.208045959, -7.29312849, 0}
-			var Scale = Real3{1, 1, 1}
-			var Rotation = Quaternion{0, 0, 0, 1}
+			var Translation = Real3{-0.83200717, -0.239803314, 0}
+			var Scale = Real3{2, 2, 1}
+			var Rotation = Quaternion{0, 0, -0.0882929638, 0.996094525}
 		}
 		Sprite 
 		{
@@ -510,32 +523,109 @@ Level
 			var Material = "5c887ab691cc6823:DestructibleSprite"
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
-			var SpriteSource = "5c87317045d7a76d:BranchesCenterTilemap000"
+			var SpriteSource = "5cb6e738914a9d98:DestructableLeaf"
 			var FlipX = false
 			var FlipY = false
 			var AnimationActive = true
 			var AnimationSpeed = 1
 			var StartFrame = 0
 		}
+		DestructableCustomCollision 
+		{
+		}
+		MultiConvexMeshCollider 
+		{
+			var Ghost = false
+			var SendsEvents = true
+			var Material = "4de020863e872da8:DefaultPhysicsMaterial"
+			var CollisionGroup = "5c32dddceaf965aa:Destructable"
+			var Offset = Real3{0, 0, 0}
+			var Mesh = "5c8dbf0544f9cccb:LeafMesh"
+		}
+	}
+	Cog [ContextId:10]
+	{
+		var Name = "Leaf"
+		Transform 
+		{
+			var Translation = Real3{-2.29195404, 8.01019573, 0}
+			var Scale = Real3{2, 2, 1}
+			var Rotation = Quaternion{0, 0, -0.991444826, -0.1305262}
+		}
+		Sprite 
+		{
+			var Visible = true
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var OverrideBoundingBox = false
+			var LocalAabbCenter = Real3{0, 0, 0}
+			var LocalAabbHalfExtents = Real3{1, 1, 1}
+			var GroupSortValue = 0
+			var Material = "5c887ab691cc6823:DestructibleSprite"
+			var VertexColor = Real4{1, 1, 1, 1}
+			var GeometryMode = SpriteGeometryMode.ZPlane
+			var SpriteSource = "5cb6e738914a9d98:DestructableLeaf"
+			var FlipX = false
+			var FlipY = false
+			var AnimationActive = true
+			var AnimationSpeed = 1
+			var StartFrame = 0
+		}
+		DestructableCustomCollision 
+		{
+		}
 		BoxCollider 
 		{
 			var Ghost = false
 			var SendsEvents = true
 			var Material = "4de020863e872da8:DefaultPhysicsMaterial"
-			var CollisionGroup = "4e740859314e5515:DefaultGroup"
+			var CollisionGroup = "5c32dddceaf965aa:Destructable"
 			var Offset = Real3{0, 0, 0}
-			var HalfSize = Real3{25, 5, 0.5}
+			var HalfSize = Real3{1, 2, 0.5}
+		}
+	}
+	Cog [ContextId:11]
+	{
+		var Name = "Leaf"
+		Transform 
+		{
+			var Translation = Real3{0.224626064, 9.36448574, 0}
+			var Scale = Real3{2, 2, 1}
+			var Rotation = Quaternion{0, 0, -0.965925872, 0.258819014}
+		}
+		Sprite 
+		{
+			var Visible = true
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var OverrideBoundingBox = false
+			var LocalAabbCenter = Real3{0, 0, 0}
+			var LocalAabbHalfExtents = Real3{1, 1, 1}
+			var GroupSortValue = 0
+			var Material = "5c887ab691cc6823:DestructibleSprite"
+			var VertexColor = Real4{1, 1, 1, 1}
+			var GeometryMode = SpriteGeometryMode.ZPlane
+			var SpriteSource = "5cb6e738914a9d98:DestructableLeaf"
+			var FlipX = false
+			var FlipY = false
+			var AnimationActive = true
+			var AnimationSpeed = 1
+			var StartFrame = 0
 		}
 		DestructableCustomCollision 
 		{
 		}
-		Area 
+		BoxCollider 
 		{
-			var Size = Real2{50, 10}
-			var Origin = Location.Center
+			var Ghost = false
+			var SendsEvents = true
+			var Material = "4de020863e872da8:DefaultPhysicsMaterial"
+			var CollisionGroup = "5c32dddceaf965aa:Destructable"
+			var Offset = Real3{0, 0, 0}
+			var HalfSize = Real3{1, 2, 0.5}
 		}
 	}
-	Cog [InheritId:"5c0f9844b874aa7c:Bullet"][ContextId:10]
+	Cog [InheritId:"5c0f9844b874aa7c:Bullet"][ContextId:12]
 	{
 		Transform 
 		{
@@ -544,7 +634,7 @@ Level
 			var Scale = Real3{0.5, 0.5, 1}
 		}
 	}
-	Cog [ContextId:11]
+	Cog [ContextId:13]
 	{
 		var Name = "BulletArea"
 		Transform 
@@ -586,6 +676,124 @@ Level
 			var Explodes = true
 			var ExplosionRadius = 5
 			var MaxSlope = 30
+		}
+	}
+	Cog [ContextId:14]
+	{
+		var Name = "TileMap"
+		Transform 
+		{
+			var Translation = Real3{0, 0, 0}
+			var Scale = Real3{1, 1, 1}
+			var Rotation = Quaternion{0, 0, 0, 1}
+		}
+		MultiSprite 
+		{
+			var Visible = true
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var OverrideBoundingBox = false
+			var LocalAabbCenter = Real3{0, 0, 0}
+			var LocalAabbHalfExtents = Real3{1, 1, 1}
+			var GroupSortValue = 0
+			var Material = "582c575af53d18c9:AlphaSprite"
+			var VertexColor = Real4{1, 1, 1, 1}
+			var GeometryMode = SpriteGeometryMode.ZPlane
+			var AnimationActive = true
+			var AnimationSpeed = 1
+		}
+		TileMap 
+		{
+			var Source = "5cb6f34524551019:MainLevel_TileMap00"
+			var PaletteName = "5c0f869da6af70e1:GamePalette"
+			var MeshThickness = 1.20000005
+		}
+	}
+	Cog [ContextId:15]
+	{
+		var Name = "BackgroundBranch"
+		Transform 
+		{
+			var Translation = Real3{-15.837019, -2.63949347, -0.100000001}
+			var Scale = Real3{1, 1, 1}
+			var Rotation = Quaternion{0, 0, 0, 1}
+		}
+		Sprite 
+		{
+			var Visible = true
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var OverrideBoundingBox = false
+			var LocalAabbCenter = Real3{0, 0, 0}
+			var LocalAabbHalfExtents = Real3{1, 1, 1}
+			var GroupSortValue = 0
+			var Material = "582c575af53d18c9:AlphaSprite"
+			var VertexColor = Real4{1, 1, 1, 1}
+			var GeometryMode = SpriteGeometryMode.ZPlane
+			var SpriteSource = "5cb6ea10144a9218:BackgroundBranch_0"
+			var FlipX = true
+			var FlipY = false
+			var AnimationActive = true
+			var AnimationSpeed = 1
+			var StartFrame = 0
+		}
+	}
+	Cog [ContextId:16]
+	{
+		var Name = "BackgroundBranch"
+		Transform 
+		{
+			var Translation = Real3{33.4559135, 5.89641142, -1.00455248}
+			var Scale = Real3{2, 2, 1}
+			var Rotation = Quaternion{0, 0, 0, 1}
+		}
+		Sprite 
+		{
+			var Visible = true
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var OverrideBoundingBox = false
+			var LocalAabbCenter = Real3{0, 0, 0}
+			var LocalAabbHalfExtents = Real3{1, 1, 1}
+			var GroupSortValue = 0
+			var Material = "582c575af53d18c9:AlphaSprite"
+			var VertexColor = Real4{1, 1, 1, 1}
+			var GeometryMode = SpriteGeometryMode.ZPlane
+			var SpriteSource = "5cb6ea10144a9218:BackgroundBranch_0"
+			var FlipX = false
+			var FlipY = false
+			var AnimationActive = true
+			var AnimationSpeed = 1
+			var StartFrame = 0
+		}
+	}
+	Cog [ContextId:17]
+	{
+		var Name = "BackgroundBranch"
+		Transform 
+		{
+			var Translation = Real3{1.90556192, 16.6073303, -4.75}
+			var Scale = Real3{3, 3, 3}
+			var Rotation = Quaternion{0, 0, 0.49999997, 0.866025507}
+		}
+		Sprite 
+		{
+			var Visible = true
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var OverrideBoundingBox = false
+			var LocalAabbCenter = Real3{0, 0, 0}
+			var LocalAabbHalfExtents = Real3{1, 1, 1}
+			var GroupSortValue = 0
+			var Material = "582c575af53d18c9:AlphaSprite"
+			var VertexColor = Real4{1, 1, 1, 1}
+			var GeometryMode = SpriteGeometryMode.ZPlane
+			var SpriteSource = "5cb6ea10144a9218:BackgroundBranch_0"
+			var FlipX = false
+			var FlipY = false
+			var AnimationActive = true
+			var AnimationSpeed = 1
+			var StartFrame = 0
 		}
 	}
 }

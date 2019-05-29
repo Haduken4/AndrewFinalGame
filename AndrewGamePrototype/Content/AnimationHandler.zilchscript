@@ -8,11 +8,20 @@ class AnimationHandler : ZilchComponent
   var AttackSprite : SpriteSource;
   var LastHealth : Real;
   var BulletBool : Boolean;
+  
+  var MouseDownBool : Boolean = false;
+  
   function Initialize(init : CogInitializer)
   {
     Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    Zero.Connect(this.Space, Events.MouseDown, this.OnMouseDown);
     this.LastHealth = this.Owner.Health.MaxHealth;
     this.BulletBool = true;
+  }
+
+  function OnMouseDown(event : ViewportMouseEvent)
+  {
+    this.MouseDownBool = true;
   }
 
   function OnLogicUpdate(event : UpdateEvent)
@@ -30,8 +39,9 @@ class AnimationHandler : ZilchComponent
       this.LastHealth = this.Owner.Health.CurrHealth;
     }
     // check to see if a bullet was shot, if so, run attacking sprite once
-    else if(this.BulletBool && this.Owner.PlayerShooting.BBool)
+    else if(this.MouseDownBool && this.Owner.PlayerShooting.BBool)
     {
+      this.MouseDownBool = false;
       this.BulletBool = false;
       // run attack animation
       this.Owner.Sprite.SpriteSource = this.AttackSprite;

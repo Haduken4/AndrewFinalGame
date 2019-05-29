@@ -4,7 +4,7 @@ Cog
 	var Name = "WeaponSpawner"
 	Transform 
 	{
-		var Translation = Real3{0, 5.48553467, 3.14779136e-08}
+		var Translation = Real3{-3.62151599, 0.061029911, 0}
 		var Scale = Real3{1, 1, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
@@ -29,35 +29,57 @@ Cog
 	}
 	ItemSpawn 
 	{
-		var Chance = 30
 	}
 	Hierarchy 
 	{
-		Cog [Id:0x5c85d945c11d8dae][InheritId:"5cbf4710572ae165:ExplosionWeaponPickup"]
+		Cog [Id:0x5c8dd4da1fb71a25][InheritId:"5cbf45c9f4ae80b7:PlantWeaponPickup"]
 		{
+			var Name = "PlantWeapon"
 			Transform 
 			{
-				var Translation = Real3{0, 0, 0.100000001}
+				var Translation = Real3{0, 0, 0}
 				var Rotation = Quaternion{0, 0, 0, 1}
-				var Scale = Real3{1, 0.5, 1}
+				var Scale = Real3{0.75, 0.75, 1}
 			}
 		}
-		Cog [Id:0x5c85d945c11d8def][InheritId:"5cbf45c9f4ae80b7:PlantWeaponPickup"]
+		Cog [Id:0x5c8dd4da1fb71a75][InheritId:"5cbf4710572ae165:ExplosionWeaponPickup"]
 		{
+			var Name = "ExplosionWeapon"
 			Transform 
 			{
-				var Translation = Real3{0, 0, 0.100000001}
+				var Translation = Real3{0, 0, 0}
 				var Rotation = Quaternion{0, 0, 0, 1}
-				var Scale = Real3{1, 0.5, 1}
+				var Scale = Real3{0.75, 0.75, 1}
 			}
 		}
-		Cog [Id:0x5c85d945c11d8e1d][InheritId:"5c85d7cd169955b2:ClusterWeaponPickup"]
+		Cog [Id:0x5c8dd4da1fb71aaa][InheritId:"5c85ed4daa32760c:LobWeapon"]
 		{
+			var Name = "LobWeapon"
 			Transform 
 			{
-				var Translation = Real3{0, 0, 0.100000001}
+				var Translation = Real3{0, 0, 0}
 				var Rotation = Quaternion{0, 0, 0, 1}
-				var Scale = Real3{1, 0.5, 1}
+				var Scale = Real3{0.75, 0.75, 1}
+			}
+		}
+		Cog [Id:0x5c8dd4da1fb71adc][InheritId:"5c85d7cd169955b2:ClusterWeaponPickup"]
+		{
+			var Name = "ClusterWeapon"
+			Transform 
+			{
+				var Translation = Real3{0, 0, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{0.75, 0.75, 1}
+			}
+		}
+		Cog [Id:0x5c8dd4da1fb71b0d][InheritId:"5c872030213e749b:RockWeapon"]
+		{
+			var Name = "RockWeapon"
+			Transform 
+			{
+				var Translation = Real3{0, 0, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{0.75, 0.75, 1}
 			}
 		}
 	}

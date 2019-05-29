@@ -16,6 +16,10 @@ class PlayerMovement : ZilchComponent
   [Property]
   var SoundToPlay : SoundCue = null;
   
+  //This should be the jump animation that will place where the frog
+  [Property]
+  var JumpAnimation : Archetype = null;
+  
   //How much more we can move this turn
   var CurrMoveResource : Real = 10;
   
@@ -60,6 +64,8 @@ class PlayerMovement : ZilchComponent
     //If we can jump
     if(this.Active && this.CurrMoveResource > this.MaxMoveResource / 2 && !this.LockMovement)
     {
+      //this.Space.CreateAtPosition(this.JumpAnimation, this.Owner.Transform.Translation - Real3(0,0.75,0));
+      
       var mousePos = event.ToWorldZPlane(0);
       var dirToAngle = Math.Normalize(mousePos - this.Owner.Transform.WorldTranslation);
       

@@ -1,9 +1,11 @@
+/*************************
+Authors: Nicole Smith
+Date Created: 5/28/19
+Brief: Chooses a weapon to spawn
+*************************/
+
 class ItemSpawn : ZilchComponent
-{
-  //percentage chance to spawn (0 - 100)
-  [Property]
-  var Chance : Integer = 30;
-  
+{  
   //random number generator
   var RandomGenerator : Random = Random();
   
@@ -11,27 +13,16 @@ class ItemSpawn : ZilchComponent
   {
     
     var childCount = this.Owner.ChildrenArray.Count;
-    var spawn = this.RandomGenerator.Range(0, 100);
+    var spawn = this.RandomGenerator.RangeExclusiveMax(0, childCount);
     
-    if(spawn <= this.Chance)
+    
+    for(var i = 0; i < childCount; ++i)
     {
-      var childToSpawn = this.RandomGenerator.RangeInclusiveMax(0, childCount - 1);
-      for(var i = 0; i < childCount; ++i)
+      if(i != spawn)
       {
-        if(i != childToSpawn)
-        {
-          Console.WriteLine(this.Owner.ChildrenArray[i].Name);
-          this.Owner.ChildrenArray[i].Destroy();
-          
-        }
-      }
-    }
-    else{
-      for(var i = 0; i < childCount; ++i)
-      {
+        //Console.WriteLine(this.Owner.ChildrenArray[i].Name);
         this.Owner.ChildrenArray[i].Destroy();
       }
     }
   }
-
 }

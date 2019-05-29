@@ -1,0 +1,11 @@
+[Version:1]
+DataContent 
+{
+	DataBuilder 
+	{
+		var Name = "Runes"
+		var ResourceId = 0x5c8dce2b55c9272a
+		var LoaderType = "Cog"
+		var Version = 0
+	}
+}

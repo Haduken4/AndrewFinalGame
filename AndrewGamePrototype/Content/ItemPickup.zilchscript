@@ -1,3 +1,9 @@
+/*************************
+Authors: Nicole Smith
+Date Created: 5/28/19
+Brief: item to pickup
+*************************/
+
 class ItemPickup : ZilchComponent
 {
   //weapon variables
@@ -6,7 +12,14 @@ class ItemPickup : ZilchComponent
   
   function Initialize(init : CogInitializer)
   {
+    Console.WriteLine("YEET");
     Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
+    Zero.Connect(this.Owner, Events.CogDestroy, this.OnCogDestroy);
+  }
+
+  function OnCogDestroy(event : ObjectEvent)
+  {
+    Console.WriteLine(this.Owner.Name);
   }
 
   function OnCollisionStarted(event : CollisionEvent)

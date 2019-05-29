@@ -4,8 +4,8 @@ Cog
 	var Name = "ExplosionWeapon"
 	Transform 
 	{
-		var Translation = Real3{-10.9848814, -1.40454125, -2.81008624e-07}
-		var Scale = Real3{1, 0.5, 1}
+		var Translation = Real3{-10.9848814, -0.803842545, -2.81008624e-07}
+		var Scale = Real3{0.75, 0.75, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
 	Sprite 
@@ -18,23 +18,14 @@ Cog
 		var LocalAabbHalfExtents = Real3{1, 1, 1}
 		var GroupSortValue = 0
 		var Material = "582c575af53d18c9:AlphaSprite"
-		var VertexColor = Real4{0.805000007, 0.138379738, 0.0724500418, 1}
+		var VertexColor = Real4{1, 1, 1, 1}
 		var GeometryMode = SpriteGeometryMode.ZPlane
-		var SpriteSource = "5586f579ca73ecc2:SquareBordered"
+		var SpriteSource = "5c8dbe6f9c688a2a:TinyFruit"
 		var FlipX = false
 		var FlipY = false
 		var AnimationActive = true
 		var AnimationSpeed = 1
 		var StartFrame = 0
-	}
-	BoxCollider 
-	{
-		var Ghost = false
-		var SendsEvents = true
-		var Material = "4de020863e872da8:DefaultPhysicsMaterial"
-		var CollisionGroup = "5c306556261f6375:Pickup"
-		var Offset = Real3{0, 0, 0}
-		var HalfSize = Real3{0.5, 0.5, 0.5}
 	}
 	RigidBody 
 	{
@@ -55,6 +46,47 @@ Cog
 			var ProjectileCount = 1
 			var SpreadCone = 0
 			var ProjectileSpeed = 20
+			var SpeedVariation = 0
+			var SpeedBool = false
+			var ShootSound = "5c57371855e8f80d:Attack"
+			var Type = WeaponType.NONE
+		}
+	}
+	SphereCollider 
+	{
+		var Ghost = false
+		var SendsEvents = true
+		var Material = "4de020863e872da8:DefaultPhysicsMaterial"
+		var CollisionGroup = "5c306556261f6375:Pickup"
+		var Offset = Real3{0, -0.150000006, 0}
+		var Radius = 0.899999976
+	}
+	Hierarchy 
+	{
+		Cog [Id:0x5c8dd22b8363bf00][InheritId:"5c8dce2b55c9272a:Runes"]
+		{
+			Transform 
+			{
+				var Translation = Real3{0.0559358597, -0.202576041, 0.898166955}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1.33333337, 1.33333337, 1}
+			}
+			SpriteParticleSystem 
+			{
+				var VertexColor = Real4{0, 0.0784313083, 0.784313798, 1}
+				var SpriteSource = "5c8dce76acf29586:WeaponRunes"
+			}
+			SphericalParticleEmitter 
+			{
+				var EmitRate = 5
+				var Size = 0.5
+				var RandomVelocity = Real3{2, 2, 2}
+				var TangentVelocity = Real3{0, 0, 0}
+			}
+			SelectionIcon 
+			{
+				var Visible = false
+			}
 		}
 	}
 }

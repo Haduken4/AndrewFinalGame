@@ -1,0 +1,72 @@
+[Version:1]
+Cog 
+{
+	var Name = "ItemFruit"
+	Transform 
+	{
+		var Translation = Real3{-7.33341885, 2.16668177, 10}
+		var Scale = Real3{1, 1, 1}
+		var Rotation = Quaternion{0, 0, 0, 1}
+	}
+	Sprite 
+	{
+		var Visible = true
+		var ViewCulling = true
+		var VisibilityEvents = true
+		var OverrideBoundingBox = false
+		var LocalAabbCenter = Real3{0, 0, 0}
+		var LocalAabbHalfExtents = Real3{1, 1, 1}
+		var GroupSortValue = 0
+		var Material = "582c575af53d18c9:AlphaSprite"
+		var VertexColor = Real4{1, 1, 1, 1}
+		var GeometryMode = SpriteGeometryMode.ZPlane
+		var SpriteSource = "5c8dbe6f9c688a2a:TinyFruit"
+		var FlipX = false
+		var FlipY = false
+		var AnimationActive = true
+		var AnimationSpeed = 1
+		var StartFrame = 0
+	}
+	ItemPickup 
+	{
+		var Weapon = ShootVariables
+		{
+			var Icon = "null"
+			var Projectile = "null"
+			var ProjectileCount = 1
+			var SpreadCone = 0.785398185
+			var ProjectileSpeed = 100
+			var SpeedVariation = 0
+			var SpeedBool = false
+			var ShootSound = "null"
+			var Type = WeaponType.NONE
+		}
+	}
+	ItemSpawn 
+	{
+	}
+	Hierarchy 
+	{
+		Cog [Id:0x5c8dcec5482de41c][InheritId:"5c8dce2b55c9272a:Runes"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-0.0610499382, -0.227109671, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+			SpriteParticleSystem 
+			{
+				var SpriteSource = "5c8dce76acf29586:WeaponRunes"
+			}
+			SphericalParticleEmitter 
+			{
+				var EmitRate = 20
+				var EmitVariance = 10
+				var Size = 0.300000012
+				var StartVelocity = Real3{0, 0, 0}
+				var RandomVelocity = Real3{2, 2, 2}
+			}
+		}
+	}
+}

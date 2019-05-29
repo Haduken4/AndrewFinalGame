@@ -4,7 +4,7 @@ Cog
 	var Name = "ExplosionParticles"
 	Transform 
 	{
-		var Translation = Real3{-7.36171389, 7.08937216, 0}
+		var Translation = Real3{4.27684212, 31.145153, 0}
 		var Scale = Real3{1, 1, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
@@ -25,7 +25,7 @@ Cog
 		var PreviewInEditor = false
 		var VertexColor = Real4{1, 1, 1, 1}
 		var GeometryMode = SpriteParticleGeometryMode.Billboarded
-		var SpriteSource = "59a4f6f4a01bac09:SoftCircle"
+		var SpriteSource = "5274db4c2e7c11f9:Circle"
 		var ParticleAnimation = SpriteParticleAnimationMode.Single
 		var ParticleSort = SpriteParticleSortMode.None
 		var BeamBaseScale = 1
