@@ -109,7 +109,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{-5.82576704, -0.246949539, 20.0631409}
+			var Translation = Real3{-11.6595125, 5.2535634, 20.0631409}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -162,7 +162,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 20.0003014
+			var Size = 32.9749222
 		}
 		EditorCameraController 
 		{
@@ -171,7 +171,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{-5.82576704, -0.246949539, 0.0631402954}
+			var LookTarget = Real3{-11.6595125, 5.2535634, 0.0631402954}
 			var MoveSensitivity = 1
 		}
 	}
@@ -627,50 +627,6 @@ Level
 	}
 	Cog [ContextId:12]
 	{
-		var Name = "BulletArea"
-		Transform 
-		{
-			var Translation = Real3{-12.7505064, 9.90505314, 0}
-			var Scale = Real3{1, 1, 1}
-			var Rotation = Quaternion{0, 0, 0, 1}
-		}
-		Sprite 
-		{
-			var Visible = true
-			var ViewCulling = true
-			var VisibilityEvents = true
-			var OverrideBoundingBox = false
-			var LocalAabbCenter = Real3{0, 0, 0}
-			var LocalAabbHalfExtents = Real3{1, 1, 1}
-			var GroupSortValue = 0
-			var Material = "582c575af53d18c9:AlphaSprite"
-			var VertexColor = Real4{1, 1, 1, 0}
-			var GeometryMode = SpriteGeometryMode.ZPlane
-			var SpriteSource = "5274db4c2e7c11f9:Circle"
-			var FlipX = false
-			var FlipY = false
-			var AnimationActive = true
-			var AnimationSpeed = 1
-			var StartFrame = 0
-		}
-		SphereCollider 
-		{
-			var Ghost = false
-			var SendsEvents = true
-			var Material = "4de020863e872da8:DefaultPhysicsMaterial"
-			var CollisionGroup = "4e740859314e5515:DefaultGroup"
-			var Offset = Real3{0, 0, 0}
-			var Radius = 0.5
-		}
-		CustomCollisionVariables 
-		{
-			var Explodes = true
-			var ExplosionRadius = 5
-			var MaxSlope = 30
-		}
-	}
-	Cog [ContextId:13]
-	{
 		var Name = "TileMap"
 		Transform 
 		{
@@ -700,7 +656,7 @@ Level
 			var MeshThickness = 1.20000005
 		}
 	}
-	Cog [ContextId:14]
+	Cog [ContextId:13]
 	{
 		var Name = "BackgroundBranch"
 		Transform 
@@ -729,7 +685,7 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:15]
+	Cog [ContextId:14]
 	{
 		var Name = "BackgroundBranch"
 		Transform 
@@ -758,7 +714,7 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:16]
+	Cog [ContextId:15]
 	{
 		var Name = "BackgroundBranch"
 		Transform 

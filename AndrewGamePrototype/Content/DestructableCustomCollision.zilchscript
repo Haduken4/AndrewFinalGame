@@ -305,11 +305,11 @@ class DestructableCustomCollision : ZilchComponent
                 var moveVector = tangentPoint - Real3(object.Transform.WorldTranslation.X + objExtents.X, object.Transform.WorldTranslation.Y - objExtents.Y, 0);
                 if(moveVector.Y > 0)
                 {
-                  object.Transform.WorldTranslation += moveVector;
+                  object.Transform.WorldTranslation += (moveVector - object.BoxCollider.Offset);
                 }
                 else
                 {
-                  object.Transform.WorldTranslation += Real3(moveVector.X, 0, 0);
+                  object.Transform.WorldTranslation += (Real3(moveVector.X, 0, 0) - object.BoxCollider.Offset);
                 }
                 Console.WriteLine(moveVector);
               }
