@@ -1,6 +1,6 @@
 /*****
 Filename: DestructableCustomCollision.zilchscript
-Author(s): Bar Ben-zvi
+Author(s): Bar Ben-zvi, Nicole Smith
 Date Created: 5/23/2019
 Brief: Handles custom collision for destructable terrain, only things with the CustomCollisionVariables script will be
        handled
@@ -364,16 +364,17 @@ class DestructableCustomCollision : ZilchComponent
     
     if(colliding)
     {
+      Console.WriteLine(objRad);
       
       if(this.DestructionCenterArray.Count != 0)
       {
         //Get a direction directly away from the closest circle
-        var dir = Math.Normalize(translation - this.Owner.Transform.WorldTranslation);
+        var dir = Math.Normalize(translation - this.DestructionCenterArray[closestIndex]);
         
         //Console.WriteLine(this.DestructionCenterArray[closestIndex] + (dir * objRad));
         
         //Check if the furthest point away on the circle from us and the center of the circle are colliding with us at all
-        if(!this.IsPointColliding(translation + (dir * objRad)))
+        if(!this.IsPointColliding(this.DestructionCenterArray[closestIndex] + (dir * this.DestructionRadiusArray[closestIndex])))
         {
           
           Console.WriteLine("why");

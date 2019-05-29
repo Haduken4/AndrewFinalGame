@@ -1,3 +1,8 @@
+/*************************
+Authors: Nicole Smith, Bar Ben-zvi
+Date Created: 5/23/19
+Brief: Spawns an object when this object is destroyed
+*************************/
 class SpawnOnDeath : ZilchComponent
 {
   //the archetype to spawn when this one dies
@@ -29,16 +34,16 @@ class SpawnOnDeath : ZilchComponent
 
   function OnCollisionStarted(event : CollisionEvent)
   {
-    if(this.DIE)
+    if(event.OtherObject.DestructableCustomCollision == null && this.DIE)
     {
-      this.Space.FindObjectByName("GameCamera").ScreenShake.TriggerScreenShake(0.1);
       this.Owner.Destroy();
     }
   }
 
   function OnCogDestroy(event : ObjectEvent)
   {
-   this.Space.SoundSpace.PlayCue(this.SoundToPlay); 
+    this.Space.FindObjectByName("GameCamera").ScreenShake.TriggerScreenShake(0.1);
+    this.Space.SoundSpace.PlayCue(this.SoundToPlay); 
     this.Space.SoundSpace.PlayCue(this.SoundToPlay);
     var object = this.Space.CreateAtPosition(this.ObjectToSpawn, this.Owner.Transform.WorldTranslation - 
       Real3(0, this.Owner.Transform.Scale.Y * this.SpawnOffset, 0));

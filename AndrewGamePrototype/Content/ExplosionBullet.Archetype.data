@@ -4,7 +4,7 @@ Cog
 	var Name = "Bullet"
 	Transform 
 	{
-		var Translation = Real3{0, 0, 0}
+		var Translation = Real3{-11.0585938, 7.65195084, 0.0631408691}
 		var Scale = Real3{0.5, 0.5, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
@@ -37,6 +37,12 @@ Cog
 		var RotationLocked = false
 		var Mode2D = Mode2DStates.InheritFromSpace
 	}
+	CustomCollisionVariables 
+	{
+		var Explodes = true
+		var ExplosionRadius = 2.5
+		var MaxSlope = 30
+	}
 	DamageOnCollide 
 	{
 		var Damage = 0
@@ -49,7 +55,7 @@ Cog
 		var Material = "4de020863e872da8:DefaultPhysicsMaterial"
 		var CollisionGroup = "5c098e40de85b0fc:PlayerBullet"
 		var Offset = Real3{0, 0, 0}
-		var Radius = 0.25
+		var Radius = 0.5
 	}
 	SpawnOnDeath 
 	{

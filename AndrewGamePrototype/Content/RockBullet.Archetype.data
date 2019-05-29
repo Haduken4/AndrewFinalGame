@@ -4,7 +4,7 @@ Cog
 	var Name = "Bullet"
 	Transform 
 	{
-		var Translation = Real3{0, 0, 0}
+		var Translation = Real3{13.9608545, 1.21800971, 0.0631408691}
 		var Scale = Real3{2, 2, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
@@ -49,10 +49,16 @@ Cog
 		var Material = "4de020863e872da8:DefaultPhysicsMaterial"
 		var CollisionGroup = "5c098e40de85b0fc:PlayerBullet"
 		var Offset = Real3{0, 0, 0}
-		var Radius = 0.25
+		var Radius = 0.200000003
 	}
 	TimedDeath 
 	{
 		var Timer = 5
+	}
+	CustomCollisionVariables 
+	{
+		var Explodes = true
+		var ExplosionRadius = 0.25
+		var MaxSlope = 30
 	}
 }

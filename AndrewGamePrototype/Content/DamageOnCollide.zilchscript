@@ -22,6 +22,7 @@ class DamageOnCollide : ZilchComponent
         event.OtherObject.Health.ApplyDamage(this.Damage);
         if(this.DestroyMe)
         {
+          Console.WriteLine("???");
           this.Space.FindObjectByName("GameCamera").ScreenShake.TriggerScreenShake(0.1);
           this.Owner.Destroy();
         }
