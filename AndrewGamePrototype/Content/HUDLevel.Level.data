@@ -185,7 +185,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{13.1462946, 5.81412935, 20}
+			var Translation = Real3{-13.1944084, -4.52030468, 20}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -238,7 +238,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 9.93178368
+			var Size = 10.9763174
 		}
 		EditorCameraController 
 		{
@@ -247,7 +247,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{13.1462946, 5.81412935, -2.20636679e-07}
+			var LookTarget = Real3{-13.1944084, -4.52030468, -2.20636679e-07}
 			var MoveSensitivity = 1
 		}
 	}
@@ -567,11 +567,11 @@ Level
 	}
 	Cog [ContextId:13]
 	{
-		var Name = "Sprite"
+		var Name = "MoveMeter"
 		Transform 
 		{
-			var Translation = Real3{-8, -6.25, 0.200000003}
-			var Scale = Real3{0.100000001, 1, 1}
+			var Translation = Real3{-15.8295736, -6.62784767, 0.200000003}
+			var Scale = Real3{2, 0.100000001, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
 		Sprite 

@@ -56,6 +56,13 @@ Level
 		{
 			var TimerPerPhase = 15
 		}
+		SpawnPickups 
+		{
+			var SpawnY = 10
+			var Chance = 100
+			var MinSpawnX = -10
+			var MaxSpawnX = 10
+		}
 	}
 	Cog [ContextId:2]
 	{
@@ -102,7 +109,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{-10.9171629, -2.16556072, 30}
+			var Translation = Real3{-2.08209801, 1.33480263, 30}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -155,7 +162,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 10.9762154
+			var Size = 19.999958
 		}
 		EditorCameraController 
 		{
@@ -164,7 +171,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{-10.9171629, -2.16556072, 10}
+			var LookTarget = Real3{-2.08209801, 1.33480263, 10}
 			var MoveSensitivity = 1
 		}
 	}
@@ -309,6 +316,7 @@ Level
 			var JumpSpeed = 10
 			var MaxMoveResource = 5
 			var SoundToPlay = "5c57355bc3ba7392:Jump"
+			var JumpAnimation = "null"
 			var Active = false
 		}
 		Health 
@@ -391,6 +399,7 @@ Level
 			var JumpSpeed = 10
 			var MaxMoveResource = 5
 			var SoundToPlay = "5c57355bc3ba7392:Jump"
+			var JumpAnimation = "null"
 			var Active = false
 		}
 		Health 
@@ -449,15 +458,6 @@ Level
 			var Source = "5c0f86e8af7e3102:Level_TileMap00"
 			var PaletteName = "5c0f869da6af70e1:GamePalette"
 			var MeshThickness = 1.20000005
-		}
-	}
-	Cog [InheritId:"5c85da8abb1395cf:WeaponSpawner"][ContextId:8]
-	{
-		Transform 
-		{
-			var Translation = Real3{-3.62151599, 0.061029911, 0}
-			var Rotation = Quaternion{0, 0, 0, 1}
-			var Scale = Real3{1, 1, 1}
 		}
 	}
 }

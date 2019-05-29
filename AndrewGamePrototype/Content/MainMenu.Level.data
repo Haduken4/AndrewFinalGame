@@ -130,7 +130,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 16.3746071
+			var Size = 24.4280338
 		}
 		EditorCameraController 
 		{
@@ -276,7 +276,7 @@ Level
 		}
 		MenuButton 
 		{
-			var NextLevel = "5c0f9845b860fa8b:Level"
+			var NextLevel = "5c777819f3e45a3c:MainLevel"
 			var QuitButton = false
 		}
 		Reactive 

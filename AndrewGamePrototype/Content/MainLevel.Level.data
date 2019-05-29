@@ -46,15 +46,22 @@ Level
 		{
 			var MinSpawnX = -50
 			var MaxSpawnX = 50
-			var MaxSpawnY = 50
-			var MinSpawnY = -50
+			var MaxSpawnY = 20
+			var MinSpawnY = 8
 			var MaxSpawnCount = 5
 			var MinDiameterSize = 1
-			var MaxDiameterSize = 10
+			var MaxDiameterSize = 2.5
 		}
 		PlayerTurnManager 
 		{
 			var TimerPerPhase = 30
+		}
+		SpawnPickups 
+		{
+			var SpawnY = 20
+			var Chance = 10
+			var MinSpawnX = -50
+			var MaxSpawnX = 50
 		}
 	}
 	Cog [ContextId:2]
@@ -102,7 +109,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{12.9193134, 1.70966864, 21.1585636}
+			var Translation = Real3{2.93713784, 8.02963543, 20.7281857}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{-0.0340181589, -0.0235457812, -0.000801671296, 0.999143481}
 		}
@@ -155,7 +162,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 44.5114441
+			var Size = 89.6349792
 		}
 		EditorCameraController 
 		{
@@ -164,7 +171,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0.0680683479
 			var HorizontalAngle = 0.0471231788
-			var LookTarget = Real3{13.8592463, 0.349352598, 1.22702992}
+			var LookTarget = Real3{3.8770709, 6.66931915, 0.796652555}
 			var MoveSensitivity = 1
 		}
 	}
