@@ -1,0 +1,11 @@
+[Version:1]
+DataContent 
+{
+	DataBuilder 
+	{
+		var Name = "ItemFruit"
+		var ResourceId = 0x5c8dc3dda3ed8a7c
+		var LoaderType = "Cog"
+		var Version = 0
+	}
+}

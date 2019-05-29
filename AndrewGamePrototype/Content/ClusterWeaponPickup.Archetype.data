@@ -57,6 +57,7 @@ Cog
 			var ProjectileSpeed = 20
 			var SpeedVariation = 1.5
 			var SpeedBool = true
+			var ShootSound = "5c528ff8af1f2fae:Frogrunes"
 		}
 	}
 }

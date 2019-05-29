@@ -130,7 +130,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 26.9971561
+			var Size = 16.3746071
 		}
 		EditorCameraController 
 		{
@@ -252,7 +252,7 @@ Level
 		Transform 
 		{
 			var Translation = Real3{0, 0, 0}
-			var Scale = Real3{5, 2, 1}
+			var Scale = Real3{10, 10, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
 		Sprite 
@@ -267,7 +267,7 @@ Level
 			var Material = "582c575af53d18c9:AlphaSprite"
 			var VertexColor = Real4{0.14684999, 0.889999986, 0.444110066, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
-			var SpriteSource = "5586f579ca73ecc2:SquareBordered"
+			var SpriteSource = "5c529bde35bcd532:ButtonUp"
 			var FlipX = false
 			var FlipY = false
 			var AnimationActive = true
@@ -291,7 +291,7 @@ Level
 				Transform 
 				{
 					var Translation = Real3{0, 0, 0.100000001}
-					var Scale = Real3{0.200000003, 0.5, 1}
+					var Scale = Real3{1, 1, 1}
 					var Rotation = Quaternion{0, 0, 0, 1}
 				}
 				SpriteText 
@@ -308,7 +308,7 @@ Level
 					var GeometryMode = SpriteGeometryMode.ZPlane
 					var Text = "Start"
 					var Font = "57343753bb4eaaec:NotoSans-Regular"
-					var FontSize = 100
+					var FontSize = 16
 					var PixelsPerUnit = 128
 					var TextAlign = TextAlign.Center
 				}
@@ -320,8 +320,8 @@ Level
 		var Name = "CreditButton"
 		Transform 
 		{
-			var Translation = Real3{0, -2.51333332, 0}
-			var Scale = Real3{5, 2, 1}
+			var Translation = Real3{0, -2.66907024, 0}
+			var Scale = Real3{10, 10, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
 		Sprite 
@@ -336,7 +336,7 @@ Level
 			var Material = "582c575af53d18c9:AlphaSprite"
 			var VertexColor = Real4{0.240125, 0.564999998, 0.448044956, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
-			var SpriteSource = "5586f579ca73ecc2:SquareBordered"
+			var SpriteSource = "5c529bde35bcd532:ButtonUp"
 			var FlipX = false
 			var FlipY = false
 			var AnimationActive = true
@@ -360,7 +360,7 @@ Level
 				Transform 
 				{
 					var Translation = Real3{0, 0, 0.100000001}
-					var Scale = Real3{0.200000003, 0.5, 1}
+					var Scale = Real3{1, 1, 1}
 					var Rotation = Quaternion{0, 0, 0, 1}
 				}
 				SpriteText 
@@ -377,7 +377,7 @@ Level
 					var GeometryMode = SpriteGeometryMode.ZPlane
 					var Text = "Credits"
 					var Font = "57343753bb4eaaec:NotoSans-Regular"
-					var FontSize = 100
+					var FontSize = 16
 					var PixelsPerUnit = 128
 					var TextAlign = TextAlign.Center
 				}
@@ -390,7 +390,7 @@ Level
 		Transform 
 		{
 			var Translation = Real3{0, -5.15435886, 0}
-			var Scale = Real3{5, 2, 1}
+			var Scale = Real3{10, 10, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
 		Sprite 
@@ -405,7 +405,7 @@ Level
 			var Material = "582c575af53d18c9:AlphaSprite"
 			var VertexColor = Real4{0.137799978, 0.482936025, 0.529999971, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
-			var SpriteSource = "5586f579ca73ecc2:SquareBordered"
+			var SpriteSource = "5c529bde35bcd532:ButtonUp"
 			var FlipX = false
 			var FlipY = false
 			var AnimationActive = true
@@ -429,7 +429,7 @@ Level
 				Transform 
 				{
 					var Translation = Real3{0, 0, 0.100000001}
-					var Scale = Real3{0.200000003, 0.5, 1}
+					var Scale = Real3{0.699999988, 1, 1}
 					var Rotation = Quaternion{0, 0, 0, 1}
 				}
 				SpriteText 
@@ -446,7 +446,7 @@ Level
 					var GeometryMode = SpriteGeometryMode.ZPlane
 					var Text = "Quit game"
 					var Font = "57343753bb4eaaec:NotoSans-Regular"
-					var FontSize = 100
+					var FontSize = 16
 					var PixelsPerUnit = 128
 					var TextAlign = TextAlign.Center
 				}

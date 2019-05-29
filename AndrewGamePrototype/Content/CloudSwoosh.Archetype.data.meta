@@ -1,0 +1,11 @@
+[Version:1]
+DataContent 
+{
+	DataBuilder 
+	{
+		var Name = "CloudSwoosh"
+		var ResourceId = 0x5c5298f4542290d6
+		var LoaderType = "Cog"
+		var Version = 0
+	}
+}
