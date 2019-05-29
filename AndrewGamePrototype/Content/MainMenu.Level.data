@@ -77,7 +77,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{0, 0, 20}
+			var Translation = Real3{1.0000124, -1.83336425, 20}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -130,7 +130,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 24.4280338
+			var Size = 36.4423027
 		}
 		EditorCameraController 
 		{
@@ -139,7 +139,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{0, 0, 0}
+			var LookTarget = Real3{1.0000124, -1.83336425, 0}
 			var MoveSensitivity = 1
 		}
 	}
@@ -265,7 +265,7 @@ Level
 			var LocalAabbHalfExtents = Real3{1, 1, 1}
 			var GroupSortValue = 0
 			var Material = "582c575af53d18c9:AlphaSprite"
-			var VertexColor = Real4{0.14684999, 0.889999986, 0.444110066, 1}
+			var VertexColor = Real4{0, 1, 0.400000095, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var SpriteSource = "5c529bde35bcd532:ButtonUp"
 			var FlipX = false
@@ -278,6 +278,8 @@ Level
 		{
 			var NextLevel = "5c777819f3e45a3c:MainLevel"
 			var QuitButton = false
+			var ButtonUpSprite = "5c529bde35bcd532:ButtonUp"
+			var ButtonDownSprite = "5c529bdf35ee9611:ButtonDown"
 		}
 		Reactive 
 		{
@@ -308,8 +310,8 @@ Level
 					var GeometryMode = SpriteGeometryMode.ZPlane
 					var Text = "Start"
 					var Font = "57343753bb4eaaec:NotoSans-Regular"
-					var FontSize = 16
-					var PixelsPerUnit = 128
+					var FontSize = 60
+					var PixelsPerUnit = 512
 					var TextAlign = TextAlign.Center
 				}
 			}
@@ -334,7 +336,7 @@ Level
 			var LocalAabbHalfExtents = Real3{1, 1, 1}
 			var GroupSortValue = 0
 			var Material = "582c575af53d18c9:AlphaSprite"
-			var VertexColor = Real4{0.240125, 0.564999998, 0.448044956, 1}
+			var VertexColor = Real4{0, 1, 0.639999866, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var SpriteSource = "5c529bde35bcd532:ButtonUp"
 			var FlipX = false
@@ -347,6 +349,8 @@ Level
 		{
 			var NextLevel = "5c0f9844b87783c6:CreditsLevel"
 			var QuitButton = false
+			var ButtonUpSprite = "5c529bde35bcd532:ButtonUp"
+			var ButtonDownSprite = "5c529bdf35ee9611:ButtonDown"
 		}
 		Reactive 
 		{
@@ -377,8 +381,8 @@ Level
 					var GeometryMode = SpriteGeometryMode.ZPlane
 					var Text = "Credits"
 					var Font = "57343753bb4eaaec:NotoSans-Regular"
-					var FontSize = 16
-					var PixelsPerUnit = 128
+					var FontSize = 60
+					var PixelsPerUnit = 512
 					var TextAlign = TextAlign.Center
 				}
 			}
@@ -389,7 +393,7 @@ Level
 		var Name = "QuitButton"
 		Transform 
 		{
-			var Translation = Real3{0, -5.15435886, 0}
+			var Translation = Real3{0, -5.37252378, 0}
 			var Scale = Real3{10, 10, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
@@ -403,7 +407,7 @@ Level
 			var LocalAabbHalfExtents = Real3{1, 1, 1}
 			var GroupSortValue = 0
 			var Material = "582c575af53d18c9:AlphaSprite"
-			var VertexColor = Real4{0.137799978, 0.482936025, 0.529999971, 1}
+			var VertexColor = Real4{0, 0.880000114, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var SpriteSource = "5c529bde35bcd532:ButtonUp"
 			var FlipX = false
@@ -416,6 +420,8 @@ Level
 		{
 			var NextLevel = "5c0f9845b860fa8b:Level"
 			var QuitButton = true
+			var ButtonUpSprite = "5c529bde35bcd532:ButtonUp"
+			var ButtonDownSprite = "5c529bdf35ee9611:ButtonDown"
 		}
 		Reactive 
 		{
@@ -428,8 +434,8 @@ Level
 				var Name = "Text"
 				Transform 
 				{
-					var Translation = Real3{0, 0, 0.100000001}
-					var Scale = Real3{0.699999988, 1, 1}
+					var Translation = Real3{0, 0.00831103232, 0.100000001}
+					var Scale = Real3{1, 1, 1}
 					var Rotation = Quaternion{0, 0, 0, 1}
 				}
 				SpriteText 
@@ -446,8 +452,8 @@ Level
 					var GeometryMode = SpriteGeometryMode.ZPlane
 					var Text = "Quit game"
 					var Font = "57343753bb4eaaec:NotoSans-Regular"
-					var FontSize = 16
-					var PixelsPerUnit = 128
+					var FontSize = 45
+					var PixelsPerUnit = 512
 					var TextAlign = TextAlign.Center
 				}
 			}
