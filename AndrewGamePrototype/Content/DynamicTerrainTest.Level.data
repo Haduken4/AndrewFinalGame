@@ -46,6 +46,13 @@ Level
 		{
 			var TimerPerPhase = 30
 		}
+		SpawnPickups 
+		{
+			var SpawnY = 30
+			var Chance = 10
+			var MinSpawnX = -50
+			var MaxSpawnX = 50
+		}
 	}
 	Cog [ContextId:2]
 	{
@@ -92,7 +99,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{-9.04191685, 4.67026281, 20}
+			var Translation = Real3{-7.04335451, 0.220722497, 20}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -145,7 +152,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 18.0967598
+			var Size = 8.13140202
 		}
 		EditorCameraController 
 		{
@@ -154,7 +161,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{-9.04191685, 4.67026281, -3.95234878e-07}
+			var LookTarget = Real3{-7.04335451, 0.220722497, -3.07874899e-07}
 			var MoveSensitivity = 1
 		}
 	}
@@ -274,8 +281,8 @@ Level
 			var SendsEvents = true
 			var Material = "4de020863e872da8:DefaultPhysicsMaterial"
 			var CollisionGroup = "5c098e4fdd820ac1:Player"
-			var Offset = Real3{0, 0, 0}
-			var HalfSize = Real3{0.5, 0.5, 0.5}
+			var Offset = Real3{0, -0.125, 0}
+			var HalfSize = Real3{0.400000006, 0.400000006, 0.5}
 		}
 		RigidBody 
 		{
@@ -293,6 +300,7 @@ Level
 			var JumpSpeed = 10
 			var MaxMoveResource = 5
 			var SoundToPlay = "null"
+			var JumpAnimation = "null"
 			var Active = false
 		}
 		Health 
@@ -310,9 +318,9 @@ Level
 				var ProjectileSpeed = 30
 				var SpeedVariation = 0
 				var SpeedBool = false
+				var ShootSound = "null"
 			}
 			var Active = false
-			var SoundToPlay = "null"
 			var RuneSound = "null"
 		}
 		CustomCollisionVariables 
@@ -375,6 +383,7 @@ Level
 			var JumpSpeed = 10
 			var MaxMoveResource = 5
 			var SoundToPlay = "null"
+			var JumpAnimation = "null"
 			var Active = false
 		}
 		Health 
@@ -392,9 +401,9 @@ Level
 				var ProjectileSpeed = 30
 				var SpeedVariation = 0
 				var SpeedBool = false
+				var ShootSound = "null"
 			}
 			var Active = false
-			var SoundToPlay = "null"
 			var RuneSound = "null"
 		}
 	}
@@ -424,7 +433,7 @@ Level
 		}
 		TileMap 
 		{
-			var Source = "5cb6f9d3c8dbc2bc:DynamicTerrainTest_TileMap01"
+			var Source = "5c3acb3c48c142c2:DynamicTerrainTest_TileMap06"
 			var PaletteName = "5c0f869da6af70e1:GamePalette"
 			var MeshThickness = 1.20000005
 		}
@@ -434,7 +443,7 @@ Level
 		var Name = "Sprite"
 		Transform 
 		{
-			var Translation = Real3{8.29491615, 8.20670414, -0.100000001}
+			var Translation = Real3{-1.9418745, 14.698328, -0.100000001}
 			var Scale = Real3{5, 5, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
@@ -474,7 +483,7 @@ Level
 	{
 		Transform 
 		{
-			var Translation = Real3{-1.56670189, -0.141305923, 0}
+			var Translation = Real3{-1.56670189, 13.434927, 0}
 			var Rotation = Quaternion{0, 0, 0, 1}
 			var Scale = Real3{10, 10, 1}
 		}
@@ -519,6 +528,47 @@ Level
 			var Translation = Real3{-10.369669, 4.67026281, 0}
 			var Rotation = Quaternion{0, 0, 0, 1}
 			var Scale = Real3{0.5, 0.5, 1}
+		}
+	}
+	Cog [ContextId:12]
+	{
+		var Name = "Leaf"
+		Transform 
+		{
+			var Translation = Real3{-0.83200717, 1.66398883, 0}
+			var Scale = Real3{2, 2, 1}
+			var Rotation = Quaternion{0, 0, -0.0880250558, 0.996118248}
+		}
+		Sprite 
+		{
+			var Visible = true
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var OverrideBoundingBox = false
+			var LocalAabbCenter = Real3{0, 0, 0}
+			var LocalAabbHalfExtents = Real3{1, 1, 1}
+			var GroupSortValue = 0
+			var Material = "5c887ab691cc6823:DestructibleSprite"
+			var VertexColor = Real4{1, 1, 1, 1}
+			var GeometryMode = SpriteGeometryMode.ZPlane
+			var SpriteSource = "5cb6e738914a9d98:DestructableLeaf"
+			var FlipX = false
+			var FlipY = false
+			var AnimationActive = true
+			var AnimationSpeed = 1
+			var StartFrame = 0
+		}
+		DestructableCustomCollision 
+		{
+		}
+		MultiConvexMeshCollider 
+		{
+			var Ghost = false
+			var SendsEvents = true
+			var Material = "4de020863e872da8:DefaultPhysicsMaterial"
+			var CollisionGroup = "5c32dddceaf965aa:Destructable"
+			var Offset = Real3{0, 0, 0}
+			var Mesh = "5c8dbf0544f9cccb:LeafMesh"
 		}
 	}
 }
