@@ -223,19 +223,10 @@ class PlayerShooting : ZilchComponent
     //this is for switchign after the bullet gets destroyed
     if(this.BBool && this.GameSession.GameVars.BulletArray.Count == 0)
     {
-      //turns on the timer bool
-      this.TBool = true;
-      //waits till the timer is goes above 3 secvonds
-      if(this.Timer > 3)
-      {
         //changes whos turn it is
         this.LevelSettings.PlayerTurnManager.TurnBool = true;
         //turn off the bools
         this.BBool = false;
-        this.TBool = false;
-        //reset the timer
-        this.Timer = 0;
-      }
     }
   }
 }
