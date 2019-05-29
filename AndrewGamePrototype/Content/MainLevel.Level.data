@@ -109,7 +109,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{-1.60449874, -0.161584198, 20.0631409}
+			var Translation = Real3{-19.1679859, 4.13764572, 20.063139}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -162,7 +162,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 12.1307898
+			var Size = 60.0841484
 		}
 		EditorCameraController 
 		{
@@ -171,7 +171,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{-1.60449874, -0.161584198, 0.0631404594}
+			var LookTarget = Real3{-19.1679859, 4.13764572, 0.0631396919}
 			var MoveSensitivity = 1
 		}
 	}
@@ -365,7 +365,7 @@ Level
 			var DynamicState = RigidBodyDynamicState.Dynamic
 			var AllowSleep = false
 			var Asleep = false
-			var RotationLocked = false
+			var RotationLocked = true
 			var Mode2D = Mode2DStates.InheritFromSpace
 		}
 		PlayerMovement 
@@ -625,16 +625,7 @@ Level
 			var HalfSize = Real3{1, 2, 0.5}
 		}
 	}
-	Cog [InheritId:"5c0f9844b874aa7c:Bullet"][ContextId:12]
-	{
-		Transform 
-		{
-			var Translation = Real3{-15.9076891, 9.36647797, -4.99000168}
-			var Rotation = Quaternion{0, 0, 0, 1}
-			var Scale = Real3{0.5, 0.5, 1}
-		}
-	}
-	Cog [ContextId:13]
+	Cog [ContextId:12]
 	{
 		var Name = "BulletArea"
 		Transform 
@@ -678,7 +669,7 @@ Level
 			var MaxSlope = 30
 		}
 	}
-	Cog [ContextId:14]
+	Cog [ContextId:13]
 	{
 		var Name = "TileMap"
 		Transform 
@@ -709,7 +700,7 @@ Level
 			var MeshThickness = 1.20000005
 		}
 	}
-	Cog [ContextId:15]
+	Cog [ContextId:14]
 	{
 		var Name = "BackgroundBranch"
 		Transform 
@@ -738,7 +729,7 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:16]
+	Cog [ContextId:15]
 	{
 		var Name = "BackgroundBranch"
 		Transform 
@@ -767,7 +758,7 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:17]
+	Cog [ContextId:16]
 	{
 		var Name = "BackgroundBranch"
 		Transform 
