@@ -297,7 +297,8 @@ class DestructableCustomCollision : ZilchComponent
     
     var objRad = object.SphereCollider.WorldRadius;
     var colliding = true;
-    var translation = Real3(object.Transform.WorldTranslation.XY, 0);
+    var translation = object.SphereCollider.WorldBoundingSphere.Center;
+    
     
     var closestIndex = 0;
     
@@ -325,19 +326,21 @@ class DestructableCustomCollision : ZilchComponent
     if(colliding)
     {
       
-      /*if(this.DestructionCenterArray.Count != 0)
+      if(this.DestructionCenterArray.Count != 0)
       {
         //Get a direction directly away from the closest circle
-        var dir = Math.Normalize(this.DestructionCenterArray[closestIndex] - this.Owner.Transform.WorldTranslation);
+        var dir = Math.Normalize(translation - this.Owner.Transform.WorldTranslation);
         
+        //Console.WriteLine(this.DestructionCenterArray[closestIndex] + (dir * objRad));
         
         //Check if the furthest point away on the circle from us and the center of the circle are colliding with us at all
-        if(!this.IsPointColliding(this.DestructionCenterArray[closestIndex] + (dir * objRad)))
+        if(!this.IsPointColliding(translation + (dir * objRad)))
         {
+          
           Console.WriteLine("why");
           return;
         }
-      }*/
+      }
       
       //If the other object explodes, explode it
       if(object.CustomCollisionVariables.Explodes)
@@ -429,14 +432,17 @@ class DestructableCustomCollision : ZilchComponent
     //If we have a box collider
     else if(this.Owner.BoxCollider != null)
     {
-      var extents = this.Owner.Transform.WorldScale * this.Owner.BoxCollider.HalfSize;
-      var ownerPos = this.Owner.Transform.WorldTranslation;
+      var results = this.Space.PhysicsSpace.CastSphere(Sphere(point, 0.01), 20, CastFilter());
       
-      //If the point is outside of our collider
-      if(point.X > ownerPos.X + extents.X || point.X < ownerPos.X - extents.X || point.Y > ownerPos.Y + extents.Y || point.Y < ownerPos.Y - extents.Y)
+      foreach(var collision in results)
       {
-        return false;
+        if(collision.ObjectHit == this.Owner)
+        {
+          return true;
+        }
       }
+      
+      return false;
     }
     else if(this.Owner.MultiConvexMeshCollider != null)
     {
