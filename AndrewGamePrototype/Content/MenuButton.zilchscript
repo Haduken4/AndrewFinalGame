@@ -50,6 +50,7 @@ class MenuButton : ZilchComponent
 
   function OnLeftMouseDown(event : ViewportMouseEvent)
   {
+    this.Space.SoundSpace.PlayCue(SoundCue.MenuButton);
     this.Owner.Sprite.SpriteSource = this.ButtonDownSprite;
     
   }
