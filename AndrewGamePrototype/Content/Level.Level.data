@@ -162,7 +162,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 19.999958
+			var Size = 22.1033688
 		}
 		EditorCameraController 
 		{
@@ -337,7 +337,6 @@ Level
 				var ShootSound = "null"
 			}
 			var Active = false
-			var RuneSound = "5c57355bc3b8bad5:Runecircle"
 		}
 		AnimationHandler 
 		{
@@ -420,7 +419,6 @@ Level
 				var ShootSound = "null"
 			}
 			var Active = false
-			var RuneSound = "5c57355bc3b8bad5:Runecircle"
 		}
 		AnimationHandler 
 		{
@@ -464,7 +462,7 @@ Level
 	{
 		Transform 
 		{
-			var Translation = Real3{-4.36242723, 0.707188487, 0}
+			var Translation = Real3{-3.77537394, 0.844643593, 0}
 			var Rotation = Quaternion{0, 0, 0, 1}
 			var Scale = Real3{0.75, 0.75, 1}
 		}

@@ -4,7 +4,7 @@ Cog
 	var Name = "Plant"
 	Transform 
 	{
-		var Translation = Real3{-13.1649752, 7.75378132, 0}
+		var Translation = Real3{-13.1649752, 7.75378132, -2.81008624e-07}
 		var Scale = Real3{1, 2, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}

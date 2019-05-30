@@ -4,7 +4,7 @@ Cog
 	var Name = "Bullet"
 	Transform 
 	{
-		var Translation = Real3{0, 0, 0}
+		var Translation = Real3{-17.6986084, 4.87854958, 10}
 		var Scale = Real3{0.5, 0.5, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
@@ -53,11 +53,10 @@ Cog
 	}
 	SpawnOnDeath 
 	{
-		var ObjectToSpawn = "5c506e0240683dfd:Smoke"
+		var ObjectToSpawn = "5c119a085f028422:Smoke"
 		var OffsetSpawn = true
 		var SpawnOffset = 0
-		var DIE = false
-		var Zvalue = 0.00999999978
+		var DIE = true
 		var SoundToPlay = "5c57355bc3b9f2ac:DefensePlant"
 	}
 	TimedDeath 
