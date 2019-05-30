@@ -109,7 +109,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{3.98465538, -2.9627378, 22.089201}
+			var Translation = Real3{21.1668167, 0.994596958, 22.089201}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -162,7 +162,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 40.2760277
+			var Size = 7.35777426
 		}
 		EditorCameraController 
 		{
@@ -171,7 +171,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{3.98465538, -2.9627378, 2.08920145}
+			var LookTarget = Real3{21.1668167, 0.994596958, 2.08920145}
 			var MoveSensitivity = 1
 		}
 	}
@@ -398,7 +398,6 @@ Level
 				var ShootSound = "null"
 			}
 			var Active = false
-			var RuneSound = "5c8f26170f022816:Runecircle"
 		}
 		AnimationHandler 
 		{
@@ -500,7 +499,7 @@ Level
 			var Material = "582c575af53d18c9:AlphaSprite"
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
-			var SpriteSource = "5c873dadf480ed3f:RecoloredIdleFrogAni_0"
+			var SpriteSource = "5cab3c556b13c5b6:RecoloredIdleFrogAni_1"
 			var FlipX = true
 			var FlipY = false
 			var AnimationActive = true
@@ -553,13 +552,12 @@ Level
 				var ShootSound = "null"
 			}
 			var Active = false
-			var RuneSound = "5c8f26170f022816:Runecircle"
 		}
 		AnimationHandler 
 		{
-			var DamagedSprite = "5c8882b117ef3454:RecoloredDamagedFrogAni_0"
-			var IdleSprite = "5c873dadf480ed3f:RecoloredIdleFrogAni_0"
-			var AttackSprite = "5c8882cb1232b0a5:RecoloredAttackFrogAni_0"
+			var DamagedSprite = "5cab3c9950dc5caf:RecoloredDamagedFrogAni_1"
+			var IdleSprite = "5cab3c556b13c5b6:RecoloredIdleFrogAni_1"
+			var AttackSprite = "5cab3c9950dc5caf:RecoloredDamagedFrogAni_1"
 		}
 		CloudEffect 
 		{
@@ -579,7 +577,7 @@ Level
 				var Name = "FlyingCloud"
 				Transform 
 				{
-					var Translation = Real3{-0.0799999982, -0.530543327, -0.602967262}
+					var Translation = Real3{-0.0799999982, -0.611510158, -0.602967262}
 					var Scale = Real3{2.5, 2.5, 1}
 					var Rotation = Quaternion{0, 0, 0, 1}
 				}
@@ -608,7 +606,7 @@ Level
 				var Name = "FlyingCloud"
 				Transform 
 				{
-					var Translation = Real3{0.0199999996, -0.530543327, 0.395746231}
+					var Translation = Real3{0.0199999996, -0.611510158, 0.395746231}
 					var Scale = Real3{2.5, 2.5, 1}
 					var Rotation = Quaternion{0, 0, 0, 1}
 				}
