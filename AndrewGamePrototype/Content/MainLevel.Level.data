@@ -162,7 +162,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 49.1934052
+			var Size = 54.367115
 		}
 		EditorCameraController 
 		{
@@ -388,7 +388,7 @@ Level
 		{
 			var Weapon = ShootVariables
 			{
-				var Icon = "5274db4c2e7c11f9:Circle"
+				var Icon = "5c4f2f551442b9d7:Blank"
 				var Projectile = "5c0f9844b874aa7c:Bullet"
 				var ProjectileCount = 1
 				var SpreadCone = 0
