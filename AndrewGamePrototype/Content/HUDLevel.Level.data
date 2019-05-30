@@ -185,7 +185,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{11.2184477, 6.27440071, 20}
+			var Translation = Real3{-16.6875744, -1.1653372, 19.9999981}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -238,7 +238,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 10.9763384
+			var Size = 10.9763365
 		}
 		EditorCameraController 
 		{
@@ -247,7 +247,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{11.2184477, 6.27440071, -2.20636679e-07}
+			var LookTarget = Real3{-16.6875744, -1.1653372, -1.4404477e-06}
 			var MoveSensitivity = 1
 		}
 	}
@@ -399,7 +399,7 @@ Level
 		var Name = "TurnStateText"
 		Transform 
 		{
-			var Translation = Real3{-16.0850563, -2.17344856, 0.100000001}
+			var Translation = Real3{-14.5, -2.17344856, 0.100000001}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
@@ -419,7 +419,7 @@ Level
 			var Font = "5c11e92d484179e3:eldermagic"
 			var FontSize = 100
 			var PixelsPerUnit = 128
-			var TextAlign = TextAlign.Left
+			var TextAlign = TextAlign.Center
 		}
 	}
 	Cog [ContextId:5]
@@ -427,7 +427,7 @@ Level
 		var Name = "PlayerText"
 		Transform 
 		{
-			var Translation = Real3{-16.3095398, -0.423449039, 0.100000001}
+			var Translation = Real3{-14.5, -0.423449039, 0.100000001}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
@@ -447,7 +447,7 @@ Level
 			var Font = "5c11e92d484179e3:eldermagic"
 			var FontSize = 100
 			var PixelsPerUnit = 128
-			var TextAlign = TextAlign.Left
+			var TextAlign = TextAlign.Center
 		}
 	}
 	Cog [ContextId:6]
@@ -629,7 +629,7 @@ Level
 		var Name = "HUDPlayerDisplay"
 		Transform 
 		{
-			var Translation = Real3{-14.6048794, -0.493224263, 0}
+			var Translation = Real3{-14.5, -0.493224263, 0}
 			var Scale = Real3{1.5, 1.5, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
@@ -658,7 +658,7 @@ Level
 		var Name = "HUDPlayerDisplay"
 		Transform 
 		{
-			var Translation = Real3{-14.6048794, -2.24322414, 0}
+			var Translation = Real3{-14.5, -2.24322414, 0}
 			var Scale = Real3{1.5, 1.5, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
