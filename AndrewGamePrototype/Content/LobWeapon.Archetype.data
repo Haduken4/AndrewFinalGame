@@ -4,7 +4,7 @@ Cog
 	var Name = "LobWeapon"
 	Transform 
 	{
-		var Translation = Real3{-11.1076765, 3.72702527, -2.81008624e-07}
+		var Translation = Real3{0, 0, -5.05000019}
 		var Scale = Real3{0.75, 0.75, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
@@ -41,7 +41,7 @@ Cog
 	{
 		var Weapon = ShootVariables
 		{
-			var Icon = "59a4f6f4a01bac09:SoftCircle"
+			var Icon = "5c505c76e3611204:DropExplosionSymbol"
 			var Projectile = "5c85e83b5648f152:LobBullet"
 			var ProjectileCount = 1
 			var SpreadCone = 0
@@ -49,7 +49,6 @@ Cog
 			var SpeedVariation = 0
 			var SpeedBool = false
 			var ShootSound = "5c57371855e8f80d:Attack"
-			var Type = WeaponType.NONE
 		}
 	}
 	SphereCollider 

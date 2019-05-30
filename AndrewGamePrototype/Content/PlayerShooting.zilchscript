@@ -46,9 +46,6 @@ class PlayerShooting : ZilchComponent
   [Property]
   var Active : Boolean = true;
   
-  [Property]
-  var RuneSound : SoundCue = null;
-  
   var CurrProjectile : Cog = null;
   
   //weapons inventory
@@ -88,7 +85,6 @@ class PlayerShooting : ZilchComponent
     //create cast circle
     if(this.Active)
     {
-      this.Space.SoundSpace.PlayCue(this.RuneSound);
       var object =this.Space.Create(Archetype.CastCircle);
       object.CursorFollow.RotateObject = this.Owner;
     }
@@ -103,6 +99,7 @@ class PlayerShooting : ZilchComponent
       if(this.Space.FindObjectByName("CastCircle") != null)
       {
         this.Space.FindObjectByName("CastCircle").Destroy();
+        
       }
       
       //gets the mouse position to know where to fire the bullet
@@ -192,17 +189,28 @@ class PlayerShooting : ZilchComponent
         var dirToAngle = Math.Normalize(distToMouse);
         var angleToMouse = Math.ATan2(dirToAngle.Y, dirToAngle.X);
         var dirToMouse = CustomMath.DirectionFromAngle(angleToMouse);
-       
-       if(CustomMath.Magnitude(distToMouse) > this.MaxAimDist)
-       {
-         distToMouse = Math.Normalize(distToMouse) * this.MaxAimDist;
-       }
+        
+        if(CustomMath.Magnitude(distToMouse) > this.MaxAimDist)
+        {
+          distToMouse = Math.Normalize(distToMouse) * this.MaxAimDist;
+        }
         
         var debugLine = DebugLine(this.Owner.Transform.WorldTranslation, this.Owner.Transform.WorldTranslation + distToMouse);
         
         debugLine.Color = Real4(1, 1, 1, 1);
         
         DebugDraw.Add(debugLine);
+        
+        if(screenMousePos.X > this.Owner.Transform.WorldTranslation.X)
+        {
+          Console.WriteLine("right");
+          this.Owner.Sprite.FlipX = false;
+        }
+        else if(screenMousePos.X < this.Owner.Transform.WorldTranslation.X)
+        {
+          Console.WriteLine("left");
+          this.Owner.Sprite.FlipX = true;
+        }
       }
       
       if(Zero.Keyboard.KeyIsPressed(Keys.K))

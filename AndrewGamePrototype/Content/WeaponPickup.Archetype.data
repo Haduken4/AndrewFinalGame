@@ -50,11 +50,14 @@ Cog
 	{
 		var Weapon = ShootVariables
 		{
-			var Icon = "null"
-			var Projectile = "5cbf3f95da5fd0a8:PlantBulletArchetype"
+			var Icon = "5c505c76e3616cb3:PlantFlowerSymbol"
+			var Projectile = "5cbf3f95da5fd0a8:PlantBullet"
 			var ProjectileCount = 1
 			var SpreadCone = 0
 			var ProjectileSpeed = 20
+			var SpeedVariation = 0
+			var SpeedBool = false
+			var ShootSound = "null"
 		}
 	}
 }

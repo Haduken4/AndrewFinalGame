@@ -1,0 +1,18 @@
+class CreateOnSpawn : ZilchComponent
+{
+  [Property]
+  var ObjectToSpawn : Archetype = null;
+  
+  [Property]
+  var OffsetSpawnY : Boolean = false;
+  
+  function Initialize(init : CogInitializer)
+  {
+    var obj = this.Space.CreateAtPosition(this.ObjectToSpawn, Real3(this.Owner.Transform.Translation.XY, this.Owner.Transform.Translation.Z - 0.01));
+    
+    if(this.OffsetSpawnY)
+    {
+      obj.Transform.WorldTranslation += Real3(0, obj.Transform.Scale.Y / 2.0, 0);
+    }
+  }
+}
