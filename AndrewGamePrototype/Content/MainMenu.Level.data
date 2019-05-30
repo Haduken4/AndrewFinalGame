@@ -481,7 +481,7 @@ Level
 		{
 			var StartPlaying = true
 			var Positional = false
-			var Cue = "4e1bd44008b4dc2a:DefaultSoundCue"
+			var Cue = "5c8f26591d8d294d:IntroBrogs"
 		}
 	}
 }

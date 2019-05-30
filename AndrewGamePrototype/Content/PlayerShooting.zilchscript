@@ -103,6 +103,7 @@ class PlayerShooting : ZilchComponent
       if(this.Space.FindObjectByName("CastCircle") != null)
       {
         this.Space.FindObjectByName("CastCircle").Destroy();
+        
       }
       
       //gets the mouse position to know where to fire the bullet
