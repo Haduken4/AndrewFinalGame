@@ -378,13 +378,16 @@ class DestructableCustomCollision : ZilchComponent
       //If the other object explodes, explode it
       if(object.CustomCollisionVariables.Explodes)
       {
-        this.DestructionCenterArray.Add(object.Transform.WorldTranslation);
-        this.DestructionRadiusArray.Add(object.CustomCollisionVariables.ExplosionRadius);
-        
-        //Spawn a display
-        var display = this.Space.CreateAtPosition(Archetype.DestructionDisplay, object.Transform.WorldTranslation + Real3(0, 0, 0.1));
-        
-        display.Transform.WorldScale = Real3(Real2(2, 2) * object.CustomCollisionVariables.ExplosionRadius, 1);
+        if(object.CustomCollisionVariables.ExplosionRadius != 0)
+        {
+          this.DestructionCenterArray.Add(object.Transform.WorldTranslation);
+          this.DestructionRadiusArray.Add(object.CustomCollisionVariables.ExplosionRadius);
+          
+          //Spawn a display
+          var display = this.Space.CreateAtPosition(Archetype.DestructionDisplay, object.Transform.WorldTranslation + Real3(0, 0, 0.1));
+          
+          display.Transform.WorldScale = Real3(Real2(2, 2) * object.CustomCollisionVariables.ExplosionRadius, 1);
+        }
         
         object.Destroy();
       }
