@@ -1,0 +1,18 @@
+class MusicManager : ZilchComponent
+{
+  //song to play first
+  [Property]
+  var CurrentSong : SoundCue = null;
+  
+  var NextSong : SoundCue = null;
+  
+  
+  function Initialize(init : CogInitializer)
+  {
+    //Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+  }
+}
