@@ -1,0 +1,9 @@
+class CreateOnSpawn : ZilchComponent
+{
+  [Property]
+  var ObjectToSpawn : Archetype = null;
+  function Initialize(init : CogInitializer)
+  {
+    this.Space.CreateAtPosition(this.ObjectToSpawn,this.Owner.Transform.Translation);
+  }
+}
