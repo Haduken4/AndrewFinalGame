@@ -64,7 +64,7 @@ class PlayerMovement : ZilchComponent
     //If we can jump
     if(this.Active && this.CurrMoveResource > this.MaxMoveResource / 2 && !this.LockMovement)
     {
-      //this.Space.CreateAtPosition(this.JumpAnimation, this.Owner.Transform.Translation - Real3(0,0.75,0));
+      this.Space.CreateAtPosition(this.JumpAnimation, this.Owner.Transform.Translation - Real3(0,0.75,0));
       
       var mousePos = event.ToWorldZPlane(0);
       var dirToAngle = Math.Normalize(mousePos - this.Owner.Transform.WorldTranslation);
@@ -82,6 +82,7 @@ class PlayerMovement : ZilchComponent
       this.LockMovement = true;
       
       this.MouseIsDown = false;
+      
       
     }
     
@@ -115,11 +116,13 @@ class PlayerMovement : ZilchComponent
       {
         if(Zero.Keyboard.KeyIsDown(Keys.A))
         {
+          this.Owner.Sprite.FlipX = true;
           vel.X = -1 * this.MoveSpeed * event.Dt;
           this.CurrMoveResource -= event.Dt;
         }
         else if(Zero.Keyboard.KeyIsDown(Keys.D))
         {
+          this.Owner.Sprite.FlipX = false;
           vel.X = 1 * this.MoveSpeed * event.Dt;
           this.CurrMoveResource -= event.Dt;
         }
@@ -143,6 +146,7 @@ class PlayerMovement : ZilchComponent
     if(this.MouseIsDown)
     {
       var mousePos = Zero.Mouse.ClientPosition;
+      
       var screenMousePos = this.Space.FindObjectByName("GameCamera").CameraViewport.ScreenToWorldZPlane(mousePos, 0);
       
       var dirToAngle = Math.Normalize(screenMousePos - this.Owner.Transform.WorldTranslation);
@@ -156,6 +160,17 @@ class PlayerMovement : ZilchComponent
       debugLine.Color = Real4(1, 0, 1, 1);
       
       DebugDraw.Add(debugLine);
+    
+      if(screenMousePos.X > this.Owner.Transform.WorldTranslation.X)
+      {
+        Console.WriteLine("right");
+        this.Owner.Sprite.FlipX = false;
+      }
+      else if(screenMousePos.X < this.Owner.Transform.WorldTranslation.X)
+      {
+        Console.WriteLine("left");
+        this.Owner.Sprite.FlipX = true;
+      }
     }
     
   }

@@ -203,6 +203,17 @@ class PlayerShooting : ZilchComponent
         debugLine.Color = Real4(1, 1, 1, 1);
         
         DebugDraw.Add(debugLine);
+        
+      if(screenMousePos.X > this.Owner.Transform.WorldTranslation.X)
+      {
+        Console.WriteLine("right");
+        this.Owner.Sprite.FlipX = false;
+      }
+      else if(screenMousePos.X < this.Owner.Transform.WorldTranslation.X)
+      {
+        Console.WriteLine("left");
+        this.Owner.Sprite.FlipX = true;
+      }
       }
       
       if(Zero.Keyboard.KeyIsPressed(Keys.K))

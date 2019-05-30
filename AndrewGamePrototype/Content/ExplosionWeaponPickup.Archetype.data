@@ -41,7 +41,7 @@ Cog
 	{
 		var Weapon = ShootVariables
 		{
-			var Icon = "59a4f6f4a01bac09:SoftCircle"
+			var Icon = "5c505c76e361c33d:BigExplosionSymbol"
 			var Projectile = "5cbf47e05bde41ed:ExplosionBullet"
 			var ProjectileCount = 1
 			var SpreadCone = 0
@@ -49,7 +49,6 @@ Cog
 			var SpeedVariation = 0
 			var SpeedBool = false
 			var ShootSound = "5c57371855e8f80d:Attack"
-			var Type = WeaponType.NONE
 		}
 	}
 	SphereCollider 
