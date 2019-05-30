@@ -460,4 +460,13 @@ Level
 			var MeshThickness = 1.20000005
 		}
 	}
+	Cog [InheritId:"5cbf45c9f4ae80b7:PlantWeaponPickup"][ContextId:8]
+	{
+		Transform 
+		{
+			var Translation = Real3{-4.36242723, 0.707188487, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.75, 0.75, 1}
+		}
+	}
 }

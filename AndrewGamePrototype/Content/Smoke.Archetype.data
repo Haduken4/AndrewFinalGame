@@ -1,11 +1,11 @@
 [Version:1]
 Cog 
 {
-	var Name = "Plant"
+	var Name = "Smoke_0"
 	Transform 
 	{
-		var Translation = Real3{-13.1649752, 7.75378132, 0}
-		var Scale = Real3{1, 2, 1}
+		var Translation = Real3{0, 0, 0}
+		var Scale = Real3{6, 6, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
 	Sprite 
@@ -18,26 +18,25 @@ Cog
 		var LocalAabbHalfExtents = Real3{1, 1, 1}
 		var GroupSortValue = 0
 		var Material = "582c575af53d18c9:AlphaSprite"
-		var VertexColor = Real4{0.0742500424, 0.824999988, 0.329504967, 1}
+		var VertexColor = Real4{1, 1, 1, 1}
 		var GeometryMode = SpriteGeometryMode.ZPlane
-		var SpriteSource = "5586f579ca73ecc2:SquareBordered"
+		var SpriteSource = "5c506e5759ec7183:Smoke_0"
 		var FlipX = false
 		var FlipY = false
 		var AnimationActive = true
 		var AnimationSpeed = 1
 		var StartFrame = 0
 	}
-	BoxCollider 
+	DeathAfterAni 
 	{
-		var Ghost = false
-		var SendsEvents = true
-		var Material = "4de020863e872da8:DefaultPhysicsMaterial"
-		var CollisionGroup = "4e740859314e5515:DefaultGroup"
-		var Offset = Real3{0, 0, 0}
-		var HalfSize = Real3{0.5, 0.5, 0.5}
 	}
-	Health 
+	SpawnOnDeath 
 	{
-		var MaxHealth = 5
+		var ObjectToSpawn = "5cbf42d047af2e95:Plant"
+		var OffsetSpawn = false
+		var SpawnOffset = 0
+		var DIE = false
+		var Zvalue = 0
+		var SoundToPlay = "null"
 	}
 }

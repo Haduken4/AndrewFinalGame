@@ -19,6 +19,9 @@ class SpawnOnDeath : ZilchComponent
   [Property]
   var DIE : Boolean = false;
   
+  [Property]
+  var Zvalue : Real = 0;
+  
   //sound that plays once the plant is created
   [Property]
   var SoundToPlay : SoundCue = null;
@@ -46,7 +49,7 @@ class SpawnOnDeath : ZilchComponent
     this.Space.SoundSpace.PlayCue(this.SoundToPlay); 
     this.Space.SoundSpace.PlayCue(this.SoundToPlay);
     var object = this.Space.CreateAtPosition(this.ObjectToSpawn, this.Owner.Transform.WorldTranslation - 
-      Real3(0, this.Owner.Transform.Scale.Y * this.SpawnOffset, 0));
+      Real3(0, this.Owner.Transform.Scale.Y * this.SpawnOffset, this.Zvalue));
     if(this.OffsetSpawn)
     {
       object.Transform.WorldTranslation += Real3(0, object.Transform.Scale.Y / 2.0, 0);

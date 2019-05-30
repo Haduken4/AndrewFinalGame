@@ -109,7 +109,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{-19.6574306, -1.17444611, 22.089201}
+			var Translation = Real3{-21.5598373, 4.4353857, 22.089201}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -162,7 +162,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 32.9752045
+			var Size = 36.4432793
 		}
 		EditorCameraController 
 		{
@@ -171,7 +171,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{-19.6574306, -1.17444611, 2.08920026}
+			var LookTarget = Real3{-21.5598373, 4.4353857, 2.08920026}
 			var MoveSensitivity = 1
 		}
 	}
@@ -888,6 +888,15 @@ Level
 			var AnimationActive = true
 			var AnimationSpeed = 1
 			var StartFrame = 0
+		}
+	}
+	Cog [InheritId:"5c42385b60f4b135:WeaponPickup"][ContextId:20]
+	{
+		Transform 
+		{
+			var Translation = Real3{-25.410017, -0.215324402, 2.08920097}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{1, 0.5, 1}
 		}
 	}
 }
