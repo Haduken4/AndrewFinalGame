@@ -38,9 +38,10 @@ Level
 			var HighlightInterval = 10
 			var FollowEditorCamera = false
 		}
-		MusicManager 
+		MusicSpaceCreator 
 		{
-			var FadeSpeed = 0.0299999993
+			var LevelToLoad = "5c0f9845b8684b3c:MainMenu"
+			var MusicLevelToLoad = "5c8f226e2972910b:MusicLevel"
 		}
 	}
 	Cog [ContextId:2]
@@ -134,7 +135,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 13.4063969
+			var Size = 19.9999905
 		}
 		EditorCameraController 
 		{

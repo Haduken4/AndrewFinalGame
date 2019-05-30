@@ -899,20 +899,9 @@ Level
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
-		SoundEmitter 
+		PlayMusicOnInitialize 
 		{
-			var Volume = 1
-			var Pitch = 0
-			var Attenuator = "57ca8a6ad262efe5:DefaultNoAttenuation"
-			var Directional = false
-			var EmitAngle = 90
-			var RearVolume = 0.200000003
-		}
-		SimpleSound 
-		{
-			var StartPlaying = true
-			var Positional = false
-			var Cue = "5c8f26591d8df061:Brogs_music"
+			var TrackToPlay = "5c8f26591d8df061:Brogs_music"
 		}
 	}
 }

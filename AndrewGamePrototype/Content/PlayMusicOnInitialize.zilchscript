@@ -1,0 +1,22 @@
+/*****
+Filename: PlayMusicOnInitialize.zilchscript
+Author(s): Bar Ben-zvi
+Date Created: 5/29/2019
+Brief: Plays music when this object is initialized (relies on music space already existing)
+*****/
+class PlayMusicOnInitialize : ZilchComponent
+{
+  //Track to send to the music manager
+  [Property]
+  var TrackToPlay : SoundCue = null;
+  
+  function Initialize(init : CogInitializer)
+  {
+    var musicSpace = this.GameSession.FindSpaceByName("MusicSpace");
+    if(musicSpace != null)
+    {
+      musicSpace.LevelSettings.MusicManager.NewTrack = this.TrackToPlay;
+      this.Owner.Destroy();
+    }
+  }
+}
