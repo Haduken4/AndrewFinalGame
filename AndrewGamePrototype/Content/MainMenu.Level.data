@@ -77,7 +77,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{1.0000124, 0.797621191, 20}
+			var Translation = Real3{1.0000124, -2.20240355, 20}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -130,7 +130,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 22.1033897
+			var Size = 22.1034012
 		}
 		EditorCameraController 
 		{
@@ -139,7 +139,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{1.0000124, 0.797621191, 0}
+			var LookTarget = Real3{1.0000124, -2.20240355, 0}
 			var MoveSensitivity = 1
 		}
 	}
@@ -362,10 +362,81 @@ Level
 	}
 	Cog [ContextId:9]
 	{
-		var Name = "QuitButton"
+		var Name = "InstructionButton"
 		Transform 
 		{
 			var Translation = Real3{0, -5.37252378, 0}
+			var Scale = Real3{5, 5, 1}
+			var Rotation = Quaternion{0, 0, 0, 1}
+		}
+		Sprite 
+		{
+			var Visible = true
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var OverrideBoundingBox = false
+			var LocalAabbCenter = Real3{0, 0, 0}
+			var LocalAabbHalfExtents = Real3{1, 1, 1}
+			var GroupSortValue = 0
+			var Material = "582c575af53d18c9:AlphaSprite"
+			var VertexColor = Real4{0.889999986, 0.889999986, 0.889999986, 1}
+			var GeometryMode = SpriteGeometryMode.ZPlane
+			var SpriteSource = "5cab35405cd72e25:ButtonUp_0"
+			var FlipX = false
+			var FlipY = false
+			var AnimationActive = true
+			var AnimationSpeed = 1
+			var StartFrame = 0
+		}
+		MenuButton 
+		{
+			var NextLevel = "5c8f2926b84f6596:Tutorial"
+			var QuitButton = false
+			var ButtonUpSprite = "5cab35405cd72e25:ButtonUp_0"
+			var ButtonDownSprite = "5cab35505a836667:ButtonDown_0"
+		}
+		Reactive 
+		{
+			var Active = true
+		}
+		Hierarchy 
+		{
+			Cog [Id:0x5c475afee5505026][ContextId:10]
+			{
+				var Name = "Text"
+				Transform 
+				{
+					var Translation = Real3{0, 0.00831103232, 0.100000001}
+					var Scale = Real3{1, 1, 1}
+					var Rotation = Quaternion{0, 0, 0, 1}
+				}
+				SpriteText 
+				{
+					var Visible = true
+					var ViewCulling = true
+					var VisibilityEvents = true
+					var OverrideBoundingBox = false
+					var LocalAabbCenter = Real3{0, 0, 0}
+					var LocalAabbHalfExtents = Real3{1, 1, 1}
+					var GroupSortValue = 0
+					var Material = "582c575af53d18c9:AlphaSprite"
+					var VertexColor = Real4{0, 0, 0, 1}
+					var GeometryMode = SpriteGeometryMode.ZPlane
+					var Text = "Instructions"
+					var Font = "5c11e92d484179e3:eldermagic"
+					var FontSize = 45
+					var PixelsPerUnit = 512
+					var TextAlign = TextAlign.Center
+				}
+			}
+		}
+	}
+	Cog [ContextId:11]
+	{
+		var Name = "QuitButton"
+		Transform 
+		{
+			var Translation = Real3{0, -8.13017082, 0}
 			var Scale = Real3{5, 5, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
@@ -401,7 +472,7 @@ Level
 		}
 		Hierarchy 
 		{
-			Cog [Id:0x5c475afee5505026][ContextId:10]
+			Cog [Id:0x5c475afee5505026][ContextId:12]
 			{
 				var Name = "Text"
 				Transform 
@@ -431,7 +502,7 @@ Level
 			}
 		}
 	}
-	Cog [ContextId:11]
+	Cog [ContextId:13]
 	{
 		var Name = "MusicPlayer"
 		Transform 
@@ -445,7 +516,7 @@ Level
 			var TrackToPlay = "5c8f26591d8d294d:IntroBrogs"
 		}
 	}
-	Cog [ContextId:12]
+	Cog [ContextId:14]
 	{
 		var Name = "Sprite"
 		Transform 
@@ -474,7 +545,7 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:13]
+	Cog [ContextId:15]
 	{
 		var Name = "Sprite"
 		Transform 

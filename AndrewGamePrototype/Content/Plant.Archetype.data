@@ -4,8 +4,8 @@ Cog
 	var Name = "Plant"
 	Transform 
 	{
-		var Translation = Real3{-13.1649752, 7.75378132, -2.81008624e-07}
-		var Scale = Real3{1, 2, 1}
+		var Translation = Real3{0, 0, 0}
+		var Scale = Real3{2, 2, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
 	Sprite 
@@ -18,9 +18,9 @@ Cog
 		var LocalAabbHalfExtents = Real3{1, 1, 1}
 		var GroupSortValue = 0
 		var Material = "582c575af53d18c9:AlphaSprite"
-		var VertexColor = Real4{0.0742500424, 0.824999988, 0.329504967, 1}
+		var VertexColor = Real4{1, 1, 1, 1}
 		var GeometryMode = SpriteGeometryMode.ZPlane
-		var SpriteSource = "5586f579ca73ecc2:SquareBordered"
+		var SpriteSource = "5c906b33a45e87f0:Flower"
 		var FlipX = false
 		var FlipY = false
 		var AnimationActive = true

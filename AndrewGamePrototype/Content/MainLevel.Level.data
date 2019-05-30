@@ -109,7 +109,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{-3.05743098, 4.6486764, 22.089201}
+			var Translation = Real3{-8.02260303, -5.24812603, 22.089201}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -162,7 +162,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 24.428669
+			var Size = 54.367115
 		}
 		EditorCameraController 
 		{
@@ -171,7 +171,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{-3.05743098, 4.6486764, 2.08920121}
+			var LookTarget = Real3{-8.02260303, -5.24812603, 2.08920074}
 			var MoveSensitivity = 1
 		}
 	}
@@ -388,7 +388,7 @@ Level
 		{
 			var Weapon = ShootVariables
 			{
-				var Icon = "5274db4c2e7c11f9:Circle"
+				var Icon = "5c4f2f551442b9d7:Blank"
 				var Projectile = "5c0f9844b874aa7c:Bullet"
 				var ProjectileCount = 1
 				var SpreadCone = 0

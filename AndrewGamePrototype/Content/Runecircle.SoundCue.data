@@ -2,7 +2,7 @@
 SoundCue 
 {
 	var PlayMode = SoundPlayMode.Looping
-	var Volume = 1
+	var Volume = 1.5
 	var UseDecibelVariation = false
 	var VolumeVariation = 0
 	var DecibelVariation = 0

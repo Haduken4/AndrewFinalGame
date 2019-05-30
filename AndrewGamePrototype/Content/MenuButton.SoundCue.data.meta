@@ -1,0 +1,11 @@
+[Version:1]
+DataContent 
+{
+	DataBuilder 
+	{
+		var Name = "MenuButton"
+		var ResourceId = 0x5c9066feb8fc52f0
+		var LoaderType = "SoundCue"
+		var Version = 0
+	}
+}
