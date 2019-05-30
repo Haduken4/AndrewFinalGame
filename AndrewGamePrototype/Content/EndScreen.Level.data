@@ -224,7 +224,7 @@ Level
 		Transform 
 		{
 			var Translation = Real3{0, -4.90463638, 0}
-			var Scale = Real3{5, 2, 1}
+			var Scale = Real3{5, 5, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
 		Sprite 
@@ -237,9 +237,9 @@ Level
 			var LocalAabbHalfExtents = Real3{1, 1, 1}
 			var GroupSortValue = 0
 			var Material = "582c575af53d18c9:AlphaSprite"
-			var VertexColor = Real4{0.240125, 0.564999998, 0.448044956, 1}
+			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
-			var SpriteSource = "5586f579ca73ecc2:SquareBordered"
+			var SpriteSource = "5cab35405cd72e25:ButtonUp_0"
 			var FlipX = false
 			var FlipY = false
 			var AnimationActive = true
@@ -250,6 +250,8 @@ Level
 		{
 			var NextLevel = "5c0f9845b8684b3c:MainMenu"
 			var QuitButton = false
+			var ButtonUpSprite = "5cab35405cd72e25:ButtonUp_0"
+			var ButtonDownSprite = "5c529bdf35ee9611:ButtonDown"
 		}
 		Reactive 
 		{
@@ -257,13 +259,13 @@ Level
 		}
 		Hierarchy 
 		{
-			Cog [Id:0x5c475afee5505026][ContextId:6]
+			Cog [Id:0x5c4f2c44bb131fe0][ContextId:6]
 			{
 				var Name = "Text"
 				Transform 
 				{
 					var Translation = Real3{0, 0, 0.100000001}
-					var Scale = Real3{0.200000003, 0.5, 1}
+					var Scale = Real3{1, 1, 1}
 					var Rotation = Quaternion{0, 0, 0, 1}
 				}
 				SpriteText 
@@ -280,7 +282,7 @@ Level
 					var GeometryMode = SpriteGeometryMode.ZPlane
 					var Text = "Main Menu"
 					var Font = "57343753bb4eaaec:NotoSans-Regular"
-					var FontSize = 100
+					var FontSize = 16
 					var PixelsPerUnit = 128
 					var TextAlign = TextAlign.Center
 				}
@@ -309,7 +311,7 @@ Level
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "Player  wins!"
-			var Font = "57343753bb4eaaec:NotoSans-Regular"
+			var Font = "5c11e92d484179e3:eldermagic"
 			var FontSize = 128
 			var PixelsPerUnit = 128
 			var TextAlign = TextAlign.Center

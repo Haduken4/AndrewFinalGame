@@ -1,0 +1,29 @@
+/*****
+Filename: FaceVelocityDirection.zilchscript
+Author(s): Bar Ben-zvi, Nicole Smith
+Date Created: 5/30/2019
+Brief: Makes thing face direction it be moving in
+*****/
+class FaceVelocityDirection : ZilchComponent
+{
+  [Dependency]
+  var RigidBody : RigidBody = null;
+  
+  function Initialize(init : CogInitializer)
+  {
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    //if we're moving
+    if(CustomMath.Magnitude(this.RigidBody.Velocity) != 0)
+    {
+      var dir = Math.Normalize(this.RigidBody.Velocity);
+      var angle = Math.ATan2(dir.Y, dir.X);
+      
+      this.Owner.Transform.SetEulerAnglesXYZ(0, 0, angle);
+    }
+    
+  }
+}

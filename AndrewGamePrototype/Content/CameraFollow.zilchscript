@@ -21,6 +21,10 @@ class CameraFollow : ZilchComponent
   
   var CurrentSize : Real;
   
+  var StayBool : Boolean = false;
+  
+  var Timer : Real = 0;
+  
   function Initialize(init : CogInitializer)
   {
     //for testing
@@ -43,6 +47,11 @@ class CameraFollow : ZilchComponent
     //Console.WriteLine(this.Owner.Transform.Translation);
     var i : Integer = 0;
   
+    if(this.StayBool)
+    {
+      this.Timer -= event.Dt;
+    }
+    
     //loop through the array
     for(i; i < this.GameSession.GameVars.BulletArray.Count; ++i)
     {
@@ -57,8 +66,9 @@ class CameraFollow : ZilchComponent
       this.Total = Real3(0,0,10);
       this.CameraPosition();
     }
-    else
+    else if (this.Timer <= 0)
     {
+      this.StayBool = false;
       this.Owner.Camera.Size = this.CurrentSize;
       //If our target exists
       if(this.Target != null)
@@ -74,6 +84,7 @@ class CameraFollow : ZilchComponent
   //this function gets where the camera should be
   function CameraPosition()
   {
+    this.StayBool = true;
     var farX : Real = 0;
     var farY : Real = 0;
     //find the lowest and highest x and y values
@@ -109,5 +120,6 @@ class CameraFollow : ZilchComponent
     {
       this.Owner.Camera.Size = Math.Abs(this.Owner.Transform.Translation.Y - farY) + this.MinCamSize;
     }
+    this.Timer = 1;
   }
 }
