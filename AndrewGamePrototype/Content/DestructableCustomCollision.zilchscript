@@ -190,13 +190,6 @@ class DestructableCustomCollision : ZilchComponent
         
         if(CustomMath.Magnitude(object.RigidBody.Velocity) != 0)
         {
-          var dBox = DebugBox(object.Transform.WorldTranslation + offset, objExtents);
-          
-          dBox.Filled = true;
-          dBox.Color = Real4(0.3, 0.8, 0.3, 1.0);
-          
-          DebugDraw.Add(dBox);
-          
           var newVel = object.RigidBody.Velocity;
           var newTra = object.Transform.WorldTranslation;
           
