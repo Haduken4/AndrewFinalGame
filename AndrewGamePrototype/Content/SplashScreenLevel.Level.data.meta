@@ -1,0 +1,18 @@
+[Version:1]
+DataContent 
+{
+	DataBuilder 
+	{
+		var Name = "SplashScreenLevel"
+		var ResourceId = 0x5c3bb52825781e9d
+		var LoaderType = "Level"
+		var Version = 0
+	}
+	ContentTags 
+	{
+		var Tags = Array
+		{
+			"Level"
+		}
+	}
+}

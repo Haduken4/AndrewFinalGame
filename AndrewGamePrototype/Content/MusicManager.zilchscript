@@ -1,18 +1,84 @@
+/*****
+Filename: MusicManager.zilchscript
+Author(s): Bar Ben-zvi
+Date Created: 5/29/2019
+Brief: Manages switching music
+*****/
 class MusicManager : ZilchComponent
 {
-  //song to play first
-  [Property]
-  var CurrentSong : SoundCue = null;
   
-  var NextSong : SoundCue = null;
+  //The speed at which songs fade in/out
+  //Should be between 0.01 and 1
+  [Property]
+  var FadeSpeed : Real = 0.03;
+  
+  var CurrTrack : SoundCue = null;
+  
+  var NewTrack : SoundCue = null;
+  
+  var CurrEmitter : Cog = null;
   
   
   function Initialize(init : CogInitializer)
   {
-    //Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
   }
 
   function OnLogicUpdate(event : UpdateEvent)
   {
+    //If we are trying to switch tracks to the track we are already playing, there is no reason to switch
+    if(this.NewTrack == this.CurrTrack)
+    {
+      this.NewTrack = null;
+    }
+    
+    //If there is a new track, we need to begin switching tracks
+    if(this.NewTrack != null)
+    {
+      //If a current emitter exists, fade it out and eventually destroy it
+      if(this.CurrEmitter != null)
+      {
+        //If the current emitter's volume - FadeSpeed is less than or equal to 0, destroy it. Otherwise, continue fading out
+        if(this.CurrEmitter.SoundEmitter.Volume - this.FadeSpeed <= 0)
+        {
+          this.CurrEmitter.SoundEmitter.Volume = 0;
+          
+          this.CurrEmitter.Destroy();
+          
+          this.CurrEmitter = null;
+        }
+        else
+        {
+          this.CurrEmitter.SoundEmitter.Volume -= this.FadeSpeed;
+        }
+      }
+      //If no current emitter exists, create one and have it play the correct track
+      else
+      {
+        //Set currtrack to newtrack
+        this.CurrTrack = this.NewTrack;
+        
+        this.NewTrack = null;
+        
+        this.CurrEmitter = this.Space.CreateAtPosition(Archetype.MusicEmitter, Real3(0, 0, 0));
+        
+        this.CurrEmitter.SoundEmitter.Volume = 0;
+        
+        this.CurrEmitter.SoundEmitter.PlayCue(this.CurrTrack);
+      }
+    }
+    //If currtrack is not null and curr emitter is not null and curr emitter's volume is not 1
+    else if(this.CurrTrack != null && this.CurrEmitter != null && this.CurrEmitter.SoundEmitter.Volume != 1)
+    {
+      //If curr emitter's volume + FadeSpeed is greater than or equal to 1, set it to 1. Otherwise, continue fading in
+      if(this.CurrEmitter.SoundEmitter.Volume + this.FadeSpeed >= 1)
+      {
+        this.CurrEmitter.SoundEmitter.Volume = 1;
+      }
+      else
+      {
+        this.CurrEmitter.SoundEmitter.Volume += this.FadeSpeed;
+      }
+    }
   }
 }

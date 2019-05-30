@@ -4,7 +4,7 @@ DataContent
 	DataBuilder 
 	{
 		var Name = "Runecircle"
-		var ResourceId = 0x5c57355bc3b8bad5
+		var ResourceId = 0x5c8f26170f022816
 		var LoaderType = "SoundCue"
 		var Version = 0
 	}

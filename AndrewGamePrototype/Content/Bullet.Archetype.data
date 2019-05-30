@@ -21,6 +21,7 @@ Cog
 		var VertexColor = Real4{1, 1, 1, 1}
 		var GeometryMode = SpriteGeometryMode.ZPlane
 		var SpriteSource = "5274db4c2e7c11f9:Circle"
+		var SpriteSource = "5cab3e56af65d9d8:WaterShot"
 		var FlipX = false
 		var FlipY = false
 		var AnimationActive = true

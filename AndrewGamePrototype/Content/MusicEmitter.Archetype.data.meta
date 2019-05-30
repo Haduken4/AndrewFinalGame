@@ -1,0 +1,11 @@
+[Version:1]
+DataContent 
+{
+	DataBuilder 
+	{
+		var Name = "MusicEmitter"
+		var ResourceId = 0x5c3b4ee333f366d3
+		var LoaderType = "Cog"
+		var Version = 0
+	}
+}

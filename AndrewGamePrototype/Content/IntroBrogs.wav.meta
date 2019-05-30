@@ -1,0 +1,12 @@
+[Version:1]
+AudioContent 
+{
+	SoundBuilder 
+	{
+		var Name = "IntroBrogs"
+		var ResourceId = 0x5c8f26441e6ac565
+		var FileLoadType = AudioFileLoadType.Auto
+		var Normalize = false
+		var MaxVolume = 0.899999976
+	}
+}

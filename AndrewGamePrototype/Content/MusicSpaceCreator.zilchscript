@@ -1,0 +1,22 @@
+class MusicSpaceCreator : ZilchComponent
+{
+  //Level to load into this space
+  [Property]
+  var LevelToLoad : Level = Level.MainMenu;
+  
+  //Level to load into the music space
+  [Property]
+  var MusicLevelToLoad : Level = Level.MusicLevel;
+  
+  function Initialize(init : CogInitializer)
+  {
+    var musicSpace = this.GameSession.CreateNamedSpace("MusicSpace", Archetype.Space);
+    
+    musicSpace.LoadLevel(this.MusicLevelToLoad);
+    
+    if(this.LevelToLoad != null)
+    {
+      this.Space.LoadLevel(this.LevelToLoad);
+    }
+  }
+}
