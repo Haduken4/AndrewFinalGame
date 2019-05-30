@@ -1,0 +1,9 @@
+[Version:1]
+FontContent 
+{
+	FontBuilder 
+	{
+		var Name = "eldermagic"
+		var ResourceId = 0x5c11e92d484179e3
+	}
+}
