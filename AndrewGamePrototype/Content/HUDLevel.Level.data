@@ -185,7 +185,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{-13.1944084, -4.52030468, 20}
+			var Translation = Real3{-14.0277615, -7.02037907, 20}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -238,7 +238,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 10.9763174
+			var Size = 8.98665047
 		}
 		EditorCameraController 
 		{
@@ -247,7 +247,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{-13.1944084, -4.52030468, -2.20636679e-07}
+			var LookTarget = Real3{-14.0277615, -7.02037907, -2.20636679e-07}
 			var MoveSensitivity = 1
 		}
 	}
@@ -331,8 +331,8 @@ Level
 		var Name = "PlayerMoveResource"
 		Transform 
 		{
-			var Translation = Real3{-15.8385601, -8.81629944, 0.100000001}
-			var Scale = Real3{0.854924619, 1.81679869, 1}
+			var Translation = Real3{-15.8555717, -8.65468979, 0.100000001}
+			var Scale = Real3{0.800000012, 1.81679869, 1}
 			var Rotation = Quaternion{0, 0, 0.707106769, 0.707106829}
 		}
 		Sprite 
@@ -365,8 +365,8 @@ Level
 		var Name = "PlayerHealth"
 		Transform 
 		{
-			var Translation = Real3{-13.3654089, -8.68257523, 0.100000001}
-			var Scale = Real3{0.817241132, 1.90947747, 1}
+			var Translation = Real3{-13.3654089, -8.65468979, 0.100000001}
+			var Scale = Real3{0.800000012, 1.8168, 1}
 			var Rotation = Quaternion{0, 0, 0.707106769, 0.707106888}
 		}
 		Sprite 
@@ -599,7 +599,7 @@ Level
 		var Name = "SpriteText"
 		Transform 
 		{
-			var Translation = Real3{-14.3775845, -6.31804562, 0.25}
+			var Translation = Real3{-14.3305826, -6.31804562, 0.25}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
@@ -627,8 +627,8 @@ Level
 		var Name = "SpriteText"
 		Transform 
 		{
-			var Translation = Real3{-16.7069893, -6.25, 0.25}
-			var Scale = Real3{0.564592421, 0.688994646, 1}
+			var Translation = Real3{-16.8205032, -6.37534952, 0.25}
+			var Scale = Real3{0.600000024, 0.699999988, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
 		SpriteText 

@@ -1,3 +1,9 @@
+/*************************
+Authors: Nicole Smith, Bar Ben-Zvi
+Date Created: 5/22/19
+Brief: Click a button to change a level
+*************************/
+
 class MenuButton : ZilchComponent
 {
   //the level to switch to when pressed
@@ -8,13 +14,29 @@ class MenuButton : ZilchComponent
   [Property]
   var QuitButton : Boolean = false;
   
+  [Property]
+  var ButtonUpSprite : SpriteSource = null;
+  
+  [Property]
+  var ButtonDownSprite : SpriteSource = null;
+  
   function Initialize(init : CogInitializer)
   {
+    this.Owner.Sprite.SpriteSource = this.ButtonUpSprite;
     Zero.Connect(this.Owner, Events.LeftMouseDown, this.OnLeftMouseDown);
+    Zero.Connect(this.Owner, Events.LeftMouseUp, this.OnLeftMouseUp);
+    Zero.Connect(this.Owner, Events.MouseExit, this.OnMouseExit);
   }
 
-  function OnLeftMouseDown(event : ViewportMouseEvent)
+  //when the player moves the mouse away from the button
+  function OnMouseExit(event : ViewportMouseEvent)
   {
+    this.Owner.Sprite.SpriteSource = this.ButtonUpSprite;
+  }
+
+  function OnLeftMouseUp(event : ViewportMouseEvent)
+  {
+    this.Owner.Sprite.SpriteSource = this.ButtonUpSprite;
     //quit the game
     if(this.QuitButton)
     {
@@ -24,5 +46,11 @@ class MenuButton : ZilchComponent
     else{
       this.Space.LoadLevel(this.NextLevel);
     }
+  }
+
+  function OnLeftMouseDown(event : ViewportMouseEvent)
+  {
+    this.Owner.Sprite.SpriteSource = this.ButtonDownSprite;
+    
   }
 }

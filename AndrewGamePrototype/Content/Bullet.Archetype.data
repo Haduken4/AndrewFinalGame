@@ -4,7 +4,7 @@ Cog
 	var Name = "Bullet"
 	Transform 
 	{
-		var Translation = Real3{-15.9076891, 9.36647797, -4.99000168}
+		var Translation = Real3{0, 0, 0}
 		var Scale = Real3{0.5, 0.5, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
@@ -59,7 +59,7 @@ Cog
 	CustomCollisionVariables 
 	{
 		var Explodes = true
-		var ExplosionRadius = 1.5
+		var ExplosionRadius = 0.75
 		var MaxSlope = 30
 	}
 }

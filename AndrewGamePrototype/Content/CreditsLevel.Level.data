@@ -77,7 +77,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{0, -1.50004184, 20}
+			var Translation = Real3{0, -7.33342838, 20}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -130,7 +130,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 26.9971504
+			var Size = 16.3746033
 		}
 		EditorCameraController 
 		{
@@ -139,7 +139,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{0, -1.50004184, 0}
+			var LookTarget = Real3{0, -7.33342838, 0}
 			var MoveSensitivity = 1
 		}
 	}
@@ -220,75 +220,6 @@ Level
 	}
 	Cog [ContextId:5]
 	{
-		var Name = "MenuButton"
-		Transform 
-		{
-			var Translation = Real3{0, -7.81224394, 0}
-			var Scale = Real3{5, 2, 1}
-			var Rotation = Quaternion{0, 0, 0, 1}
-		}
-		Sprite 
-		{
-			var Visible = true
-			var ViewCulling = true
-			var VisibilityEvents = true
-			var OverrideBoundingBox = false
-			var LocalAabbCenter = Real3{0, 0, 0}
-			var LocalAabbHalfExtents = Real3{1, 1, 1}
-			var GroupSortValue = 0
-			var Material = "582c575af53d18c9:AlphaSprite"
-			var VertexColor = Real4{0.240125, 0.564999998, 0.448044956, 1}
-			var GeometryMode = SpriteGeometryMode.ZPlane
-			var SpriteSource = "5586f579ca73ecc2:SquareBordered"
-			var FlipX = false
-			var FlipY = false
-			var AnimationActive = true
-			var AnimationSpeed = 1
-			var StartFrame = 0
-		}
-		MenuButton 
-		{
-			var NextLevel = "5c0f9845b8684b3c:MainMenu"
-			var QuitButton = false
-		}
-		Reactive 
-		{
-			var Active = true
-		}
-		Hierarchy 
-		{
-			Cog [Id:0x5c475afee5505026][ContextId:6]
-			{
-				var Name = "Text"
-				Transform 
-				{
-					var Translation = Real3{0, 0, 0.100000001}
-					var Scale = Real3{0.200000003, 0.5, 1}
-					var Rotation = Quaternion{0, 0, 0, 1}
-				}
-				SpriteText 
-				{
-					var Visible = true
-					var ViewCulling = true
-					var VisibilityEvents = true
-					var OverrideBoundingBox = false
-					var LocalAabbCenter = Real3{0, 0, 0}
-					var LocalAabbHalfExtents = Real3{1, 1, 1}
-					var GroupSortValue = 0
-					var Material = "582c575af53d18c9:AlphaSprite"
-					var VertexColor = Real4{0, 0, 0, 1}
-					var GeometryMode = SpriteGeometryMode.ZPlane
-					var Text = "Main Menu"
-					var Font = "57343753bb4eaaec:NotoSans-Regular"
-					var FontSize = 100
-					var PixelsPerUnit = 128
-					var TextAlign = TextAlign.Center
-				}
-			}
-		}
-	}
-	Cog [ContextId:7]
-	{
 		var Name = "TItle"
 		Transform 
 		{
@@ -315,7 +246,7 @@ Level
 			var TextAlign = TextAlign.Center
 		}
 	}
-	Cog [ContextId:8]
+	Cog [ContextId:6]
 	{
 		var Name = "Names"
 		Transform 
@@ -343,7 +274,7 @@ Level
 			var TextAlign = TextAlign.Right
 		}
 	}
-	Cog [ContextId:9]
+	Cog [ContextId:7]
 	{
 		var Name = "Names"
 		Transform 
@@ -371,7 +302,7 @@ Level
 			var TextAlign = TextAlign.Left
 		}
 	}
-	Cog [ContextId:10]
+	Cog [ContextId:8]
 	{
 		var Name = "Names"
 		Transform 
@@ -399,7 +330,7 @@ Level
 			var TextAlign = TextAlign.Right
 		}
 	}
-	Cog [ContextId:11]
+	Cog [ContextId:9]
 	{
 		var Name = "Names"
 		Transform 
@@ -427,7 +358,7 @@ Level
 			var TextAlign = TextAlign.Right
 		}
 	}
-	Cog [ContextId:12]
+	Cog [ContextId:10]
 	{
 		var Name = "Names"
 		Transform 
@@ -455,7 +386,7 @@ Level
 			var TextAlign = TextAlign.Right
 		}
 	}
-	Cog [ContextId:13]
+	Cog [ContextId:11]
 	{
 		var Name = "Names"
 		Transform 
@@ -483,7 +414,7 @@ Level
 			var TextAlign = TextAlign.Right
 		}
 	}
-	Cog [ContextId:14]
+	Cog [ContextId:12]
 	{
 		var Name = "Names"
 		Transform 
@@ -511,7 +442,7 @@ Level
 			var TextAlign = TextAlign.Right
 		}
 	}
-	Cog [ContextId:15]
+	Cog [ContextId:13]
 	{
 		var Name = "Names"
 		Transform 
@@ -539,7 +470,7 @@ Level
 			var TextAlign = TextAlign.Left
 		}
 	}
-	Cog [ContextId:16]
+	Cog [ContextId:14]
 	{
 		var Name = "Names"
 		Transform 
@@ -567,7 +498,7 @@ Level
 			var TextAlign = TextAlign.Left
 		}
 	}
-	Cog [ContextId:17]
+	Cog [ContextId:15]
 	{
 		var Name = "Names"
 		Transform 
@@ -595,7 +526,7 @@ Level
 			var TextAlign = TextAlign.Left
 		}
 	}
-	Cog [ContextId:18]
+	Cog [ContextId:16]
 	{
 		var Name = "Names"
 		Transform 
@@ -623,7 +554,7 @@ Level
 			var TextAlign = TextAlign.Left
 		}
 	}
-	Cog [ContextId:19]
+	Cog [ContextId:17]
 	{
 		var Name = "Names"
 		Transform 
@@ -651,7 +582,7 @@ Level
 			var TextAlign = TextAlign.Left
 		}
 	}
-	Cog [ContextId:20]
+	Cog [ContextId:18]
 	{
 		var Name = "Names"
 		Transform 
@@ -679,7 +610,7 @@ Level
 			var TextAlign = TextAlign.Left
 		}
 	}
-	Cog [ContextId:21]
+	Cog [ContextId:19]
 	{
 		var Name = "Names"
 		Transform 
@@ -707,7 +638,7 @@ Level
 			var TextAlign = TextAlign.Left
 		}
 	}
-	Cog [ContextId:22]
+	Cog [ContextId:20]
 	{
 		var Name = "Names"
 		Transform 
@@ -735,7 +666,7 @@ Level
 			var TextAlign = TextAlign.Left
 		}
 	}
-	Cog [ContextId:23]
+	Cog [ContextId:21]
 	{
 		var Name = "Names"
 		Transform 
@@ -763,7 +694,7 @@ Level
 			var TextAlign = TextAlign.Left
 		}
 	}
-	Cog [ContextId:24]
+	Cog [ContextId:22]
 	{
 		var Name = "Names"
 		Transform 
@@ -791,7 +722,7 @@ Level
 			var TextAlign = TextAlign.Right
 		}
 	}
-	Cog [ContextId:25]
+	Cog [ContextId:23]
 	{
 		var Name = "Names"
 		Transform 
@@ -819,7 +750,7 @@ Level
 			var TextAlign = TextAlign.Left
 		}
 	}
-	Cog [ContextId:26]
+	Cog [ContextId:24]
 	{
 		var Name = "Names"
 		Transform 
@@ -847,7 +778,7 @@ Level
 			var TextAlign = TextAlign.Right
 		}
 	}
-	Cog [ContextId:27]
+	Cog [ContextId:25]
 	{
 		var Name = "Names"
 		Transform 
@@ -875,7 +806,7 @@ Level
 			var TextAlign = TextAlign.Left
 		}
 	}
-	Cog [ContextId:28]
+	Cog [ContextId:26]
 	{
 		var Name = "DigiLogo"
 		Transform 
@@ -902,6 +833,77 @@ Level
 			var AnimationActive = true
 			var AnimationSpeed = 1
 			var StartFrame = 0
+		}
+	}
+	Cog [ContextId:27]
+	{
+		var Name = "CreditButton"
+		Transform 
+		{
+			var Translation = Real3{0, -7.72190332, 0}
+			var Scale = Real3{10, 10, 1}
+			var Rotation = Quaternion{0, 0, 0, 1}
+		}
+		Sprite 
+		{
+			var Visible = true
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var OverrideBoundingBox = false
+			var LocalAabbCenter = Real3{0, 0, 0}
+			var LocalAabbHalfExtents = Real3{1, 1, 1}
+			var GroupSortValue = 0
+			var Material = "582c575af53d18c9:AlphaSprite"
+			var VertexColor = Real4{0, 0.880000114, 1, 1}
+			var GeometryMode = SpriteGeometryMode.ZPlane
+			var SpriteSource = "5c529bde35bcd532:ButtonUp"
+			var FlipX = false
+			var FlipY = false
+			var AnimationActive = true
+			var AnimationSpeed = 1
+			var StartFrame = 0
+		}
+		MenuButton 
+		{
+			var NextLevel = "5c0f9845b8684b3c:MainMenu"
+			var QuitButton = false
+			var ButtonUpSprite = "5c529bde35bcd532:ButtonUp"
+			var ButtonDownSprite = "5c529bdf35ee9611:ButtonDown"
+		}
+		Reactive 
+		{
+			var Active = true
+		}
+		Hierarchy 
+		{
+			Cog [Id:0x5c475afee5505026][ContextId:28]
+			{
+				var Name = "Text"
+				Transform 
+				{
+					var Translation = Real3{0, 0, 0.100000001}
+					var Scale = Real3{1, 1, 1}
+					var Rotation = Quaternion{0, 0, 0, 1}
+				}
+				SpriteText 
+				{
+					var Visible = true
+					var ViewCulling = true
+					var VisibilityEvents = true
+					var OverrideBoundingBox = false
+					var LocalAabbCenter = Real3{0, 0, 0}
+					var LocalAabbHalfExtents = Real3{1, 1, 1}
+					var GroupSortValue = 0
+					var Material = "582c575af53d18c9:AlphaSprite"
+					var VertexColor = Real4{0, 0, 0, 1}
+					var GeometryMode = SpriteGeometryMode.ZPlane
+					var Text = "Main Menu"
+					var Font = "57343753bb4eaaec:NotoSans-Regular"
+					var FontSize = 45
+					var PixelsPerUnit = 512
+					var TextAlign = TextAlign.Center
+				}
+			}
 		}
 	}
 }
