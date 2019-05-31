@@ -4,7 +4,7 @@ Cog
 	var Name = "Bullet"
 	Transform 
 	{
-		var Translation = Real3{0, 0, 0}
+		var Translation = Real3{4.43965435, 10.1253376, 10}
 		var Scale = Real3{0.5, 0.5, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
@@ -58,7 +58,7 @@ Cog
 	LobBulletBehavior 
 	{
 		var DropInterval = 0.5
-		var DroppedProjectile = "5cbf47e05bde41ed:ExplosionBullet"
+		var DroppedProjectile = "5c254f1d9584ee20:ExplosionBulletSmall"
 		var DropCount = 5
 	}
 	FaceVelocityDirection 
@@ -66,7 +66,7 @@ Cog
 	}
 	SpawnOnDeath 
 	{
-		var ObjectToSpawn = "5cb6e021f919fc3f:ExplosionCircular"
+		var ObjectToSpawn = "5c254fd7a9abf841:ExplosionCircularSmall"
 		var OffsetSpawn = false
 		var SpawnOffset = 0
 		var DIE = false

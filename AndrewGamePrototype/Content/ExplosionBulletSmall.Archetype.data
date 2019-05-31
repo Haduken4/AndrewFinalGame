@@ -4,8 +4,8 @@ Cog
 	var Name = "Bullet"
 	Transform 
 	{
-		var Translation = Real3{3.20669317, 9.79477119, 10.0049992}
-		var Scale = Real3{0.5, 0.5, 1}
+		var Translation = Real3{4.86529064, 9.79477119, 10.0049992}
+		var Scale = Real3{0.300000012, 0.300000012, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
 	Sprite 
@@ -40,7 +40,7 @@ Cog
 	CustomCollisionVariables 
 	{
 		var Explodes = true
-		var ExplosionRadius = 3.5
+		var ExplosionRadius = 2
 		var MaxSlope = 30
 	}
 	DamageOnCollide 
@@ -55,11 +55,11 @@ Cog
 		var Material = "4de020863e872da8:DefaultPhysicsMaterial"
 		var CollisionGroup = "5c098e40de85b0fc:PlayerBullet"
 		var Offset = Real3{0, 0, 0}
-		var Radius = 0.5
+		var Radius = 0.300000012
 	}
 	SpawnOnDeath 
 	{
-		var ObjectToSpawn = "5cb6e021f919fc3f:ExplosionCircular"
+		var ObjectToSpawn = "5c254fd7a9abf841:ExplosionCircularSmall"
 		var OffsetSpawn = false
 		var SpawnOffset = 0
 		var DIE = true

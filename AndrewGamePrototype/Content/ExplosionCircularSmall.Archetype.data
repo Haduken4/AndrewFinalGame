@@ -4,8 +4,8 @@ Cog
 	var Name = "Sprite"
 	Transform 
 	{
-		var Translation = Real3{1.66596508, 7.31655979, 10}
-		var Scale = Real3{5, 5, 1}
+		var Translation = Real3{6.34978151, 7.31655979, 10}
+		var Scale = Real3{3, 3, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
 	Sprite 
@@ -32,7 +32,7 @@ Cog
 	}
 	DamageOnCollide 
 	{
-		var Damage = 3
+		var Damage = 2
 		var DestroyMe = false
 	}
 	SphereCollider 
