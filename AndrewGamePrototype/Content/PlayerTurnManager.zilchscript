@@ -63,7 +63,7 @@ class PlayerTurnManager : ZilchComponent
       if(this.CurrState == TurnState.STATEMOVE)
       {
         this.PlayerArray[this.CurrIndex].PlayerMovement.Active = false;
-        this.PlayerArray[this.CurrIndex].PlayerShooting.Active = true;
+        this.PlayerArray[this.CurrIndex].PlayerShooting.Activate();
         this.CurrState = TurnState.STATESHOOT;
         this.HUDManager.CurrState = TurnState.STATESHOOT;
       }

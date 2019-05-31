@@ -85,7 +85,7 @@ class PlayerShooting : ZilchComponent
     //create cast circle
     if(this.Active)
     {
-      var object =this.Space.Create(Archetype.CastCircle);
+      var object = this.Space.Create(Archetype.CastCircle);
       object.CursorFollow.RotateObject = this.Owner;
     }
   }
@@ -236,4 +236,15 @@ class PlayerShooting : ZilchComponent
         this.BBool = false;
     }
   }
+  
+  function Activate()
+  {
+    this.Active = true;
+    if(Zero.Mouse.IsButtonDown(MouseButtons.Left))
+    {
+      var object = this.Space.Create(Archetype.CastCircle);
+      object.CursorFollow.RotateObject = this.Owner;
+    }
+  }
+  
 }
