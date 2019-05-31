@@ -130,7 +130,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 22.1034126
+			var Size = 32.9744034
 		}
 		EditorCameraController 
 		{
@@ -239,7 +239,7 @@ Level
 			var Material = "582c575af53d18c9:AlphaSprite"
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
-			var SpriteSource = "5cab35405cd72e25:ButtonUp_0"
+			var SpriteSource = "5cab35405cd72e25:ButtonUp"
 			var FlipX = false
 			var FlipY = false
 			var AnimationActive = true
@@ -250,8 +250,8 @@ Level
 		{
 			var NextLevel = "5c0f9845b8684b3c:MainMenu"
 			var QuitButton = false
-			var ButtonUpSprite = "5cab35405cd72e25:ButtonUp_0"
-			var ButtonDownSprite = "5cab35505a836667:ButtonDown_0"
+			var ButtonUpSprite = "5cab35405cd72e25:ButtonUp"
+			var ButtonDownSprite = "5cab35505a836667:ButtonDown"
 		}
 		Reactive 
 		{
@@ -264,7 +264,7 @@ Level
 				var Name = "Text"
 				Transform 
 				{
-					var Translation = Real3{0, 0, 0.100000001}
+					var Translation = Real3{0, 0.00924835168, 0.100000001}
 					var Scale = Real3{1, 1, 1}
 					var Rotation = Quaternion{0, 0, 0, 1}
 				}
@@ -281,8 +281,8 @@ Level
 					var VertexColor = Real4{0, 0, 0, 1}
 					var GeometryMode = SpriteGeometryMode.ZPlane
 					var Text = "Main Menu"
-					var Font = "5c11e92d484179e3:eldermagic"
-					var FontSize = 45
+					var Font = "5c90792fce1fdeb5:BradleyGratis"
+					var FontSize = 100
 					var PixelsPerUnit = 512
 					var TextAlign = TextAlign.Center
 				}
@@ -311,8 +311,8 @@ Level
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "Instructions"
-			var Font = "5c11e92d484179e3:eldermagic"
-			var FontSize = 128
+			var Font = "5c90792fce1fdeb5:BradleyGratis"
+			var FontSize = 90
 			var PixelsPerUnit = 128
 			var TextAlign = TextAlign.Center
 		}
@@ -338,9 +338,9 @@ Level
 			var Material = "582c575af53d18c9:AlphaSprite"
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
-			var Text = "Click and hold to aim, release to jump/fire"
-			var Font = "5c11e92d484179e3:eldermagic"
-			var FontSize = 55
+			var Text = "Click and hold to aim, release to jump or fire"
+			var Font = "5c90792fce1fdeb5:BradleyGratis"
+			var FontSize = 70
 			var PixelsPerUnit = 128
 			var TextAlign = TextAlign.Center
 		}
@@ -366,9 +366,9 @@ Level
 			var Material = "582c575af53d18c9:AlphaSprite"
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
-			var Text = "Press L to change states/ turns"
-			var Font = "5c11e92d484179e3:eldermagic"
-			var FontSize = 55
+			var Text = "Press L to change states or turns"
+			var Font = "5c90792fce1fdeb5:BradleyGratis"
+			var FontSize = 70
 			var PixelsPerUnit = 128
 			var TextAlign = TextAlign.Center
 		}
@@ -395,8 +395,8 @@ Level
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "Pick up weapons, press Q and E to switch"
-			var Font = "5c11e92d484179e3:eldermagic"
-			var FontSize = 55
+			var Font = "5c90792fce1fdeb5:BradleyGratis"
+			var FontSize = 70
 			var PixelsPerUnit = 128
 			var TextAlign = TextAlign.Center
 		}
@@ -423,8 +423,8 @@ Level
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "Bounce attacks off big fruit"
-			var Font = "5c11e92d484179e3:eldermagic"
-			var FontSize = 55
+			var Font = "5c90792fce1fdeb5:BradleyGratis"
+			var FontSize = 70
 			var PixelsPerUnit = 128
 			var TextAlign = TextAlign.Center
 		}
@@ -451,8 +451,8 @@ Level
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "Defeat your enemy!"
-			var Font = "5c11e92d484179e3:eldermagic"
-			var FontSize = 55
+			var Font = "5c90792fce1fdeb5:BradleyGratis"
+			var FontSize = 70
 			var PixelsPerUnit = 128
 			var TextAlign = TextAlign.Center
 		}
@@ -479,8 +479,8 @@ Level
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "You have limited"
-			var Font = "5c11e92d484179e3:eldermagic"
-			var FontSize = 50
+			var Font = "5c90792fce1fdeb5:BradleyGratis"
+			var FontSize = 70
 			var PixelsPerUnit = 128
 			var TextAlign = TextAlign.Left
 		}
@@ -507,8 +507,8 @@ Level
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "energy to move..."
-			var Font = "5c11e92d484179e3:eldermagic"
-			var FontSize = 50
+			var Font = "5c90792fce1fdeb5:BradleyGratis"
+			var FontSize = 70
 			var PixelsPerUnit = 128
 			var TextAlign = TextAlign.Left
 		}
@@ -535,8 +535,8 @@ Level
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "And health too!"
-			var Font = "5c11e92d484179e3:eldermagic"
-			var FontSize = 50
+			var Font = "5c90792fce1fdeb5:BradleyGratis"
+			var FontSize = 70
 			var PixelsPerUnit = 128
 			var TextAlign = TextAlign.Right
 		}
@@ -671,7 +671,7 @@ Level
 	{
 		Transform 
 		{
-			var Translation = Real3{8.31524277, -0.638223767, 0}
+			var Translation = Real3{6.65962362, -0.948653221, 0}
 			var Rotation = Quaternion{0, 0, 0, 1}
 			var Scale = Real3{3, 3, 1}
 		}
@@ -680,7 +680,7 @@ Level
 	{
 		Transform 
 		{
-			var Translation = Real3{-11.0895329, 1.50396252, 0}
+			var Translation = Real3{-8.84754848, 1.40048563, 0}
 			var Rotation = Quaternion{0, 0, 0, 1}
 			var Scale = Real3{0.75, 0.75, 1}
 		}

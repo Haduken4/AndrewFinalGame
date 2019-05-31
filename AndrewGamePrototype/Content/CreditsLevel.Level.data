@@ -77,7 +77,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{-5.67999649, -7.1239934, 19.1753426}
+			var Translation = Real3{0.339389801, -0.624284863, 19.1100788}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{-0.00518176286, -0.143490687, -0.000751320214, 0.989637852}
 		}
@@ -130,7 +130,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 32.9743805
+			var Size = 13.4063969
 		}
 		EditorCameraController 
 		{
@@ -139,7 +139,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0.0104719428
 			var HorizontalAngle = 0.287979394
-			var LookTarget = Real3{0, -7.33342838, 0}
+			var LookTarget = Real3{6.01938629, -0.833719909, -0.0652640387}
 			var MoveSensitivity = 1
 		}
 	}
@@ -240,7 +240,7 @@ Level
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "Credits"
-			var Font = "5c11e92d484179e3:eldermagic"
+			var Font = "5c90792fce1fdeb5:BradleyGratis"
 			var FontSize = 128
 			var PixelsPerUnit = 128
 			var TextAlign = TextAlign.Center
@@ -268,8 +268,8 @@ Level
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "Game designer - Andrew Yan"
-			var Font = "5c11e92d484179e3:eldermagic"
-			var FontSize = 80
+			var Font = "5c90792fce1fdeb5:BradleyGratis"
+			var FontSize = 100
 			var PixelsPerUnit = 128
 			var TextAlign = TextAlign.Right
 		}
@@ -296,8 +296,8 @@ Level
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "Artists:"
-			var Font = "5c11e92d484179e3:eldermagic"
-			var FontSize = 90
+			var Font = "5c90792fce1fdeb5:BradleyGratis"
+			var FontSize = 124
 			var PixelsPerUnit = 128
 			var TextAlign = TextAlign.Left
 		}
@@ -323,9 +323,9 @@ Level
 			var Material = "582c575af53d18c9:AlphaSprite"
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
-			var Text = "Game director - Andrew Yan"
-			var Font = "5c11e92d484179e3:eldermagic"
-			var FontSize = 80
+			var Text = "Game director - Bar Ben-Zvi"
+			var Font = "5c90792fce1fdeb5:BradleyGratis"
+			var FontSize = 100
 			var PixelsPerUnit = 128
 			var TextAlign = TextAlign.Right
 		}
@@ -352,8 +352,8 @@ Level
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "Tech lead - Bar Ben-Zvi"
-			var Font = "5c11e92d484179e3:eldermagic"
-			var FontSize = 80
+			var Font = "5c90792fce1fdeb5:BradleyGratis"
+			var FontSize = 100
 			var PixelsPerUnit = 128
 			var TextAlign = TextAlign.Right
 		}
@@ -380,8 +380,8 @@ Level
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "Producer - Nicole Smith"
-			var Font = "5c11e92d484179e3:eldermagic"
-			var FontSize = 80
+			var Font = "5c90792fce1fdeb5:BradleyGratis"
+			var FontSize = 100
 			var PixelsPerUnit = 128
 			var TextAlign = TextAlign.Right
 		}
@@ -408,8 +408,8 @@ Level
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "Sound lead - Dilara Kal"
-			var Font = "5c11e92d484179e3:eldermagic"
-			var FontSize = 80
+			var Font = "5c90792fce1fdeb5:BradleyGratis"
+			var FontSize = 100
 			var PixelsPerUnit = 128
 			var TextAlign = TextAlign.Right
 		}
@@ -435,9 +435,9 @@ Level
 			var Material = "582c575af53d18c9:AlphaSprite"
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
-			var Text = "Art lead - Adithi Arunganapathy"
-			var Font = "5c11e92d484179e3:eldermagic"
-			var FontSize = 80
+			var Text = "Art lead - Andrew Yan"
+			var Font = "5c90792fce1fdeb5:BradleyGratis"
+			var FontSize = 100
 			var PixelsPerUnit = 128
 			var TextAlign = TextAlign.Right
 		}
@@ -464,8 +464,8 @@ Level
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "Adithi Arunganapathy"
-			var Font = "5c11e92d484179e3:eldermagic"
-			var FontSize = 80
+			var Font = "5c90792fce1fdeb5:BradleyGratis"
+			var FontSize = 100
 			var PixelsPerUnit = 128
 			var TextAlign = TextAlign.Left
 		}
@@ -492,8 +492,8 @@ Level
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "Lupita Castro"
-			var Font = "5c11e92d484179e3:eldermagic"
-			var FontSize = 80
+			var Font = "5c90792fce1fdeb5:BradleyGratis"
+			var FontSize = 100
 			var PixelsPerUnit = 128
 			var TextAlign = TextAlign.Left
 		}
@@ -520,8 +520,8 @@ Level
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "Andrew Yan"
-			var Font = "5c11e92d484179e3:eldermagic"
-			var FontSize = 80
+			var Font = "5c90792fce1fdeb5:BradleyGratis"
+			var FontSize = 100
 			var PixelsPerUnit = 128
 			var TextAlign = TextAlign.Left
 		}
@@ -548,8 +548,8 @@ Level
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "Programmers:"
-			var Font = "5c11e92d484179e3:eldermagic"
-			var FontSize = 90
+			var Font = "5c90792fce1fdeb5:BradleyGratis"
+			var FontSize = 124
 			var PixelsPerUnit = 128
 			var TextAlign = TextAlign.Left
 		}
@@ -576,8 +576,8 @@ Level
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "Christian Yan"
-			var Font = "5c11e92d484179e3:eldermagic"
-			var FontSize = 80
+			var Font = "5c90792fce1fdeb5:BradleyGratis"
+			var FontSize = 100
 			var PixelsPerUnit = 128
 			var TextAlign = TextAlign.Left
 		}
@@ -604,8 +604,8 @@ Level
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "Bar Ben-Zvi"
-			var Font = "5c11e92d484179e3:eldermagic"
-			var FontSize = 80
+			var Font = "5c90792fce1fdeb5:BradleyGratis"
+			var FontSize = 100
 			var PixelsPerUnit = 128
 			var TextAlign = TextAlign.Left
 		}
@@ -632,8 +632,8 @@ Level
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "Nicole Smith"
-			var Font = "5c11e92d484179e3:eldermagic"
-			var FontSize = 80
+			var Font = "5c90792fce1fdeb5:BradleyGratis"
+			var FontSize = 100
 			var PixelsPerUnit = 128
 			var TextAlign = TextAlign.Left
 		}
@@ -660,8 +660,8 @@ Level
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "Tsering Ngoche"
-			var Font = "5c11e92d484179e3:eldermagic"
-			var FontSize = 80
+			var Font = "5c90792fce1fdeb5:BradleyGratis"
+			var FontSize = 100
 			var PixelsPerUnit = 128
 			var TextAlign = TextAlign.Left
 		}
@@ -688,8 +688,8 @@ Level
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "Teada Nguon"
-			var Font = "5c11e92d484179e3:eldermagic"
-			var FontSize = 80
+			var Font = "5c90792fce1fdeb5:BradleyGratis"
+			var FontSize = 100
 			var PixelsPerUnit = 128
 			var TextAlign = TextAlign.Left
 		}
@@ -699,7 +699,7 @@ Level
 		var Name = "Names"
 		Transform 
 		{
-			var Translation = Real3{12.5757294, -4.89239073, 0}
+			var Translation = Real3{12.5757294, -3.59329391, 0}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
@@ -716,8 +716,8 @@ Level
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "Runa Chernik"
-			var Font = "5c11e92d484179e3:eldermagic"
-			var FontSize = 80
+			var Font = "5c90792fce1fdeb5:BradleyGratis"
+			var FontSize = 100
 			var PixelsPerUnit = 128
 			var TextAlign = TextAlign.Right
 		}
@@ -744,8 +744,8 @@ Level
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "Sound designers:"
-			var Font = "5c11e92d484179e3:eldermagic"
-			var FontSize = 90
+			var Font = "5c90792fce1fdeb5:BradleyGratis"
+			var FontSize = 124
 			var PixelsPerUnit = 128
 			var TextAlign = TextAlign.Left
 		}
@@ -755,7 +755,7 @@ Level
 		var Name = "Names"
 		Transform 
 		{
-			var Translation = Real3{12.5757294, -3.38407636, 0}
+			var Translation = Real3{12.5757294, -2.08497953, 0}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
@@ -772,8 +772,8 @@ Level
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "Voice Acting:"
-			var Font = "5c11e92d484179e3:eldermagic"
-			var FontSize = 90
+			var Font = "5c90792fce1fdeb5:BradleyGratis"
+			var FontSize = 124
 			var PixelsPerUnit = 128
 			var TextAlign = TextAlign.Right
 		}
@@ -800,8 +800,8 @@ Level
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "Dilara Kal"
-			var Font = "5c11e92d484179e3:eldermagic"
-			var FontSize = 80
+			var Font = "5c90792fce1fdeb5:BradleyGratis"
+			var FontSize = 100
 			var PixelsPerUnit = 128
 			var TextAlign = TextAlign.Left
 		}
@@ -856,7 +856,7 @@ Level
 			var Material = "582c575af53d18c9:AlphaSprite"
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
-			var SpriteSource = "5cab35405cd72e25:ButtonUp_0"
+			var SpriteSource = "5cab35405cd72e25:ButtonUp"
 			var FlipX = false
 			var FlipY = false
 			var AnimationActive = true
@@ -867,8 +867,8 @@ Level
 		{
 			var NextLevel = "5c0f9845b8684b3c:MainMenu"
 			var QuitButton = false
-			var ButtonUpSprite = "5cab35405cd72e25:ButtonUp_0"
-			var ButtonDownSprite = "5cab35505a836667:ButtonDown_0"
+			var ButtonUpSprite = "5cab35405cd72e25:ButtonUp"
+			var ButtonDownSprite = "5cab35505a836667:ButtonDown"
 		}
 		Reactive 
 		{
@@ -881,7 +881,7 @@ Level
 				var Name = "Text"
 				Transform 
 				{
-					var Translation = Real3{0, 0, 0.100000001}
+					var Translation = Real3{0, 0.0252435673, 0.100000001}
 					var Scale = Real3{1, 1, 1}
 					var Rotation = Quaternion{0, 0, 0, 1}
 				}
@@ -898,8 +898,8 @@ Level
 					var VertexColor = Real4{0, 0, 0, 1}
 					var GeometryMode = SpriteGeometryMode.ZPlane
 					var Text = "Main Menu"
-					var Font = "5c11e92d484179e3:eldermagic"
-					var FontSize = 45
+					var Font = "5c90792fce1fdeb5:BradleyGratis"
+					var FontSize = 100
 					var PixelsPerUnit = 512
 					var TextAlign = TextAlign.Center
 				}
@@ -933,6 +933,120 @@ Level
 			var AnimationActive = true
 			var AnimationSpeed = 1
 			var StartFrame = 0
+		}
+	}
+	Cog [ContextId:30]
+	{
+		var Name = "Names"
+		Transform 
+		{
+			var Translation = Real3{12.5757294, -4.4007616, 0}
+			var Scale = Real3{1, 1, 1}
+			var Rotation = Quaternion{0, 0, 0, 1}
+		}
+		SpriteText 
+		{
+			var Visible = true
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var OverrideBoundingBox = false
+			var LocalAabbCenter = Real3{0, 0, 0}
+			var LocalAabbHalfExtents = Real3{1, 1, 1}
+			var GroupSortValue = 0
+			var Material = "582c575af53d18c9:AlphaSprite"
+			var VertexColor = Real4{1, 1, 1, 1}
+			var GeometryMode = SpriteGeometryMode.ZPlane
+			var Text = "Font:"
+			var Font = "5c90792fce1fdeb5:BradleyGratis"
+			var FontSize = 124
+			var PixelsPerUnit = 128
+			var TextAlign = TextAlign.Right
+		}
+	}
+	Cog [ContextId:31]
+	{
+		var Name = "Names"
+		Transform 
+		{
+			var Translation = Real3{12.5757294, -6.02204132, 0}
+			var Scale = Real3{1, 1, 1}
+			var Rotation = Quaternion{0, 0, 0, 1}
+		}
+		SpriteText 
+		{
+			var Visible = true
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var OverrideBoundingBox = false
+			var LocalAabbCenter = Real3{0, 0, 0}
+			var LocalAabbHalfExtents = Real3{1, 1, 1}
+			var GroupSortValue = 0
+			var Material = "582c575af53d18c9:AlphaSprite"
+			var VertexColor = Real4{1, 1, 1, 1}
+			var GeometryMode = SpriteGeometryMode.ZPlane
+			var Text = "Justin Callaghan
+"
+			var Font = "5c90792fce1fdeb5:BradleyGratis"
+			var FontSize = 100
+			var PixelsPerUnit = 128
+			var TextAlign = TextAlign.Right
+		}
+	}
+	Cog [ContextId:32]
+	{
+		var Name = "Names"
+		Transform 
+		{
+			var Translation = Real3{-0.245982885, 4.0035429, 1}
+			var Scale = Real3{1, 1, 1}
+			var Rotation = Quaternion{0, 0, 0, 1}
+		}
+		SpriteText 
+		{
+			var Visible = true
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var OverrideBoundingBox = false
+			var LocalAabbCenter = Real3{0, 0, 0}
+			var LocalAabbHalfExtents = Real3{1, 1, 1}
+			var GroupSortValue = 0
+			var Material = "582c575af53d18c9:AlphaSprite"
+			var VertexColor = Real4{1, 1, 1, 1}
+			var GeometryMode = SpriteGeometryMode.ZPlane
+			var Text = "And help from Doug Zwick
+"
+			var Font = "5c90792fce1fdeb5:BradleyGratis"
+			var FontSize = 100
+			var PixelsPerUnit = 128
+			var TextAlign = TextAlign.Center
+		}
+	}
+	Cog [ContextId:33]
+	{
+		var Name = "Names"
+		Transform 
+		{
+			var Translation = Real3{-0.135543346, 3.49531555, 1}
+			var Scale = Real3{1, 1, 1}
+			var Rotation = Quaternion{0, 0, 0, 1}
+		}
+		SpriteText 
+		{
+			var Visible = true
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var OverrideBoundingBox = false
+			var LocalAabbCenter = Real3{0, 0, 0}
+			var LocalAabbHalfExtents = Real3{1, 1, 1}
+			var GroupSortValue = 0
+			var Material = "582c575af53d18c9:AlphaSprite"
+			var VertexColor = Real4{1, 1, 1, 1}
+			var GeometryMode = SpriteGeometryMode.ZPlane
+			var Text = "and Aoki-San"
+			var Font = "5c90792fce1fdeb5:BradleyGratis"
+			var FontSize = 100
+			var PixelsPerUnit = 128
+			var TextAlign = TextAlign.Center
 		}
 	}
 }

@@ -185,7 +185,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{-16.6875744, -1.1653372, 19.9999981}
+			var Translation = Real3{-13.8542042, 0.33467561, 19.9999981}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -238,7 +238,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 10.9763365
+			var Size = 16.3747597
 		}
 		EditorCameraController 
 		{
@@ -247,7 +247,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{-16.6875744, -1.1653372, -1.4404477e-06}
+			var LookTarget = Real3{-13.8542042, 0.33467561, -1.4404477e-06}
 			var MoveSensitivity = 1
 		}
 	}
@@ -399,7 +399,7 @@ Level
 		var Name = "TurnStateText"
 		Transform 
 		{
-			var Translation = Real3{-14.5, -2.17344856, 0.100000001}
+			var Translation = Real3{-14.5, -2.18748641, 0.100000001}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
@@ -416,8 +416,8 @@ Level
 			var VertexColor = Real4{0.444999993, 0.444999993, 0.444999993, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "Moving"
-			var Font = "5c11e92d484179e3:eldermagic"
-			var FontSize = 100
+			var Font = "5c90792fce1fdeb5:BradleyGratis"
+			var FontSize = 124
 			var PixelsPerUnit = 128
 			var TextAlign = TextAlign.Center
 		}
@@ -427,7 +427,7 @@ Level
 		var Name = "PlayerText"
 		Transform 
 		{
-			var Translation = Real3{-14.5, -0.423449039, 0.100000001}
+			var Translation = Real3{-14.5, -0.371504724, 0.100000001}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
@@ -444,8 +444,8 @@ Level
 			var VertexColor = Real4{0.444999993, 0.444999993, 0.444999993, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "Player 1"
-			var Font = "5c11e92d484179e3:eldermagic"
-			var FontSize = 100
+			var Font = "5c90792fce1fdeb5:BradleyGratis"
+			var FontSize = 124
 			var PixelsPerUnit = 128
 			var TextAlign = TextAlign.Center
 		}
