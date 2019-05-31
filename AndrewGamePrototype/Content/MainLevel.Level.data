@@ -93,7 +93,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{6.85496616, -2.96762514, 20}
+			var Translation = Real3{-9.95747471, 3.28462005, 20}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -146,7 +146,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 36.4460144
+			var Size = 40.2790718
 		}
 		EditorCameraController 
 		{
@@ -155,7 +155,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{6.85496616, -2.96762514, 1.98352339e-07}
+			var LookTarget = Real3{-9.95747471, 3.28462005, -5.36542757e-07}
 			var MoveSensitivity = 1
 		}
 	}
@@ -685,50 +685,6 @@ Level
 	}
 	Cog [ContextId:14]
 	{
-		var Name = "BulletArea"
-		Transform 
-		{
-			var Translation = Real3{-12.7505064, 9.90505314, 0}
-			var Scale = Real3{1, 1, 1}
-			var Rotation = Quaternion{0, 0, 0, 1}
-		}
-		Sprite 
-		{
-			var Visible = true
-			var ViewCulling = true
-			var VisibilityEvents = true
-			var OverrideBoundingBox = false
-			var LocalAabbCenter = Real3{0, 0, 0}
-			var LocalAabbHalfExtents = Real3{1, 1, 1}
-			var GroupSortValue = 0
-			var Material = "582c575af53d18c9:AlphaSprite"
-			var VertexColor = Real4{1, 1, 1, 0}
-			var GeometryMode = SpriteGeometryMode.ZPlane
-			var SpriteSource = "5274db4c2e7c11f9:Circle"
-			var FlipX = false
-			var FlipY = false
-			var AnimationActive = true
-			var AnimationSpeed = 1
-			var StartFrame = 0
-		}
-		SphereCollider 
-		{
-			var Ghost = false
-			var SendsEvents = true
-			var Material = "4de020863e872da8:DefaultPhysicsMaterial"
-			var CollisionGroup = "4e740859314e5515:DefaultGroup"
-			var Offset = Real3{0, 0, 0}
-			var Radius = 0.5
-		}
-		CustomCollisionVariables 
-		{
-			var Explodes = true
-			var ExplosionRadius = 5
-			var MaxSlope = 30
-		}
-	}
-	Cog [ContextId:15]
-	{
 		var Name = "OldTileMap"
 		Transform 
 		{
@@ -758,7 +714,7 @@ Level
 			var MeshThickness = 1.20000005
 		}
 	}
-	Cog [ContextId:16]
+	Cog [ContextId:15]
 	{
 		var Name = "BackgroundBranch"
 		Transform 
@@ -787,7 +743,7 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:17]
+	Cog [ContextId:16]
 	{
 		var Name = "BackgroundBranch"
 		Transform 
@@ -816,7 +772,7 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:18]
+	Cog [ContextId:17]
 	{
 		var Name = "BackgroundBranch"
 		Transform 
@@ -845,7 +801,7 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:19]
+	Cog [ContextId:18]
 	{
 		var Name = "BackgroundBranch"
 		Transform 
@@ -874,7 +830,7 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:20]
+	Cog [ContextId:19]
 	{
 		var Name = "BackgroundBranch"
 		Transform 
@@ -903,7 +859,7 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:21]
+	Cog [ContextId:20]
 	{
 		var Name = "BackgroundBranch"
 		Transform 
@@ -932,7 +888,7 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:22]
+	Cog [ContextId:21]
 	{
 		var Name = "MusicPlayer"
 		Transform 
@@ -946,7 +902,7 @@ Level
 			var TrackToPlay = "5c8f26591d8df061:Brogs_music"
 		}
 	}
-	Cog [ContextId:23]
+	Cog [ContextId:22]
 	{
 		var Name = "BouncySpawnZone"
 		Transform 
@@ -967,7 +923,7 @@ Level
 			var MaxTries = 100
 		}
 	}
-	Cog [InheritId:"5c85da8abb1395cf:WeaponSpawner"][ContextId:24]
+	Cog [InheritId:"5c85da8abb1395cf:WeaponSpawner"][ContextId:23]
 	{
 		Transform 
 		{
@@ -980,7 +936,7 @@ Level
 			var ChanceToSpawn = 60
 		}
 	}
-	Cog [InheritId:"5c85da8abb1395cf:WeaponSpawner"][ContextId:25]
+	Cog [InheritId:"5c85da8abb1395cf:WeaponSpawner"][ContextId:24]
 	{
 		Transform 
 		{
@@ -993,7 +949,7 @@ Level
 			var ChanceToSpawn = 60
 		}
 	}
-	Cog [InheritId:"5c85da8abb1395cf:WeaponSpawner"][ContextId:26]
+	Cog [InheritId:"5c85da8abb1395cf:WeaponSpawner"][ContextId:25]
 	{
 		Transform 
 		{
@@ -1006,7 +962,7 @@ Level
 			var ChanceToSpawn = 60
 		}
 	}
-	Cog [InheritId:"5c85da8abb1395cf:WeaponSpawner"][ContextId:27]
+	Cog [InheritId:"5c85da8abb1395cf:WeaponSpawner"][ContextId:26]
 	{
 		Transform 
 		{
@@ -1019,7 +975,7 @@ Level
 			var ChanceToSpawn = 60
 		}
 	}
-	Cog [InheritId:"5c85da8abb1395cf:WeaponSpawner"][ContextId:28]
+	Cog [InheritId:"5c85da8abb1395cf:WeaponSpawner"][ContextId:27]
 	{
 		Transform 
 		{
@@ -1032,7 +988,7 @@ Level
 			var ChanceToSpawn = 60
 		}
 	}
-	Cog [InheritId:"5c85da8abb1395cf:WeaponSpawner"][ContextId:29]
+	Cog [InheritId:"5c85da8abb1395cf:WeaponSpawner"][ContextId:28]
 	{
 		Transform 
 		{
@@ -1045,7 +1001,7 @@ Level
 			var ChanceToSpawn = 60
 		}
 	}
-	Cog [ContextId:30]
+	Cog [ContextId:29]
 	{
 		var Name = "TileMap"
 		Transform 
@@ -1076,7 +1032,7 @@ Level
 			var MeshThickness = 1.20000005
 		}
 	}
-	Cog [ContextId:31]
+	Cog [ContextId:30]
 	{
 		var Name = "CloudTile_0"
 		Transform 
@@ -1105,7 +1061,7 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:32]
+	Cog [ContextId:31]
 	{
 		var Name = "CloudTile_0"
 		Transform 
@@ -1134,7 +1090,7 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:33]
+	Cog [ContextId:32]
 	{
 		var Name = "CloudTile_0"
 		Transform 
@@ -1163,7 +1119,7 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:34]
+	Cog [ContextId:33]
 	{
 		var Name = "CloudTile_0"
 		Transform 
@@ -1192,7 +1148,7 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:35]
+	Cog [ContextId:34]
 	{
 		var Name = "CloudTile_0"
 		Transform 
@@ -1221,7 +1177,7 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:36]
+	Cog [ContextId:35]
 	{
 		var Name = "CloudTile_0"
 		Transform 
@@ -1250,7 +1206,7 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:37]
+	Cog [ContextId:36]
 	{
 		var Name = "CloudTile_0"
 		Transform 
@@ -1279,7 +1235,7 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:38]
+	Cog [ContextId:37]
 	{
 		var Name = "CloudTile_0"
 		Transform 
@@ -1308,7 +1264,7 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:39]
+	Cog [ContextId:38]
 	{
 		var Name = "CloudTile_0"
 		Transform 
@@ -1337,7 +1293,7 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:40]
+	Cog [ContextId:39]
 	{
 		var Name = "CloudTile_0"
 		Transform 
@@ -1366,7 +1322,7 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:41]
+	Cog [ContextId:40]
 	{
 		var Name = "CloudTile_0"
 		Transform 
@@ -1395,7 +1351,7 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:42]
+	Cog [ContextId:41]
 	{
 		var Name = "CloudTile_0"
 		Transform 
@@ -1424,7 +1380,7 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:43]
+	Cog [ContextId:42]
 	{
 		var Name = "CloudTile_0"
 		Transform 
@@ -1453,7 +1409,7 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:44]
+	Cog [ContextId:43]
 	{
 		var Name = "CloudTile_0"
 		Transform 
@@ -1482,7 +1438,7 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:45]
+	Cog [ContextId:44]
 	{
 		var Name = "BottomCLoud"
 		Transform 
@@ -1511,7 +1467,7 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [InheritId:"5c0f9844b87295c0:BouncyTerrain"][ContextId:46]
+	Cog [InheritId:"5c0f9844b87295c0:BouncyTerrain"][ContextId:45]
 	{
 		Transform 
 		{
@@ -1524,7 +1480,7 @@ Level
 			var SpriteSource = "5caa09b3e47e95f3:GiantFruit_0"
 		}
 	}
-	Cog [InheritId:"5c0f9844b87295c0:BouncyTerrain"][ContextId:47]
+	Cog [InheritId:"5c0f9844b87295c0:BouncyTerrain"][ContextId:46]
 	{
 		Transform 
 		{
@@ -1537,7 +1493,7 @@ Level
 			var SpriteSource = "5caa09b3e47e95f3:GiantFruit_0"
 		}
 	}
-	Cog [InheritId:"5c0f9844b87295c0:BouncyTerrain"][ContextId:48]
+	Cog [InheritId:"5c0f9844b87295c0:BouncyTerrain"][ContextId:47]
 	{
 		Transform 
 		{
@@ -1550,7 +1506,7 @@ Level
 			var SpriteSource = "5caa09b3e47e95f3:GiantFruit_0"
 		}
 	}
-	Cog [ContextId:49]
+	Cog [ContextId:48]
 	{
 		var Name = "Killzone"
 		Transform 
@@ -1591,7 +1547,7 @@ Level
 		{
 		}
 	}
-	Cog [ContextId:50]
+	Cog [ContextId:49]
 	{
 		var Name = "Killzone"
 		Transform 
@@ -1632,7 +1588,7 @@ Level
 		{
 		}
 	}
-	Cog [ContextId:51]
+	Cog [ContextId:50]
 	{
 		var Name = "CursorSprite"
 		Transform 
