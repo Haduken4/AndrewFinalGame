@@ -109,9 +109,9 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{39.5705986, -21.1012173, 24.3435707}
+			var Translation = Real3{-18.5741272, -3.89885807, 18.116478}
 			var Scale = Real3{1, 1, 1}
-			var Rotation = Quaternion{0.0052356096, -0.0130895944, 6.85388586e-05, 0.999900699}
+			var Rotation = Quaternion{-0.00785177015, -0.0235592853, -0.000185039375, 0.999691665}
 		}
 		CameraViewport 
 		{
@@ -162,16 +162,16 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 73.388504
+			var Size = 44.5125389
 		}
 		EditorCameraController 
 		{
 			var ControlMode = ControlMode.ZPlane
 			var Previous3DMode = ControlMode.Orbit
 			var LookDistance = 20
-			var VerticalAngle = -0.0104721645
-			var HorizontalAngle = 0.0261802785
-			var LookTarget = Real3{40.0941162, -20.891777, 4.35151958}
+			var VerticalAngle = 0.0157080628
+			var HorizontalAngle = 0.0471243374
+			var LookTarget = Real3{-17.6321049, -4.2130065, -1.85885358}
 			var MoveSensitivity = 1
 		}
 	}
@@ -297,39 +297,10 @@ Level
 	}
 	Cog [ContextId:6]
 	{
-		var Name = "BackgroundBranch"
-		Transform 
-		{
-			var Translation = Real3{-19.9348927, 79.1396713, -4.99500084}
-			var Scale = Real3{20, 20, 1}
-			var Rotation = Quaternion{0, 0, 0, 1}
-		}
-		Sprite 
-		{
-			var Visible = true
-			var ViewCulling = true
-			var VisibilityEvents = true
-			var OverrideBoundingBox = false
-			var LocalAabbCenter = Real3{0, 0, 0}
-			var LocalAabbHalfExtents = Real3{1, 1, 1}
-			var GroupSortValue = 0
-			var Material = "5c888481afad634e:BackgroundSprite"
-			var VertexColor = Real4{1, 1, 1, 1}
-			var GeometryMode = SpriteGeometryMode.ZPlane
-			var SpriteSource = "5c777e549c2748e9:BackgroundBranch"
-			var FlipX = false
-			var FlipY = false
-			var AnimationActive = true
-			var AnimationSpeed = 1
-			var StartFrame = 0
-		}
-	}
-	Cog [ContextId:7]
-	{
 		var Name = "Player"
 		Transform 
 		{
-			var Translation = Real3{-19.1167049, -0.482002258, 0}
+			var Translation = Real3{-17.333231, -1.52090073, -1}
 			var Scale = Real3{2, 2, 1}
 			var Rotation = Quaternion{0, -2.52854051e-07, 0, 1}
 		}
@@ -388,7 +359,7 @@ Level
 		{
 			var Weapon = ShootVariables
 			{
-				var Icon = "5c4f2f551442b9d7:Blank"
+				var Icon = "5c505c76e3613f4e:FastWaterDropSymbol"
 				var Projectile = "5c0f9844b874aa7c:Bullet"
 				var ProjectileCount = 1
 				var SpreadCone = 0
@@ -418,7 +389,7 @@ Level
 		}
 		Hierarchy 
 		{
-			Cog [Id:0x5c50583222d7baca][ContextId:8]
+			Cog [Id:0x5c50583222d7baca][ContextId:7]
 			{
 				var Name = "FlyingCloud"
 				Transform 
@@ -447,7 +418,7 @@ Level
 					var StartFrame = 0
 				}
 			}
-			Cog [Id:0x5c5058102b7eca69][ContextId:9]
+			Cog [Id:0x5c5058102b7eca69][ContextId:8]
 			{
 				var Name = "FlyingCloud"
 				Transform 
@@ -478,7 +449,7 @@ Level
 			}
 		}
 	}
-	Cog [ContextId:10]
+	Cog [ContextId:9]
 	{
 		var Name = "Player"
 		Transform 
@@ -572,7 +543,7 @@ Level
 		}
 		Hierarchy 
 		{
-			Cog [Id:0x5c50598101d15198][ContextId:11]
+			Cog [Id:0x5c50598101d15198][ContextId:10]
 			{
 				var Name = "FlyingCloud"
 				Transform 
@@ -601,7 +572,7 @@ Level
 					var StartFrame = 0
 				}
 			}
-			Cog [Id:0x5c50598101d151dc][ContextId:12]
+			Cog [Id:0x5c50598101d151dc][ContextId:11]
 			{
 				var Name = "FlyingCloud"
 				Transform 
@@ -632,7 +603,7 @@ Level
 			}
 		}
 	}
-	Cog [ContextId:13]
+	Cog [ContextId:12]
 	{
 		var Name = "Leaf"
 		Transform 
@@ -673,7 +644,7 @@ Level
 			var Mesh = "5c8dbf0544f9cccb:LeafMesh"
 		}
 	}
-	Cog [ContextId:14]
+	Cog [ContextId:13]
 	{
 		var Name = "Leaf"
 		Transform 
@@ -714,7 +685,7 @@ Level
 			var Mesh = "5c8dbf0544f9cccb:LeafMesh"
 		}
 	}
-	Cog [ContextId:15]
+	Cog [ContextId:14]
 	{
 		var Name = "Leaf"
 		Transform 
@@ -755,7 +726,7 @@ Level
 			var Mesh = "5c8dbf0544f9cccb:LeafMesh"
 		}
 	}
-	Cog [ContextId:16]
+	Cog [ContextId:15]
 	{
 		var Name = "BulletArea"
 		Transform 
@@ -799,7 +770,7 @@ Level
 			var MaxSlope = 30
 		}
 	}
-	Cog [ContextId:17]
+	Cog [ContextId:16]
 	{
 		var Name = "TileMap"
 		Transform 
@@ -830,12 +801,12 @@ Level
 			var MeshThickness = 1.20000005
 		}
 	}
-	Cog [ContextId:18]
+	Cog [ContextId:17]
 	{
 		var Name = "BackgroundBranch"
 		Transform 
 		{
-			var Translation = Real3{-15.837019, -2.63949347, -0.100000001}
+			var Translation = Real3{-15.837019, -2.63949347, -3.09999967}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
@@ -859,7 +830,7 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:19]
+	Cog [ContextId:18]
 	{
 		var Name = "BackgroundBranch"
 		Transform 
@@ -888,7 +859,7 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:20]
+	Cog [ContextId:19]
 	{
 		var Name = "MusicPlayer"
 		Transform 
@@ -900,37 +871,6 @@ Level
 		PlayMusicOnInitialize 
 		{
 			var TrackToPlay = "5c8f26591d8df061:Brogs_music"
-		}
-	}
-	Cog [ContextId:21]
-	{
-		var Name = "TileMap"
-		Transform 
-		{
-			var Translation = Real3{0, 0, -1.75}
-			var Scale = Real3{1, 1, 1}
-			var Rotation = Quaternion{0, 0, 0, 1}
-		}
-		MultiSprite 
-		{
-			var Visible = true
-			var ViewCulling = true
-			var VisibilityEvents = true
-			var OverrideBoundingBox = false
-			var LocalAabbCenter = Real3{0, 0, 0}
-			var LocalAabbHalfExtents = Real3{1, 1, 1}
-			var GroupSortValue = 0
-			var Material = "582c575af53d18c9:AlphaSprite"
-			var VertexColor = Real4{1, 1, 1, 1}
-			var GeometryMode = SpriteGeometryMode.ZPlane
-			var AnimationActive = true
-			var AnimationSpeed = 1
-		}
-		TileMap 
-		{
-			var Source = "5c4f3800c4efa8b9:MainLevel_TileMap01"
-			var PaletteName = "5c0f869da6af70e1:GamePalette"
-			var MeshThickness = 1.20000005
 		}
 	}
 }

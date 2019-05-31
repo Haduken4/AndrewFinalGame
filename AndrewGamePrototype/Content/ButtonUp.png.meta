@@ -4,15 +4,15 @@ ImageContent
 	SpriteSourceBuilder 
 	{
 		var Name = "ButtonUp"
-		var ResourceId = 0x5c529bde35bcd532
-		var FrameSizeX = 32
-		var FrameSizeY = 16
+		var ResourceId = 0x5cab35405cd72e25
+		var FrameSizeX = 62
+		var FrameSizeY = 30
 		var FrameCount = 1
 		var FrameDelay = 0.0833333358
-		var OriginX = 16
-		var OriginY = 8
+		var OriginX = 31
+		var OriginY = 15
 		var PixelsPerUnit = 64
-		var Sampling = SpriteSampling.Linear
+		var Sampling = SpriteSampling.Nearest
 		var Looping = true
 		var Slices = Real4{0, 0, 0, 0}
 		var Fill = SpriteFill.Stretch
