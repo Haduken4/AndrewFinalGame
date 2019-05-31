@@ -109,7 +109,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{-18.5741272, -3.89885807, 18.116478}
+			var Translation = Real3{-15.7942123, -1.83209407, 18.2150707}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{-0.00785177015, -0.0235592853, -0.000185039375, 0.999691665}
 		}
@@ -162,7 +162,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 44.5125389
+			var Size = 22.1043453
 		}
 		EditorCameraController 
 		{
@@ -171,7 +171,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0.0157080628
 			var HorizontalAngle = 0.0471243374
-			var LookTarget = Real3{-17.6321049, -4.2130065, -1.85885358}
+			var LookTarget = Real3{-14.852191, -2.14624238, -1.76026094}
 			var MoveSensitivity = 1
 		}
 	}
@@ -300,7 +300,7 @@ Level
 		var Name = "Player"
 		Transform 
 		{
-			var Translation = Real3{-17.333231, -1.52090073, -1}
+			var Translation = Real3{-17.333231, -1.52090073, 0}
 			var Scale = Real3{2, 2, 1}
 			var Rotation = Quaternion{0, -2.52854051e-07, 0, 1}
 		}
@@ -316,7 +316,7 @@ Level
 			var Material = "582c575af53d18c9:AlphaSprite"
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
-			var SpriteSource = "5c4f2305c86ed909:IdleFrogAni_2"
+			var SpriteSource = "5c4f2305c86ed909:IdleFrogAni"
 			var FlipX = false
 			var FlipY = false
 			var AnimationActive = true
@@ -373,7 +373,7 @@ Level
 		AnimationHandler 
 		{
 			var DamagedSprite = "5c4f2359c1c35e34:DamagedFrogAni_2"
-			var IdleSprite = "5c4f2305c86ed909:IdleFrogAni_2"
+			var IdleSprite = "5c4f2305c86ed909:IdleFrogAni"
 			var AttackSprite = "5c4f24d838f71e3a:AttackFrogAni_2"
 		}
 		CustomCollisionVariables 
@@ -410,7 +410,7 @@ Level
 					var Material = "582c575af53d18c9:AlphaSprite"
 					var VertexColor = Real4{1, 1, 1, 1}
 					var GeometryMode = SpriteGeometryMode.ZPlane
-					var SpriteSource = "5c5058963082106b:FlyingCloud_0"
+					var SpriteSource = "5c5058963082106b:FlyingCloud"
 					var FlipX = false
 					var FlipY = false
 					var AnimationActive = true
@@ -439,7 +439,7 @@ Level
 					var Material = "582c575af53d18c9:AlphaSprite"
 					var VertexColor = Real4{1, 1, 1, 1}
 					var GeometryMode = SpriteGeometryMode.ZPlane
-					var SpriteSource = "5c5058963082106b:FlyingCloud_0"
+					var SpriteSource = "5c5058963082106b:FlyingCloud"
 					var FlipX = true
 					var FlipY = false
 					var AnimationActive = true
@@ -564,7 +564,7 @@ Level
 					var Material = "582c575af53d18c9:AlphaSprite"
 					var VertexColor = Real4{1, 1, 1, 1}
 					var GeometryMode = SpriteGeometryMode.ZPlane
-					var SpriteSource = "5c5058963082106b:FlyingCloud_0"
+					var SpriteSource = "5c5058963082106b:FlyingCloud"
 					var FlipX = false
 					var FlipY = false
 					var AnimationActive = true
@@ -593,7 +593,7 @@ Level
 					var Material = "582c575af53d18c9:AlphaSprite"
 					var VertexColor = Real4{1, 1, 1, 1}
 					var GeometryMode = SpriteGeometryMode.ZPlane
-					var SpriteSource = "5c5058963082106b:FlyingCloud_0"
+					var SpriteSource = "5c5058963082106b:FlyingCloud"
 					var FlipX = true
 					var FlipY = false
 					var AnimationActive = true
