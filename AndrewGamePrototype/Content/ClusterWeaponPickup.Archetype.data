@@ -4,7 +4,7 @@ Cog
 	var Name = "ClusterWeapon"
 	Transform 
 	{
-		var Translation = Real3{-38.3322945, 45.9648552, 0}
+		var Translation = Real3{0, 0, 0}
 		var Scale = Real3{0.75, 0.75, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
@@ -48,7 +48,7 @@ Cog
 			var ProjectileSpeed = 20
 			var SpeedVariation = 1.5
 			var SpeedBool = true
-			var ShootSound = "5c57371855e8f80d:Attack"
+			var ShootSound = "5c91bbdf53d15d39:FrogBurp"
 		}
 	}
 	SphereCollider 

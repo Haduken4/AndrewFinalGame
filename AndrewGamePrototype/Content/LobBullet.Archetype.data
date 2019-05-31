@@ -4,7 +4,7 @@ Cog
 	var Name = "Bullet"
 	Transform 
 	{
-		var Translation = Real3{4.43965435, 10.1253376, 10}
+		var Translation = Real3{0, 0, 0}
 		var Scale = Real3{0.5, 0.5, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
@@ -70,7 +70,7 @@ Cog
 		var OffsetSpawn = false
 		var SpawnOffset = 0
 		var DIE = false
-		var SoundToPlay = "null"
+		var SoundToPlay = "5c91bbd155d5d169:Impact"
 	}
 	CustomCollisionVariables 
 	{

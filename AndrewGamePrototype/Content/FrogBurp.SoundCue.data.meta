@@ -1,0 +1,11 @@
+[Version:1]
+DataContent 
+{
+	DataBuilder 
+	{
+		var Name = "FrogBurp"
+		var ResourceId = 0x5c91bbdf53d15d39
+		var LoaderType = "SoundCue"
+		var Version = 0
+	}
+}

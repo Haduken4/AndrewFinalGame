@@ -1,0 +1,11 @@
+[Version:1]
+DataContent 
+{
+	DataBuilder 
+	{
+		var Name = "LeavesImpact"
+		var ResourceId = 0x5c91bddbf91e6e60
+		var LoaderType = "SoundCue"
+		var Version = 0
+	}
+}

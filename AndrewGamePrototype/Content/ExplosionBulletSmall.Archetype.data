@@ -4,7 +4,7 @@ Cog
 	var Name = "Bullet"
 	Transform 
 	{
-		var Translation = Real3{4.86529064, 9.79477119, 10.0049992}
+		var Translation = Real3{0, 0, 0}
 		var Scale = Real3{0.300000012, 0.300000012, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
@@ -63,7 +63,7 @@ Cog
 		var OffsetSpawn = false
 		var SpawnOffset = 0
 		var DIE = true
-		var SoundToPlay = "null"
+		var SoundToPlay = "5c91bbd155d5d169:Impact"
 	}
 	TimedDeath 
 	{

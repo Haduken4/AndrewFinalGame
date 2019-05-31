@@ -4,7 +4,7 @@ Cog
 	var Name = "Bullet"
 	Transform 
 	{
-		var Translation = Real3{-42.8809776, 49.2214661, -1.72827148}
+		var Translation = Real3{-0.0483760834, -0.0153923035, 0}
 		var Scale = Real3{0.5, 0.5, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
@@ -41,6 +41,7 @@ Cog
 	{
 		var Damage = 1
 		var DestroyMe = true
+		var SoundToPlay = "5c91bbda54f6784c:WaterImpact"
 	}
 	SphereCollider 
 	{
@@ -71,7 +72,7 @@ Cog
 		var OffsetSpawn = false
 		var SpawnOffset = 0
 		var DIE = false
-		var SoundToPlay = "null"
+		var SoundToPlay = "5c91bbda54f6784c:WaterImpact"
 	}
 	Hierarchy 
 	{
