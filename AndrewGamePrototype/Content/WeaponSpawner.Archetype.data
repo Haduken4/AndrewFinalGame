@@ -4,7 +4,7 @@ Cog
 	var Name = "WeaponSpawner"
 	Transform 
 	{
-		var Translation = Real3{-3.62151599, 0.061029911, 0}
+		var Translation = Real3{17.0995483, 31.4717007, 0}
 		var Scale = Real3{1, 1, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
@@ -52,7 +52,7 @@ Cog
 				var Scale = Real3{0.75, 0.75, 1}
 			}
 		}
-		Cog [Id:0x5c8dd4da1fb71aaa][InheritId:"5c85ed4daa32760c:LobWeapon"]
+		Cog [Id:0x5c8dd4da1fb71aaa][InheritId:"5c85ed4daa32760c:LobWeaponPickup"]
 		{
 			var Name = "LobWeapon"
 			Transform 
@@ -65,16 +65,6 @@ Cog
 		Cog [Id:0x5c8dd4da1fb71adc][InheritId:"5c85d7cd169955b2:ClusterWeaponPickup"]
 		{
 			var Name = "ClusterWeapon"
-			Transform 
-			{
-				var Translation = Real3{0, 0, 0}
-				var Rotation = Quaternion{0, 0, 0, 1}
-				var Scale = Real3{0.75, 0.75, 1}
-			}
-		}
-		Cog [Id:0x5c8dd4da1fb71b0d][InheritId:"5c872030213e749b:RockWeapon"]
-		{
-			var Name = "RockWeapon"
 			Transform 
 			{
 				var Translation = Real3{0, 0, 0}

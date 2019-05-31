@@ -93,7 +93,6 @@ class PlayerTurnManager : ZilchComponent
         this.PlayerArray[this.CurrIndex].BoxCollider.CollisionGroup = CollisionGroup.CurrentPlayer;
         
         this.HUDManager.UpdateWeapons();
-        this.Space.LevelSettings.SpawnPickups.SpawnItems();
       }
     }
     

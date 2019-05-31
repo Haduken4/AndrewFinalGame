@@ -59,7 +59,7 @@ Cog
 	CustomCollisionVariables 
 	{
 		var Explodes = true
-		var ExplosionRadius = 0.75
+		var ExplosionRadius = 1
 		var MaxSlope = 30
 	}
 	FaceVelocityDirection 

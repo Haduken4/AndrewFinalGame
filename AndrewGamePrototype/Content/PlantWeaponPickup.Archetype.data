@@ -4,7 +4,7 @@ Cog
 	var Name = "PlantWeapon"
 	Transform 
 	{
-		var Translation = Real3{0, 0, -5.05000019}
+		var Translation = Real3{-26.9989109, 47.705658, 0}
 		var Scale = Real3{0.75, 0.75, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
@@ -41,7 +41,7 @@ Cog
 	{
 		var Weapon = ShootVariables
 		{
-			var Icon = "5cb6ebbee4493df4:PlantShot"
+			var Icon = "5c505c76e3616cb3:PlantFlowerSymbol"
 			var Projectile = "5cbf3f95da5fd0a8:PlantBullet"
 			var ProjectileCount = 1
 			var SpreadCone = 0

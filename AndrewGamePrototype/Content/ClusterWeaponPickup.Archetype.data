@@ -4,7 +4,7 @@ Cog
 	var Name = "ClusterWeapon"
 	Transform 
 	{
-		var Translation = Real3{0, 0.00643408298, -0.498896539}
+		var Translation = Real3{-28.0130043, 50.4105034, 0}
 		var Scale = Real3{0.75, 0.75, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
@@ -42,7 +42,7 @@ Cog
 		var Weapon = ShootVariables
 		{
 			var Icon = "5c505c76e36195b5:WaterDropsMultiSymbol"
-			var Projectile = "5c87217748a4fa65:RockBullet"
+			var Projectile = "5c0f9844b874aa7c:Bullet"
 			var ProjectileCount = 5
 			var SpreadCone = 1
 			var ProjectileSpeed = 20

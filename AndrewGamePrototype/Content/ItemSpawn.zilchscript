@@ -6,19 +6,27 @@ Brief: Chooses a weapon to spawn
 
 class ItemSpawn : ZilchComponent
 {  
+  
+  //This should be between 0 and 100
+  [Property]
+  var ChanceToSpawn : Integer = 50;
+  
   //random number generator
   var RandomGenerator : Random = Random();
   
   function Initialize(init : CogInitializer)
   {
     
+    
+    
     var childCount = this.Owner.ChildrenArray.Count;
     var spawn = this.RandomGenerator.RangeExclusiveMax(0, childCount);
+    var shouldSpawn = this.RandomGenerator.RangeInclusiveMax(1, 100);
     
     
     for(var i = 0; i < childCount; ++i)
     {
-      if(i != spawn)
+      if(i != spawn || shouldSpawn > this.ChanceToSpawn)
       {
         //Console.WriteLine(this.Owner.ChildrenArray[i].Name);
         this.Owner.ChildrenArray[i].Destroy();
