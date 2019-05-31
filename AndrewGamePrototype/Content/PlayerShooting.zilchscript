@@ -57,6 +57,9 @@ class PlayerShooting : ZilchComponent
   //timer for the bullet
   var Timer : Real = 0;
   
+  //This is the timer for when its switching turns
+  var EndTimer : Real = 0;
+  
   //turn this bool on for a timer to start
   var TBool : Boolean = false;
   
@@ -230,10 +233,16 @@ class PlayerShooting : ZilchComponent
     //this is for switchign after the bullet gets destroyed
     if(this.BBool && this.GameSession.GameVars.BulletArray.Count == 0)
     {
-        //changes whos turn it is
-        this.LevelSettings.PlayerTurnManager.TurnBool = true;
-        //turn off the bools
-        this.BBool = false;
+        //Add to the timer 
+        this.EndTimer += event.Dt;
+        
+        if(this.EndTimer >= 1)
+        {
+          //changes whos turn it is
+          this.LevelSettings.PlayerTurnManager.TurnBool = true;
+          //turn off the bools
+          this.BBool = false;
+        }
     }
   }
   

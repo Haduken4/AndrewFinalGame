@@ -3,15 +3,15 @@ ImageContent
 {
 	SpriteSourceBuilder 
 	{
-		var Name = "BranchTiles008"
-		var ResourceId = 0x5c4f243d1b81276f
-		var FrameSizeX = 32
-		var FrameSizeY = 32
+		var Name = "GiantFruit_0"
+		var ResourceId = 0x5caa09b3e47e95f3
+		var FrameSizeX = 128
+		var FrameSizeY = 128
 		var FrameCount = 1
 		var FrameDelay = 0.0833333358
-		var OriginX = 16
-		var OriginY = 16
-		var PixelsPerUnit = 64
+		var OriginX = 64
+		var OriginY = 64
+		var PixelsPerUnit = 96
 		var Sampling = SpriteSampling.Nearest
 		var Looping = true
 		var Slices = Real4{0, 0, 0, 0}
