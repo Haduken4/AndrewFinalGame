@@ -93,7 +93,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{-14.1532946, 1.3070538, 20}
+			var Translation = Real3{-21.4884205, 1.14015031, 20}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -146,7 +146,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 29.8365326
+			var Size = 10.9762659
 		}
 		EditorCameraController 
 		{
@@ -155,7 +155,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{-14.1532946, 1.3070538, -5.6765316e-07}
+			var LookTarget = Real3{-21.4884205, 1.14015031, -5.6765316e-07}
 			var MoveSensitivity = 1
 		}
 	}
@@ -466,8 +466,20 @@ Level
 			var MoveSprite = "5c25a986b4d58d75:TutorialSprite02"
 			var ShootSprite = "5c25a986b4a8538d:TutorialSprite01"
 		}
+		Hierarchy 
+		{
+			Cog [Id:0x5c24fffb5392e48a][InheritId:"5c24ffe05cad187f:LNextPhase"][ContextId:10]
+			{
+				Transform 
+				{
+					var Translation = Real3{-1.16768646, -3.83889127, -1}
+					var Rotation = Quaternion{0, 0, 0, 1}
+					var Scale = Real3{4, 4, 1}
+				}
+			}
+		}
 	}
-	Cog [InheritId:"5cbf4710572ae165:ExplosionWeaponPickup"][ContextId:10]
+	Cog [InheritId:"5cbf4710572ae165:ExplosionWeaponPickup"][ContextId:11]
 	{
 		Transform 
 		{
@@ -476,7 +488,7 @@ Level
 			var Scale = Real3{0.75, 0.75, 1}
 		}
 	}
-	Cog [ContextId:11]
+	Cog [ContextId:12]
 	{
 		var Name = "SpriteText"
 		Transform 
@@ -504,7 +516,7 @@ Level
 			var TextAlign = TextAlign.Left
 		}
 	}
-	Cog [ContextId:12]
+	Cog [ContextId:13]
 	{
 		var Name = "SpriteText"
 		Transform 
@@ -532,7 +544,7 @@ Level
 			var TextAlign = TextAlign.Left
 		}
 	}
-	Cog [ContextId:13]
+	Cog [ContextId:14]
 	{
 		var Name = "Leaf"
 		Transform 
@@ -573,7 +585,7 @@ Level
 			var Mesh = "5c8dbf0544f9cccb:LeafMesh"
 		}
 	}
-	Cog [ContextId:14]
+	Cog [ContextId:15]
 	{
 		var Name = "Leaf"
 		Transform 
@@ -614,7 +626,7 @@ Level
 			var Mesh = "5c8dbf0544f9cccb:LeafMesh"
 		}
 	}
-	Cog [ContextId:15]
+	Cog [ContextId:16]
 	{
 		var Name = "MenuButton"
 		Transform 
@@ -668,7 +680,7 @@ Level
 		}
 		Hierarchy 
 		{
-			Cog [Id:0x5c475afee5505026][ContextId:16]
+			Cog [Id:0x5c475afee5505026][ContextId:17]
 			{
 				var Name = "Text"
 				Transform 
@@ -698,7 +710,7 @@ Level
 			}
 		}
 	}
-	Cog [ContextId:17]
+	Cog [ContextId:18]
 	{
 		var Name = "CursorSprite"
 		Transform 

@@ -8,7 +8,7 @@ ImageContent
 		var FrameSizeX = 18
 		var FrameSizeY = 18
 		var FrameCount = 2
-		var FrameDelay = 0.25
+		var FrameDelay = 0.125
 		var OriginX = 9
 		var OriginY = 9
 		var PixelsPerUnit = 36
