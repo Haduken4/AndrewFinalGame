@@ -1,0 +1,18 @@
+/*****
+Filename: Killzone.zilchscript
+Author(s): Bar Ben-zvi
+Date Created: 5/31/2019
+Brief: Destroys anything that collides with this object
+*****/
+class Killzone : ZilchComponent
+{
+  function Initialize(init : CogInitializer)
+  {
+    Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
+  }
+
+  function OnCollisionStarted(event : CollisionEvent)
+  {
+    event.OtherObject.Destroy();
+  }
+}
