@@ -1,0 +1,29 @@
+[Version:1]
+Cog 
+{
+	var Name = "SpriteText"
+	Transform 
+	{
+		var Translation = Real3{-13.3732576, -6.4165287, 1.25}
+		var Scale = Real3{5, 5, 1}
+		var Rotation = Quaternion{0, 0, 0, 1}
+	}
+	SpriteText 
+	{
+		var Visible = true
+		var ViewCulling = true
+		var VisibilityEvents = true
+		var OverrideBoundingBox = false
+		var LocalAabbCenter = Real3{0, 0, 0}
+		var LocalAabbHalfExtents = Real3{1, 1, 1}
+		var GroupSortValue = 0
+		var Material = "582c575af53d18c9:AlphaSprite"
+		var VertexColor = Real4{1, 1, 1, 1}
+		var GeometryMode = SpriteGeometryMode.ZPlane
+		var Text = "Health"
+		var Font = "5c90792fce1fdeb5:BradleyGratis"
+		var FontSize = 32
+		var PixelsPerUnit = 512
+		var TextAlign = TextAlign.Center
+	}
+}
