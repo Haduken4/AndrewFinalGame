@@ -77,7 +77,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{0.339389801, -0.624284863, 19.1100788}
+			var Translation = Real3{-13.0282135, -0.601165414, 15.1501598}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{-0.00518176286, -0.143490687, -0.000751320214, 0.989637852}
 		}
@@ -130,7 +130,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 22.1034069
+			var Size = 22.1034126
 		}
 		EditorCameraController 
 		{
@@ -139,7 +139,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0.0104719428
 			var HorizontalAngle = 0.287979394
-			var LookTarget = Real3{6.01938629, -0.833719909, -0.0652640387}
+			var LookTarget = Real3{-7.34821701, -0.81060046, -4.02518225}
 			var MoveSensitivity = 1
 		}
 	}
@@ -265,7 +265,7 @@ Level
 			var LocalAabbHalfExtents = Real3{1, 1, 1}
 			var GroupSortValue = 0
 			var Material = "582c575af53d18c9:AlphaSprite"
-			var VertexColor = Real4{1, 1, 1, 1}
+			var VertexColor = Real4{0.74000001, 0.74000001, 0.74000001, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "Game designer - Andrew Yan"
 			var Font = "5c90792fce1fdeb5:BradleyGratis"
@@ -293,7 +293,7 @@ Level
 			var LocalAabbHalfExtents = Real3{1, 1, 1}
 			var GroupSortValue = 0
 			var Material = "582c575af53d18c9:AlphaSprite"
-			var VertexColor = Real4{1, 1, 1, 1}
+			var VertexColor = Real4{0.769999981, 0.769999981, 0.769999981, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "Artists:"
 			var Font = "5c90792fce1fdeb5:BradleyGratis"
@@ -321,7 +321,7 @@ Level
 			var LocalAabbHalfExtents = Real3{1, 1, 1}
 			var GroupSortValue = 0
 			var Material = "582c575af53d18c9:AlphaSprite"
-			var VertexColor = Real4{1, 1, 1, 1}
+			var VertexColor = Real4{0.769999981, 0.769999981, 0.769999981, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "Game director - Bar Ben-Zvi"
 			var Font = "5c90792fce1fdeb5:BradleyGratis"
@@ -349,7 +349,7 @@ Level
 			var LocalAabbHalfExtents = Real3{1, 1, 1}
 			var GroupSortValue = 0
 			var Material = "582c575af53d18c9:AlphaSprite"
-			var VertexColor = Real4{1, 1, 1, 1}
+			var VertexColor = Real4{0.769999981, 0.769999981, 0.769999981, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "Tech lead - Bar Ben-Zvi"
 			var Font = "5c90792fce1fdeb5:BradleyGratis"
@@ -377,7 +377,7 @@ Level
 			var LocalAabbHalfExtents = Real3{1, 1, 1}
 			var GroupSortValue = 0
 			var Material = "582c575af53d18c9:AlphaSprite"
-			var VertexColor = Real4{1, 1, 1, 1}
+			var VertexColor = Real4{0.769999981, 0.769999981, 0.769999981, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "Producer - Nicole Smith"
 			var Font = "5c90792fce1fdeb5:BradleyGratis"
@@ -405,7 +405,7 @@ Level
 			var LocalAabbHalfExtents = Real3{1, 1, 1}
 			var GroupSortValue = 0
 			var Material = "582c575af53d18c9:AlphaSprite"
-			var VertexColor = Real4{1, 1, 1, 1}
+			var VertexColor = Real4{0.769999981, 0.769999981, 0.769999981, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "Sound lead - Dilara Kal"
 			var Font = "5c90792fce1fdeb5:BradleyGratis"
@@ -433,7 +433,7 @@ Level
 			var LocalAabbHalfExtents = Real3{1, 1, 1}
 			var GroupSortValue = 0
 			var Material = "582c575af53d18c9:AlphaSprite"
-			var VertexColor = Real4{1, 1, 1, 1}
+			var VertexColor = Real4{0.769999981, 0.769999981, 0.769999981, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "Art lead - Andrew Yan"
 			var Font = "5c90792fce1fdeb5:BradleyGratis"
@@ -461,7 +461,7 @@ Level
 			var LocalAabbHalfExtents = Real3{1, 1, 1}
 			var GroupSortValue = 0
 			var Material = "582c575af53d18c9:AlphaSprite"
-			var VertexColor = Real4{1, 1, 1, 1}
+			var VertexColor = Real4{0.769999981, 0.769999981, 0.769999981, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "Adithi Arunganapathy"
 			var Font = "5c90792fce1fdeb5:BradleyGratis"
@@ -489,7 +489,7 @@ Level
 			var LocalAabbHalfExtents = Real3{1, 1, 1}
 			var GroupSortValue = 0
 			var Material = "582c575af53d18c9:AlphaSprite"
-			var VertexColor = Real4{1, 1, 1, 1}
+			var VertexColor = Real4{0.769999981, 0.769999981, 0.769999981, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "Lupita Castro"
 			var Font = "5c90792fce1fdeb5:BradleyGratis"
@@ -517,7 +517,7 @@ Level
 			var LocalAabbHalfExtents = Real3{1, 1, 1}
 			var GroupSortValue = 0
 			var Material = "582c575af53d18c9:AlphaSprite"
-			var VertexColor = Real4{1, 1, 1, 1}
+			var VertexColor = Real4{0.769999981, 0.769999981, 0.769999981, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "Andrew Yan"
 			var Font = "5c90792fce1fdeb5:BradleyGratis"
@@ -545,7 +545,7 @@ Level
 			var LocalAabbHalfExtents = Real3{1, 1, 1}
 			var GroupSortValue = 0
 			var Material = "582c575af53d18c9:AlphaSprite"
-			var VertexColor = Real4{1, 1, 1, 1}
+			var VertexColor = Real4{0.769999981, 0.769999981, 0.769999981, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "Programmers:"
 			var Font = "5c90792fce1fdeb5:BradleyGratis"
@@ -573,7 +573,7 @@ Level
 			var LocalAabbHalfExtents = Real3{1, 1, 1}
 			var GroupSortValue = 0
 			var Material = "582c575af53d18c9:AlphaSprite"
-			var VertexColor = Real4{1, 1, 1, 1}
+			var VertexColor = Real4{0.769999981, 0.769999981, 0.769999981, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "Christian Yan"
 			var Font = "5c90792fce1fdeb5:BradleyGratis"
@@ -601,7 +601,7 @@ Level
 			var LocalAabbHalfExtents = Real3{1, 1, 1}
 			var GroupSortValue = 0
 			var Material = "582c575af53d18c9:AlphaSprite"
-			var VertexColor = Real4{1, 1, 1, 1}
+			var VertexColor = Real4{0.769999981, 0.769999981, 0.769999981, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "Bar Ben-Zvi"
 			var Font = "5c90792fce1fdeb5:BradleyGratis"
@@ -629,7 +629,7 @@ Level
 			var LocalAabbHalfExtents = Real3{1, 1, 1}
 			var GroupSortValue = 0
 			var Material = "582c575af53d18c9:AlphaSprite"
-			var VertexColor = Real4{1, 1, 1, 1}
+			var VertexColor = Real4{0.769999981, 0.769999981, 0.769999981, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "Nicole Smith"
 			var Font = "5c90792fce1fdeb5:BradleyGratis"
@@ -657,7 +657,7 @@ Level
 			var LocalAabbHalfExtents = Real3{1, 1, 1}
 			var GroupSortValue = 0
 			var Material = "582c575af53d18c9:AlphaSprite"
-			var VertexColor = Real4{1, 1, 1, 1}
+			var VertexColor = Real4{0.769999981, 0.769999981, 0.769999981, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "Tsering Ngoche"
 			var Font = "5c90792fce1fdeb5:BradleyGratis"
@@ -685,7 +685,7 @@ Level
 			var LocalAabbHalfExtents = Real3{1, 1, 1}
 			var GroupSortValue = 0
 			var Material = "582c575af53d18c9:AlphaSprite"
-			var VertexColor = Real4{1, 1, 1, 1}
+			var VertexColor = Real4{0.769999981, 0.769999981, 0.769999981, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "Teada Nguon"
 			var Font = "5c90792fce1fdeb5:BradleyGratis"
@@ -713,7 +713,7 @@ Level
 			var LocalAabbHalfExtents = Real3{1, 1, 1}
 			var GroupSortValue = 0
 			var Material = "582c575af53d18c9:AlphaSprite"
-			var VertexColor = Real4{1, 1, 1, 1}
+			var VertexColor = Real4{0.769999981, 0.769999981, 0.769999981, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "Runa Chernik"
 			var Font = "5c90792fce1fdeb5:BradleyGratis"
@@ -741,7 +741,7 @@ Level
 			var LocalAabbHalfExtents = Real3{1, 1, 1}
 			var GroupSortValue = 0
 			var Material = "582c575af53d18c9:AlphaSprite"
-			var VertexColor = Real4{1, 1, 1, 1}
+			var VertexColor = Real4{0.769999981, 0.769999981, 0.769999981, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "Sound designers:"
 			var Font = "5c90792fce1fdeb5:BradleyGratis"
@@ -769,7 +769,7 @@ Level
 			var LocalAabbHalfExtents = Real3{1, 1, 1}
 			var GroupSortValue = 0
 			var Material = "582c575af53d18c9:AlphaSprite"
-			var VertexColor = Real4{1, 1, 1, 1}
+			var VertexColor = Real4{0.769999981, 0.769999981, 0.769999981, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "Voice Acting:"
 			var Font = "5c90792fce1fdeb5:BradleyGratis"
@@ -797,7 +797,7 @@ Level
 			var LocalAabbHalfExtents = Real3{1, 1, 1}
 			var GroupSortValue = 0
 			var Material = "582c575af53d18c9:AlphaSprite"
-			var VertexColor = Real4{1, 1, 1, 1}
+			var VertexColor = Real4{0.769999981, 0.769999981, 0.769999981, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "Dilara Kal"
 			var Font = "5c90792fce1fdeb5:BradleyGratis"
@@ -956,7 +956,7 @@ Level
 			var LocalAabbHalfExtents = Real3{1, 1, 1}
 			var GroupSortValue = 0
 			var Material = "582c575af53d18c9:AlphaSprite"
-			var VertexColor = Real4{1, 1, 1, 1}
+			var VertexColor = Real4{0.680000007, 0.680000007, 0.680000007, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "Font:"
 			var Font = "5c90792fce1fdeb5:BradleyGratis"
@@ -984,7 +984,7 @@ Level
 			var LocalAabbHalfExtents = Real3{1, 1, 1}
 			var GroupSortValue = 0
 			var Material = "582c575af53d18c9:AlphaSprite"
-			var VertexColor = Real4{1, 1, 1, 1}
+			var VertexColor = Real4{0.680000007, 0.680000007, 0.680000007, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "Justin Callaghan
 "
@@ -1013,7 +1013,7 @@ Level
 			var LocalAabbHalfExtents = Real3{1, 1, 1}
 			var GroupSortValue = 0
 			var Material = "582c575af53d18c9:AlphaSprite"
-			var VertexColor = Real4{1, 1, 1, 1}
+			var VertexColor = Real4{0.680000007, 0.680000007, 0.680000007, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "And help from Doug Zwick
 "
@@ -1042,7 +1042,7 @@ Level
 			var LocalAabbHalfExtents = Real3{1, 1, 1}
 			var GroupSortValue = 0
 			var Material = "582c575af53d18c9:AlphaSprite"
-			var VertexColor = Real4{1, 1, 1, 1}
+			var VertexColor = Real4{0.680000007, 0.680000007, 0.680000007, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "and Aoki-San"
 			var Font = "5c90792fce1fdeb5:BradleyGratis"
