@@ -1,3 +1,8 @@
+/*************************
+Authors: Bar Ben-zvi, Christian Yan, Tsering Ngoche, Nicole Smith
+Date Created: 5/20/19
+Brief: Shoots a projectile and creates aiming displays
+*************************/
 class ShootVariables
 {
   //Weapon icon for display
