@@ -136,7 +136,7 @@ class PlayerMovement : ZilchComponent
         this.Owner.RigidBody.Velocity = vel;
         
       }
-      else
+      else if(!this.LockMovement)
       {
         vel.X = 0;
       }

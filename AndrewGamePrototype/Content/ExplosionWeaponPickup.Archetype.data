@@ -4,7 +4,7 @@ Cog
 	var Name = "ExplosionWeapon"
 	Transform 
 	{
-		var Translation = Real3{0, 0.0134660006, -0.499083459}
+		var Translation = Real3{-16.4523735, -1.42918015, 0}
 		var Scale = Real3{0.75, 0.75, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
@@ -45,7 +45,7 @@ Cog
 			var Projectile = "5cbf47e05bde41ed:ExplosionBullet"
 			var ProjectileCount = 1
 			var SpreadCone = 0
-			var ProjectileSpeed = 20
+			var ProjectileSpeed = 25
 			var SpeedVariation = 0
 			var SpeedBool = false
 			var ShootSound = "5c57371855e8f80d:Attack"

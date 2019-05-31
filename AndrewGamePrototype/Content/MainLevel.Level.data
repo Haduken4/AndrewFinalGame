@@ -92,7 +92,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{2.26032996, 12.3029308, 20}
+			var Translation = Real3{-18.9204044, -1.44546723, 20}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -145,7 +145,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 66.4087524
+			var Size = 36.445961
 		}
 		EditorCameraController 
 		{
@@ -154,7 +154,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{2.26032996, 12.3029308, -2.48598386e-09}
+			var LookTarget = Real3{-18.9204044, -1.44546723, -9.28324994e-07}
 			var MoveSensitivity = 1
 		}
 	}
@@ -308,7 +308,7 @@ Level
 		}
 		Health 
 		{
-			var MaxHealth = 5
+			var MaxHealth = 10
 		}
 		PlayerShooting 
 		{
@@ -318,7 +318,7 @@ Level
 				var Projectile = "5c0f9844b874aa7c:Bullet"
 				var ProjectileCount = 1
 				var SpreadCone = 0
-				var ProjectileSpeed = 35
+				var ProjectileSpeed = 45
 				var SpeedVariation = 0
 				var SpeedBool = false
 				var ShootSound = "null"
@@ -463,7 +463,7 @@ Level
 		}
 		Health 
 		{
-			var MaxHealth = 5
+			var MaxHealth = 10
 		}
 		PlayerShooting 
 		{
@@ -473,7 +473,7 @@ Level
 				var Projectile = "5c0f9844b874aa7c:Bullet"
 				var ProjectileCount = 1
 				var SpreadCone = 0
-				var ProjectileSpeed = 35
+				var ProjectileSpeed = 45
 				var SpeedVariation = 0
 				var SpeedBool = false
 				var ShootSound = "null"
