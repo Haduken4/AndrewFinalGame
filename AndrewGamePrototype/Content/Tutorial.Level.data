@@ -63,7 +63,7 @@ Level
 			var Skybox = "5822dec85e380cf1:SimpleSkybox"
 			var ClearColor = Real4{0, 0, 0, 1}
 			var TopColor = Real4{0, 0, 0, 1}
-			var BottomColor = Real4{0.100000001, 0.25, 0.5, 1}
+			var BottomColor = Real4{0, 0, 0, 1}
 			var Top = 0
 			var Bottom = 1
 			var Exponent = 1
@@ -93,7 +93,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{-21.4884205, 1.14015031, 20}
+			var Translation = Real3{-21.2321033, 1.04724324, 20}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -146,7 +146,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 10.9762659
+			var Size = 29.8366051
 		}
 		EditorCameraController 
 		{
@@ -155,7 +155,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{-21.4884205, 1.14015031, -5.6765316e-07}
+			var LookTarget = Real3{-21.2321033, 1.04724324, -5.56449322e-07}
 			var MoveSensitivity = 1
 		}
 	}
@@ -472,7 +472,7 @@ Level
 			{
 				Transform 
 				{
-					var Translation = Real3{-1.16768646, -3.83889127, -1}
+					var Translation = Real3{7.32275391, 3.7814126, -1}
 					var Rotation = Quaternion{0, 0, 0, 1}
 					var Scale = Real3{4, 4, 1}
 				}
