@@ -1,0 +1,34 @@
+/*************************
+Authors: Bar Ben-zvi
+Date Created: 5/31/19
+Brief: Changes sprites per turn phase (based on turn manager)
+*************************/
+class ChangeSpritePerPhase : ZilchComponent
+{
+  //Sprite during move phase
+  [Property]
+  var MoveSprite : SpriteSource = SpriteSource.Circle;
+  
+  //Sprite during shoot phase
+  [Property]
+  var ShootSprite : SpriteSource = SpriteSource.Square;
+  
+  function Initialize(init : CogInitializer)
+  {
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    
+    if(this.LevelSettings.PlayerTurnManager.CurrState == TurnState.STATEMOVE)
+    {
+      this.Owner.Sprite.SpriteSource = this.MoveSprite;
+    }
+    else
+    {
+      this.Owner.Sprite.SpriteSource = this.ShootSprite;
+    }
+    
+  }
+}
