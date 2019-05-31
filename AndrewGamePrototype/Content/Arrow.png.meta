@@ -1,0 +1,20 @@
+[Version:1]
+ImageContent 
+{
+	SpriteSourceBuilder 
+	{
+		var Name = "Arrow"
+		var ResourceId = 0x5caae1f4a470725d
+		var FrameSizeX = 34
+		var FrameSizeY = 34
+		var FrameCount = 1
+		var FrameDelay = 0.0833333358
+		var OriginX = 17
+		var OriginY = 17
+		var PixelsPerUnit = 64
+		var Sampling = SpriteSampling.Nearest
+		var Looping = true
+		var Slices = Real4{0, 0, 0, 0}
+		var Fill = SpriteFill.Stretch
+	}
+}
