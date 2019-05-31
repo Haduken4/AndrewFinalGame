@@ -116,6 +116,12 @@ class PlayerShooting : ZilchComponent
 
       var angleToMouse = Math.ATan2(dir.Y, dir.X);
       
+      var normDir = Math.Normalize(Real3(dir.XY, 0)) * 2;
+      
+      var effect = this.Space.CreateAtPosition(Archetype.AttackEffect, this.Owner.Transform.WorldTranslation + normDir);
+      
+      effect.Transform.SetEulerAnglesXYZ(0, 0, angleToMouse - (Math.Pi / 2));
+      
       //velocity based on mouse dist
       var power = 1.0;
       if(CustomMath.Magnitude(dir) < this.MaxAimDist)
