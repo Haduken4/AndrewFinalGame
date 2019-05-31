@@ -109,9 +109,9 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{-8.02260303, -5.24812603, 22.089201}
+			var Translation = Real3{39.5705986, -21.1012173, 24.3435707}
 			var Scale = Real3{1, 1, 1}
-			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
+			var Rotation = Quaternion{0.0052356096, -0.0130895944, 6.85388586e-05, 0.999900699}
 		}
 		CameraViewport 
 		{
@@ -162,16 +162,16 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 54.367115
+			var Size = 73.388504
 		}
 		EditorCameraController 
 		{
 			var ControlMode = ControlMode.ZPlane
 			var Previous3DMode = ControlMode.Orbit
 			var LookDistance = 20
-			var VerticalAngle = 0
-			var HorizontalAngle = 0
-			var LookTarget = Real3{-8.02260303, -5.24812603, 2.08920074}
+			var VerticalAngle = -0.0104721645
+			var HorizontalAngle = 0.0261802785
+			var LookTarget = Real3{40.0941162, -20.891777, 4.35151958}
 			var MoveSensitivity = 1
 		}
 	}
@@ -345,7 +345,7 @@ Level
 			var Material = "582c575af53d18c9:AlphaSprite"
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
-			var SpriteSource = "5cb6f101e7f06210:IdleFrogAni_1"
+			var SpriteSource = "5c4f2305c86ed909:IdleFrogAni_2"
 			var FlipX = false
 			var FlipY = false
 			var AnimationActive = true
@@ -401,9 +401,9 @@ Level
 		}
 		AnimationHandler 
 		{
-			var DamagedSprite = "5cb6f128fae6c77d:DamagedFrogAni_1"
-			var IdleSprite = "5cb6f101e7f06210:IdleFrogAni_1"
-			var AttackSprite = "5cb6f5b261811ed7:AttackFrogAni_1"
+			var DamagedSprite = "5c4f2359c1c35e34:DamagedFrogAni_2"
+			var IdleSprite = "5c4f2305c86ed909:IdleFrogAni_2"
+			var AttackSprite = "5c4f24d838f71e3a:AttackFrogAni_2"
 		}
 		CustomCollisionVariables 
 		{
@@ -900,6 +900,37 @@ Level
 		PlayMusicOnInitialize 
 		{
 			var TrackToPlay = "5c8f26591d8df061:Brogs_music"
+		}
+	}
+	Cog [ContextId:21]
+	{
+		var Name = "TileMap"
+		Transform 
+		{
+			var Translation = Real3{0, 0, -1.75}
+			var Scale = Real3{1, 1, 1}
+			var Rotation = Quaternion{0, 0, 0, 1}
+		}
+		MultiSprite 
+		{
+			var Visible = true
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var OverrideBoundingBox = false
+			var LocalAabbCenter = Real3{0, 0, 0}
+			var LocalAabbHalfExtents = Real3{1, 1, 1}
+			var GroupSortValue = 0
+			var Material = "582c575af53d18c9:AlphaSprite"
+			var VertexColor = Real4{1, 1, 1, 1}
+			var GeometryMode = SpriteGeometryMode.ZPlane
+			var AnimationActive = true
+			var AnimationSpeed = 1
+		}
+		TileMap 
+		{
+			var Source = "5c4f3800c4efa8b9:MainLevel_TileMap01"
+			var PaletteName = "5c0f869da6af70e1:GamePalette"
+			var MeshThickness = 1.20000005
 		}
 	}
 }
