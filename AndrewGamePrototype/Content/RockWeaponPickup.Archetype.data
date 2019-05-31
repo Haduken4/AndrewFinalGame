@@ -4,7 +4,7 @@ Cog
 	var Name = "RockWeapon"
 	Transform 
 	{
-		var Translation = Real3{-11.0387344, 1.54799438, 0}
+		var Translation = Real3{-28.8913116, 1.7288481, 2.08920097}
 		var Scale = Real3{0.75, 0.75, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
@@ -41,15 +41,14 @@ Cog
 	{
 		var Weapon = ShootVariables
 		{
-			var Icon = "59a4f6f4a01bac09:SoftCircle"
+			var Icon = "5c889d3746736304:RockBullet"
 			var Projectile = "5c87217748a4fa65:RockBullet"
 			var ProjectileCount = 1
 			var SpreadCone = 0
 			var ProjectileSpeed = 20
 			var SpeedVariation = 0
 			var SpeedBool = false
-			var ShootSound = "null"
-			var Type = WeaponType.NONE
+			var ShootSound = "5c57355bc3b9f2ac:DefensePlant"
 		}
 	}
 	SphereCollider 
