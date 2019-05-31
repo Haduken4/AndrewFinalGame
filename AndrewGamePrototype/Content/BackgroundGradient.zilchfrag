@@ -1,0 +1,34 @@
+// PostProcess fragments are intended to be constructed in script
+// and passed directly to the AddRenderTaskPostProcess method.
+//ALL CREDIT TO DOUG ZWICK
+[Pixel][PostProcess]
+struct BackgroundGradient
+{
+  [PropertyInput]
+  var ColorA : Real4 = Colors.Black;
+  [PropertyInput]
+  var ColorB : Real4 = Real4(0.1, 0.25, 0.5, 1);
+  [PropertyInput]
+  var AY : Real = 0;
+  [PropertyInput]
+  var BY : Real = 1;
+  [PropertyInput]
+  var Exponent : Real = 1;
+  [StageInput]
+  var Uv : Real2;
+  
+  [Output]
+  var Target0 : Real4;
+  
+  
+  function Main()
+  {
+    var y = this.Uv.Y;
+    var interpolant = (y - this.AY) / (this.BY - this.AY);
+    interpolant = Math.Clamp(interpolant, 0, 1);
+    interpolant = Math.Pow(interpolant, this.Exponent);
+    var color = Math.Lerp(this.ColorA, this.ColorB, interpolant);
+    
+    this.Target0 = color;
+  }
+}

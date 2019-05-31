@@ -77,6 +77,16 @@ class DestructionRenderer : ZilchComponent
     /////////////////////////////////////////////////////////////////////////////
     
     
+    // This just makes the sky look cool
+    var backgroundGradient = BackgroundGradient();
+    backgroundGradient.ColorA = this.TopColor;
+    backgroundGradient.ColorB = this.BottomColor;
+    backgroundGradient.AY = this.Top;
+    backgroundGradient.BY = this.Bottom;
+    backgroundGradient.Exponent = this.Exponent;
+    event.AddRenderTaskPostProcess(colorTarget, backgroundGradient);
+    
+    
     if (this.RenderSkybox)
     {
       var skybox = Skybox();

@@ -12,6 +12,10 @@ class PlayerMovement : ZilchComponent
   [Property]
   var MaxMoveResource : Real = 10;
   
+  //How many times we can jump in a turn (in total)
+  [Property]
+  var JumpsAllowed : Integer = 3;
+  
   //sound for the jumping
   [Property]
   var SoundToPlay : SoundCue = null;
@@ -62,7 +66,7 @@ class PlayerMovement : ZilchComponent
   function OnLeftMouseUp(event : ViewportMouseEvent)
   {
     //If we can jump
-    if(this.Active && this.CurrMoveResource > this.MaxMoveResource / 2 && !this.LockMovement)
+    if(this.Active && this.CurrMoveResource > this.MaxMoveResource / this.JumpsAllowed && !this.LockMovement)
     {
       this.Space.CreateAtPosition(this.JumpAnimation, this.Owner.Transform.Translation - Real3(0,0.75,0));
       
@@ -75,7 +79,7 @@ class PlayerMovement : ZilchComponent
       
       this.Owner.RigidBody.Velocity += dirToMouse * this.JumpSpeed;
       
-      this.CurrMoveResource -= this.MaxMoveResource / 2;
+      this.CurrMoveResource -= this.MaxMoveResource / this.JumpsAllowed;
       
       this.Space.SoundSpace.PlayCue(this.SoundToPlay);
       
@@ -91,7 +95,7 @@ class PlayerMovement : ZilchComponent
   function OnLeftMouseDown(event : ViewportMouseEvent)
   {
     //If we can jump
-    if(this.Active && this.CurrMoveResource > this.MaxMoveResource / 2)
+    if(this.Active && this.CurrMoveResource > this.MaxMoveResource / this.JumpsAllowed)
     {
       this.MouseIsDown = true;
       

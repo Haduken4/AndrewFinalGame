@@ -4,12 +4,11 @@ Cog
 	var Name = "Transform"
 	Transform 
 	{
-		var Translation = Real3{0, 0, 0}
+		var Translation = Real3{-27.2839451, 1.73084128, -1.69225562}
 		var Scale = Real3{1, 1, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
-	Health 
+	DestructableCustomCollision 
 	{
-		var MaxHealth = 1
 	}
 }

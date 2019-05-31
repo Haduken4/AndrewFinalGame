@@ -19,7 +19,7 @@ class CloudEffect : ZilchComponent
     if(this.Timer >= this.SpawnSpeed )
     {
       this.Timer = 0;
-      this.Space.CreateAtPosition(this.CloudEffect, this.Owner.Transform.Translation - Real3(0,1.25,0));
+      this.Space.CreateAtPosition(this.CloudEffect, this.Owner.Transform.Translation - Real3(0,1.25,0.02));
     }
   }
 }

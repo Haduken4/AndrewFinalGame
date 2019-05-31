@@ -42,16 +42,6 @@ Level
 		{
 			var HUDLevel = "5c085f8ce87995ce:HUDLevel"
 		}
-		BouncySpawn 
-		{
-			var MinSpawnX = -50
-			var MaxSpawnX = 50
-			var MaxSpawnY = 20
-			var MinSpawnY = 8
-			var MaxSpawnCount = 5
-			var MinDiameterSize = 1
-			var MaxDiameterSize = 2.5
-		}
 		PlayerTurnManager 
 		{
 			var TimerPerPhase = 30
@@ -79,10 +69,10 @@ Level
 			var Skybox = "5822dec85e380cf1:SimpleSkybox"
 			var ClearColor = Real4{0, 0, 0, 1}
 			var TopColor = Real4{0, 0, 0, 1}
-			var BottomColor = Real4{0.100000001, 0.25, 0.5, 1}
-			var Top = 0
-			var Bottom = 1
-			var Exponent = 1
+			var BottomColor = Real4{0, 0.369999886, 1, 1}
+			var Top = -0.5
+			var Bottom = 1.5
+			var Exponent = 3
 			var DirectLighting = true
 			var IndirectLighting = true
 			var IndirectIntensity = 1
@@ -109,9 +99,9 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{-15.7942123, -1.83209407, 18.2150707}
+			var Translation = Real3{22.8182907, 4.30525255, 18.2717304}
 			var Scale = Real3{1, 1, 1}
-			var Rotation = Quaternion{-0.00785177015, -0.0235592853, -0.000185039375, 0.999691665}
+			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
 		CameraViewport 
 		{
@@ -162,16 +152,16 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 22.1043453
+			var Size = 163.332352
 		}
 		EditorCameraController 
 		{
 			var ControlMode = ControlMode.ZPlane
 			var Previous3DMode = ControlMode.Orbit
 			var LookDistance = 20
-			var VerticalAngle = 0.0157080628
-			var HorizontalAngle = 0.0471243374
-			var LookTarget = Real3{-14.852191, -2.14624238, -1.76026094}
+			var VerticalAngle = 0
+			var HorizontalAngle = 0
+			var LookTarget = Real3{22.8182907, 4.30525255, -1.72826993}
 			var MoveSensitivity = 1
 		}
 	}
@@ -264,43 +254,14 @@ Level
 		}
 		Hierarchy 
 		{
-			Cog [Id:0x5c5055ee4e84b599][ContextId:5]
-			{
-				var Name = "Background"
-				Transform 
-				{
-					var Translation = Real3{0, 0, -30}
-					var Scale = Real3{1.29999995, 1.29999995, 1}
-					var Rotation = Quaternion{0, 0, 0, 1}
-				}
-				Sprite 
-				{
-					var Visible = true
-					var ViewCulling = true
-					var VisibilityEvents = true
-					var OverrideBoundingBox = false
-					var LocalAabbCenter = Real3{0, 0, 0}
-					var LocalAabbHalfExtents = Real3{1, 1, 1}
-					var GroupSortValue = 0
-					var Material = "5c888481afad634e:BackgroundSprite"
-					var VertexColor = Real4{0.396078467, 0.396078467, 0.396078467, 0.699999988}
-					var GeometryMode = SpriteGeometryMode.ZPlane
-					var SpriteSource = "5c505da4c4b353ba:Background"
-					var FlipX = false
-					var FlipY = false
-					var AnimationActive = true
-					var AnimationSpeed = 1
-					var StartFrame = 0
-				}
-			}
 		}
 	}
-	Cog [ContextId:6]
+	Cog [ContextId:5]
 	{
 		var Name = "Player"
 		Transform 
 		{
-			var Translation = Real3{-17.333231, -1.52090073, 0}
+			var Translation = Real3{-33.3831787, 11.0915899, 0}
 			var Scale = Real3{2, 2, 1}
 			var Rotation = Quaternion{0, -2.52854051e-07, 0, 1}
 		}
@@ -345,8 +306,9 @@ Level
 		PlayerMovement 
 		{
 			var MoveSpeed = 400
-			var JumpSpeed = 10
+			var JumpSpeed = 13
 			var MaxMoveResource = 5
+			var JumpsAllowed = 3
 			var SoundToPlay = "5c57355bc3ba7392:Jump"
 			var JumpAnimation = "5c5298f4542290d6:CloudSwoosh"
 			var Active = false
@@ -389,12 +351,12 @@ Level
 		}
 		Hierarchy 
 		{
-			Cog [Id:0x5c50583222d7baca][ContextId:7]
+			Cog [Id:0x5c50583222d7baca][ContextId:6]
 			{
 				var Name = "FlyingCloud"
 				Transform 
 				{
-					var Translation = Real3{-0.0799999982, -0.600000024, -0.602967262}
+					var Translation = Real3{-0.0799999982, -0.600000024, -0.00999999978}
 					var Scale = Real3{2.5, 2.5, 1}
 					var Rotation = Quaternion{0, 0, 0, 1}
 				}
@@ -418,12 +380,12 @@ Level
 					var StartFrame = 0
 				}
 			}
-			Cog [Id:0x5c5058102b7eca69][ContextId:8]
+			Cog [Id:0x5c5058102b7eca69][ContextId:7]
 			{
 				var Name = "FlyingCloud"
 				Transform 
 				{
-					var Translation = Real3{0.200000003, -0.600000024, 0.395746231}
+					var Translation = Real3{0.200000003, -0.600000024, -0.00100000005}
 					var Scale = Real3{2.5, 2.5, 1}
 					var Rotation = Quaternion{0, 0, 0, 1}
 				}
@@ -449,7 +411,7 @@ Level
 			}
 		}
 	}
-	Cog [ContextId:9]
+	Cog [ContextId:8]
 	{
 		var Name = "Player"
 		Transform 
@@ -483,7 +445,7 @@ Level
 			var SendsEvents = true
 			var Material = "4de020863e872da8:DefaultPhysicsMaterial"
 			var CollisionGroup = "5c098e4fdd820ac1:Player"
-			var Offset = Real3{0, -0.125, 0}
+			var Offset = Real3{0, -0.25, 0}
 			var HalfSize = Real3{0.375, 0.5, 0.5}
 		}
 		RigidBody 
@@ -501,6 +463,7 @@ Level
 			var MoveSpeed = 400
 			var JumpSpeed = 10
 			var MaxMoveResource = 5
+			var JumpsAllowed = 3
 			var SoundToPlay = "5c57355bc3ba7392:Jump"
 			var JumpAnimation = "5c5298f4542290d6:CloudSwoosh"
 			var Active = false
@@ -543,12 +506,12 @@ Level
 		}
 		Hierarchy 
 		{
-			Cog [Id:0x5c50598101d15198][ContextId:10]
+			Cog [Id:0x5c50598101d15198][ContextId:9]
 			{
 				var Name = "FlyingCloud"
 				Transform 
 				{
-					var Translation = Real3{-0.0799999982, -0.611510158, -0.602967262}
+					var Translation = Real3{-0.0799999982, -0.611510158, -0.00999999978}
 					var Scale = Real3{2.5, 2.5, 1}
 					var Rotation = Quaternion{0, 0, 0, 1}
 				}
@@ -572,12 +535,12 @@ Level
 					var StartFrame = 0
 				}
 			}
-			Cog [Id:0x5c50598101d151dc][ContextId:11]
+			Cog [Id:0x5c50598101d151dc][ContextId:10]
 			{
 				var Name = "FlyingCloud"
 				Transform 
 				{
-					var Translation = Real3{0.0199999996, -0.611510158, 0.395746231}
+					var Translation = Real3{0.0827202946, -0.611510158, -0.0199999996}
 					var Scale = Real3{2.5, 2.5, 1}
 					var Rotation = Quaternion{0, 0, 0, 1}
 				}
@@ -603,14 +566,55 @@ Level
 			}
 		}
 	}
+	Cog [ContextId:11]
+	{
+		var Name = "Leaf"
+		Transform 
+		{
+			var Translation = Real3{6.66449261, -2.58719158, 0}
+			var Scale = Real3{2, 2, 1}
+			var Rotation = Quaternion{0, 0, -0.512459397, 0.858711481}
+		}
+		Sprite 
+		{
+			var Visible = true
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var OverrideBoundingBox = false
+			var LocalAabbCenter = Real3{0, 0, 0}
+			var LocalAabbHalfExtents = Real3{1, 1, 1}
+			var GroupSortValue = 0
+			var Material = "5c887ab691cc6823:DestructibleSprite"
+			var VertexColor = Real4{1, 1, 1, 1}
+			var GeometryMode = SpriteGeometryMode.ZPlane
+			var SpriteSource = "5cb6e738914a9d98:DestructableLeaf"
+			var FlipX = false
+			var FlipY = false
+			var AnimationActive = true
+			var AnimationSpeed = 1
+			var StartFrame = 0
+		}
+		DestructableCustomCollision 
+		{
+		}
+		MultiConvexMeshCollider 
+		{
+			var Ghost = false
+			var SendsEvents = true
+			var Material = "4de020863e872da8:DefaultPhysicsMaterial"
+			var CollisionGroup = "5c32dddceaf965aa:Destructable"
+			var Offset = Real3{0, 0, 0}
+			var Mesh = "5c8dbf0544f9cccb:LeafMesh"
+		}
+	}
 	Cog [ContextId:12]
 	{
 		var Name = "Leaf"
 		Transform 
 		{
-			var Translation = Real3{-0.83200717, -0.239803314, 0}
+			var Translation = Real3{-15.1197653, 10.3822479, 0}
 			var Scale = Real3{2, 2, 1}
-			var Rotation = Quaternion{0, 0, -0.0880250558, 0.996118248}
+			var Rotation = Quaternion{0, 0, -0.991444826, -0.1305262}
 		}
 		Sprite 
 		{
@@ -649,48 +653,7 @@ Level
 		var Name = "Leaf"
 		Transform 
 		{
-			var Translation = Real3{-2.29195404, 8.01019573, 0}
-			var Scale = Real3{2, 2, 1}
-			var Rotation = Quaternion{0, 0, -0.991444826, -0.1305262}
-		}
-		Sprite 
-		{
-			var Visible = true
-			var ViewCulling = true
-			var VisibilityEvents = true
-			var OverrideBoundingBox = false
-			var LocalAabbCenter = Real3{0, 0, 0}
-			var LocalAabbHalfExtents = Real3{1, 1, 1}
-			var GroupSortValue = 0
-			var Material = "5c887ab691cc6823:DestructibleSprite"
-			var VertexColor = Real4{1, 1, 1, 1}
-			var GeometryMode = SpriteGeometryMode.ZPlane
-			var SpriteSource = "5cb6e738914a9d98:DestructableLeaf"
-			var FlipX = false
-			var FlipY = false
-			var AnimationActive = true
-			var AnimationSpeed = 1
-			var StartFrame = 0
-		}
-		DestructableCustomCollision 
-		{
-		}
-		MultiConvexMeshCollider 
-		{
-			var Ghost = false
-			var SendsEvents = true
-			var Material = "4de020863e872da8:DefaultPhysicsMaterial"
-			var CollisionGroup = "5c32dddceaf965aa:Destructable"
-			var Offset = Real3{0, 0, 0}
-			var Mesh = "5c8dbf0544f9cccb:LeafMesh"
-		}
-	}
-	Cog [ContextId:14]
-	{
-		var Name = "Leaf"
-		Transform 
-		{
-			var Translation = Real3{0.224626064, 9.36448574, 0}
+			var Translation = Real3{-30.1545639, 22.5218716, 0}
 			var Scale = Real3{2, 2, 1}
 			var Rotation = Quaternion{0, 0, -0.965925872, 0.258819014}
 		}
@@ -726,7 +689,7 @@ Level
 			var Mesh = "5c8dbf0544f9cccb:LeafMesh"
 		}
 	}
-	Cog [ContextId:15]
+	Cog [ContextId:14]
 	{
 		var Name = "BulletArea"
 		Transform 
@@ -770,7 +733,7 @@ Level
 			var MaxSlope = 30
 		}
 	}
-	Cog [ContextId:16]
+	Cog [ContextId:15]
 	{
 		var Name = "TileMap"
 		Transform 
@@ -801,7 +764,7 @@ Level
 			var MeshThickness = 1.20000005
 		}
 	}
-	Cog [ContextId:17]
+	Cog [ContextId:16]
 	{
 		var Name = "BackgroundBranch"
 		Transform 
@@ -830,12 +793,12 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:18]
+	Cog [ContextId:17]
 	{
 		var Name = "BackgroundBranch"
 		Transform 
 		{
-			var Translation = Real3{1.90556192, 16.6073303, -4.75}
+			var Translation = Real3{35.8631477, 29.2045002, -4.75}
 			var Scale = Real3{3, 3, 3}
 			var Rotation = Quaternion{0, 0, 0.49999997, 0.866025507}
 		}
@@ -859,7 +822,7 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:19]
+	Cog [ContextId:18]
 	{
 		var Name = "MusicPlayer"
 		Transform 
@@ -871,6 +834,48 @@ Level
 		PlayMusicOnInitialize 
 		{
 			var TrackToPlay = "5c8f26591d8df061:Brogs_music"
+		}
+	}
+	Cog [ContextId:19]
+	{
+		var Name = "BouncySpawnZone"
+		Transform 
+		{
+			var Translation = Real3{0.0108280182, 21.0152321, 0}
+			var Scale = Real3{1, 1, 1}
+			var Rotation = Quaternion{0, 0, 0, 1}
+		}
+		BouncySpawn 
+		{
+			var MinSpawnX = 3
+			var MaxSpawnX = 12
+			var MaxSpawnY = 30
+			var MinSpawnY = 22
+			var MaxSpawnCount = 2
+			var MinDiameterSize = 2
+			var MaxDiameterSize = 5
+			var MaxTries = 100
+		}
+	}
+	Cog [ContextId:20]
+	{
+		var Name = "BouncySpawnZone"
+		Transform 
+		{
+			var Translation = Real3{-50.0237541, 9.95326805, -1.90734863e-06}
+			var Scale = Real3{1, 1, 1}
+			var Rotation = Quaternion{0, 0, 0, 1}
+		}
+		BouncySpawn 
+		{
+			var MinSpawnX = -50
+			var MaxSpawnX = -40
+			var MaxSpawnY = 15
+			var MinSpawnY = 5
+			var MaxSpawnCount = 2
+			var MinDiameterSize = 2
+			var MaxDiameterSize = 5
+			var MaxTries = 100
 		}
 	}
 }
