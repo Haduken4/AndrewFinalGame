@@ -61,4 +61,7 @@ Cog
 		var ExplosionRadius = 0.25
 		var MaxSlope = 30
 	}
+	FaceVelocityDirection 
+	{
+	}
 }
