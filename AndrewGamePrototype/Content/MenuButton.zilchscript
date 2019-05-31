@@ -20,18 +20,53 @@ class MenuButton : ZilchComponent
   [Property]
   var ButtonDownSprite : SpriteSource = null;
   
+  [Property]
+  var UpHoverSprite : SpriteSource = null;
+  
+  [Property]
+  var DownHoverSprite : SpriteSource = null;
+  
   function Initialize(init : CogInitializer)
   {
     this.Owner.Sprite.SpriteSource = this.ButtonUpSprite;
     Zero.Connect(this.Owner, Events.LeftMouseDown, this.OnLeftMouseDown);
     Zero.Connect(this.Owner, Events.LeftMouseUp, this.OnLeftMouseUp);
     Zero.Connect(this.Owner, Events.MouseExit, this.OnMouseExit);
+    Zero.Connect(this.Owner, Events.MouseEnter, this.OnMouseEnter);
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    if(!Zero.Mouse.IsButtonDown(MouseButtons.Left) && this.Owner.Sprite.SpriteSource == this.ButtonDownSprite)
+    {
+      this.Owner.Sprite.SpriteSource = this.ButtonUpSprite;
+    }
+  }
+
+  function OnMouseEnter(event : ViewportMouseEvent)
+  {
+    if(this.Owner.Sprite.SpriteSource == this.ButtonUpSprite)
+    {
+      this.Owner.Sprite.SpriteSource = this.UpHoverSprite;
+    }
+    else
+    {
+      this.Owner.Sprite.SpriteSource = this.DownHoverSprite;
+    }
   }
 
   //when the player moves the mouse away from the button
   function OnMouseExit(event : ViewportMouseEvent)
   {
-    this.Owner.Sprite.SpriteSource = this.ButtonUpSprite;
+    if(this.Owner.Sprite.SpriteSource == this.UpHoverSprite)
+    {
+      this.Owner.Sprite.SpriteSource = this.ButtonUpSprite;
+    }
+    else
+    {
+      this.Owner.Sprite.SpriteSource = this.ButtonDownSprite;
+    }
   }
 
   function OnLeftMouseUp(event : ViewportMouseEvent)
@@ -51,7 +86,8 @@ class MenuButton : ZilchComponent
   function OnLeftMouseDown(event : ViewportMouseEvent)
   {
     this.Space.SoundSpace.PlayCue(SoundCue.MenuButton);
-    this.Owner.Sprite.SpriteSource = this.ButtonDownSprite;
+    
+    this.Owner.Sprite.SpriteSource = this.DownHoverSprite;
     
   }
 }

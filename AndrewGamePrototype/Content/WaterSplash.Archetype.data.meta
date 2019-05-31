@@ -1,0 +1,11 @@
+[Version:1]
+DataContent 
+{
+	DataBuilder 
+	{
+		var Name = "WaterSplash"
+		var ResourceId = 0x5c24ea0ec04220ee
+		var LoaderType = "Cog"
+		var Version = 0
+	}
+}

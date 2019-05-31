@@ -4,7 +4,7 @@ Cog
 	var Name = "Bullet"
 	Transform 
 	{
-		var Translation = Real3{0, 0, 0}
+		var Translation = Real3{-42.8809776, 49.2214661, -1.72827148}
 		var Scale = Real3{0.5, 0.5, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
@@ -64,5 +64,87 @@ Cog
 	}
 	FaceVelocityDirection 
 	{
+	}
+	SpawnOnDeath 
+	{
+		var ObjectToSpawn = "5c24ea0ec04220ee:WaterSplash"
+		var OffsetSpawn = false
+		var SpawnOffset = 0
+		var DIE = false
+		var SoundToPlay = "null"
+	}
+	Hierarchy 
+	{
+		Cog [Id:0x5c24d5a833b01164]
+		{
+			var Name = "SpriteParticles"
+			Transform 
+			{
+				var Translation = Real3{0.0967521667, 0.0307846069, 0}
+				var Scale = Real3{2, 2, 1}
+				var Rotation = Quaternion{0, 0, 0, 1}
+			}
+			SpriteParticleSystem 
+			{
+				var Visible = true
+				var ViewCulling = true
+				var VisibilityEvents = true
+				var OverrideBoundingBox = false
+				var LocalAabbCenter = Real3{0, 0, 0}
+				var LocalAabbHalfExtents = Real3{1, 1, 1}
+				var GroupSortValue = 0
+				var Material = "582c575af53d18c9:AlphaSprite"
+				var BoundingBoxSize = 2
+				var ChildSystem = false
+				var SystemSpace = SystemSpace.WorldSpace
+				var WarmUpTime = 0
+				var PreviewInEditor = false
+				var VertexColor = Real4{1, 1, 1, 1}
+				var GeometryMode = SpriteParticleGeometryMode.Billboarded
+				var SpriteSource = "5c24ea4ecd6d8d77:WaterEffect_Ani"
+				var ParticleAnimation = SpriteParticleAnimationMode.Single
+				var ParticleSort = SpriteParticleSortMode.None
+				var BeamBaseScale = 1
+				var BeamVelocityScale = 1
+			}
+			SphericalParticleEmitter 
+			{
+				var Active = true
+				var EmitCount = 0
+				var EmitDelay = 0
+				var EmitRate = 50
+				var EmitVariance = 0
+				var EmitRateSoftStartTime = 0.25
+				var Size = 0.100000001
+				var SizeVariance = 0.0500000007
+				var Lifetime = 0.330000013
+				var LifetimeVariance = 0.0500000007
+				var Spin = 0
+				var SpinVariance = 50
+				var RandomSpin = true
+				var Fill = 1
+				var EmitterVelocityPercent = 0
+				var StartVelocity = Real3{0, 0, 0}
+				var RandomVelocity = Real3{0.600000024, 0.600000024, 0}
+				var TangentVelocity = Real3{0, 0, 0}
+				var EmitterSize = Real3{0, 0, 0}
+				var FastMovingEmitter = true
+			}
+			LinearParticleAnimator 
+			{
+				var Force = Real3{0, 0, 0}
+				var RandomForce = Real3{0, 0, 0}
+				var Torque = 0
+				var Growth = 0
+				var Dampening = 0
+				var Twist = Real3{0, 0, 0}
+			}
+			ParticleColorAnimator 
+			{
+				var TimeGradient = "591abd225f232eaa:FadeInOut"
+				var VelocityGradient = "null"
+				var MaxParticleSpeed = 5
+			}
+		}
 	}
 }

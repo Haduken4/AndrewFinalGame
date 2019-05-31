@@ -252,6 +252,8 @@ Level
 			var QuitButton = false
 			var ButtonUpSprite = "5cab35405cd72e25:ButtonUp"
 			var ButtonDownSprite = "5cab35505a836667:ButtonDown"
+			var UpHoverSprite = "5c24eb2687065730:ButtonUpHover"
+			var DownHoverSprite = "5c24eb278754eab2:ButtonDownHover"
 		}
 		Reactive 
 		{

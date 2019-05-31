@@ -92,7 +92,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{-28.4865475, 25.7363586, 18.2717285}
+			var Translation = Real3{-37.2004318, 40.4821663, 18.2717285}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -145,7 +145,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 66.4066315
+			var Size = 22.1048813
 		}
 		EditorCameraController 
 		{
@@ -154,7 +154,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{-28.4865475, 25.7363586, -1.72827208}
+			var LookTarget = Real3{-37.2004318, 40.4821663, -1.7282722}
 			var MoveSensitivity = 1
 		}
 	}
@@ -1049,6 +1049,15 @@ Level
 		ItemSpawn 
 		{
 			var ChanceToSpawn = 80
+		}
+	}
+	Cog [InheritId:"5c24ea0ec04220ee:WaterSplash"][ContextId:29]
+	{
+		Transform 
+		{
+			var Translation = Real3{-28.4865475, 25.7363586, -1.72827208}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{1, 1, 1}
 		}
 	}
 }
