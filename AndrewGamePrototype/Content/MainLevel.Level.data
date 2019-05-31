@@ -92,7 +92,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{-37.2004318, 40.4821663, 18.2717285}
+			var Translation = Real3{-35.3855247, 45.3003464, 18.2717285}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -145,7 +145,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 22.1048813
+			var Size = 49.19561
 		}
 		EditorCameraController 
 		{
@@ -154,7 +154,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{-37.2004318, 40.4821663, -1.7282722}
+			var LookTarget = Real3{-35.3855247, 45.3003464, -1.7282722}
 			var MoveSensitivity = 1
 		}
 	}
@@ -236,7 +236,7 @@ Level
 		{
 			var LerpSpeed = 0.25
 			var ResizeSpeed = 1.5
-			var MinMaxSize = Real2{5, 40}
+			var MinMaxSize = Real2{5, 69}
 			var MinCamSize = 20
 		}
 		ScreenShake 
@@ -254,7 +254,7 @@ Level
 		var Name = "Player"
 		Transform 
 		{
-			var Translation = Real3{-39.5962372, 43.6739922, 1.90734863e-06}
+			var Translation = Real3{-39.5962372, 43.8899155, 1.90734863e-06}
 			var Scale = Real3{2, 2, 1}
 			var Rotation = Quaternion{0, -2.52854051e-07, 0, 1}
 		}
@@ -299,7 +299,7 @@ Level
 		PlayerMovement 
 		{
 			var MoveSpeed = 500
-			var JumpSpeed = 13
+			var JumpSpeed = 18
 			var MaxMoveResource = 3
 			var JumpsAllowed = 3
 			var SoundToPlay = "5c57355bc3ba7392:Jump"
@@ -1049,15 +1049,6 @@ Level
 		ItemSpawn 
 		{
 			var ChanceToSpawn = 80
-		}
-	}
-	Cog [InheritId:"5c24ea0ec04220ee:WaterSplash"][ContextId:29]
-	{
-		Transform 
-		{
-			var Translation = Real3{-28.4865475, 25.7363586, -1.72827208}
-			var Rotation = Quaternion{0, 0, 0, 1}
-			var Scale = Real3{1, 1, 1}
 		}
 	}
 }

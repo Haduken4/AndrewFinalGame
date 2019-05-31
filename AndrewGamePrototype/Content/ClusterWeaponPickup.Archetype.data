@@ -4,7 +4,7 @@ Cog
 	var Name = "ClusterWeapon"
 	Transform 
 	{
-		var Translation = Real3{-28.0130043, 50.4105034, 0}
+		var Translation = Real3{-38.3322945, 45.9648552, 0}
 		var Scale = Real3{0.75, 0.75, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
@@ -20,7 +20,7 @@ Cog
 		var Material = "582c575af53d18c9:AlphaSprite"
 		var VertexColor = Real4{1, 1, 1, 1}
 		var GeometryMode = SpriteGeometryMode.ZPlane
-		var SpriteSource = "5c8dbe6f9c688a2a:TinyFruit"
+		var SpriteSource = "5cab9da0c0305785:SmallFruit_0"
 		var FlipX = false
 		var FlipY = false
 		var AnimationActive = true
@@ -44,7 +44,7 @@ Cog
 			var Icon = "5c505c76e36195b5:WaterDropsMultiSymbol"
 			var Projectile = "5c0f9844b874aa7c:Bullet"
 			var ProjectileCount = 5
-			var SpreadCone = 1
+			var SpreadCone = 0.100000001
 			var ProjectileSpeed = 20
 			var SpeedVariation = 1.5
 			var SpeedBool = true

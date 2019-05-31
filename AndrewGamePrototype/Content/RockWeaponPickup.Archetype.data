@@ -4,7 +4,7 @@ Cog
 	var Name = "RockWeapon"
 	Transform 
 	{
-		var Translation = Real3{-30.0785217, 48.9597244, 0}
+		var Translation = Real3{0, 0, -0.49889642}
 		var Scale = Real3{0.75, 0.75, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
@@ -20,7 +20,7 @@ Cog
 		var Material = "582c575af53d18c9:AlphaSprite"
 		var VertexColor = Real4{1, 1, 1, 1}
 		var GeometryMode = SpriteGeometryMode.ZPlane
-		var SpriteSource = "5c8dbe6f9c688a2a:TinyFruit"
+		var SpriteSource = "5cab9da0c0305785:SmallFruit_0"
 		var FlipX = false
 		var FlipY = false
 		var AnimationActive = true

@@ -17,7 +17,7 @@ class LobBulletBehavior : ZilchComponent
   function OnLogicUpdate(event : UpdateEvent)
   {
     this.Timer += event.Dt;
-    if(this.Timer > 0.5 && this.DropCount > 0)
+    if(this.Timer > this.DropInterval && this.DropCount > 0)
     {
       this.Timer = 0;
       this.DropCount -= 1;
@@ -25,6 +25,11 @@ class LobBulletBehavior : ZilchComponent
       this.CurrProjectile = this.Space.CreateAtPosition(this.DroppedProjectile, this.Owner.Transform.WorldTranslation);
       //give the bullet downward velocity
       this.CurrProjectile.RigidBody.Velocity = Real3(0, -10, 0);
+    }
+    //Destroy the owner if there are no more shots
+    if(this.DropCount <= 0)
+    {
+      this.Owner.Destroy();
     }
   }
 }
