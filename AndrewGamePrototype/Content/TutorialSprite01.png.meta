@@ -1,0 +1,20 @@
+[Version:1]
+ImageContent 
+{
+	SpriteSourceBuilder 
+	{
+		var Name = "TutorialSprite01"
+		var ResourceId = 0x5c25a986b4a8538d
+		var FrameSizeX = 912
+		var FrameSizeY = 808
+		var FrameCount = 1
+		var FrameDelay = 0.0833333358
+		var OriginX = 456
+		var OriginY = 404
+		var PixelsPerUnit = 64
+		var Sampling = SpriteSampling.Nearest
+		var Looping = true
+		var Slices = Real4{0, 0, 0, 0}
+		var Fill = SpriteFill.Stretch
+	}
+}

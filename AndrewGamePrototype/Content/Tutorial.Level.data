@@ -93,7 +93,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{-1.18130302, 3.72514892, 20}
+			var Translation = Real3{-14.1532946, 1.3070538, 20}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -146,7 +146,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 24.428093
+			var Size = 29.8365326
 		}
 		EditorCameraController 
 		{
@@ -155,7 +155,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{-1.18130302, 3.72514892, -6.29437835e-10}
+			var LookTarget = Real3{-14.1532946, 1.3070538, -5.6765316e-07}
 			var MoveSensitivity = 1
 		}
 	}
@@ -438,7 +438,7 @@ Level
 		var Name = "Sprite"
 		Transform 
 		{
-			var Translation = Real3{-11.5273418, -10, 2}
+			var Translation = Real3{-20.2972851, 1.7972908, 2}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
@@ -454,7 +454,7 @@ Level
 			var Material = "582c575af53d18c9:AlphaSprite"
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
-			var SpriteSource = "5586f579ca73ecc2:SquareBordered"
+			var SpriteSource = "5c25a986b4d58d75:TutorialSprite02"
 			var FlipX = false
 			var FlipY = false
 			var AnimationActive = true
@@ -463,8 +463,8 @@ Level
 		}
 		ChangeSpritePerPhase 
 		{
-			var MoveSprite = "5274db4c2e7c11f9:Circle"
-			var ShootSprite = "5275aa4d802dd6dc:Square"
+			var MoveSprite = "5c25a986b4d58d75:TutorialSprite02"
+			var ShootSprite = "5c25a986b4a8538d:TutorialSprite01"
 		}
 	}
 	Cog [InheritId:"5cbf4710572ae165:ExplosionWeaponPickup"][ContextId:10]
