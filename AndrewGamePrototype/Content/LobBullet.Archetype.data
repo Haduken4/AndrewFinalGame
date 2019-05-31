@@ -72,4 +72,10 @@ Cog
 		var DIE = false
 		var SoundToPlay = "null"
 	}
+	CustomCollisionVariables 
+	{
+		var Explodes = true
+		var ExplosionRadius = 2
+		var MaxSlope = 30
+	}
 }

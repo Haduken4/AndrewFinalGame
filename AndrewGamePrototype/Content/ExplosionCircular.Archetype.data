@@ -37,7 +37,7 @@ Cog
 	}
 	SphereCollider 
 	{
-		var Ghost = false
+		var Ghost = true
 		var SendsEvents = true
 		var Material = "4de020863e872da8:DefaultPhysicsMaterial"
 		var CollisionGroup = "4e740859314e5515:DefaultGroup"
