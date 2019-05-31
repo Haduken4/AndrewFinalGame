@@ -1,0 +1,96 @@
+/*************************
+Authors: Bar Ben-zvi
+Date Created: 5/31/19
+Brief: Makes the cursor invisible and displays a sprite based on turn phase
+*************************/
+class CursorSprite : ZilchComponent
+{
+  [Property]
+  var MouseUpGeneralSprite : SpriteSource = SpriteSource.GeneralCursorUp;
+  
+  [Property]
+  var MouseDownGeneralSprite : SpriteSource = SpriteSource.GeneralCursorDown;
+  
+  [Property]
+  var MouseUpAttackSprite : SpriteSource = SpriteSource.TargetCursorUp_Ani;
+  
+  [Property]
+  var MouseDownAttackSprite : SpriteSource = SpriteSource.TargetCursorDown_Ani;
+  
+  
+  function Initialize(init : CogInitializer)
+  {
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    Zero.Connect(this.Space, Events.LeftMouseDown, this.OnLeftMouseDown);
+    Zero.Connect(this.Space, Events.LeftMouseUp, this.OnLeftMouseUp);
+    
+    Zero.Mouse.Cursor = Cursor.Invisible;
+    this.Owner.Sprite.SpriteSource = this.MouseUpGeneralSprite;
+  }
+
+  function OnLeftMouseUp(event : ViewportMouseEvent)
+  {
+    var turnManager = this.LevelSettings.PlayerTurnManager;
+    
+    if(turnManager == null || turnManager.CurrState == TurnState.STATEMOVE)
+    {
+      this.Owner.Sprite.SpriteSource = this.MouseUpGeneralSprite;
+    }
+    else if(turnManager != null && turnManager.CurrState == TurnState.STATESHOOT)
+    {
+      this.Owner.Sprite.SpriteSource = this.MouseUpAttackSprite;
+    }
+  }
+
+  function OnLeftMouseDown(event : ViewportMouseEvent)
+  {
+    var turnManager = this.LevelSettings.PlayerTurnManager;
+    
+    if(turnManager == null || turnManager.CurrState == TurnState.STATEMOVE)
+    {
+      this.Owner.Sprite.SpriteSource = this.MouseDownGeneralSprite;
+    }
+    else if(turnManager != null && turnManager.CurrState == TurnState.STATESHOOT)
+    {
+      this.Owner.Sprite.SpriteSource = this.MouseDownAttackSprite;
+    }
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    var mousePos = Zero.Mouse.ClientPosition;
+    var screenMousePos = this.Space.FindObjectByName("GameCamera").CameraViewport.ScreenToWorldZPlane(mousePos, 5);
+    
+    this.Owner.Transform.WorldTranslation = screenMousePos;
+    
+    //If we are using the wrong sprite for the phase
+    var turnManager = this.LevelSettings.PlayerTurnManager;
+    
+    if(turnManager != null)
+    {
+      if(turnManager.CurrState == TurnState.STATEMOVE)
+      {
+        if(this.Owner.Sprite.SpriteSource == this.MouseUpAttackSprite)
+        {
+          this.Owner.Sprite.SpriteSource = this.MouseUpGeneralSprite;
+        }
+        else if(this.Owner.Sprite.SpriteSource == this.MouseDownAttackSprite)
+        {
+          this.Owner.Sprite.SpriteSource = this.MouseDownGeneralSprite;
+        }
+      }
+      else
+      {
+        if(this.Owner.Sprite.SpriteSource == this.MouseUpGeneralSprite)
+        {
+          this.Owner.Sprite.SpriteSource = this.MouseUpAttackSprite;
+        }
+        else if(this.Owner.Sprite.SpriteSource == this.MouseDownGeneralSprite)
+        {
+          this.Owner.Sprite.SpriteSource = this.MouseDownAttackSprite;
+        }
+      }
+    }
+    
+  }
+}
