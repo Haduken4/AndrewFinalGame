@@ -48,6 +48,7 @@ class MenuButton : ZilchComponent
   {
     if(this.Owner.Sprite.SpriteSource == this.ButtonUpSprite)
     {
+      this.Space.SoundSpace.PlayCue(SoundCue.MenuHover);
       this.Owner.Sprite.SpriteSource = this.UpHoverSprite;
     }
     else

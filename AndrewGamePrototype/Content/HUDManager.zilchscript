@@ -24,7 +24,7 @@ class HUDManager : ZilchComponent
   var WeaponDisplayRight : CogPath = null;
   
   [Property]
-  //var DefaultWeaponSymbol : SpriteSource = SpriteSource.
+  var DefaultWeaponSymbol : SpriteSource = SpriteSource.QuestionMark;
   
   function Initialize(init : CogInitializer)
   {
@@ -71,9 +71,9 @@ class HUDManager : ZilchComponent
       
       if(count == 1)
       {
-        this.WeaponDisplayLeft.Sprite.SpriteSource = this.CurrPlayer.PlayerShooting.Weapons[0].Icon;
+        this.WeaponDisplayLeft.Sprite.SpriteSource = this.DefaultWeaponSymbol;
         this.WeaponDisplayCenter.Sprite.SpriteSource = this.CurrPlayer.PlayerShooting.Weapons[0].Icon;
-        this.WeaponDisplayRight.Sprite.SpriteSource = this.CurrPlayer.PlayerShooting.Weapons[0].Icon;
+        this.WeaponDisplayRight.Sprite.SpriteSource = this.DefaultWeaponSymbol;
         return;
         
       }
