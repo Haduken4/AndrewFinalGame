@@ -1,0 +1,20 @@
+class PlayerWin : ZilchComponent
+{
+  [Property]
+  var Player1 : SpriteSource = null;
+  
+  [Property]
+  var Player2 : SpriteSource = null;
+  
+  function Initialize(init : CogInitializer)
+  {
+    if(this.GameSession.GameVars.WinningPlayer == 1)
+    {
+      this.Owner.Sprite.SpriteSource = this.Player1;
+    }
+    else
+    {
+      this.Owner.Sprite.SpriteSource = this.Player2;
+    }
+  }
+}
