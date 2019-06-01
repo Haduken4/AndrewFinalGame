@@ -130,7 +130,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 49.1920433
+			var Size = 32.9744263
 		}
 		EditorCameraController 
 		{
@@ -558,7 +558,7 @@ Level
 		var Name = "Sprite"
 		Transform 
 		{
-			var Translation = Real3{1.0000124, 0.797621191, -3}
+			var Translation = Real3{1.0000124, 0.556176126, -3}
 			var Scale = Real3{1.25, 1.25, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}

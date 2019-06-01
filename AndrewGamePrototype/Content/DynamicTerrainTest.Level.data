@@ -44,6 +44,7 @@ Level
 		}
 		PlayerTurnManager 
 		{
+			var Tutorial = false
 			var TimerPerPhase = 30
 		}
 		SpawnPickups 
@@ -299,6 +300,7 @@ Level
 			var MoveSpeed = 400
 			var JumpSpeed = 10
 			var MaxMoveResource = 5
+			var JumpsAllowed = 3
 			var SoundToPlay = "null"
 			var JumpAnimation = "null"
 			var Active = false
@@ -321,7 +323,6 @@ Level
 				var ShootSound = "null"
 			}
 			var Active = false
-			var RuneSound = "null"
 		}
 		CustomCollisionVariables 
 		{
@@ -382,6 +383,7 @@ Level
 			var MoveSpeed = 400
 			var JumpSpeed = 10
 			var MaxMoveResource = 5
+			var JumpsAllowed = 3
 			var SoundToPlay = "null"
 			var JumpAnimation = "null"
 			var Active = false
@@ -404,7 +406,6 @@ Level
 				var ShootSound = "null"
 			}
 			var Active = false
-			var RuneSound = "null"
 		}
 	}
 	Cog [ContextId:7]
@@ -433,7 +434,7 @@ Level
 		}
 		TileMap 
 		{
-			var Source = "5c8f0965da72e90b:DynamicTerrainTest_TileMap07"
+			var Source = "5c91c5fcc44de0bb:DynamicTerrainTest_TileMap08"
 			var PaletteName = "5c0f869da6af70e1:GamePalette"
 			var MeshThickness = 1.20000005
 		}
@@ -477,6 +478,7 @@ Level
 		}
 		DestructableCustomCollision 
 		{
+			var ExplodeSound = "5c91bddbf91e6e60:LeavesImpact"
 		}
 	}
 	Cog [InheritId:"5cb6f9d0c927efaf:DynamicTerrainTest"][ContextId:9]
@@ -560,6 +562,7 @@ Level
 		}
 		DestructableCustomCollision 
 		{
+			var ExplodeSound = "5c91bddbf91e6e60:LeavesImpact"
 		}
 		MultiConvexMeshCollider 
 		{
