@@ -1,8 +1,8 @@
 [Version:1]
 SoundCue 
 {
-	var PlayMode = SoundPlayMode.Looping
-	var Volume = 0.299999982
+	var PlayMode = SoundPlayMode.Single
+	var Volume = 0.519999981
 	var UseDecibelVariation = false
 	var VolumeVariation = 0
 	var DecibelVariation = 0
@@ -18,11 +18,11 @@ SoundCue
 	{
 		Object
 		{
-			var Sound = "5c8f26441e653ac2:Brogs_music"
+			var Sound = "5c91ca9cf476a044:MenuHover"
 			var Weight = 1
 			var StartTime = 0
-			var EndTime = 54.1819382
-			var LoopEndTime = 54.1819382
+			var EndTime = 0.0666041672
+			var LoopEndTime = 0.0666041672
 			var LoopStartTime = 0
 			var LoopTailLength = 0
 			var CrossFadeLoopTail = false
