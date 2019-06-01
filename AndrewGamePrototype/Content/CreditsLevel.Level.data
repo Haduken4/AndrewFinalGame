@@ -77,7 +77,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{-8.52454185, 0.403429121, 15.1400738}
+			var Translation = Real3{-5.69076443, 0.403429121, 15.1400738}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{-0.00518176286, -0.143490687, -0.000751320214, 0.989637852}
 		}
@@ -130,7 +130,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 24.4280567
+			var Size = 22.1034222
 		}
 		EditorCameraController 
 		{
@@ -139,7 +139,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0.0104719428
 			var HorizontalAngle = 0.287979394
-			var LookTarget = Real3{-2.8445456, 0.193994105, -4.03526831}
+			var LookTarget = Real3{-0.0107677132, 0.193994105, -4.03526831}
 			var MoveSensitivity = 1
 		}
 	}
@@ -811,7 +811,7 @@ Level
 		var Name = "DigiLogo"
 		Transform 
 		{
-			var Translation = Real3{6.99097013, -7.97713566, 0}
+			var Translation = Real3{6.99097013, -7.19098806, 0}
 			var Scale = Real3{0.5, 0.5, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
@@ -840,7 +840,7 @@ Level
 		var Name = "CreditButton"
 		Transform 
 		{
-			var Translation = Real3{0, -7.72190332, 0}
+			var Translation = Real3{0, -6.93575382, 0}
 			var Scale = Real3{5, 5, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
@@ -1107,6 +1107,35 @@ Level
 			var GroupSortValue = 0
 			var Material = "582c575af53d18c9:AlphaSprite"
 			var VertexColor = Real4{1, 1, 1, 0.5}
+			var GeometryMode = SpriteGeometryMode.ZPlane
+			var SpriteSource = "5275aa4d802dd6dc:Square"
+			var FlipX = false
+			var FlipY = false
+			var AnimationActive = true
+			var AnimationSpeed = 1
+			var StartFrame = 0
+		}
+	}
+	Cog [ContextId:36]
+	{
+		var Name = "Cover"
+		Transform 
+		{
+			var Translation = Real3{0, 0, -3.88202333}
+			var Scale = Real3{30, 17, 1}
+			var Rotation = Quaternion{0, 0, 0, 1}
+		}
+		Sprite 
+		{
+			var Visible = true
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var OverrideBoundingBox = false
+			var LocalAabbCenter = Real3{0, 0, 0}
+			var LocalAabbHalfExtents = Real3{1, 1, 1}
+			var GroupSortValue = 0
+			var Material = "582c575af53d18c9:AlphaSprite"
+			var VertexColor = Real4{0.168000028, 0.263200045, 0.280000031, 0.935000002}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var SpriteSource = "5275aa4d802dd6dc:Square"
 			var FlipX = false
