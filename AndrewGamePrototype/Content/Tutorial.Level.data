@@ -93,7 +93,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{-21.2321033, 1.04724324, 20}
+			var Translation = Real3{18.2345905, -4.96636438, 20.0000019}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -146,7 +146,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 29.8366051
+			var Size = 24.4281616
 		}
 		EditorCameraController 
 		{
@@ -155,7 +155,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{-21.2321033, 1.04724324, -5.56449322e-07}
+			var LookTarget = Real3{18.2345905, -4.96636438, 1.16869444e-06}
 			var MoveSensitivity = 1
 		}
 	}
@@ -433,53 +433,7 @@ Level
 			}
 		}
 	}
-	Cog [ContextId:9]
-	{
-		var Name = "Sprite"
-		Transform 
-		{
-			var Translation = Real3{-20.2972851, 1.7972908, 2}
-			var Scale = Real3{1, 1, 1}
-			var Rotation = Quaternion{0, 0, 0, 1}
-		}
-		Sprite 
-		{
-			var Visible = true
-			var ViewCulling = true
-			var VisibilityEvents = true
-			var OverrideBoundingBox = false
-			var LocalAabbCenter = Real3{0, 0, 0}
-			var LocalAabbHalfExtents = Real3{1, 1, 1}
-			var GroupSortValue = 0
-			var Material = "582c575af53d18c9:AlphaSprite"
-			var VertexColor = Real4{1, 1, 1, 1}
-			var GeometryMode = SpriteGeometryMode.ZPlane
-			var SpriteSource = "5c25a986b4d58d75:TutorialSprite02"
-			var FlipX = false
-			var FlipY = false
-			var AnimationActive = true
-			var AnimationSpeed = 1
-			var StartFrame = 0
-		}
-		ChangeSpritePerPhase 
-		{
-			var MoveSprite = "5c25a986b4d58d75:TutorialSprite02"
-			var ShootSprite = "5c25a986b4a8538d:TutorialSprite01"
-		}
-		Hierarchy 
-		{
-			Cog [Id:0x5c24fffb5392e48a][InheritId:"5c24ffe05cad187f:LNextPhase"][ContextId:10]
-			{
-				Transform 
-				{
-					var Translation = Real3{7.32275391, 3.7814126, -1}
-					var Rotation = Quaternion{0, 0, 0, 1}
-					var Scale = Real3{4, 4, 1}
-				}
-			}
-		}
-	}
-	Cog [InheritId:"5cbf4710572ae165:ExplosionWeaponPickup"][ContextId:11]
+	Cog [InheritId:"5cbf4710572ae165:ExplosionWeaponPickup"][ContextId:9]
 	{
 		Transform 
 		{
@@ -488,7 +442,7 @@ Level
 			var Scale = Real3{0.75, 0.75, 1}
 		}
 	}
-	Cog [ContextId:12]
+	Cog [ContextId:10]
 	{
 		var Name = "SpriteText"
 		Transform 
@@ -516,7 +470,7 @@ Level
 			var TextAlign = TextAlign.Left
 		}
 	}
-	Cog [ContextId:13]
+	Cog [ContextId:11]
 	{
 		var Name = "SpriteText"
 		Transform 
@@ -544,7 +498,7 @@ Level
 			var TextAlign = TextAlign.Left
 		}
 	}
-	Cog [ContextId:14]
+	Cog [ContextId:12]
 	{
 		var Name = "Leaf"
 		Transform 
@@ -574,6 +528,7 @@ Level
 		}
 		DestructableCustomCollision 
 		{
+			var ExplodeSound = "5c91bddbf91e6e60:LeavesImpact"
 		}
 		MultiConvexMeshCollider 
 		{
@@ -585,7 +540,7 @@ Level
 			var Mesh = "5c8dbf0544f9cccb:LeafMesh"
 		}
 	}
-	Cog [ContextId:15]
+	Cog [ContextId:13]
 	{
 		var Name = "Leaf"
 		Transform 
@@ -615,6 +570,7 @@ Level
 		}
 		DestructableCustomCollision 
 		{
+			var ExplodeSound = "5c91bddbf91e6e60:LeavesImpact"
 		}
 		MultiConvexMeshCollider 
 		{
@@ -626,7 +582,7 @@ Level
 			var Mesh = "5c8dbf0544f9cccb:LeafMesh"
 		}
 	}
-	Cog [ContextId:16]
+	Cog [ContextId:14]
 	{
 		var Name = "MenuButton"
 		Transform 
@@ -680,7 +636,7 @@ Level
 		}
 		Hierarchy 
 		{
-			Cog [Id:0x5c475afee5505026][ContextId:17]
+			Cog [Id:0x5c475afee5505026][ContextId:15]
 			{
 				var Name = "Text"
 				Transform 
@@ -710,7 +666,7 @@ Level
 			}
 		}
 	}
-	Cog [ContextId:18]
+	Cog [ContextId:16]
 	{
 		var Name = "CursorSprite"
 		Transform 
@@ -744,6 +700,39 @@ Level
 			var MouseDownGeneralSprite = "5c25a77fa4c69aff:GeneralCursorDown"
 			var MouseUpAttackSprite = "5c25a6a196b35a1e:TargetCursorUp_Ani"
 			var MouseDownAttackSprite = "5c25a74590c2e8b6:TargetCursorDown_Ani"
+		}
+	}
+	Cog [InheritId:"5caacd8ed512b01f:Movement"][ContextId:17]
+	{
+		Transform 
+		{
+			var Translation = Real3{-17.5160561, 1.14137626, 2}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{1, 1, 1}
+		}
+		Hierarchy 
+		{
+			Cog [Id:0x5caacdeed0ddf673][ContextId:18]
+			{
+				Transform 
+				{
+					var Translation = Real3{40.5930939, -9.47768402, 2.91259568e-07}
+				}
+			}
+			Cog [Id:0x5caacdeed0ddf6a5][ContextId:19]
+			{
+				Transform 
+				{
+					var Translation = Real3{41.5007401, -8.61217117, 2.91259568e-07}
+				}
+			}
+			Cog [Id:0x5caacdeed0ddf6c9][ContextId:20]
+			{
+				Transform 
+				{
+					var Translation = Real3{42.4391785, -7.51641846, 2.91259568e-07}
+				}
+			}
 		}
 	}
 }

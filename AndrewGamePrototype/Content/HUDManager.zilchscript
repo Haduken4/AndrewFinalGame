@@ -23,6 +23,9 @@ class HUDManager : ZilchComponent
   [Property]
   var WeaponDisplayRight : CogPath = null;
   
+  [Property]
+  //var DefaultWeaponSymbol : SpriteSource = SpriteSource.
+  
   function Initialize(init : CogInitializer)
   {
     Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);

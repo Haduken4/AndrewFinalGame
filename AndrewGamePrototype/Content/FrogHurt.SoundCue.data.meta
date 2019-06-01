@@ -1,0 +1,11 @@
+[Version:1]
+DataContent 
+{
+	DataBuilder 
+	{
+		var Name = "FrogHurt"
+		var ResourceId = 0x5c91c4fc9472134e
+		var LoaderType = "SoundCue"
+		var Version = 0
+	}
+}
