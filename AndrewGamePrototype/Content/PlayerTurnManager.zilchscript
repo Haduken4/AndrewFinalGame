@@ -102,9 +102,12 @@ class PlayerTurnManager : ZilchComponent
         
         this.PlayerArray[this.CurrIndex].BoxCollider.CollisionGroup = CollisionGroup.CurrentPlayer;
         
-        var text = this.Space.FindObjectByName("GameCamera").FindChildByName("TransitionText");
-        text.SpriteText.Text = "Player `this.CurrIndex + 1`'s Turn!";
-        text.SpriteText.VertexColor = Real4(text.SpriteText.VertexColor.XYZ, 1);
+        if(!this.Tutorial)
+        {
+          var text = this.Space.FindObjectByName("GameCamera").FindChildByName("TransitionText");
+          text.SpriteText.Text = "Player `this.CurrIndex + 1`'s Turn!";
+          text.SpriteText.VertexColor = Real4(text.SpriteText.VertexColor.XYZ, 1);
+        }
         
         this.HUDManager.UpdateWeapons();
       }
