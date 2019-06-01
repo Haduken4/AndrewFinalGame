@@ -140,6 +140,11 @@ class PlayerMovement : ZilchComponent
       {
         vel.X = 0;
       }
+      
+      if(this.Active && this.CurrMoveResource <= 0)
+      {
+        this.LevelSettings.PlayerTurnManager.TurnBool = true;
+      }
     
     this.Owner.RigidBody.Velocity = vel;
     

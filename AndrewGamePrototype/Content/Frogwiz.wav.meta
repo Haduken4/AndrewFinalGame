@@ -1,0 +1,12 @@
+[Version:1]
+AudioContent 
+{
+	SoundBuilder 
+	{
+		var Name = "Frogwiz"
+		var ResourceId = 0x5c91c4fc9474c2b4
+		var FileLoadType = AudioFileLoadType.Auto
+		var Normalize = false
+		var MaxVolume = 0.899999976
+	}
+}

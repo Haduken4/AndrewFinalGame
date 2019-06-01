@@ -65,13 +65,14 @@ class PlayerTurnManager : ZilchComponent
   function OnLogicUpdate(event : UpdateEvent)
   {
     //If the player presses L, this ends the current state
-    if((Zero.Keyboard.KeyIsPressed(Keys.L) && this.CurrState == TurnState.STATEMOVE) || this.TurnBool)
+    if((Zero.Keyboard.KeyIsPressed(Keys.Tab) && this.CurrState == TurnState.STATEMOVE) || this.TurnBool)
     {
       this.TurnBool = false;
       //If we are currently on the move state, we only need to change to the shoot state
       if(this.CurrState == TurnState.STATEMOVE)
       {
         this.PlayerArray[this.CurrIndex].PlayerMovement.Active = false;
+        this.PlayerArray[this.CurrIndex].PlayerMovement.CurrMoveResource = 0;
         this.PlayerArray[this.CurrIndex].PlayerShooting.Activate();
         this.CurrState = TurnState.STATESHOOT;
         this.HUDManager.CurrState = TurnState.STATESHOOT;
@@ -100,6 +101,10 @@ class PlayerTurnManager : ZilchComponent
         this.HUDManager.Index = this.CurrIndex + 1;
         
         this.PlayerArray[this.CurrIndex].BoxCollider.CollisionGroup = CollisionGroup.CurrentPlayer;
+        
+        var text = this.Space.FindObjectByName("GameCamera").FindChildByName("TransitionText");
+        text.SpriteText.Text = "Player `this.CurrIndex + 1`'s Turn!";
+        text.SpriteText.VertexColor = Real4(text.SpriteText.VertexColor.XYZ, 1);
         
         this.HUDManager.UpdateWeapons();
       }
