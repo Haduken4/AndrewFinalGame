@@ -47,6 +47,10 @@ class PlayerShooting : ZilchComponent
   
   //Random functions
   var Random : Random = Random();
+      
+  //sound to play when weapon is switched
+  [Property]
+  var SwitchSound : SoundCue = null;
   
   [Property]
   var Active : Boolean = true;
@@ -168,6 +172,10 @@ class PlayerShooting : ZilchComponent
       //go left in weapon array
       if(Zero.Keyboard.KeyIsPressed(Keys.Q))
       {
+        if(this.Weapons.Count != 1)
+        {
+          this.Space.SoundSpace.PlayCue(this.SwitchSound);
+        }
         --this.CurrWeapon;
         //wrap to right if out of bounds
         if(this.CurrWeapon < 0)
@@ -182,6 +190,11 @@ class PlayerShooting : ZilchComponent
       //go right in weapon array
       if(Zero.Keyboard.KeyIsPressed(Keys.E))
       {
+        if(this.Weapons.Count != 1)
+        {
+          this.Space.SoundSpace.PlayCue(this.SwitchSound);
+        }
+        
         ++this.CurrWeapon;
         //wrap to left if out of bounds
         if(this.CurrWeapon >= this.Weapons.Count)

@@ -57,7 +57,7 @@ Cog
 		var OffsetSpawn = true
 		var SpawnOffset = 0
 		var DIE = true
-		var SoundToPlay = "5c57355bc3b9f2ac:DefensePlant"
+		var SoundToPlay = "5c6dd8995b41e4b1:Plant2shot"
 	}
 	TimedDeath 
 	{

@@ -18,11 +18,11 @@ SoundCue
 	{
 		Object
 		{
-			var Sound = "5c57355bc38a66a4:DefensePlant"
+			var Sound = "5c6dd8995b5e9b70:Plant2shot"
 			var Weight = 1
 			var StartTime = 0
-			var EndTime = 0.485562503
-			var LoopEndTime = 0.485562503
+			var EndTime = 0.829416633
+			var LoopEndTime = 0.829416633
 			var LoopStartTime = 0
 			var LoopTailLength = 0
 			var CrossFadeLoopTail = false

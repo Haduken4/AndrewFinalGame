@@ -93,7 +93,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{-5.99226046, 2.79848456, 20}
+			var Translation = Real3{-3.83764219, 1.13418686, 20}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -146,7 +146,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 24.4305038
+			var Size = 16.376255
 		}
 		EditorCameraController 
 		{
@@ -155,7 +155,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{-5.99226046, 2.79848456, -3.63217481e-07}
+			var LookTarget = Real3{-3.83764219, 1.13418686, -3.63217481e-07}
 			var MoveSensitivity = 1
 		}
 	}
@@ -270,8 +270,8 @@ Level
 					var VertexColor = Real4{1, 1, 1, 0}
 					var GeometryMode = SpriteGeometryMode.ZPlane
 					var Text = "Sprite Text..."
-					var Font = "57343753bb4eaaec:NotoSans-Regular"
-					var FontSize = 128
+					var Font = "5c91cd6a5d324692:IMMORTAL"
+					var FontSize = 110
 					var PixelsPerUnit = 128
 					var TextAlign = TextAlign.Center
 				}
@@ -357,6 +357,7 @@ Level
 				var SpeedBool = false
 				var ShootSound = "5c91bbdf53d15d39:FrogBurp"
 			}
+			var SwitchSound = "5c6dda720f0bf30f:WeaponSwitch"
 			var Active = false
 		}
 		AnimationHandler 
@@ -513,6 +514,7 @@ Level
 				var SpeedBool = false
 				var ShootSound = "5c91bbdf53d15d39:FrogBurp"
 			}
+			var SwitchSound = "5c6dda720f0bf30f:WeaponSwitch"
 			var Active = false
 		}
 		AnimationHandler 

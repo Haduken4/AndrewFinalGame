@@ -145,6 +145,7 @@ Level
 				var PathPreference1 = CogPathPreference.SpaceRelative
 				var PathPreference2 = CogPathPreference.Absolute
 			}
+			var DefaultWeaponSymbol = "5c91cb9e2a7e5b5c:QuestionMark"
 		}
 	}
 	Cog [ContextId:9]
@@ -185,7 +186,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{-14.987174, -0.224795163, 20.0452557}
+			var Translation = Real3{-1.14988637, 0.108133256, 20.0452557}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -238,7 +239,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 8.13146591
+			var Size = 29.8367462
 		}
 		EditorCameraController 
 		{
@@ -247,7 +248,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{-14.987174, -0.224795163, 0.0452564657}
+			var LookTarget = Real3{-1.14988637, 0.108133256, 0.0452564657}
 			var MoveSensitivity = 1
 		}
 	}
@@ -416,7 +417,7 @@ Level
 			var VertexColor = Real4{0.444999993, 0.444999993, 0.444999993, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "Moving"
-			var Font = "5c90792fce1fdeb5:BradleyGratis"
+			var Font = "5c91cd6a5d324692:IMMORTAL"
 			var FontSize = 124
 			var PixelsPerUnit = 128
 			var TextAlign = TextAlign.Center
@@ -444,7 +445,7 @@ Level
 			var VertexColor = Real4{0.444999993, 0.444999993, 0.444999993, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "Player 1"
-			var Font = "5c90792fce1fdeb5:BradleyGratis"
+			var Font = "5c91cd6a5d324692:IMMORTAL"
 			var FontSize = 124
 			var PixelsPerUnit = 128
 			var TextAlign = TextAlign.Center
@@ -773,26 +774,30 @@ Level
 	{
 		Transform 
 		{
-			var Translation = Real3{-15.8732576, -6.4165287, 1.5}
+			var Translation = Real3{-15.8732576, -6.44731379, 1.5}
 			var Rotation = Quaternion{0, 0, 0, 1}
-			var Scale = Real3{10, 10, 1}
+			var Scale = Real3{2, 2.5, 1}
 		}
 		SpriteText 
 		{
 			var VertexColor = Real4{0.915000021, 0.90813756, 0.846375048, 1}
+			var Font = "5c91cd6a5d324692:IMMORTAL"
+			var FontSize = 128
 		}
 	}
 	Cog [InheritId:"5c91b6427c9ef249:HealthText"][ContextId:21]
 	{
 		Transform 
 		{
-			var Translation = Real3{-13.3732576, -6.4165287, 1.5}
+			var Translation = Real3{-13.3732576, -6.48579502, 1.5}
 			var Rotation = Quaternion{0, 0, 0, 1}
-			var Scale = Real3{10, 10, 1}
+			var Scale = Real3{2, 2.5, 1}
 		}
 		SpriteText 
 		{
 			var VertexColor = Real4{0.915000021, 0.90813756, 0.846375048, 1}
+			var Font = "5c91cd6a5d324692:IMMORTAL"
+			var FontSize = 128
 		}
 	}
 	Cog [ContextId:22]

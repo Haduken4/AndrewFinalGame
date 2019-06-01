@@ -39,5 +39,6 @@ Cog
 	Health 
 	{
 		var MaxHealth = 5
+		var HurtSound = "5c6ddf9ac25944d6:Plantshot"
 	}
 }

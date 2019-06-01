@@ -2,7 +2,7 @@
 SoundCue 
 {
 	var PlayMode = SoundPlayMode.Single
-	var Volume = 2
+	var Volume = 0.719999969
 	var UseDecibelVariation = false
 	var VolumeVariation = 0
 	var DecibelVariation = 0
@@ -18,11 +18,11 @@ SoundCue
 	{
 		Object
 		{
-			var Sound = "5c57355bc38a66a4:DefensePlant"
+			var Sound = "5c6dda720f09b6d1:WeaponSwitch"
 			var Weight = 1
 			var StartTime = 0
-			var EndTime = 0.485562503
-			var LoopEndTime = 0.485562503
+			var EndTime = 0.405687481
+			var LoopEndTime = 0.405687481
 			var LoopStartTime = 0
 			var LoopTailLength = 0
 			var CrossFadeLoopTail = false

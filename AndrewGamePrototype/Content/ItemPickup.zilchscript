@@ -26,6 +26,7 @@ class ItemPickup : ZilchComponent
   {
       if(event.OtherObject.Name == "Player")
       {
+        this.Space.SoundSpace.PlayCue(SoundCue.Smallfruit);
         event.OtherObject.PlayerShooting.Weapons.Add(this.Weapon);
         this.Owner.Destroy();
         Console.WriteLine(this.Weapon.Projectile);

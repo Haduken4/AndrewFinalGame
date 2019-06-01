@@ -77,7 +77,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{2.47243953, 0.528373778, 20}
+			var Translation = Real3{2.47243953, -0.971629739, 20}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -130,7 +130,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 22.1034069
+			var Size = 26.9971561
 		}
 		EditorCameraController 
 		{
@@ -139,7 +139,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{2.47243953, 0.528373778, 1.08073806e-07}
+			var LookTarget = Real3{2.47243953, -0.971629739, 1.08073806e-07}
 			var MoveSensitivity = 1
 		}
 	}
@@ -281,8 +281,8 @@ Level
 				var Name = "Text"
 				Transform 
 				{
-					var Translation = Real3{0.00623335782, 0.00831108075, 0.100000001}
-					var Scale = Real3{1, 1, 1}
+					var Translation = Real3{0.0100192307, 0.00452518463, 0.100000001}
+					var Scale = Real3{0.75, 1, 1}
 					var Rotation = Quaternion{0, 0, 0, 1}
 				}
 				SpriteText 
@@ -298,7 +298,7 @@ Level
 					var VertexColor = Real4{0, 0, 0, 1}
 					var GeometryMode = SpriteGeometryMode.ZPlane
 					var Text = "Main Menu"
-					var Font = "5c90792fce1fdeb5:BradleyGratis"
+					var Font = "5c91cd6a5d324692:IMMORTAL"
 					var FontSize = 90
 					var PixelsPerUnit = 512
 					var TextAlign = TextAlign.Center
@@ -328,7 +328,7 @@ Level
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "Player  wins!"
-			var Font = "5c90792fce1fdeb5:BradleyGratis"
+			var Font = "5c91cd6a5d324692:IMMORTAL"
 			var FontSize = 128
 			var PixelsPerUnit = 128
 			var TextAlign = TextAlign.Center
