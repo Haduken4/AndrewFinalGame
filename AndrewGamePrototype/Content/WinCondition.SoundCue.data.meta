@@ -1,0 +1,11 @@
+[Version:1]
+DataContent 
+{
+	DataBuilder 
+	{
+		var Name = "WinCondition"
+		var ResourceId = 0x5c91ca2bd0437b89
+		var LoaderType = "SoundCue"
+		var Version = 0
+	}
+}
