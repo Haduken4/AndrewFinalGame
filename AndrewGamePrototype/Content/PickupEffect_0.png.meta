@@ -1,0 +1,20 @@
+[Version:1]
+ImageContent 
+{
+	SpriteSourceBuilder 
+	{
+		var Name = "PickupEffect_0"
+		var ResourceId = 0x5ca8043c18ffef33
+		var FrameSizeX = 36
+		var FrameSizeY = 36
+		var FrameCount = 6
+		var FrameDelay = 0.0833333358
+		var OriginX = 18
+		var OriginY = 18
+		var PixelsPerUnit = 24
+		var Sampling = SpriteSampling.Nearest
+		var Looping = true
+		var Slices = Real4{0, 0, 0, 0}
+		var Fill = SpriteFill.Stretch
+	}
+}

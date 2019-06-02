@@ -60,6 +60,14 @@ Cog
 		var Offset = Real3{0, -0.150000006, 0}
 		var Radius = 0.899999976
 	}
+	SpawnOnDeath 
+	{
+		var ObjectToSpawn = "5ca804720042f347:PickupEffect"
+		var OffsetSpawn = false
+		var SpawnOffset = 0
+		var DIE = false
+		var SoundToPlay = "null"
+	}
 	Hierarchy 
 	{
 		Cog [Id:0x5c8dd22b8363bf00][InheritId:"5c8dce2b55c9272a:Runes"]

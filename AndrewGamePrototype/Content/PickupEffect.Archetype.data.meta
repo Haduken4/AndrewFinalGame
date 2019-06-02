@@ -1,0 +1,11 @@
+[Version:1]
+DataContent 
+{
+	DataBuilder 
+	{
+		var Name = "PickupEffect"
+		var ResourceId = 0x5ca804720042f347
+		var LoaderType = "Cog"
+		var Version = 0
+	}
+}
