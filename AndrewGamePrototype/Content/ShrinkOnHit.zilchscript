@@ -1,0 +1,61 @@
+class ShrinkOnHit : ZilchComponent
+{
+  //The amount to shrink the owner by
+  [Property]
+  var ShrinkAmount : Real = 0.125;
+  //The amount of time the owner is shrunk
+  [Property]
+  var ShrinkTime : Real = 0.125;
+  
+  var Timer : Real = 0;
+  var Collided : Boolean = false;
+  var OriginalSize : Real3 = Real3();
+  var Shrunk : Boolean = false;
+  function Initialize(init : CogInitializer)
+  {
+    //Set original size
+    this.OriginalSize = this.Owner.Transform.Scale;
+    
+    //Make sure that the shrink amount isnt too big
+    if(this.ShrinkAmount >= this.Owner.Transform.Scale.X)
+    {
+      this.ShrinkAmount = this.Owner.Transform.Scale.X;
+    }
+    
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    if(this.Collided)
+    {
+      this.Timer += event.Dt;
+      
+      //This is used to make sure the owner doesnt keep shrinking
+      if(!this.Shrunk)
+      {
+        this.Owner.Transform.Scale -= Real3(this.ShrinkAmount, this.ShrinkAmount, 0);
+        this.Shrunk = true;
+      }
+      
+      //This will reset the variables and owners size after set amount of time
+      if(this.Timer >= this.ShrinkTime)
+      {
+        this.Owner.Transform.Scale = this.OriginalSize;
+        this.Timer = 0;
+        this.Shrunk = false;
+        this.Collided = false;
+      }
+    }
+  }
+
+  function OnCollisionStarted(event : CollisionEvent)
+  {
+    //Check if the owner touched the bullet
+    if(event.OtherObject.Collider.CollisionGroup.Name == "PlayerBullet")
+    {
+      this.Collided = true;
+    }
+  }
+}

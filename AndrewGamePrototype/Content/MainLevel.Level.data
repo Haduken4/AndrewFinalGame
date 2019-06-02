@@ -93,7 +93,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{-3.83764219, 1.13418686, 20}
+			var Translation = Real3{-28.5138931, -2.66785121, 20}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -146,7 +146,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 16.376255
+			var Size = 9.93270493
 		}
 		EditorCameraController 
 		{
@@ -155,7 +155,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{-3.83764219, 1.13418686, -3.63217481e-07}
+			var LookTarget = Real3{-28.5138931, -2.66785121, -3.63217481e-07}
 			var MoveSensitivity = 1
 		}
 	}
@@ -289,7 +289,7 @@ Level
 		var Name = "Player"
 		Transform 
 		{
-			var Translation = Real3{-25.0883293, -2.22451782, 1.90734863e-06}
+			var Translation = Real3{-24.3383293, -2.22451782, 1.90734863e-06}
 			var Scale = Real3{2, 2, 1}
 			var Rotation = Quaternion{0, -2.52854051e-07, 0, 1}
 		}
@@ -364,9 +364,9 @@ Level
 		}
 		AnimationHandler 
 		{
-			var DamagedSprite = "5c4f2359c1c35e34:DamagedFrogAni_2"
+			var DamagedSprite = "5ca8184f87755fc2:DamagedFrogAni_2_0"
 			var IdleSprite = "5c4f2305c86ed909:IdleFrogAni"
-			var AttackSprite = "5c4f24d838f71e3a:AttackFrogAni_2"
+			var AttackSprite = "5ca81e4f557558c3:AttackFrogAni_0"
 		}
 		CustomCollisionVariables 
 		{
@@ -523,7 +523,7 @@ Level
 		{
 			var DamagedSprite = "5cab3c9950dc5caf:RecoloredDamagedFrogAni_1"
 			var IdleSprite = "5cab3c556b13c5b6:RecoloredIdleFrogAni_1"
-			var AttackSprite = "5cab3c9950dc5caf:RecoloredDamagedFrogAni_1"
+			var AttackSprite = "5ca8188c8ee8d305:AttackFrogAniRecolored"
 		}
 		CloudEffect 
 		{
