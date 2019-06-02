@@ -277,7 +277,9 @@ Level
 				}
 				FadeOut 
 				{
-					var FadeSpeed = 0.00999999978
+					var FadeOutSpeed = 0.0149999997
+					var FadeInSpeed = 0.0299999993
+					var FadeIn = false
 				}
 			}
 		}

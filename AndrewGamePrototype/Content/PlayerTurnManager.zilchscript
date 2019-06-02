@@ -106,7 +106,7 @@ class PlayerTurnManager : ZilchComponent
         {
           var text = this.Space.FindObjectByName("GameCamera").FindChildByName("TransitionText");
           text.SpriteText.Text = "Player `this.CurrIndex + 1`'s Turn!";
-          text.SpriteText.VertexColor = Real4(text.SpriteText.VertexColor.XYZ, 1);
+          text.FadeOut.FadeIn = true;
         }
         
         this.HUDManager.UpdateWeapons();

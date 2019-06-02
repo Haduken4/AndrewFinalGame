@@ -1,7 +1,13 @@
 class FadeOut : ZilchComponent
 {
   [Property]
-  var FadeSpeed : Real = 0.05;
+  var FadeOutSpeed : Real = 0.05;
+  
+  [Property]
+  var FadeInSpeed : Real = 0.05;
+  
+  [Property]
+  var FadeIn : Boolean = false;
   
   function Initialize(init : CogInitializer)
   {
@@ -10,9 +16,19 @@ class FadeOut : ZilchComponent
 
   function OnLogicUpdate(event : UpdateEvent)
   {
-    if(this.Owner.SpriteText.VertexColor.W > 0)
+    if(this.Owner.SpriteText.VertexColor.W > 0 && !this.FadeIn)
     {
-      this.Owner.SpriteText.VertexColor -= Real4(0, 0, 0, this.FadeSpeed);
+      this.Owner.SpriteText.VertexColor -= Real4(0, 0, 0, this.FadeOutSpeed);
+    }
+    else if(this.Owner.SpriteText.VertexColor.W < 1 && this.FadeIn)
+    {
+      this.Owner.SpriteText.VertexColor += Real4(0, 0, 0, this.FadeInSpeed);
+      
+      if(this.Owner.SpriteText.VertexColor.W >= 1)
+      {
+        this.FadeIn = false;
+      }
+      
     }
   }
 }

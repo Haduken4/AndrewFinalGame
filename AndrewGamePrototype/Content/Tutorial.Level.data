@@ -796,6 +796,10 @@ Level
 				{
 					var Translation = Real3{-1.07836485, -3.17191601, 0}
 				}
+				Sprite 
+				{
+					var SpriteSource = "5c4f24d838f71e3a:AttackFrogAni_2"
+				}
 				Health [LocallyRemoved]
 				{
 				}
