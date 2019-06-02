@@ -36,6 +36,9 @@ class PlayerMovement : ZilchComponent
   //Used to track winning player
   var Index : Integer = 0;
   
+  //Does not deduct energy when true
+  var MoveCheat : Boolean = false;
+  
   //whether we active
   [Property]
   var Active : Boolean = false;
@@ -79,7 +82,10 @@ class PlayerMovement : ZilchComponent
       
       this.Owner.RigidBody.Velocity = dirToMouse * this.JumpSpeed;
       
-      this.CurrMoveResource -= this.MaxMoveResource / this.JumpsAllowed;
+      if(!this.MoveCheat)
+      {
+        this.CurrMoveResource -= this.MaxMoveResource / this.JumpsAllowed;
+      }
       
       this.Space.SoundSpace.PlayCue(this.SoundToPlay);
       
@@ -120,13 +126,19 @@ class PlayerMovement : ZilchComponent
         {
           this.Owner.Sprite.FlipX = true;
           vel.X = -1 * this.MoveSpeed * event.Dt;
-          this.CurrMoveResource -= event.Dt;
+          if(!this.MoveCheat)
+          {
+            this.CurrMoveResource -= event.Dt;
+          }
         }
         else if(Zero.Keyboard.KeyIsDown(Keys.D))
         {
           this.Owner.Sprite.FlipX = false;
           vel.X = 1 * this.MoveSpeed * event.Dt;
-          this.CurrMoveResource -= event.Dt;
+          if(!this.MoveCheat)
+          {
+            this.CurrMoveResource -= event.Dt;
+          }
         }
         else if(!this.LockMovement)
         {
@@ -177,6 +189,18 @@ class PlayerMovement : ZilchComponent
         Console.WriteLine("left");
         this.Owner.Sprite.FlipX = true;
       }
+    }
+    
+    //Cheat code for infinite movement
+    if(Zero.Keyboard.KeyIsDown(Keys.M) && Zero.Keyboard.KeyIsDown(Keys.O) && Zero.Keyboard.KeyIsDown(Keys.V) && Zero.Keyboard.KeyIsDown(Keys.E))
+    {
+      this.MoveCheat = true;
+    }
+    
+    //Resets cheat if it is active
+    if(Zero.Keyboard.KeyIsPressed(Keys.R))
+    {
+      this.MoveCheat = false;
     }
     
   }

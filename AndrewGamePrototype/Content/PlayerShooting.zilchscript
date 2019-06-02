@@ -77,6 +77,8 @@ class PlayerShooting : ZilchComponent
   
   var MaxAimDist : Real = 5.0;
   
+  var WepCheat : Boolean = false;
+  
   
   function Initialize(init : CogInitializer)
   {
@@ -244,6 +246,19 @@ class PlayerShooting : ZilchComponent
         this.BBool = true;
         this.Active = false;
         this.Timer = 2.9;
+      }
+      
+      //Weapon cheat (can only be used once per player)
+      if(Zero.Keyboard.KeyIsDown(Keys.W) && Zero.Keyboard.KeyIsDown(Keys.E) && Zero.Keyboard.KeyIsDown(Keys.P) && !this.WepCheat)
+      {
+        this.WepCheat = true;
+        var pos = this.Owner.Transform.WorldTranslation;
+        
+        this.Space.CreateAtPosition(Archetype.PlantWeaponPickup, pos);
+        this.Space.CreateAtPosition(Archetype.LobWeaponPickup, pos);
+        this.Space.CreateAtPosition(Archetype.ExplosionWeaponPickup, pos);
+        this.Space.CreateAtPosition(Archetype.ClusterWeaponPickup, pos);
+        
       }
       
     }
