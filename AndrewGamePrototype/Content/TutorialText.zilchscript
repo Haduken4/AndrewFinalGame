@@ -1,0 +1,29 @@
+class TutoriaText : ZilchComponent
+{
+  //The object disappear
+  [Property]
+  var Text : CogPath = null;
+  //The text to be revealed
+  [Property]
+  var NextText : CogPath = null;
+  
+  function Initialize(init : CogInitializer)
+  {
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
+  }
+
+  function OnCollisionStarted(event : CollisionEvent)
+  {
+    this.Owner.Destroy();
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    if(this.Owner.MarkedForDestruction && this.Text != null && this.NextText != null)
+    {
+      this.NextText.Transform.Translation += Real3(0,0,5);
+      this.Text.Cog.Destroy();
+    }
+  }
+}

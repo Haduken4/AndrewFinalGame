@@ -1,0 +1,20 @@
+[Version:1]
+ImageContent 
+{
+	SpriteSourceBuilder 
+	{
+		var Name = "MiddleMouse"
+		var ResourceId = 0x5caf415c3e9b3a1b
+		var FrameSizeX = 24
+		var FrameSizeY = 36
+		var FrameCount = 1
+		var FrameDelay = 0.0833333358
+		var OriginX = 12
+		var OriginY = 18
+		var PixelsPerUnit = 32
+		var Sampling = SpriteSampling.Nearest
+		var Looping = true
+		var Slices = Real4{0, 0, 0, 0}
+		var Fill = SpriteFill.Stretch
+	}
+}

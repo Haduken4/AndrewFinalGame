@@ -8,6 +8,14 @@ class BulletTimeout : ZilchComponent
   [Property]
   var MinimumSpeed : Real = 0.5;
   
+  //The minimun vertical distance the owner can be from the ground before it counts down
+  [Property]
+  var MinCastHeight : Real = 1;
+  
+  //The max vertical distance before the owner will start to destroy itself
+  [Property]
+  var MaxCastHeight : Real = 10;
+  
   var LastFrameVelocity : Real3 = Real3();
   
   var Timer : Real = 3;
@@ -25,24 +33,25 @@ class BulletTimeout : ZilchComponent
     var ray = Ray(this.Owner.Transform.WorldTranslation, Real3(0, -1, 0));
     var filter = CastFilter();
     filter.IgnoreCog = this.Owner;
-    var results = this.Space.PhysicsSpace.CastRay(ray, 10, filter);
+    //var results = this.Space.PhysicsSpace.CastRay(ray, 10, filter);
+    //This is used instead to get height
+    var results = this.Space.PhysicsSpace.CastRayFirst(ray, filter);
     
     var lastMag = CustomMath.Magnitude(this.LastFrameVelocity);
     var currMag = CustomMath.Magnitude(this.Owner.RigidBody.Velocity);
     
-    var isFastEnough = lastMag >= this.MinimumSpeed && currMag >= this.MinimumSpeed;
+    var isFastEnough = (lastMag >= this.MinimumSpeed) && (currMag >= this.MinimumSpeed);
     
     //If there is nothing below us, decrement the timer, otherwise reset it
-    if(results.IsEmpty || !isFastEnough)
+    if(!isFastEnough || results.Distance <= this.MinCastHeight || results.Distance >= this.MaxCastHeight)
     {
+      //Console.WriteLine("E");
       this.Timer -= event.Dt;
     }
     else
     {
       this.Timer = this.TimeoutDestroyTimer;
     }
-    
-    
     
     //If we are moving too slow or the timer is at 0, we have "timed out" and should be destroyed
     if(this.Timer <= 0)
@@ -51,7 +60,5 @@ class BulletTimeout : ZilchComponent
     }
     
     this.LastFrameVelocity = this.Owner.RigidBody.Velocity;
-    
-    
   }
 }

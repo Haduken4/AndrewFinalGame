@@ -93,7 +93,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{-27.5458431, 1.32688487, 20}
+			var Translation = Real3{-3.02368927, 15.0944624, 20}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -146,7 +146,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 16.3762703
+			var Size = 73.3933334
 		}
 		EditorCameraController 
 		{
@@ -155,7 +155,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{-27.5458431, 1.32688487, -3.63217481e-07}
+			var LookTarget = Real3{-3.02368927, 15.0944624, -3.63217481e-07}
 			var MoveSensitivity = 1
 		}
 	}
@@ -446,7 +446,7 @@ Level
 		var Name = "Player"
 		Transform 
 		{
-			var Translation = Real3{26.7277756, -3.25411129, 0}
+			var Translation = Real3{25.8247261, -3.25411129, 0}
 			var Scale = Real3{2, 2, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
@@ -943,28 +943,7 @@ Level
 			var TrackToPlay = "5c8f26591d8df061:Brogs_music"
 		}
 	}
-	Cog [ContextId:23]
-	{
-		var Name = "BouncySpawnZone"
-		Transform 
-		{
-			var Translation = Real3{0.130055428, 21.5488033, -1.90734863e-06}
-			var Scale = Real3{1, 1, 1}
-			var Rotation = Quaternion{0, 0, 0, 1}
-		}
-		BouncySpawn 
-		{
-			var MinSpawnX = -33
-			var MaxSpawnX = -15
-			var MaxSpawnY = 30
-			var MinSpawnY = 21
-			var MaxSpawnCount = 2
-			var MinDiameterSize = 3
-			var MaxDiameterSize = 6
-			var MaxTries = 100
-		}
-	}
-	Cog [InheritId:"5c85da8abb1395cf:WeaponSpawner"][ContextId:24]
+	Cog [InheritId:"5c85da8abb1395cf:WeaponSpawner"][ContextId:23]
 	{
 		Transform 
 		{
@@ -977,7 +956,7 @@ Level
 			var ChanceToSpawn = 60
 		}
 	}
-	Cog [InheritId:"5c85da8abb1395cf:WeaponSpawner"][ContextId:25]
+	Cog [InheritId:"5c85da8abb1395cf:WeaponSpawner"][ContextId:24]
 	{
 		Transform 
 		{
@@ -990,7 +969,7 @@ Level
 			var ChanceToSpawn = 60
 		}
 	}
-	Cog [InheritId:"5c85da8abb1395cf:WeaponSpawner"][ContextId:26]
+	Cog [InheritId:"5c85da8abb1395cf:WeaponSpawner"][ContextId:25]
 	{
 		Transform 
 		{
@@ -1003,7 +982,7 @@ Level
 			var ChanceToSpawn = 60
 		}
 	}
-	Cog [InheritId:"5c85da8abb1395cf:WeaponSpawner"][ContextId:27]
+	Cog [InheritId:"5c85da8abb1395cf:WeaponSpawner"][ContextId:26]
 	{
 		Transform 
 		{
@@ -1016,7 +995,7 @@ Level
 			var ChanceToSpawn = 60
 		}
 	}
-	Cog [InheritId:"5c85da8abb1395cf:WeaponSpawner"][ContextId:28]
+	Cog [InheritId:"5c85da8abb1395cf:WeaponSpawner"][ContextId:27]
 	{
 		Transform 
 		{
@@ -1029,7 +1008,7 @@ Level
 			var ChanceToSpawn = 60
 		}
 	}
-	Cog [InheritId:"5c85da8abb1395cf:WeaponSpawner"][ContextId:29]
+	Cog [InheritId:"5c85da8abb1395cf:WeaponSpawner"][ContextId:28]
 	{
 		Transform 
 		{
@@ -1042,7 +1021,7 @@ Level
 			var ChanceToSpawn = 60
 		}
 	}
-	Cog [ContextId:30]
+	Cog [ContextId:29]
 	{
 		var Name = "TileMap"
 		Transform 
@@ -1073,7 +1052,7 @@ Level
 			var MeshThickness = 1.20000005
 		}
 	}
-	Cog [ContextId:31]
+	Cog [ContextId:30]
 	{
 		var Name = "CloudTile_0"
 		Transform 
@@ -1102,7 +1081,7 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:32]
+	Cog [ContextId:31]
 	{
 		var Name = "CloudTile_0"
 		Transform 
@@ -1131,7 +1110,7 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:33]
+	Cog [ContextId:32]
 	{
 		var Name = "CloudTile_0"
 		Transform 
@@ -1160,7 +1139,7 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:34]
+	Cog [ContextId:33]
 	{
 		var Name = "CloudTile_0"
 		Transform 
@@ -1189,7 +1168,7 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:35]
+	Cog [ContextId:34]
 	{
 		var Name = "CloudTile_0"
 		Transform 
@@ -1218,7 +1197,7 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:36]
+	Cog [ContextId:35]
 	{
 		var Name = "CloudTile_0"
 		Transform 
@@ -1247,7 +1226,7 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:37]
+	Cog [ContextId:36]
 	{
 		var Name = "CloudTile_0"
 		Transform 
@@ -1276,7 +1255,7 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:38]
+	Cog [ContextId:37]
 	{
 		var Name = "CloudTile_0"
 		Transform 
@@ -1305,7 +1284,7 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:39]
+	Cog [ContextId:38]
 	{
 		var Name = "CloudTile_0"
 		Transform 
@@ -1334,7 +1313,7 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:40]
+	Cog [ContextId:39]
 	{
 		var Name = "CloudTile_0"
 		Transform 
@@ -1363,7 +1342,7 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:41]
+	Cog [ContextId:40]
 	{
 		var Name = "CloudTile_0"
 		Transform 
@@ -1392,7 +1371,7 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:42]
+	Cog [ContextId:41]
 	{
 		var Name = "CloudTile_0"
 		Transform 
@@ -1421,7 +1400,7 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:43]
+	Cog [ContextId:42]
 	{
 		var Name = "CloudTile_0"
 		Transform 
@@ -1450,7 +1429,7 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:44]
+	Cog [ContextId:43]
 	{
 		var Name = "CloudTile_0"
 		Transform 
@@ -1479,7 +1458,7 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:45]
+	Cog [ContextId:44]
 	{
 		var Name = "BottomCLoud"
 		Transform 
@@ -1508,11 +1487,24 @@ Level
 			var StartFrame = 0
 		}
 	}
+	Cog [InheritId:"5c0f9844b87295c0:BouncyTerrain"][ContextId:45]
+	{
+		Transform 
+		{
+			var Translation = Real3{-30.0621243, 10.8940659, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{5, 5, 1}
+		}
+		Sprite 
+		{
+			var SpriteSource = "5caa09b3e47e95f3:GiantFruit_0"
+		}
+	}
 	Cog [InheritId:"5c0f9844b87295c0:BouncyTerrain"][ContextId:46]
 	{
 		Transform 
 		{
-			var Translation = Real3{-30.0621243, 19.8940659, 0}
+			var Translation = Real3{40.6878738, 4.89406586, 0}
 			var Rotation = Quaternion{0, 0, 0, 1}
 			var Scale = Real3{5, 5, 1}
 		}
@@ -1525,7 +1517,7 @@ Level
 	{
 		Transform 
 		{
-			var Translation = Real3{43.6878738, 10.1440659, 0}
+			var Translation = Real3{-5.56212234, 19.8940659, 0}
 			var Rotation = Quaternion{0, 0, 0, 1}
 			var Scale = Real3{5, 5, 1}
 		}
@@ -1538,7 +1530,7 @@ Level
 	{
 		Transform 
 		{
-			var Translation = Real3{17.4378757, 15.8940659, 0}
+			var Translation = Real3{21.9378757, 12.1440659, 0}
 			var Rotation = Quaternion{0, 0, 0, 1}
 			var Scale = Real3{2.5, 2.5, 1}
 		}

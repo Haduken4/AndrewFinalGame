@@ -7,6 +7,7 @@ CollisionTable
 		"4e740859314e5515:DefaultGroup"
 		"5c32dddceaf965aa:Destructable"
 		"5c098e48dce0575f:CurrentPlayer"
+		"5caf61d07891df85:Zap"
 		"5c098e40de85b0fc:PlayerBullet"
 		"5c098e4fdd820ac1:Player"
 	}
@@ -139,6 +140,61 @@ CollisionTable
 			var TypeB = "5c098e4fdd820ac1:Player"
 			var SkipResolution = false
 			var SkipDetectingCollision = false
+			var StartEvent = false
+			var EndEvent = false
+			var PersistedEvent = false
+			var PreSolveEvent = false
+		}
+		Object
+		{
+			var TypeA = "5c098e4fdd820ac1:Player"
+			var TypeB = "5caf61d07891df85:Zap"
+			var SkipResolution = true
+			var SkipDetectingCollision = false
+			var StartEvent = false
+			var EndEvent = false
+			var PersistedEvent = false
+			var PreSolveEvent = false
+		}
+		Object
+		{
+			var TypeA = "5c306556261f6375:Pickup"
+			var TypeB = "5caf61d07891df85:Zap"
+			var SkipResolution = false
+			var SkipDetectingCollision = true
+			var StartEvent = false
+			var EndEvent = false
+			var PersistedEvent = false
+			var PreSolveEvent = false
+		}
+		Object
+		{
+			var TypeA = "5c32dddceaf965aa:Destructable"
+			var TypeB = "5caf61d07891df85:Zap"
+			var SkipResolution = false
+			var SkipDetectingCollision = true
+			var StartEvent = false
+			var EndEvent = false
+			var PersistedEvent = false
+			var PreSolveEvent = false
+		}
+		Object
+		{
+			var TypeA = "4e740859314e5515:DefaultGroup"
+			var TypeB = "5caf61d07891df85:Zap"
+			var SkipResolution = false
+			var SkipDetectingCollision = true
+			var StartEvent = false
+			var EndEvent = false
+			var PersistedEvent = false
+			var PreSolveEvent = false
+		}
+		Object
+		{
+			var TypeA = "5c098e40de85b0fc:PlayerBullet"
+			var TypeB = "5caf61d07891df85:Zap"
+			var SkipResolution = false
+			var SkipDetectingCollision = true
 			var StartEvent = false
 			var EndEvent = false
 			var PersistedEvent = false

@@ -104,7 +104,6 @@ class PlayerMovement : ZilchComponent
     if(this.Active && this.CurrMoveResource >= this.MaxMoveResource / this.JumpsAllowed)
     {
       this.MouseIsDown = true;
-      
     }
   }
 
@@ -160,8 +159,9 @@ class PlayerMovement : ZilchComponent
     
     this.Owner.RigidBody.Velocity = vel;
     
+    
     //If the mouse is down, draw a debug line
-    if(this.MouseIsDown && this.Active)
+    if(this.MouseIsDown && !this.Active)
     {
       var mousePos = Zero.Mouse.ClientPosition;
       

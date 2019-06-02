@@ -4,7 +4,7 @@ Cog
 	var Name = "ExplosionWeapon"
 	Transform 
 	{
-		var Translation = Real3{0, 0, 0}
+		var Translation = Real3{-21.4544983, -3.28144741, 0}
 		var Scale = Real3{0.75, 0.75, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
@@ -58,7 +58,7 @@ Cog
 		var Material = "4de020863e872da8:DefaultPhysicsMaterial"
 		var CollisionGroup = "5c306556261f6375:Pickup"
 		var Offset = Real3{0, -0.150000006, 0}
-		var Radius = 0.899999976
+		var Radius = 0.660161495
 	}
 	SpawnOnDeath 
 	{

@@ -64,4 +64,11 @@ Cog
 	FaceVelocityDirection 
 	{
 	}
+	BulletTimeout 
+	{
+		var TimeoutDestroyTimer = 1
+		var MinimumSpeed = 100
+		var MinCastHeight = 0.25
+		var MaxCastHeight = 10
+	}
 }
