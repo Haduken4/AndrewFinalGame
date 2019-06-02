@@ -1,0 +1,20 @@
+[Version:1]
+ImageContent 
+{
+	SpriteSourceBuilder 
+	{
+		var Name = "DeathSprite"
+		var ResourceId = 0x5ca8162e74a86a33
+		var FrameSizeX = 58
+		var FrameSizeY = 48
+		var FrameCount = 1
+		var FrameDelay = 0.0833333358
+		var OriginX = 29
+		var OriginY = 24
+		var PixelsPerUnit = 24
+		var Sampling = SpriteSampling.Nearest
+		var Looping = true
+		var Slices = Real4{0, 0, 0, 0}
+		var Fill = SpriteFill.Stretch
+	}
+}

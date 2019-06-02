@@ -1,20 +1,46 @@
 class PlayerWin : ZilchComponent
 {
+  //See if the owner is the winner sprite
+  [Property]
+  var WinnerBool : Boolean = true;
+  
   [Property]
   var Player1 : SpriteSource = null;
   
   [Property]
   var Player2 : SpriteSource = null;
   
+  //Sprite for when player 1 losses
+  [Property]
+  var Player1Loss : SpriteSource = null;
+  
+  //Sprite for when player 2 losses
+  [Property]
+  var Player2Loss : SpriteSource = null;
+  
   function Initialize(init : CogInitializer)
   {
-    if(this.GameSession.GameVars.WinningPlayer == 1)
+    if(this.WinnerBool)
     {
-      this.Owner.Sprite.SpriteSource = this.Player1;
+      if(this.GameSession.GameVars.WinningPlayer == 1)
+      {
+        this.Owner.Sprite.SpriteSource = this.Player1;
+      }
+      else
+      {
+        this.Owner.Sprite.SpriteSource = this.Player2;
+      }
     }
     else
     {
-      this.Owner.Sprite.SpriteSource = this.Player2;
+      if(this.GameSession.GameVars.WinningPlayer == 1)
+      {
+        this.Owner.Sprite.SpriteSource = this.Player2Loss;
+      }
+      else
+      {
+        this.Owner.Sprite.SpriteSource = this.Player1Loss;
+      }
     }
   }
 }
