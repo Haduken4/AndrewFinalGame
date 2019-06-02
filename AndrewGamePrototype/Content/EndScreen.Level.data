@@ -77,9 +77,9 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{2.47243953, -0.971629739, 20}
+			var Translation = Real3{0.903070331, 1.7801131, 19.9857483}
 			var Scale = Real3{1, 1, 1}
-			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
+			var Rotation = Quaternion{-0.0157064591, 0.0104702814, 0.000164479949, 0.999821842}
 		}
 		CameraViewport 
 		{
@@ -130,16 +130,16 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 26.9971561
+			var Size = 16.3746185
 		}
 		EditorCameraController 
 		{
 			var ControlMode = ControlMode.ZPlane
 			var Previous3DMode = ControlMode.Orbit
 			var LookDistance = 20
-			var VerticalAngle = 0
-			var HorizontalAngle = 0
-			var LookTarget = Real3{2.47243953, -0.971629739, 1.08073806e-07}
+			var VerticalAngle = 0.0314159282
+			var HorizontalAngle = -0.0209435783
+			var LookTarget = Real3{0.484436035, 1.15189791, 1.08073806e-07}
 			var MoveSensitivity = 1
 		}
 	}
@@ -407,7 +407,7 @@ Level
 		var Name = "Sprite"
 		Transform 
 		{
-			var Translation = Real3{0.0910055637, -2.15363026, 1}
+			var Translation = Real3{-0.158994436, -1.15363026, 1}
 			var Scale = Real3{2, 2, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
@@ -423,7 +423,7 @@ Level
 			var Material = "582c575af53d18c9:AlphaSprite"
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
-			var SpriteSource = "5586f579ca73ecc2:SquareBordered"
+			var SpriteSource = "5ca8162e74a86a33:DeathSprite"
 			var FlipX = false
 			var FlipY = false
 			var AnimationActive = true
@@ -432,8 +432,48 @@ Level
 		}
 		PlayerWin 
 		{
+			var WinnerBool = false
 			var Player1 = "5c4f24d838f71e3a:AttackFrogAni_2"
 			var Player2 = "5cab3c9950dc5caf:RecoloredDamagedFrogAni_1"
+			var Player1Loss = "5ca8162e74a86a33:DeathSprite"
+			var Player2Loss = "5ca8162e74a8db58:DeathSpriteRecolored"
+		}
+	}
+	Cog [ContextId:11]
+	{
+		var Name = "Sprite"
+		Transform 
+		{
+			var Translation = Real3{0.841005564, -0.153630257, 1.65682507}
+			var Scale = Real3{2, 2, 1}
+			var Rotation = Quaternion{0, 0, 0, 1}
+		}
+		Sprite 
+		{
+			var Visible = true
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var OverrideBoundingBox = false
+			var LocalAabbCenter = Real3{0, 0, 0}
+			var LocalAabbHalfExtents = Real3{1, 1, 1}
+			var GroupSortValue = 0
+			var Material = "582c575af53d18c9:AlphaSprite"
+			var VertexColor = Real4{1, 1, 1, 1}
+			var GeometryMode = SpriteGeometryMode.ZPlane
+			var SpriteSource = "5cab3c9950dc5caf:RecoloredDamagedFrogAni_1"
+			var FlipX = false
+			var FlipY = false
+			var AnimationActive = true
+			var AnimationSpeed = 1
+			var StartFrame = 0
+		}
+		PlayerWin 
+		{
+			var WinnerBool = true
+			var Player1 = "5c4f24d838f71e3a:AttackFrogAni_2"
+			var Player2 = "5cab3c9950dc5caf:RecoloredDamagedFrogAni_1"
+			var Player1Loss = "null"
+			var Player2Loss = "null"
 		}
 	}
 }
