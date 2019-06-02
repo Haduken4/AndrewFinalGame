@@ -93,7 +93,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{13.0702877, 3.39805388, 20}
+			var Translation = Real3{3.5022645, 5.57915783, 20}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -146,7 +146,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 24.4282036
+			var Size = 24.428215
 		}
 		EditorCameraController 
 		{
@@ -155,7 +155,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{13.0702877, 3.39805388, 9.42956149e-07}
+			var LookTarget = Real3{3.5022645, 5.57915783, 9.42956149e-07}
 			var MoveSensitivity = 1
 		}
 	}
@@ -449,7 +449,7 @@ Level
 		var Name = "SpriteText"
 		Transform 
 		{
-			var Translation = Real3{-5.92012167, -10.3438435, 2}
+			var Translation = Real3{-5.92012167, -7.93976355, 2}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
@@ -466,7 +466,7 @@ Level
 			var VertexColor = Real4{0.86500001, 0.86500001, 0.86500001, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "Touch the \"Main Menu\" button"
-			var Font = "57343753bb4eaaec:NotoSans-Regular"
+			var Font = "5c91cd6a5d324692:IMMORTAL"
 			var FontSize = 100
 			var PixelsPerUnit = 128
 			var TextAlign = TextAlign.Left
@@ -477,7 +477,7 @@ Level
 		var Name = "SpriteText"
 		Transform 
 		{
-			var Translation = Real3{-5.92012167, -11.4130974, 2}
+			var Translation = Real3{-5.92012167, -9.00901794, 2}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
@@ -494,7 +494,7 @@ Level
 			var VertexColor = Real4{0.86500001, 0.86500001, 0.86500001, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var Text = "to end the tutorial"
-			var Font = "57343753bb4eaaec:NotoSans-Regular"
+			var Font = "5c91cd6a5d324692:IMMORTAL"
 			var FontSize = 100
 			var PixelsPerUnit = 128
 			var TextAlign = TextAlign.Left
@@ -643,8 +643,8 @@ Level
 				var Name = "Text"
 				Transform 
 				{
-					var Translation = Real3{0, 0.0252435673, 0.100000001}
-					var Scale = Real3{1, 1, 1}
+					var Translation = Real3{-0.00456085196, 0.0113710398, 0.100000001}
+					var Scale = Real3{0.75, 1, 1}
 					var Rotation = Quaternion{0, 0, 0, 1}
 				}
 				SpriteText 
@@ -660,8 +660,8 @@ Level
 					var VertexColor = Real4{0, 0, 0, 1}
 					var GeometryMode = SpriteGeometryMode.ZPlane
 					var Text = "Main Menu"
-					var Font = "5c90792fce1fdeb5:BradleyGratis"
-					var FontSize = 100
+					var Font = "5c91cd6a5d324692:IMMORTAL"
+					var FontSize = 90
 					var PixelsPerUnit = 512
 					var TextAlign = TextAlign.Center
 				}
@@ -751,9 +751,35 @@ Level
 					var Translation = Real3{42.4391785, -7.51641846, 2.91259568e-07}
 				}
 			}
+			Cog [Id:0x5caacdeed0ddf76c][ContextId:21]
+			{
+				SpriteText 
+				{
+					var Font = "5c91cd6a5d324692:IMMORTAL"
+				}
+			}
+			Cog [Id:0x5caacdeed0ddf786][ContextId:22]
+			{
+				SpriteText 
+				{
+					var Font = "5c91cd6a5d324692:IMMORTAL"
+				}
+			}
+			Cog [Id:0x5caacdf5d016a96a][ContextId:23]
+			{
+				Transform 
+				{
+					var Translation = Real3{0.0215587616, 0.0725913048, 1.00000024}
+				}
+				SpriteText 
+				{
+					var Font = "5c91cd6a5d324692:IMMORTAL"
+					var FontSize = 28
+				}
+			}
 		}
 	}
-	Cog [InheritId:"5caacdc9dc552975:Shooting"][ContextId:21]
+	Cog [InheritId:"5caacdc9dc552975:Shooting"][ContextId:24]
 	{
 		Transform 
 		{
@@ -763,7 +789,7 @@ Level
 		}
 		Hierarchy [ChildOrderOverride]
 		{
-			Cog [Id:0x5caacdc3dd0ca052][ContextId:22]
+			Cog [Id:0x5caacdc3dd0ca052][ContextId:25]
 			{
 				var Name = "PlayerDisplay"
 				Transform 
@@ -786,19 +812,19 @@ Level
 				{
 				}
 			}
-			Cog [Id:0x5caacdc3dd0ca078][ContextId:23]
+			Cog [Id:0x5caacdc3dd0ca078][ContextId:26]
 			{
 				Transform 
 				{
 					var Translation = Real3{6.49908829, -1.56529617, 0}
 				}
 			}
-			Cog [Id:0x5c262bd1188168f8][LocallyAdded][ContextId:24]
+			Cog [Id:0x5c262bd1188168f8][LocallyAdded][ContextId:27]
 			{
 				var Name = "Key"
 				Transform 
 				{
-					var Translation = Real3{13.4174747, -2.77869129, 0}
+					var Translation = Real3{9.00160599, -2.77869129, 0}
 					var Scale = Real3{3, 2, 1}
 					var Rotation = Quaternion{0, 0, 0, 1}
 				}
@@ -822,92 +848,104 @@ Level
 					var StartFrame = 0
 				}
 			}
-			Cog [Id:0x5caacdc3dd0ca091][ContextId:25]
+			Cog [Id:0x5caacdc3dd0ca091][ContextId:28]
 			{
 				Transform 
 				{
 					var Translation = Real3{3.49908829, -1.56529617, 0}
 				}
 			}
-			Cog [Id:0x5caacdc3dd0ca0a9][ContextId:26]
+			Cog [Id:0x5caacdc3dd0ca0a9][ContextId:29]
 			{
 				Transform 
 				{
 					var Translation = Real3{-0.170717239, -2.30640411, 0}
 				}
 			}
-			Cog [Id:0x5caacdc3dd0ca0bf][ContextId:27]
+			Cog [Id:0x5caacdc3dd0ca0bf][ContextId:30]
 			{
 				Transform 
 				{
 					var Translation = Real3{6.52171516, -2.43095589, 0}
 				}
 			}
-			Cog [Id:0x5caacdc3dd0ca0d4][ContextId:28]
+			Cog [Id:0x5caacdc3dd0ca0d4][ContextId:31]
 			{
 				Transform 
 				{
 					var Translation = Real3{3.52171516, -2.43095589, 0}
 				}
 			}
-			Cog [Id:0x5caacdc3dd0ca0e9][ContextId:29]
+			Cog [Id:0x5caacdc3dd0ca0e9][ContextId:32]
 			{
 				Transform 
 				{
 					var Translation = Real3{5.02171516, -1.81326866, 0}
 				}
 			}
-			Cog [Id:0x5caacdc3dd0ca102][ContextId:30]
+			Cog [Id:0x5caacdc3dd0ca102][ContextId:33]
 			{
 				Transform 
 				{
 					var Translation = Real3{0.767719269, -1.21065187, 0}
 				}
 			}
-			Cog [Id:0x5caacdc3dd0ca119][ContextId:31]
+			Cog [Id:0x5caacdc3dd0ca119][ContextId:34]
 			{
 				Transform 
 				{
 					var Translation = Real3{3.53441048, -3.17660332, 0}
 				}
 			}
-			Cog [Id:0x5caacdc3dd0ca130][ContextId:32]
+			Cog [Id:0x5caacdc3dd0ca130][ContextId:35]
 			{
 				Transform 
 				{
 					var Translation = Real3{6.53441048, -3.17660332, 0}
 				}
 			}
-			Cog [Id:0x5caacdc3dd0ca146][ContextId:33]
+			Cog [Id:0x5caacdc3dd0ca146][ContextId:36]
 			{
 				Transform 
 				{
 					var Translation = Real3{5.03441048, -2.67660332, 0}
 				}
 			}
-			Cog [Id:0x5caacdc3dd0ca162][ContextId:34]
+			Cog [Id:0x5caacdc3dd0ca162][ContextId:37]
 			{
+				SpriteText 
+				{
+					var Font = "5c91cd6a5d324692:IMMORTAL"
+				}
 			}
-			Cog [Id:0x5caacdc3dd0ca17b][ContextId:35]
+			Cog [Id:0x5caacdc3dd0ca17b][ContextId:38]
 			{
 				Transform 
 				{
 					var Translation = Real3{5.00934029, -1.15913916, 1}
 				}
+				SpriteText 
+				{
+					var Font = "5c91cd6a5d324692:IMMORTAL"
+				}
 			}
-			Cog [Id:0x5caacdc3dd0ca192][ContextId:36]
+			Cog [Id:0x5caacdc3dd0ca192][ContextId:39]
 			{
 				Transform 
 				{
 					var Translation = Real3{6.47494698, -1.46231031, 1}
 				}
+				SpriteText 
+				{
+					var Font = "5c91cd6a5d324692:IMMORTAL"
+				}
 			}
-			Cog [Id:0x5c262bd118816fb2][LocallyAdded][ContextId:37]
+			Cog [Id:0x5c262bd118816fb2][LocallyAdded][ContextId:40]
 			{
 				var Name = "SpriteText"
 				Transform 
 				{
-					var Translation = Real3{13.4090376, -2.67570591, 1}
+					var Translation = Real3{8.99316883, -2.67570591, 1}
 					var Scale = Real3{12, 12, 1}
 					var Rotation = Quaternion{0, 0, 0, 1}
 				}
@@ -923,19 +961,19 @@ Level
 					var Material = "582c575af53d18c9:AlphaSprite"
 					var VertexColor = Real4{0.860000014, 0.860000014, 0.860000014, 1}
 					var GeometryMode = SpriteGeometryMode.ZPlane
-					var Text = "tab"
-					var Font = "5c90792fce1fdeb5:BradleyGratis"
+					var Text = "Tab"
+					var Font = "5c91cd6a5d324692:IMMORTAL"
 					var FontSize = 32
 					var PixelsPerUnit = 1080
 					var TextAlign = TextAlign.Center
 				}
 			}
-			Cog [Id:0x5c262bc01bb53cab][LocallyAdded][ContextId:38]
+			Cog [Id:0x5c262bc01bb53cab][LocallyAdded][ContextId:41]
 			{
 				var Name = "SpriteText"
 				Transform 
 				{
-					var Translation = Real3{15.2761879, -2.84079313, 1}
+					var Translation = Real3{11.4576893, -2.84079313, 1}
 					var Scale = Real3{12, 12, 1}
 					var Rotation = Quaternion{0, 0, 0, 1}
 				}
@@ -952,34 +990,38 @@ Level
 					var VertexColor = Real4{0.860000014, 0.860000014, 0.860000014, 1}
 					var GeometryMode = SpriteGeometryMode.ZPlane
 					var Text = "Next Phase"
-					var Font = "5c90792fce1fdeb5:BradleyGratis"
-					var FontSize = 48
+					var Font = "5c91cd6a5d324692:IMMORTAL"
+					var FontSize = 56
 					var PixelsPerUnit = 1080
 					var TextAlign = TextAlign.Center
 				}
 			}
-			Cog [Id:0x5caacdc3dd0ca1ac][ContextId:39]
+			Cog [Id:0x5caacdc3dd0ca1ac][ContextId:42]
 			{
 				Transform 
 				{
 					var Translation = Real3{3.49405479, -1.4435358, 1}
 				}
+				SpriteText 
+				{
+					var Font = "5c91cd6a5d324692:IMMORTAL"
+				}
 			}
-			Cog [Id:0x5caacdc3dd0ca1c3][ContextId:40]
+			Cog [Id:0x5caacdc3dd0ca1c3][ContextId:43]
 			{
 				Transform 
 				{
 					var Translation = Real3{3.53109932, -3.17909431, 0.00499916077}
 				}
 			}
-			Cog [Id:0x5caacdc3dd0ca1da][ContextId:41]
+			Cog [Id:0x5caacdc3dd0ca1da][ContextId:44]
 			{
 				Transform 
 				{
 					var Translation = Real3{5.0168705, -2.67351913, 0.00499916077}
 				}
 			}
-			Cog [Id:0x5caacdc3dd0ca1f3][ContextId:42]
+			Cog [Id:0x5caacdc3dd0ca1f3][ContextId:45]
 			{
 				Transform 
 				{
