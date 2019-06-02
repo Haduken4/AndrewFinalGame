@@ -93,7 +93,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{-36.9092712, 3.74743366, 22.928051}
+			var Translation = Real3{12.9170103, -0.034274295, 22.928051}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -146,7 +146,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 40.2760963
+			var Size = 22.1041546
 		}
 		EditorCameraController 
 		{
@@ -155,7 +155,7 @@ Level
 			var LookDistance = 24.428051
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{-36.9092712, 3.74743366, -1.5}
+			var LookTarget = Real3{12.9170103, -0.034274295, -1.5}
 			var MoveSensitivity = 1
 		}
 	}
@@ -283,7 +283,7 @@ Level
 		var Name = "Player"
 		Transform 
 		{
-			var Translation = Real3{-55.0597458, -2.22451782, 1.90734863e-06}
+			var Translation = Real3{11.9402542, -2.22451782, 0}
 			var Scale = Real3{2, 2, 1}
 			var Rotation = Quaternion{0, -2.52854051e-07, 0, 1}
 		}
@@ -440,7 +440,7 @@ Level
 	{
 		Transform 
 		{
-			var Translation = Real3{-23.7044983, -3.28144741, 0}
+			var Translation = Real3{-30.4544983, -3.28144741, 0}
 			var Rotation = Quaternion{0, 0, 0, 1}
 			var Scale = Real3{0.75, 0.75, 1}
 		}
@@ -506,7 +506,7 @@ Level
 		var Name = "Leaf"
 		Transform 
 		{
-			var Translation = Real3{-13.9304981, -0.541913509, 0}
+			var Translation = Real3{-21.6804981, -0.541913509, 0}
 			var Scale = Real3{2, 2, 1}
 			var Rotation = Quaternion{0, 0, 0.176486343, -0.984303176}
 		}
@@ -548,9 +548,9 @@ Level
 		var Name = "Leaf"
 		Transform 
 		{
-			var Translation = Real3{10.0695, -1.95612049, 0}
-			var Scale = Real3{1.65701163, 1.57154298, 1}
-			var Rotation = Quaternion{0, 0, -0.339309931, -0.940674663}
+			var Translation = Real3{-39.1804962, -3.50909758, 0}
+			var Scale = Real3{0.349999994, 0.349999994, 1}
+			var Rotation = Quaternion{0, 0, 0.176486343, -0.984303176}
 		}
 		Sprite 
 		{
@@ -590,9 +590,9 @@ Level
 		var Name = "Leaf"
 		Transform 
 		{
-			var Translation = Real3{27.5695, 9.79387856, 0}
+			var Translation = Real3{7.06949997, -1.95612049, 0}
 			var Scale = Real3{1.65701163, 1.57154298, 1}
-			var Rotation = Quaternion{0, 0, 0.308911771, -0.951090753}
+			var Rotation = Quaternion{0, 0, -0.339309931, -0.940674663}
 		}
 		Sprite 
 		{
@@ -791,6 +791,65 @@ Level
 	}
 	Cog [ContextId:19]
 	{
+		var Name = "ExtraJumpText"
+		Transform 
+		{
+			var Translation = Real3{34.6685791, -1.95926046, -2}
+			var Scale = Real3{30, 30, 1}
+			var Rotation = Quaternion{0, 0, 0, 1}
+		}
+		SpriteText 
+		{
+			var Visible = true
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var OverrideBoundingBox = false
+			var LocalAabbCenter = Real3{0, 0, 0}
+			var LocalAabbHalfExtents = Real3{1, 1, 1}
+			var GroupSortValue = 0
+			var Material = "582c575af53d18c9:AlphaSprite"
+			var VertexColor = Real4{0.866666734, 0.866666734, 0.866666734, 1}
+			var GeometryMode = SpriteGeometryMode.ZPlane
+			var Text = "If You Jump In The Air"
+			var Font = "5c91cd6a5d324692:IMMORTAL"
+			var FontSize = 32
+			var PixelsPerUnit = 1080
+			var TextAlign = TextAlign.Left
+		}
+		Hierarchy 
+		{
+			Cog [Id:0x5ca5ac2973812e34][ContextId:20]
+			{
+				var Name = "SpriteText"
+				Transform 
+				{
+					var Translation = Real3{0, -0.0500000045, 0}
+					var Scale = Real3{1, 1, 1}
+					var Rotation = Quaternion{0, 0, 0, 1}
+				}
+				SpriteText 
+				{
+					var Visible = true
+					var ViewCulling = true
+					var VisibilityEvents = true
+					var OverrideBoundingBox = false
+					var LocalAabbCenter = Real3{0, 0, 0}
+					var LocalAabbHalfExtents = Real3{1, 1, 1}
+					var GroupSortValue = 0
+					var Material = "582c575af53d18c9:AlphaSprite"
+					var VertexColor = Real4{0.866666734, 0.866666734, 0.866666734, 1}
+					var GeometryMode = SpriteGeometryMode.ZPlane
+					var Text = "You Can Jump Again"
+					var Font = "5c91cd6a5d324692:IMMORTAL"
+					var FontSize = 32
+					var PixelsPerUnit = 1080
+					var TextAlign = TextAlign.Left
+				}
+			}
+		}
+	}
+	Cog [ContextId:21]
+	{
 		var Name = "Jumping"
 		Transform 
 		{
@@ -819,7 +878,7 @@ Level
 		}
 		Hierarchy 
 		{
-			Cog [Id:0x5caf428b9ea256a2][ContextId:20]
+			Cog [Id:0x5caf428b9ea256a2][ContextId:22]
 			{
 				var Name = "SpriteText"
 				Transform 
@@ -847,7 +906,7 @@ Level
 					var TextAlign = TextAlign.Center
 				}
 			}
-			Cog [Id:0x5caf42e19bb5a53c][ContextId:21]
+			Cog [Id:0x5caf42e19bb5a53c][ContextId:23]
 			{
 				var Name = "SpriteText"
 				Transform 
@@ -875,7 +934,7 @@ Level
 					var TextAlign = TextAlign.Center
 				}
 			}
-			Cog [Id:0x5caf42d58599a651][ContextId:22]
+			Cog [Id:0x5caf42d58599a651][ContextId:24]
 			{
 				var Name = "SpriteText"
 				Transform 
@@ -903,7 +962,7 @@ Level
 					var TextAlign = TextAlign.Left
 				}
 			}
-			Cog [Id:0x5caf434b74fbebd5][ContextId:23]
+			Cog [Id:0x5caf434b74fbebd5][ContextId:25]
 			{
 				var Name = "Arrow"
 				Transform 
@@ -932,7 +991,7 @@ Level
 					var StartFrame = 0
 				}
 			}
-			Cog [Id:0x5caf434b74fbebfe][ContextId:24]
+			Cog [Id:0x5caf434b74fbebfe][ContextId:26]
 			{
 				var Name = "TargetCursorUp_Ani"
 				Transform 
@@ -961,7 +1020,7 @@ Level
 					var StartFrame = 0
 				}
 			}
-			Cog [Id:0x5caf4e2b2a8865b1][ContextId:25]
+			Cog [Id:0x5caf4e2b2a8865b1][ContextId:27]
 			{
 				var Name = "SpriteText"
 				Transform 
@@ -989,7 +1048,7 @@ Level
 					var TextAlign = TextAlign.Left
 				}
 			}
-			Cog [Id:0x5caf4e2b2a8865fa][ContextId:26]
+			Cog [Id:0x5caf4e2b2a8865fa][ContextId:28]
 			{
 				var Name = "SpriteText"
 				Transform 
@@ -1017,7 +1076,7 @@ Level
 					var TextAlign = TextAlign.Left
 				}
 			}
-			Cog [Id:0x5caf4e2e2b2e0a42][ContextId:27]
+			Cog [Id:0x5caf4e2e2b2e0a42][ContextId:29]
 			{
 				var Name = "MiddleMouse"
 				Transform 
@@ -1049,7 +1108,7 @@ Level
 				{
 				}
 			}
-			Cog [Id:0x5caf434b74fbec19][ContextId:28]
+			Cog [Id:0x5caf434b74fbec19][ContextId:30]
 			{
 				var Name = "PlayerDisplay"
 				Transform 
@@ -1083,46 +1142,44 @@ Level
 			}
 		}
 	}
-	Cog [InheritId:"5caacd8ed512b01f:Movement"][ContextId:29]
+	Cog [ContextId:31]
 	{
-		var Name = "MovementScroll"
+		var Name = "WeaponScroll"
 		Transform 
 		{
-			var Translation = Real3{-55.2660561, -7.05000019, 2}
-			var Rotation = Quaternion{0, 0, 0, 1}
+			var Translation = Real3{-30.656929, -6.95872927, -2}
 			var Scale = Real3{2, 2, 1}
+			var Rotation = Quaternion{0, 0, 0, 1}
 		}
-		Hierarchy [ChildOrderOverride]
+		Sprite 
 		{
-			Cog [Id:0x5caacdeed0ddf6e6][ContextId:30]
+			var Visible = true
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var OverrideBoundingBox = false
+			var LocalAabbCenter = Real3{0, 0, 0}
+			var LocalAabbHalfExtents = Real3{1, 1, 1}
+			var GroupSortValue = 0
+			var Material = "582c575af53d18c9:AlphaSprite"
+			var VertexColor = Real4{1, 1, 1, 1}
+			var GeometryMode = SpriteGeometryMode.ZPlane
+			var SpriteSource = "5cb6efa771199fa4:HUDPlayerDisplay"
+			var FlipX = false
+			var FlipY = false
+			var AnimationActive = true
+			var AnimationSpeed = 1
+			var StartFrame = 0
+		}
+		Hierarchy 
+		{
+			Cog [Id:0x5ca5a869a5d89ff8][ContextId:32]
 			{
+				var Name = "SmallFruit_0"
 				Transform 
 				{
-					var Translation = Real3{1.00967789, -1.25, 2.91259568e-07}
-				}
-			}
-			Cog [Id:0x5caacdeed0ddf719][ContextId:31]
-			{
-				Transform 
-				{
-					var Translation = Real3{-0.990322113, -1.25, 2.91259568e-07}
-				}
-			}
-			Cog [Id:0x5caacdeed0ddf734][ContextId:32]
-			{
-				Transform 
-				{
-					var Translation = Real3{1.81389046, -1.37304401, 2.91259568e-07}
-				}
-			}
-			Cog [Id:0x5caf6aa0dc358d2b][LocallyAdded][ContextId:33]
-			{
-				var Name = "RightArrow"
-				Transform 
-				{
-					var Translation = Real3{2.81389046, 2.87695599, 2.91259568e-07}
-					var Scale = Real3{2, 2, 1}
-					var Rotation = Quaternion{0, 0, -0.707106829, 0.707106769}
+					var Translation = Real3{-1.96928596, -1.4168582, -1.99500084}
+					var Scale = Real3{0.375, 0.375, 1}
+					var Rotation = Quaternion{0, 0, 0, 1}
 				}
 				Sprite 
 				{
@@ -1136,92 +1193,109 @@ Level
 					var Material = "582c575af53d18c9:AlphaSprite"
 					var VertexColor = Real4{1, 1, 1, 1}
 					var GeometryMode = SpriteGeometryMode.ZPlane
-					var SpriteSource = "5caae1f4a470725d:Arrow"
+					var SpriteSource = "5cab9da0c0305785:SmallFruit_0"
 					var FlipX = false
 					var FlipY = false
 					var AnimationActive = true
 					var AnimationSpeed = 1
 					var StartFrame = 0
 				}
-			}
-			Cog [Id:0x5caacdeed0ddf74e][ContextId:34]
-			{
-				Transform 
+				Hierarchy 
 				{
-					var Translation = Real3{-1.90500641, -1.37304401, 2.91259568e-07}
+					Cog [Id:0x5ca5c6b2b4f9ffee][ContextId:33]
+					{
+						var Name = "Arrow"
+						Transform 
+						{
+							var Translation = Real3{0.00700378418, -2.06570339, 1.99500072}
+							var Scale = Real3{1.66666651, 1.66666675, 0.99999994}
+							var Rotation = Quaternion{0, 0, 0, 1}
+						}
+						Sprite 
+						{
+							var Visible = true
+							var ViewCulling = true
+							var VisibilityEvents = true
+							var OverrideBoundingBox = false
+							var LocalAabbCenter = Real3{0, 0, 0}
+							var LocalAabbHalfExtents = Real3{1, 1, 1}
+							var GroupSortValue = 0
+							var Material = "582c575af53d18c9:AlphaSprite"
+							var VertexColor = Real4{1, 1, 1, 1}
+							var GeometryMode = SpriteGeometryMode.ZPlane
+							var SpriteSource = "5caae1f4a470725d:Arrow"
+							var FlipX = false
+							var FlipY = false
+							var AnimationActive = true
+							var AnimationSpeed = 1
+							var StartFrame = 0
+						}
+					}
+					Cog [Id:0x5ca5c6b2b4fe0068][ContextId:34]
+					{
+						var Name = "SpriteText"
+						Transform 
+						{
+							var Translation = Real3{-0.0136184692, -4.39215088, 2.9950006}
+							var Scale = Real3{25, 25, 0.99999994}
+							var Rotation = Quaternion{0, 0, 0, 1}
+						}
+						SpriteText 
+						{
+							var Visible = true
+							var ViewCulling = true
+							var VisibilityEvents = true
+							var OverrideBoundingBox = false
+							var LocalAabbCenter = Real3{0, 0, 0}
+							var LocalAabbHalfExtents = Real3{1, 1, 1}
+							var GroupSortValue = 0
+							var Material = "582c575af53d18c9:AlphaSprite"
+							var VertexColor = Real4{1, 1, 1, 1}
+							var GeometryMode = SpriteGeometryMode.ZPlane
+							var Text = "Pickup"
+							var Font = "5c91cd6a5d324692:IMMORTAL"
+							var FontSize = 32
+							var PixelsPerUnit = 1080
+							var TextAlign = TextAlign.Center
+						}
+					}
+					Cog [Id:0x5ca5c6b2b4fe00c0][ContextId:35]
+					{
+						var Name = "SpriteText"
+						Transform 
+						{
+							var Translation = Real3{-0.0136184692, -3.39214993, 2.9950006}
+							var Scale = Real3{25, 25, 0.99999994}
+							var Rotation = Quaternion{0, 0, 0, 1}
+						}
+						SpriteText 
+						{
+							var Visible = true
+							var ViewCulling = true
+							var VisibilityEvents = true
+							var OverrideBoundingBox = false
+							var LocalAabbCenter = Real3{0, 0, 0}
+							var LocalAabbHalfExtents = Real3{1, 1, 1}
+							var GroupSortValue = 0
+							var Material = "582c575af53d18c9:AlphaSprite"
+							var VertexColor = Real4{1, 1, 1, 1}
+							var GeometryMode = SpriteGeometryMode.ZPlane
+							var Text = "Weapon"
+							var Font = "5c91cd6a5d324692:IMMORTAL"
+							var FontSize = 32
+							var PixelsPerUnit = 1080
+							var TextAlign = TextAlign.Center
+						}
+					}
 				}
 			}
-			Cog [Id:0x5caacdeed0ddf76c][ContextId:35]
-			{
-				Transform 
-				{
-					var Translation = Real3{0.985534668, -1.14701414, 1.00000024}
-				}
-				SpriteText 
-				{
-					var Font = "5c91cd6a5d324692:IMMORTAL"
-				}
-			}
-			Cog [Id:0x5caacdeed0ddf786][ContextId:36]
-			{
-				Transform 
-				{
-					var Translation = Real3{-0.995355606, -1.12823963, 1.00000024}
-				}
-				SpriteText 
-				{
-					var Font = "5c91cd6a5d324692:IMMORTAL"
-				}
-			}
-			Cog [Id:0x5caacdf5d016a96a][ContextId:37]
-			{
-				Transform 
-				{
-					var Translation = Real3{0.0215587616, 0.0725913048, 1.00000024}
-				}
-				SpriteText 
-				{
-					var VertexColor = Real4{0.295000017, 0.295000017, 0.295000017, 1}
-					var Font = "5c91cd6a5d324692:IMMORTAL"
-					var FontSize = 28
-				}
-			}
-			Cog [Id:0x5caacdeed0ddf673][LocallyRemoved]
-			{
-			}
-			Cog [Id:0x5caacdeed0ddf6c9][LocallyRemoved]
-			{
-			}
-			Cog [Id:0x5caacdeed0ddf701][LocallyRemoved]
-			{
-			}
-			Cog [Id:0x5caacdeed0ddf6a5][LocallyRemoved]
-			{
-			}
-		}
-	}
-	Cog [InheritId:"5caacdc9dc552975:Shooting"][ContextId:38]
-	{
-		var Name = "Shooting"
-		Transform 
-		{
-			var Translation = Real3{-17.782135, -7.05000019, -2}
-			var Rotation = Quaternion{0, 0, 0, 1}
-			var Scale = Real3{2, 2, 1}
-		}
-		Sprite 
-		{
-			var VertexColor = Real4{1, 1, 1, 1}
-		}
-		Hierarchy [ChildOrderOverride]
-		{
-			Cog [Id:0x5ca5c6cfafdb491e][LocallyAdded][ContextId:39]
+			Cog [Id:0x5ca5a83cb7c7ff98][ContextId:36]
 			{
 				var Name = "SpriteText"
 				Transform 
 				{
-					var Translation = Real3{0.00640869141, 0.0453703403, 1}
-					var Scale = Real3{20, 20, 1}
+					var Translation = Real3{-0.05676651, -0.0200960636, 1}
+					var Scale = Real3{18.75, 18.7499981, 1}
 					var Rotation = Quaternion{0, 0, 0, 1}
 				}
 				SpriteText 
@@ -1234,82 +1308,49 @@ Level
 					var LocalAabbHalfExtents = Real3{1, 1, 1}
 					var GroupSortValue = 0
 					var Material = "582c575af53d18c9:AlphaSprite"
-					var VertexColor = Real4{0.295000017, 0.295000017, 0.295000017, 1}
+					var VertexColor = Real4{0.337254912, 0.329411775, 0.325490206, 1}
 					var GeometryMode = SpriteGeometryMode.ZPlane
-					var Text = "Shooting"
+					var Text = "Weapons"
 					var Font = "5c91cd6a5d324692:IMMORTAL"
 					var FontSize = 32
 					var PixelsPerUnit = 1080
 					var TextAlign = TextAlign.Center
 				}
-				Hierarchy 
-				{
-				}
 			}
-			Cog [Id:0x5ca5c6c3adbd4515][LocallyAdded][ContextId:40]
-			{
-				var Name = "Arrow"
-				Transform 
-				{
-					var Translation = Real3{0.455802917, -1.81650066, 0}
-					var Scale = Real3{1.24999976, 1.45087361, 1}
-					var Rotation = Quaternion{0, 0, -0.382683456, 0.923879504}
-				}
-				Sprite 
-				{
-					var Visible = true
-					var ViewCulling = true
-					var VisibilityEvents = true
-					var OverrideBoundingBox = false
-					var LocalAabbCenter = Real3{0, 0, 0}
-					var LocalAabbHalfExtents = Real3{1, 1, 1}
-					var GroupSortValue = 0
-					var Material = "582c575af53d18c9:AlphaSprite"
-					var VertexColor = Real4{1, 1, 1, 1}
-					var GeometryMode = SpriteGeometryMode.ZPlane
-					var SpriteSource = "5caae1f4a470725d:Arrow"
-					var FlipX = false
-					var FlipY = false
-					var AnimationActive = true
-					var AnimationSpeed = 1
-					var StartFrame = 0
-				}
-			}
-			Cog [Id:0x5ca5c6c3adbd445a][LocallyAdded][ContextId:41]
-			{
-				var Name = "TargetCursorUp_Ani"
-				Transform 
-				{
-					var Translation = Real3{1.04232502, -1.13165569, 0}
-					var Scale = Real3{0.624999881, 0.624999881, 1}
-					var Rotation = Quaternion{0, 0, 0, 1}
-				}
-				Sprite 
-				{
-					var Visible = true
-					var ViewCulling = true
-					var VisibilityEvents = true
-					var OverrideBoundingBox = false
-					var LocalAabbCenter = Real3{0, 0, 0}
-					var LocalAabbHalfExtents = Real3{1, 1, 1}
-					var GroupSortValue = 0
-					var Material = "582c575af53d18c9:AlphaSprite"
-					var VertexColor = Real4{1, 1, 1, 1}
-					var GeometryMode = SpriteGeometryMode.ZPlane
-					var SpriteSource = "5caacc61057e481f:MouseLeftClick"
-					var FlipX = false
-					var FlipY = false
-					var AnimationActive = true
-					var AnimationSpeed = 1
-					var StartFrame = 0
-				}
-			}
-			Cog [Id:0x5ca5c6c3adbd438c][LocallyAdded][ContextId:42]
+			Cog [Id:0x5ca5a83bb77d59e4][ContextId:37]
 			{
 				var Name = "SpriteText"
 				Transform 
 				{
-					var Translation = Real3{-2.36916351, -0.724461079, 1}
+					var Translation = Real3{0.12821579, -0.660113096, 1}
+					var Scale = Real3{10, 10, 1}
+					var Rotation = Quaternion{0, 0, 0, 1}
+				}
+				SpriteText 
+				{
+					var Visible = true
+					var ViewCulling = true
+					var VisibilityEvents = true
+					var OverrideBoundingBox = false
+					var LocalAabbCenter = Real3{0, 0, 0}
+					var LocalAabbHalfExtents = Real3{1, 1, 1}
+					var GroupSortValue = 0
+					var Material = "582c575af53d18c9:AlphaSprite"
+					var VertexColor = Real4{0.870000005, 0.852599978, 0.852599978, 1}
+					var GeometryMode = SpriteGeometryMode.ZPlane
+					var Text = "Press Q Or E To Swap Weapons"
+					var Font = "5c91cd6a5d324692:IMMORTAL"
+					var FontSize = 32
+					var PixelsPerUnit = 1080
+					var TextAlign = TextAlign.Center
+				}
+			}
+			Cog [Id:0x5ca5a86ea71b4247][ContextId:38]
+			{
+				var Name = "SpriteText"
+				Transform 
+				{
+					var Translation = Real3{0.06823349, -1.14022708, 1}
 					var Scale = Real3{12.5, 12.499999, 1}
 					var Rotation = Quaternion{0, 0, 0, 1}
 				}
@@ -1333,7 +1374,7 @@ Level
 				}
 				Hierarchy 
 				{
-					Cog [Id:0x5ca5c6279831a05f][ContextId:43]
+					Cog [Id:0x5ca5c6279831a05f][ContextId:39]
 					{
 						var Name = "Key"
 						Transform 
@@ -1362,7 +1403,7 @@ Level
 							var StartFrame = 0
 						}
 					}
-					Cog [Id:0x5ca5c6279831a0bd][ContextId:44]
+					Cog [Id:0x5ca5c6279831a0bd][ContextId:40]
 					{
 						var Name = "Key"
 						Transform 
@@ -1391,7 +1432,7 @@ Level
 							var StartFrame = 0
 						}
 					}
-					Cog [Id:0x5ca5c6279831a110][ContextId:45]
+					Cog [Id:0x5ca5c6279831a110][ContextId:41]
 					{
 						var Name = "Arrow"
 						Transform 
@@ -1420,7 +1461,7 @@ Level
 							var StartFrame = 0
 						}
 					}
-					Cog [Id:0x5ca5c6279831a15c][ContextId:46]
+					Cog [Id:0x5ca5c6279831a15c][ContextId:42]
 					{
 						var Name = "Arrow"
 						Transform 
@@ -1449,7 +1490,7 @@ Level
 							var StartFrame = 0
 						}
 					}
-					Cog [Id:0x5ca5c6279831a1ac][ContextId:47]
+					Cog [Id:0x5ca5c6279831a1ac][ContextId:43]
 					{
 						var Name = "HUDWeaponDisplay"
 						Transform 
@@ -1478,7 +1519,7 @@ Level
 							var StartFrame = 0
 						}
 					}
-					Cog [Id:0x5ca5c6279831a1f5][ContextId:48]
+					Cog [Id:0x5ca5c6279831a1f5][ContextId:44]
 					{
 						var Name = "HUDWeaponDisplay"
 						Transform 
@@ -1507,7 +1548,7 @@ Level
 							var StartFrame = 0
 						}
 					}
-					Cog [Id:0x5ca5c6279831a241][ContextId:49]
+					Cog [Id:0x5ca5c6279831a241][ContextId:45]
 					{
 						var Name = "HUDWeaponDisplay"
 						Transform 
@@ -1536,7 +1577,7 @@ Level
 							var StartFrame = 0
 						}
 					}
-					Cog [Id:0x5ca5c6279831a298][ContextId:50]
+					Cog [Id:0x5ca5c6279831a298][ContextId:46]
 					{
 						var Name = "SpriteText"
 						Transform 
@@ -1564,63 +1605,7 @@ Level
 							var TextAlign = TextAlign.Center
 						}
 					}
-					Cog [Id:0x5ca5c6279831a2ed][ContextId:51]
-					{
-						var Name = "SpriteText"
-						Transform 
-						{
-							var Translation = Real3{-0.0752013922, -0.0699999928, 0}
-							var Scale = Real3{1, 1, 1}
-							var Rotation = Quaternion{0, 0, 0, 1}
-						}
-						SpriteText 
-						{
-							var Visible = true
-							var ViewCulling = true
-							var VisibilityEvents = true
-							var OverrideBoundingBox = false
-							var LocalAabbCenter = Real3{0, 0, 0}
-							var LocalAabbHalfExtents = Real3{1, 1, 1}
-							var GroupSortValue = 0
-							var Material = "582c575af53d18c9:AlphaSprite"
-							var VertexColor = Real4{0.870000005, 0.852599978, 0.852599978, 1}
-							var GeometryMode = SpriteGeometryMode.ZPlane
-							var Text = "Swap"
-							var Font = "5c91cd6a5d324692:IMMORTAL"
-							var FontSize = 32
-							var PixelsPerUnit = 1080
-							var TextAlign = TextAlign.Center
-						}
-					}
-					Cog [Id:0x5ca5c6279831a33f][ContextId:52]
-					{
-						var Name = "SpriteText"
-						Transform 
-						{
-							var Translation = Real3{0.074798584, -0.0724894106, 0}
-							var Scale = Real3{1, 1, 1}
-							var Rotation = Quaternion{0, 0, 0, 1}
-						}
-						SpriteText 
-						{
-							var Visible = true
-							var ViewCulling = true
-							var VisibilityEvents = true
-							var OverrideBoundingBox = false
-							var LocalAabbCenter = Real3{0, 0, 0}
-							var LocalAabbHalfExtents = Real3{1, 1, 1}
-							var GroupSortValue = 0
-							var Material = "582c575af53d18c9:AlphaSprite"
-							var VertexColor = Real4{0.870000005, 0.852599978, 0.852599978, 1}
-							var GeometryMode = SpriteGeometryMode.ZPlane
-							var Text = "Swap"
-							var Font = "5c91cd6a5d324692:IMMORTAL"
-							var FontSize = 32
-							var PixelsPerUnit = 1080
-							var TextAlign = TextAlign.Center
-						}
-					}
-					Cog [Id:0x5ca5c6279831a38f][ContextId:53]
+					Cog [Id:0x5ca5c6279831a38f][ContextId:47]
 					{
 						var Name = "SpriteText"
 						Transform 
@@ -1648,7 +1633,7 @@ Level
 							var TextAlign = TextAlign.Center
 						}
 					}
-					Cog [Id:0x5ca5c6279831a3df][ContextId:54]
+					Cog [Id:0x5ca5c6279831a3df][ContextId:48]
 					{
 						var Name = "SpriteText"
 						Transform 
@@ -1676,7 +1661,7 @@ Level
 							var TextAlign = TextAlign.Center
 						}
 					}
-					Cog [Id:0x5ca5c6279831a42e][ContextId:55]
+					Cog [Id:0x5ca5c6279831a42e][ContextId:49]
 					{
 						var Name = "PlantFlowerSymbol"
 						Transform 
@@ -1705,7 +1690,7 @@ Level
 							var StartFrame = 0
 						}
 					}
-					Cog [Id:0x5ca5c6279831a47a][ContextId:56]
+					Cog [Id:0x5ca5c6279831a47a][ContextId:50]
 					{
 						var Name = "FastWaterDropSymbol"
 						Transform 
@@ -1734,7 +1719,7 @@ Level
 							var StartFrame = 0
 						}
 					}
-					Cog [Id:0x5ca5c6279831a4c9][ContextId:57]
+					Cog [Id:0x5ca5c6279831a4c9][ContextId:51]
 					{
 						var Name = "DropExplosionSymbol"
 						Transform 
@@ -1763,7 +1748,7 @@ Level
 							var StartFrame = 0
 						}
 					}
-					Cog [Id:0x5ca5c601a1384cf2][ContextId:58]
+					Cog [Id:0x5ca5c601a1384cf2][ContextId:52]
 					{
 						var Name = "Arrow"
 						Transform 
@@ -1794,13 +1779,234 @@ Level
 					}
 				}
 			}
-			Cog [Id:0x5ca5c6c3adbd415c][LocallyAdded][ContextId:59]
+		}
+	}
+	Cog [InheritId:"5caacd8ed512b01f:Movement"][ContextId:53]
+	{
+		var Name = "MovementScroll"
+		Transform 
+		{
+			var Translation = Real3{-55.0160561, -7.05000019, 2}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{2, 2, 1}
+		}
+		Hierarchy [ChildOrderOverride]
+		{
+			Cog [Id:0x5caacdeed0ddf6e6][ContextId:54]
+			{
+				Transform 
+				{
+					var Translation = Real3{1.00967789, -1.25, 2.91259568e-07}
+				}
+			}
+			Cog [Id:0x5caacdeed0ddf719][ContextId:55]
+			{
+				Transform 
+				{
+					var Translation = Real3{-0.990322113, -1.25, 2.91259568e-07}
+				}
+			}
+			Cog [Id:0x5caacdeed0ddf734][ContextId:56]
+			{
+				Transform 
+				{
+					var Translation = Real3{1.81389046, -1.37304401, 2.91259568e-07}
+				}
+			}
+			Cog [Id:0x5caf6aa0dc358d2b][LocallyAdded][ContextId:57]
+			{
+				var Name = "RightArrow"
+				Transform 
+				{
+					var Translation = Real3{2.81389046, 2.87695599, 2.91259568e-07}
+					var Scale = Real3{2, 2, 1}
+					var Rotation = Quaternion{0, 0, -0.707106829, 0.707106769}
+				}
+				Sprite 
+				{
+					var Visible = true
+					var ViewCulling = true
+					var VisibilityEvents = true
+					var OverrideBoundingBox = false
+					var LocalAabbCenter = Real3{0, 0, 0}
+					var LocalAabbHalfExtents = Real3{1, 1, 1}
+					var GroupSortValue = 0
+					var Material = "582c575af53d18c9:AlphaSprite"
+					var VertexColor = Real4{1, 1, 1, 1}
+					var GeometryMode = SpriteGeometryMode.ZPlane
+					var SpriteSource = "5caae1f4a470725d:Arrow"
+					var FlipX = false
+					var FlipY = false
+					var AnimationActive = true
+					var AnimationSpeed = 1
+					var StartFrame = 0
+				}
+			}
+			Cog [Id:0x5caacdeed0ddf74e][ContextId:58]
+			{
+				Transform 
+				{
+					var Translation = Real3{-1.90500641, -1.37304401, 2.91259568e-07}
+				}
+			}
+			Cog [Id:0x5caacdeed0ddf76c][ContextId:59]
+			{
+				Transform 
+				{
+					var Translation = Real3{0.985534668, -1.14701414, 1.00000024}
+				}
+				SpriteText 
+				{
+					var Font = "5c91cd6a5d324692:IMMORTAL"
+				}
+			}
+			Cog [Id:0x5caacdeed0ddf786][ContextId:60]
+			{
+				Transform 
+				{
+					var Translation = Real3{-0.995355606, -1.12823963, 1.00000024}
+				}
+				SpriteText 
+				{
+					var Font = "5c91cd6a5d324692:IMMORTAL"
+				}
+			}
+			Cog [Id:0x5caacdf5d016a96a][ContextId:61]
+			{
+				Transform 
+				{
+					var Translation = Real3{0.0215587616, 0.0725913048, 1.00000024}
+				}
+				SpriteText 
+				{
+					var VertexColor = Real4{0.295000017, 0.295000017, 0.295000017, 1}
+					var Font = "5c91cd6a5d324692:IMMORTAL"
+					var FontSize = 28
+				}
+			}
+			Cog [Id:0x5caacdeed0ddf673][LocallyRemoved]
+			{
+			}
+			Cog [Id:0x5caacdeed0ddf6c9][LocallyRemoved]
+			{
+			}
+			Cog [Id:0x5caacdeed0ddf701][LocallyRemoved]
+			{
+			}
+			Cog [Id:0x5caacdeed0ddf6a5][LocallyRemoved]
+			{
+			}
+		}
+	}
+	Cog [InheritId:"5caacdc9dc552975:Shooting"][ContextId:62]
+	{
+		var Name = "Shooting"
+		Transform 
+		{
+			var Translation = Real3{-46.032135, -7.05000019, -2}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{2, 2, 1}
+		}
+		Sprite 
+		{
+			var VertexColor = Real4{1, 1, 1, 1}
+		}
+		Hierarchy [ChildOrderOverride]
+		{
+			Cog [Id:0x5ca5af9901bf9110][LocallyAdded][ContextId:63]
+			{
+				var Name = "Arrow"
+				Transform 
+				{
+					var Translation = Real3{-0.919195175, -1.56650019, 0}
+					var Scale = Real3{1.24999952, 1.45087349, 1}
+					var Rotation = Quaternion{0, 0, -0.382683456, 0.923879504}
+				}
+				Sprite 
+				{
+					var Visible = true
+					var ViewCulling = true
+					var VisibilityEvents = true
+					var OverrideBoundingBox = false
+					var LocalAabbCenter = Real3{0, 0, 0}
+					var LocalAabbHalfExtents = Real3{1, 1, 1}
+					var GroupSortValue = 0
+					var Material = "582c575af53d18c9:AlphaSprite"
+					var VertexColor = Real4{1, 1, 1, 1}
+					var GeometryMode = SpriteGeometryMode.ZPlane
+					var SpriteSource = "5caae1f4a470725d:Arrow"
+					var FlipX = false
+					var FlipY = false
+					var AnimationActive = true
+					var AnimationSpeed = 1
+					var StartFrame = 0
+				}
+			}
+			Cog [Id:0x5ca5af9901bf9198][LocallyAdded][ContextId:64]
+			{
+				var Name = "Arrow"
+				Transform 
+				{
+					var Translation = Real3{3.38021088, 0.308499575, 0}
+					var Scale = Real3{1.24999952, 1.45087361, 1}
+					var Rotation = Quaternion{0, 0, 0, 1}
+				}
+				Sprite 
+				{
+					var Visible = true
+					var ViewCulling = true
+					var VisibilityEvents = true
+					var OverrideBoundingBox = false
+					var LocalAabbCenter = Real3{0, 0, 0}
+					var LocalAabbHalfExtents = Real3{1, 1, 1}
+					var GroupSortValue = 0
+					var Material = "582c575af53d18c9:AlphaSprite"
+					var VertexColor = Real4{1, 1, 1, 1}
+					var GeometryMode = SpriteGeometryMode.ZPlane
+					var SpriteSource = "5caae1f4a470725d:Arrow"
+					var FlipX = false
+					var FlipY = false
+					var AnimationActive = true
+					var AnimationSpeed = 1
+					var StartFrame = 0
+				}
+			}
+			Cog [Id:0x5ca5af9901bf91fe][LocallyAdded][ContextId:65]
+			{
+				var Name = "TargetCursorUp_Ani"
+				Transform 
+				{
+					var Translation = Real3{-0.332674026, -0.881655216, 0}
+					var Scale = Real3{0.624999881, 0.624999881, 1}
+					var Rotation = Quaternion{0, 0, 0, 1}
+				}
+				Sprite 
+				{
+					var Visible = true
+					var ViewCulling = true
+					var VisibilityEvents = true
+					var OverrideBoundingBox = false
+					var LocalAabbCenter = Real3{0, 0, 0}
+					var LocalAabbHalfExtents = Real3{1, 1, 1}
+					var GroupSortValue = 0
+					var Material = "582c575af53d18c9:AlphaSprite"
+					var VertexColor = Real4{1, 1, 1, 1}
+					var GeometryMode = SpriteGeometryMode.ZPlane
+					var SpriteSource = "5caacc61057e481f:MouseLeftClick"
+					var FlipX = false
+					var FlipY = false
+					var AnimationActive = true
+					var AnimationSpeed = 1
+					var StartFrame = 0
+				}
+			}
+			Cog [Id:0x5ca5af9901bf9268][LocallyAdded][ContextId:66]
 			{
 				var Name = "SpriteText"
 				Transform 
 				{
-					var Translation = Real3{3.46447992, -1.20356512, 1}
-					var Scale = Real3{7.49999905, 7.49999857, 1}
+					var Translation = Real3{3.33948135, -1.95356464, 1}
+					var Scale = Real3{7.49999905, 7.49999809, 1}
 					var Rotation = Quaternion{0, 0, 0, 1}
 				}
 				SpriteText 
@@ -1822,13 +2028,13 @@ Level
 					var TextAlign = TextAlign.Center
 				}
 			}
-			Cog [Id:0x5ca5c6c3adbd40f5][LocallyAdded][ContextId:60]
+			Cog [Id:0x5ca5af9901bf92de][LocallyAdded][ContextId:67]
 			{
 				var Name = "SpriteText"
 				Transform 
 				{
-					var Translation = Real3{3.44230509, -2.02549458, 1}
-					var Scale = Real3{7.49999905, 7.49999857, 1}
+					var Translation = Real3{3.44230461, -0.525494099, 1}
+					var Scale = Real3{7.49999905, 7.49999809, 1}
 					var Rotation = Quaternion{0, 0, 0, 1}
 				}
 				SpriteText 
@@ -1843,20 +2049,104 @@ Level
 					var Material = "582c575af53d18c9:AlphaSprite"
 					var VertexColor = Real4{0.860000014, 0.860000014, 0.860000014, 1}
 					var GeometryMode = SpriteGeometryMode.ZPlane
-					var Text = "Swap From Moving"
+					var Text = "Shoot The Leaf"
 					var Font = "5c91cd6a5d324692:IMMORTAL"
 					var FontSize = 56
 					var PixelsPerUnit = 1080
 					var TextAlign = TextAlign.Center
 				}
 			}
-			Cog [Id:0x5ca5c6c3adbd4085][LocallyAdded][ContextId:61]
+			Cog [Id:0x5ca5ae6b06eaf3ba][LocallyAdded][ContextId:68]
 			{
 				var Name = "SpriteText"
 				Transform 
 				{
-					var Translation = Real3{3.44230509, -2.5254941, 1}
-					var Scale = Real3{7.49999905, 7.49999857, 1}
+					var Translation = Real3{3.31730461, -2.5254941, 1}
+					var Scale = Real3{6, 6, 1}
+					var Rotation = Quaternion{0, 0, 0, 1}
+				}
+				SpriteText 
+				{
+					var Visible = true
+					var ViewCulling = true
+					var VisibilityEvents = true
+					var OverrideBoundingBox = false
+					var LocalAabbCenter = Real3{0, 0, 0}
+					var LocalAabbHalfExtents = Real3{1, 1, 1}
+					var GroupSortValue = 0
+					var Material = "582c575af53d18c9:AlphaSprite"
+					var VertexColor = Real4{0.860000014, 0.860000014, 0.860000014, 1}
+					var GeometryMode = SpriteGeometryMode.ZPlane
+					var Text = "Hit Tab To Swap From Moving"
+					var Font = "5c91cd6a5d324692:IMMORTAL"
+					var FontSize = 56
+					var PixelsPerUnit = 1080
+					var TextAlign = TextAlign.Center
+				}
+			}
+			Cog [Id:0x5ca5af9901bf9353][LocallyAdded][ContextId:69]
+			{
+				var Name = "SpriteText"
+				Transform 
+				{
+					var Translation = Real3{-1.30769348, -2.6504941, 1}
+					var Scale = Real3{7.49999905, 7.49999809, 1}
+					var Rotation = Quaternion{0, 0, 0, 1}
+				}
+				SpriteText 
+				{
+					var Visible = true
+					var ViewCulling = true
+					var VisibilityEvents = true
+					var OverrideBoundingBox = false
+					var LocalAabbCenter = Real3{0, 0, 0}
+					var LocalAabbHalfExtents = Real3{1, 1, 1}
+					var GroupSortValue = 0
+					var Material = "582c575af53d18c9:AlphaSprite"
+					var VertexColor = Real4{0.860000014, 0.860000014, 0.860000014, 1}
+					var GeometryMode = SpriteGeometryMode.ZPlane
+					var Text = "Left Click To Aim"
+					var Font = "5c91cd6a5d324692:IMMORTAL"
+					var FontSize = 56
+					var PixelsPerUnit = 1080
+					var TextAlign = TextAlign.Center
+				}
+			}
+			Cog [Id:0x5ca5af9901bf93c5][LocallyAdded][ContextId:70]
+			{
+				var Name = "SpriteText"
+				Transform 
+				{
+					var Translation = Real3{-1.30769348, -3.0254941, 1}
+					var Scale = Real3{7.49999905, 7.49999809, 1}
+					var Rotation = Quaternion{0, 0, 0, 1}
+				}
+				SpriteText 
+				{
+					var Visible = true
+					var ViewCulling = true
+					var VisibilityEvents = true
+					var OverrideBoundingBox = false
+					var LocalAabbCenter = Real3{0, 0, 0}
+					var LocalAabbHalfExtents = Real3{1, 1, 1}
+					var GroupSortValue = 0
+					var Material = "582c575af53d18c9:AlphaSprite"
+					var VertexColor = Real4{0.860000014, 0.860000014, 0.860000014, 1}
+					var GeometryMode = SpriteGeometryMode.ZPlane
+					var Text = "Release To Shoot"
+					var Font = "5c91cd6a5d324692:IMMORTAL"
+					var FontSize = 56
+					var PixelsPerUnit = 1080
+					var TextAlign = TextAlign.Center
+				}
+			}
+			Cog [Id:0x5ca5af9901bf9430][LocallyAdded][ContextId:71]
+			{
+				var Name = "SpriteText"
+				Transform 
+				{
+					var Translation = Real3{3.31730652, -3.0254941, 1}
+					var Scale = Real3{6, 6, 1}
 					var Rotation = Quaternion{0, 0, 0, 1}
 				}
 				SpriteText 
@@ -1878,13 +2168,13 @@ Level
 					var TextAlign = TextAlign.Center
 				}
 			}
-			Cog [Id:0x5ca5c6c3adbd4015][LocallyAdded][ContextId:62]
+			Cog [Id:0x5ca5af9901bf94af][LocallyAdded][ContextId:72]
 			{
 				var Name = "PlayerDisplay"
 				Transform 
 				{
-					var Translation = Real3{-0.0489768982, -2.35744667, 0}
-					var Scale = Real3{0.62499994, 0.62499994, 1}
+					var Translation = Real3{-1.42397499, -2.10744619, 0}
+					var Scale = Real3{0.624999881, 0.624999881, 1}
 					var Rotation = Quaternion{0, 0, 0, 1}
 				}
 				Sprite 
@@ -1910,12 +2200,12 @@ Level
 				{
 				}
 			}
-			Cog [Id:0x5ca5c6c7ae7dd31f][LocallyAdded][ContextId:63]
+			Cog [Id:0x5ca5af9901bf9515][LocallyAdded][ContextId:73]
 			{
 				var Name = "Key"
 				Transform 
 				{
-					var Translation = Real3{3.46975422, -1.26793146, 0}
+					var Translation = Real3{3.34475327, -2.01793098, 0}
 					var Scale = Real3{1.87499976, 1.24999976, 1}
 					var Rotation = Quaternion{0, 0, 0, 1}
 				}
@@ -1942,16 +2232,16 @@ Level
 				{
 				}
 			}
-			Cog [Id:0x5ca5c5b6e60ac2d9][LocallyAdded][ContextId:64]
+			Cog [Id:0x5ca5af9d025044d4][LocallyAdded][ContextId:74]
 			{
-				var Name = "SmallFruit_0"
+				var Name = "SpriteText"
 				Transform 
 				{
-					var Translation = Real3{-4.96228695, -1.23648357, -1.99500084}
-					var Scale = Real3{0.375, 0.37499997, 1}
+					var Translation = Real3{0.00640869141, 0.0453703403, 1}
+					var Scale = Real3{20, 20, 1}
 					var Rotation = Quaternion{0, 0, 0, 1}
 				}
-				Sprite 
+				SpriteText 
 				{
 					var Visible = true
 					var ViewCulling = true
@@ -1961,102 +2251,16 @@ Level
 					var LocalAabbHalfExtents = Real3{1, 1, 1}
 					var GroupSortValue = 0
 					var Material = "582c575af53d18c9:AlphaSprite"
-					var VertexColor = Real4{1, 1, 1, 1}
+					var VertexColor = Real4{0.295000017, 0.295000017, 0.295000017, 1}
 					var GeometryMode = SpriteGeometryMode.ZPlane
-					var SpriteSource = "5cab9da0c0305785:SmallFruit_0"
-					var FlipX = false
-					var FlipY = false
-					var AnimationActive = true
-					var AnimationSpeed = 1
-					var StartFrame = 0
+					var Text = "Shooting"
+					var Font = "5c91cd6a5d324692:IMMORTAL"
+					var FontSize = 32
+					var PixelsPerUnit = 1080
+					var TextAlign = TextAlign.Center
 				}
 				Hierarchy 
 				{
-					Cog [Id:0x5ca5c6b2b4f9ffee][ContextId:65]
-					{
-						var Name = "Arrow"
-						Transform 
-						{
-							var Translation = Real3{0.00700378418, -2.06570339, 1.99500072}
-							var Scale = Real3{1.66666651, 1.66666675, 0.99999994}
-							var Rotation = Quaternion{0, 0, 0, 1}
-						}
-						Sprite 
-						{
-							var Visible = true
-							var ViewCulling = true
-							var VisibilityEvents = true
-							var OverrideBoundingBox = false
-							var LocalAabbCenter = Real3{0, 0, 0}
-							var LocalAabbHalfExtents = Real3{1, 1, 1}
-							var GroupSortValue = 0
-							var Material = "582c575af53d18c9:AlphaSprite"
-							var VertexColor = Real4{1, 1, 1, 1}
-							var GeometryMode = SpriteGeometryMode.ZPlane
-							var SpriteSource = "5caae1f4a470725d:Arrow"
-							var FlipX = false
-							var FlipY = false
-							var AnimationActive = true
-							var AnimationSpeed = 1
-							var StartFrame = 0
-						}
-					}
-					Cog [Id:0x5ca5c6b2b4fe0068][ContextId:66]
-					{
-						var Name = "SpriteText"
-						Transform 
-						{
-							var Translation = Real3{-0.0136184692, -4.39215088, 2.9950006}
-							var Scale = Real3{25, 25, 0.99999994}
-							var Rotation = Quaternion{0, 0, 0, 1}
-						}
-						SpriteText 
-						{
-							var Visible = true
-							var ViewCulling = true
-							var VisibilityEvents = true
-							var OverrideBoundingBox = false
-							var LocalAabbCenter = Real3{0, 0, 0}
-							var LocalAabbHalfExtents = Real3{1, 1, 1}
-							var GroupSortValue = 0
-							var Material = "582c575af53d18c9:AlphaSprite"
-							var VertexColor = Real4{1, 1, 1, 1}
-							var GeometryMode = SpriteGeometryMode.ZPlane
-							var Text = "Pickup"
-							var Font = "5c91cd6a5d324692:IMMORTAL"
-							var FontSize = 32
-							var PixelsPerUnit = 1080
-							var TextAlign = TextAlign.Center
-						}
-					}
-					Cog [Id:0x5ca5c6b2b4fe00c0][ContextId:67]
-					{
-						var Name = "SpriteText"
-						Transform 
-						{
-							var Translation = Real3{-0.0136184692, -3.39214993, 2.9950006}
-							var Scale = Real3{25, 25, 0.99999994}
-							var Rotation = Quaternion{0, 0, 0, 1}
-						}
-						SpriteText 
-						{
-							var Visible = true
-							var ViewCulling = true
-							var VisibilityEvents = true
-							var OverrideBoundingBox = false
-							var LocalAabbCenter = Real3{0, 0, 0}
-							var LocalAabbHalfExtents = Real3{1, 1, 1}
-							var GroupSortValue = 0
-							var Material = "582c575af53d18c9:AlphaSprite"
-							var VertexColor = Real4{1, 1, 1, 1}
-							var GeometryMode = SpriteGeometryMode.ZPlane
-							var Text = "Weapon"
-							var Font = "5c91cd6a5d324692:IMMORTAL"
-							var FontSize = 32
-							var PixelsPerUnit = 1080
-							var TextAlign = TextAlign.Center
-						}
-					}
 				}
 			}
 			Cog [Id:0x5caacdc3dd0ca052][LocallyRemoved]
@@ -2115,13 +2319,13 @@ Level
 			}
 		}
 	}
-	Cog [ContextId:68]
+	Cog [ContextId:75]
 	{
 		var Name = "Sprite"
 		Transform 
 		{
-			var Translation = Real3{-71.4617844, 14.3713379, 9.42956149e-07}
-			var Scale = Real3{23, 86, 1}
+			var Translation = Real3{-77.345459, 14.3713379, 9.42956149e-07}
+			var Scale = Real3{34.9273071, 86, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
 		Sprite 
@@ -2144,13 +2348,13 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:69]
+	Cog [ContextId:76]
 	{
 		var Name = "Sprite"
 		Transform 
 		{
-			var Translation = Real3{-36.6460838, 27.6075592, 9.42956149e-07}
-			var Scale = Real3{23, 46, 1}
+			var Translation = Real3{-42.1460838, 27.6075592, 9.42956149e-07}
+			var Scale = Real3{37, 46, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
 		Sprite 
@@ -2173,7 +2377,7 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:70]
+	Cog [ContextId:77]
 	{
 		var Name = "Sprite"
 		Transform 
@@ -2202,12 +2406,12 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:71]
+	Cog [ContextId:78]
 	{
 		var Name = "Sprite"
 		Transform 
 		{
-			var Translation = Real3{2.28822041, -17.1415176, 9.42956149e-07}
+			var Translation = Real3{-5.21177959, -17.1415176, 9.42956149e-07}
 			var Scale = Real3{23, 110.240227, 1}
 			var Rotation = Quaternion{0, 0, 0.707106769, 0.707106888}
 		}
@@ -2231,7 +2435,7 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:72]
+	Cog [ContextId:79]
 	{
 		var Name = "Sprite"
 		Transform 
@@ -2260,7 +2464,7 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:73]
+	Cog [ContextId:80]
 	{
 		var Name = "CloudTile_0"
 		Transform 
@@ -2289,7 +2493,7 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:74]
+	Cog [ContextId:81]
 	{
 		var Name = "CloudTile_0"
 		Transform 
@@ -2318,7 +2522,36 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:75]
+	Cog [ContextId:82]
+	{
+		var Name = "CloudTile_0"
+		Transform 
+		{
+			var Translation = Real3{-114.545372, -19.2565861, 0.00499916077}
+			var Scale = Real3{10, 10, 1}
+			var Rotation = Quaternion{0, 0, 0, 1}
+		}
+		Sprite 
+		{
+			var Visible = true
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var OverrideBoundingBox = false
+			var LocalAabbCenter = Real3{0, 0, 0}
+			var LocalAabbHalfExtents = Real3{1, 1, 1}
+			var GroupSortValue = 0
+			var Material = "582c575af53d18c9:AlphaSprite"
+			var VertexColor = Real4{1, 1, 1, 1}
+			var GeometryMode = SpriteGeometryMode.ZPlane
+			var SpriteSource = "5caa03a64e22b1dc:CloudTile_0"
+			var FlipX = false
+			var FlipY = false
+			var AnimationActive = true
+			var AnimationSpeed = 1
+			var StartFrame = 0
+		}
+	}
+	Cog [ContextId:83]
 	{
 		var Name = "CloudTile_0"
 		Transform 
@@ -2347,7 +2580,36 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:76]
+	Cog [ContextId:84]
+	{
+		var Name = "CloudTile_0"
+		Transform 
+		{
+			var Translation = Real3{-94.545372, -19.2565861, 0.00499916077}
+			var Scale = Real3{10, 10, 1}
+			var Rotation = Quaternion{0, 0, 0, 1}
+		}
+		Sprite 
+		{
+			var Visible = true
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var OverrideBoundingBox = false
+			var LocalAabbCenter = Real3{0, 0, 0}
+			var LocalAabbHalfExtents = Real3{1, 1, 1}
+			var GroupSortValue = 0
+			var Material = "582c575af53d18c9:AlphaSprite"
+			var VertexColor = Real4{1, 1, 1, 1}
+			var GeometryMode = SpriteGeometryMode.ZPlane
+			var SpriteSource = "5caa03a64e22b1dc:CloudTile_0"
+			var FlipX = false
+			var FlipY = false
+			var AnimationActive = true
+			var AnimationSpeed = 1
+			var StartFrame = 0
+		}
+	}
+	Cog [ContextId:85]
 	{
 		var Name = "CloudTile_0"
 		Transform 
@@ -2376,7 +2638,36 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:77]
+	Cog [ContextId:86]
+	{
+		var Name = "CloudTile_0"
+		Transform 
+		{
+			var Translation = Real3{-74.545372, -19.2565861, 0.00499916077}
+			var Scale = Real3{10, 10, 1}
+			var Rotation = Quaternion{0, 0, 0, 1}
+		}
+		Sprite 
+		{
+			var Visible = true
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var OverrideBoundingBox = false
+			var LocalAabbCenter = Real3{0, 0, 0}
+			var LocalAabbHalfExtents = Real3{1, 1, 1}
+			var GroupSortValue = 0
+			var Material = "582c575af53d18c9:AlphaSprite"
+			var VertexColor = Real4{1, 1, 1, 1}
+			var GeometryMode = SpriteGeometryMode.ZPlane
+			var SpriteSource = "5caa03a64e22b1dc:CloudTile_0"
+			var FlipX = false
+			var FlipY = false
+			var AnimationActive = true
+			var AnimationSpeed = 1
+			var StartFrame = 0
+		}
+	}
+	Cog [ContextId:87]
 	{
 		var Name = "CloudTile_0"
 		Transform 
@@ -2405,7 +2696,7 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:78]
+	Cog [ContextId:88]
 	{
 		var Name = "CloudTile_0"
 		Transform 
@@ -2434,7 +2725,7 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:79]
+	Cog [ContextId:89]
 	{
 		var Name = "CloudTile_0"
 		Transform 
@@ -2463,7 +2754,7 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:80]
+	Cog [ContextId:90]
 	{
 		var Name = "BackgroundBranch_0"
 		Transform 
@@ -2492,7 +2783,7 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:81]
+	Cog [ContextId:91]
 	{
 		var Name = "BackgroundBranch_0"
 		Transform 
@@ -2521,12 +2812,12 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:82]
+	Cog [ContextId:92]
 	{
 		var Name = "BackgroundBranch_0"
 		Transform 
 		{
-			var Translation = Real3{22.9910221, 8.669384, -2.86088181}
+			var Translation = Real3{24.7410221, 11.3740435, -2.86088181}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
@@ -2550,7 +2841,7 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:83]
+	Cog [ContextId:93]
 	{
 		var Name = "BackgroundBranch_0"
 		Transform 
@@ -2579,7 +2870,65 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:84]
+	Cog [ContextId:94]
+	{
+		var Name = "BackgroundBranch_0"
+		Transform 
+		{
+			var Translation = Real3{-42.7589798, -3.83061504, -2.86088181}
+			var Scale = Real3{1, 1, 1}
+			var Rotation = Quaternion{0, 0, 0, 1}
+		}
+		Sprite 
+		{
+			var Visible = true
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var OverrideBoundingBox = false
+			var LocalAabbCenter = Real3{0, 0, 0}
+			var LocalAabbHalfExtents = Real3{1, 1, 1}
+			var GroupSortValue = 0
+			var Material = "582c575af53d18c9:AlphaSprite"
+			var VertexColor = Real4{1, 1, 1, 1}
+			var GeometryMode = SpriteGeometryMode.ZPlane
+			var SpriteSource = "5cb6ea10144a9218:BackgroundBranch_0"
+			var FlipX = false
+			var FlipY = false
+			var AnimationActive = true
+			var AnimationSpeed = 1
+			var StartFrame = 0
+		}
+	}
+	Cog [ContextId:95]
+	{
+		var Name = "BackgroundBranch_0"
+		Transform 
+		{
+			var Translation = Real3{-28.7589798, 2.16938496, -2.86088181}
+			var Scale = Real3{1, 1, 1}
+			var Rotation = Quaternion{0, 0, 0, 1}
+		}
+		Sprite 
+		{
+			var Visible = true
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var OverrideBoundingBox = false
+			var LocalAabbCenter = Real3{0, 0, 0}
+			var LocalAabbHalfExtents = Real3{1, 1, 1}
+			var GroupSortValue = 0
+			var Material = "582c575af53d18c9:AlphaSprite"
+			var VertexColor = Real4{1, 1, 1, 1}
+			var GeometryMode = SpriteGeometryMode.ZPlane
+			var SpriteSource = "5cb6ea10144a9218:BackgroundBranch_0"
+			var FlipX = true
+			var FlipY = true
+			var AnimationActive = true
+			var AnimationSpeed = 1
+			var StartFrame = 0
+		}
+	}
+	Cog [ContextId:96]
 	{
 		var Name = "BackgroundBranch_0"
 		Transform 
@@ -2608,7 +2957,7 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:85]
+	Cog [ContextId:97]
 	{
 		var Name = "FirstTrigger"
 		Transform 
@@ -2670,7 +3019,7 @@ Level
 				var UpdatePathOnCogChange = true
 				var UpdateCogOnInitialize = true
 				var ResolvedNullErrorOccurred = false
-				var Cog = 29
+				var Cog = 53
 				var PathPreference0 = CogPathPreference.CogRelative
 				var PathPreference1 = CogPathPreference.SpaceRelative
 				var PathPreference2 = CogPathPreference.Absolute
@@ -2685,19 +3034,184 @@ Level
 				var UpdatePathOnCogChange = true
 				var UpdateCogOnInitialize = true
 				var ResolvedNullErrorOccurred = false
-				var Cog = 38
+				var Cog = 62
 				var PathPreference0 = CogPathPreference.CogRelative
 				var PathPreference1 = CogPathPreference.SpaceRelative
 				var PathPreference2 = CogPathPreference.Absolute
 			}
 		}
 	}
-	Cog [ContextId:86]
+	Cog [ContextId:98]
+	{
+		var Name = "FirstTrigger"
+		Transform 
+		{
+			var Translation = Real3{-30.4413452, -0.576698542, -0.100000001}
+			var Scale = Real3{1, 10, 1}
+			var Rotation = Quaternion{0, 0, 0, 1}
+		}
+		Sprite 
+		{
+			var Visible = false
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var OverrideBoundingBox = false
+			var LocalAabbCenter = Real3{0, 0, 0}
+			var LocalAabbHalfExtents = Real3{1, 1, 1}
+			var GroupSortValue = 0
+			var Material = "582c575af53d18c9:AlphaSprite"
+			var VertexColor = Real4{1, 1, 1, 1}
+			var GeometryMode = SpriteGeometryMode.ZPlane
+			var SpriteSource = "5586f579ca73ecc2:SquareBordered"
+			var FlipX = false
+			var FlipY = false
+			var AnimationActive = true
+			var AnimationSpeed = 1
+			var StartFrame = 0
+		}
+		RigidBody 
+		{
+			var Velocity = Real3{0, 0, 0}
+			var AngularVelocity = Real3{0, 0, 0}
+			var DynamicState = RigidBodyDynamicState.Static
+			var AllowSleep = true
+			var Asleep = false
+			var RotationLocked = false
+			var Mode2D = Mode2DStates.InheritFromSpace
+		}
+		ZapEnergyOnTouch 
+		{
+		}
+		BoxCollider 
+		{
+			var Ghost = false
+			var SendsEvents = true
+			var Material = "4de020863e872da8:DefaultPhysicsMaterial"
+			var CollisionGroup = "5caf61d07891df85:Zap"
+			var Offset = Real3{0, 0, 0}
+			var HalfSize = Real3{0.5, 0.5, 0.5}
+		}
+		TutoriaText 
+		{
+			var Text = CogPath
+			{
+				var Path = ":/Shooting"
+				var ErrorOnResolveToNull = false
+				var ErrorOnPathCantCompute = false
+				var ErrorOnDirectLinkFail = false
+				var UpdateCogOnPathChange = true
+				var UpdatePathOnCogChange = true
+				var UpdateCogOnInitialize = true
+				var ResolvedNullErrorOccurred = false
+				var Cog = 62
+				var PathPreference0 = CogPathPreference.CogRelative
+				var PathPreference1 = CogPathPreference.SpaceRelative
+				var PathPreference2 = CogPathPreference.Absolute
+			}
+			var NextText = CogPath
+			{
+				var Path = ":/WeaponScroll"
+				var ErrorOnResolveToNull = false
+				var ErrorOnPathCantCompute = false
+				var ErrorOnDirectLinkFail = false
+				var UpdateCogOnPathChange = true
+				var UpdatePathOnCogChange = true
+				var UpdateCogOnInitialize = true
+				var ResolvedNullErrorOccurred = false
+				var Cog = 31
+				var PathPreference0 = CogPathPreference.CogRelative
+				var PathPreference1 = CogPathPreference.SpaceRelative
+				var PathPreference2 = CogPathPreference.Absolute
+			}
+		}
+	}
+	Cog [ContextId:99]
 	{
 		var Name = "SecondTrigger"
 		Transform 
 		{
-			var Translation = Real3{15.6028976, -0.576698542, 0.100000001}
+			var Translation = Real3{14.6028976, -0.576698542, 0}
+			var Scale = Real3{1, 10, 1}
+			var Rotation = Quaternion{0, 0, 0, 1}
+		}
+		Sprite 
+		{
+			var Visible = true
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var OverrideBoundingBox = false
+			var LocalAabbCenter = Real3{0, 0, 0}
+			var LocalAabbHalfExtents = Real3{1, 1, 1}
+			var GroupSortValue = 0
+			var Material = "582c575af53d18c9:AlphaSprite"
+			var VertexColor = Real4{1, 1, 1, 1}
+			var GeometryMode = SpriteGeometryMode.ZPlane
+			var SpriteSource = "5586f579ca73ecc2:SquareBordered"
+			var FlipX = false
+			var FlipY = false
+			var AnimationActive = true
+			var AnimationSpeed = 1
+			var StartFrame = 0
+		}
+		RigidBody 
+		{
+			var Velocity = Real3{0, 0, 0}
+			var AngularVelocity = Real3{0, 0, 0}
+			var DynamicState = RigidBodyDynamicState.Static
+			var AllowSleep = true
+			var Asleep = false
+			var RotationLocked = false
+			var Mode2D = Mode2DStates.InheritFromSpace
+		}
+		BoxCollider 
+		{
+			var Ghost = true
+			var SendsEvents = true
+			var Material = "4de020863e872da8:DefaultPhysicsMaterial"
+			var CollisionGroup = "5caf61d07891df85:Zap"
+			var Offset = Real3{0, 0, 0}
+			var HalfSize = Real3{0.5, 0.5, 0.5}
+		}
+		TutoriaText 
+		{
+			var Text = CogPath
+			{
+				var Path = ":/WeaponScroll"
+				var ErrorOnResolveToNull = false
+				var ErrorOnPathCantCompute = false
+				var ErrorOnDirectLinkFail = false
+				var UpdateCogOnPathChange = true
+				var UpdatePathOnCogChange = true
+				var UpdateCogOnInitialize = true
+				var ResolvedNullErrorOccurred = false
+				var Cog = 31
+				var PathPreference0 = CogPathPreference.CogRelative
+				var PathPreference1 = CogPathPreference.SpaceRelative
+				var PathPreference2 = CogPathPreference.Absolute
+			}
+			var NextText = CogPath
+			{
+				var Path = ":/Jumping"
+				var ErrorOnResolveToNull = false
+				var ErrorOnPathCantCompute = false
+				var ErrorOnDirectLinkFail = false
+				var UpdateCogOnPathChange = true
+				var UpdatePathOnCogChange = true
+				var UpdateCogOnInitialize = true
+				var ResolvedNullErrorOccurred = false
+				var Cog = 21
+				var PathPreference0 = CogPathPreference.CogRelative
+				var PathPreference1 = CogPathPreference.SpaceRelative
+				var PathPreference2 = CogPathPreference.Absolute
+			}
+		}
+	}
+	Cog [ContextId:100]
+	{
+		var Name = "SecondTrigger"
+		Transform 
+		{
+			var Translation = Real3{35.1028976, 5.67330074, 0.100000001}
 			var Scale = Real3{1, 10, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
@@ -2743,7 +3257,7 @@ Level
 		{
 			var Text = CogPath
 			{
-				var Path = ":/Shooting"
+				var Path = ":/Jumping"
 				var ErrorOnResolveToNull = false
 				var ErrorOnPathCantCompute = false
 				var ErrorOnDirectLinkFail = false
@@ -2751,14 +3265,14 @@ Level
 				var UpdatePathOnCogChange = true
 				var UpdateCogOnInitialize = true
 				var ResolvedNullErrorOccurred = false
-				var Cog = 38
+				var Cog = 21
 				var PathPreference0 = CogPathPreference.CogRelative
 				var PathPreference1 = CogPathPreference.SpaceRelative
 				var PathPreference2 = CogPathPreference.Absolute
 			}
 			var NextText = CogPath
 			{
-				var Path = ":/Jumping"
+				var Path = ":/ExtraJumpText"
 				var ErrorOnResolveToNull = false
 				var ErrorOnPathCantCompute = false
 				var ErrorOnDirectLinkFail = false
