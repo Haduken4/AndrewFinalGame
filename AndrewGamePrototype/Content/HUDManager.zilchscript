@@ -26,6 +26,10 @@ class HUDManager : ZilchComponent
   [Property]
   var DefaultWeaponSymbol : SpriteSource = SpriteSource.QuestionMark;
   
+  //From 0 to 1
+  [Property]
+  var AreaLerpSpeed : Real = 0.3;
+  
   function Initialize(init : CogInitializer)
   {
     Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
@@ -36,8 +40,11 @@ class HUDManager : ZilchComponent
     
     if(this.CurrPlayer != null)
     {
-      var moveSize = 5.0 * (this.CurrPlayer.PlayerMovement.CurrMoveResource / this.CurrPlayer.PlayerMovement.MaxMoveResource);
-      var healthSize = 5.0 * (this.CurrPlayer.Health.CurrHealth / this.CurrPlayer.Health.MaxHealth);
+      var targetMoveSize = 5.0 * (this.CurrPlayer.PlayerMovement.CurrMoveResource / this.CurrPlayer.PlayerMovement.MaxMoveResource);
+      var targetHealthSize = 5.0 * (this.CurrPlayer.Health.CurrHealth / this.CurrPlayer.Health.MaxHealth);
+      
+      var moveSize = Math.Lerp(this.MoveSprite.Area.Size.X, targetMoveSize, this.AreaLerpSpeed);
+      var healthSize = Math.Lerp(this.HealthSprite.Area.Size.X, targetHealthSize, this.AreaLerpSpeed);
       
       this.HealthSprite.Area.Size = Real2(healthSize, 1);
       this.MoveSprite.Area.Size = Real2(moveSize, 1);

@@ -146,6 +146,7 @@ Level
 				var PathPreference2 = CogPathPreference.Absolute
 			}
 			var DefaultWeaponSymbol = "5c91cb9e2a7e5b5c:QuestionMark"
+			var AreaLerpSpeed = 0.150000006
 		}
 	}
 	Cog [ContextId:9]
