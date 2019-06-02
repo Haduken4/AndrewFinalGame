@@ -15,7 +15,10 @@ class TutoriaText : ZilchComponent
 
   function OnCollisionStarted(event : CollisionEvent)
   {
-    this.Owner.Destroy();
+    if(event.OtherObject.Collider.CollisionGroup.Name == "Player")
+    {
+      this.Owner.Destroy();
+    }
   }
 
   function OnLogicUpdate(event : UpdateEvent)

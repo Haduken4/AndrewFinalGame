@@ -75,6 +75,8 @@ class PlayerShooting : ZilchComponent
   //bool that should turn on when a bullet is fired
   var BBool : Boolean = false;
   
+  //Max aim distance for the player
+  [Property]
   var MaxAimDist : Real = 5.0;
   
   var WepCheat : Boolean = false;

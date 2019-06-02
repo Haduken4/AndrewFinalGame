@@ -161,7 +161,7 @@ class PlayerMovement : ZilchComponent
     
     
     //If the mouse is down, draw a debug line
-    if(this.MouseIsDown && !this.Active)
+    if(this.MouseIsDown)
     {
       var mousePos = Zero.Mouse.ClientPosition;
       

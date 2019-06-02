@@ -11,6 +11,7 @@ class ShrinkOnHit : ZilchComponent
   var Collided : Boolean = false;
   var OriginalSize : Real3 = Real3();
   var Shrunk : Boolean = false;
+  
   function Initialize(init : CogInitializer)
   {
     //Set original size

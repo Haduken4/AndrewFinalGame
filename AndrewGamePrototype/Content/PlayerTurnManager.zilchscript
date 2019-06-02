@@ -1,5 +1,5 @@
 /*************************
-Authors: Bar Ben-zvi, Tsering Ngoche, Christian Yan, Nicole Smith
+Authors: Bar Ben-zvi, Tsering Ngoche, Christian Yan, Nicole Smith, Andrew Yan
 Date Created: 5/21/19
 Brief: Manages player turns
 *************************/
@@ -56,6 +56,19 @@ class PlayerTurnManager : ZilchComponent
     
     this.Camera.CameraFollow.Target = this.PlayerArray[this.CurrIndex];
     this.HUDManager.CurrPlayer = this.PlayerArray[this.CurrIndex];
+    
+    if(!this.Tutorial)
+    {
+      if(this.CurrIndex == 0)
+      {
+        this.HUDManager.OtherPlayer = this.PlayerArray[this.CurrIndex + 1];
+      }
+      else if(this.CurrIndex == 1)
+      {
+        this.HUDManager.OtherPlayer = this.PlayerArray[this.CurrIndex - 1];
+      }
+    }
+    
     this.HUDManager.Index = 1;
     
     this.HUDManager.UpdateWeapons();
@@ -80,7 +93,6 @@ class PlayerTurnManager : ZilchComponent
       //If we are currently on the shoot state, we need to progress to the next player and activate their movement
       else
       {
-      
         this.PlayerArray[this.CurrIndex].PlayerShooting.Active = false;
         this.PlayerArray[this.CurrIndex].BoxCollider.CollisionGroup = CollisionGroup.Player;
         
@@ -89,6 +101,18 @@ class PlayerTurnManager : ZilchComponent
         if(this.CurrIndex >= this.PlayerArray.Count)
         {
           this.CurrIndex = 0;
+        }
+        
+        if(!this.Tutorial)
+        {
+          if(this.CurrIndex == 0)
+          {
+            this.HUDManager.OtherPlayer = this.PlayerArray[this.CurrIndex + 1];
+          }
+          else if(this.CurrIndex == 1)
+          {
+            this.HUDManager.OtherPlayer = this.PlayerArray[this.CurrIndex - 1];
+          }
         }
         
         this.PlayerArray[this.CurrIndex].PlayerMovement.Activate();

@@ -2,7 +2,7 @@ class HUDManager : ZilchComponent
 {
   
   var CurrPlayer : Cog = null;
-  
+  var OtherPlayer : Cog = null;
   var CurrState : TurnState = TurnState.STATEMOVE;
   
   var Index : Integer = 1;
@@ -15,6 +15,13 @@ class HUDManager : ZilchComponent
   var StateText : CogPath = null;
   [Property]
   var PlayerText : CogPath = null;
+  [Property]
+  var StateScroll : CogPath = null;
+  
+  [Property]
+  var OtherHealthSprite : CogPath = null;
+  [Property]
+  var OtherTextSprite : CogPath = null;
   
   [Property]
   var WeaponDisplayLeft : CogPath = null;
@@ -30,6 +37,9 @@ class HUDManager : ZilchComponent
   [Property]
   var AreaLerpSpeed : Real = 0.3;
   
+  var Moved : Boolean = false;
+  var Shoot : Boolean = false;
+  
   function Initialize(init : CogInitializer)
   {
     Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
@@ -38,7 +48,7 @@ class HUDManager : ZilchComponent
   function OnLogicUpdate(event : UpdateEvent)
   {
     
-    if(this.CurrPlayer != null)
+    if(this.CurrPlayer != null && this.OtherPlayer != null)
     {
       var targetMoveSize = 5.0 * (this.CurrPlayer.PlayerMovement.CurrMoveResource / this.CurrPlayer.PlayerMovement.MaxMoveResource);
       var targetHealthSize = 5.0 * (this.CurrPlayer.Health.CurrHealth / this.CurrPlayer.Health.MaxHealth);
@@ -46,25 +56,57 @@ class HUDManager : ZilchComponent
       var moveSize = Math.Lerp(this.MoveSprite.Area.Size.X, targetMoveSize, this.AreaLerpSpeed);
       var healthSize = Math.Lerp(this.HealthSprite.Area.Size.X, targetHealthSize, this.AreaLerpSpeed);
       
+      
+      var otherTargetHealthSize = 5.0 * (this.OtherPlayer.Health.CurrHealth / this.OtherPlayer.Health.MaxHealth);
+      var otherHealthSize = Math.Lerp(this.OtherHealthSprite.Area.Size.X, otherTargetHealthSize, this.AreaLerpSpeed);
+      
       this.HealthSprite.Area.Size = Real2(healthSize, 1);
       this.MoveSprite.Area.Size = Real2(moveSize, 1);
       
       if(this.CurrState == TurnState.STATEMOVE)
       {
         this.StateText.SpriteText.Text = "Moving";
+        if(this.Shoot)
+        {
+          this.CallScale();
+          this.Shoot = false;
+        }
+        this.Moved = true;
       }
       else
       {
         this.StateText.SpriteText.Text = "Shooting";
+        if(this.Moved)
+        {
+          this.CallScale();
+          this.Moved = false;
+        }
+        this.Shoot = true;
       }
       
       this.PlayerText.SpriteText.Text = "Player `this.Index`";
       
+      if(this.Index == 1)
+      {
+        this.OtherHealthSprite.Area.Size = Real2(otherHealthSize, 1);
+        this.OtherTextSprite.SpriteText.Text = "Player `this.Index + 1`";
+      }
+      else if(this.Index == 2)
+      {
+        this.OtherHealthSprite.Area.Size = Real2(otherHealthSize, 1);
+        this.OtherTextSprite.SpriteText.Text = "Player `this.Index - 1`";
+      }
     }
-    
   }
   
-  
+  function CallScale()
+  {
+    if(this.StateScroll != null)
+    {
+      this.StateScroll.Cog.ShrinkOnHit.Collided = true;
+    }
+  }
+
   function UpdateWeapons()
   {
     if(this.CurrPlayer != null)
