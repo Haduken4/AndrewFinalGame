@@ -78,7 +78,7 @@ class PlayerTurnManager : ZilchComponent
   function OnLogicUpdate(event : UpdateEvent)
   {
     //If the player presses L, this ends the current state
-    if((Zero.Keyboard.KeyIsPressed(Keys.Tab) && (this.CurrState == TurnState.STATEMOVE)) || this.TurnBool)
+    if(Zero.Keyboard.KeyIsPressed(Keys.Tab) || this.TurnBool)
     {
       this.TurnBool = false;
       //If we are currently on the move state, we only need to change to the shoot state
