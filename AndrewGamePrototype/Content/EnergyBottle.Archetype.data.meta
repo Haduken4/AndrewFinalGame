@@ -1,0 +1,11 @@
+[Version:1]
+DataContent 
+{
+	DataBuilder 
+	{
+		var Name = "EnergyBottle"
+		var ResourceId = 0x5ca5913df967fb1d
+		var LoaderType = "Cog"
+		var Version = 0
+	}
+}

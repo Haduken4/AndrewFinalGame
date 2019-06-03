@@ -1,5 +1,8 @@
 class ZapEnergyOnTouch : ZilchComponent
 {
+  [Property]
+  var GiveEnergy : Boolean = false;
+  
   function Initialize(init : CogInitializer)
   {
     Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
@@ -10,9 +13,17 @@ class ZapEnergyOnTouch : ZilchComponent
     //Checks to see if the owner has collided with the plyer
     if(event.OtherObject.Name == "Player")
     {
-      //Sets the players movement to 0
-      event.OtherObject.PlayerMovement.CurrMoveResource = 0;
-      this.Owner.Destroy();
+      if(this.GiveEnergy)
+      {
+        event.OtherObject.PlayerMovement.CurrMoveResource = event.OtherObject.PlayerMovement.MaxMoveResource;
+        this.Owner.Destroy();
+      }
+      else
+      {
+        //Sets the players movement to 0
+        event.OtherObject.PlayerMovement.CurrMoveResource = 0;
+        this.Owner.Destroy();
+      }
     }
   }
 }

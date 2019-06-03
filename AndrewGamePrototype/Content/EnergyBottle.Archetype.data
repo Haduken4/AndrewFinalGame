@@ -1,0 +1,153 @@
+[Version:1]
+Cog 
+{
+	var Name = "SpriteText"
+	Transform 
+	{
+		var Translation = Real3{-17.2810364, -6.44731379, 1.5}
+		var Scale = Real3{2, 2.5, 1}
+		var Rotation = Quaternion{0, 0, 0, 1}
+	}
+	SpriteText 
+	{
+		var Visible = true
+		var ViewCulling = true
+		var VisibilityEvents = true
+		var OverrideBoundingBox = false
+		var LocalAabbCenter = Real3{0, 0, 0}
+		var LocalAabbHalfExtents = Real3{1, 1, 1}
+		var GroupSortValue = 0
+		var Material = "582c575af53d18c9:AlphaSprite"
+		var VertexColor = Real4{0.915000021, 0.90813756, 0.846375048, 1}
+		var GeometryMode = SpriteGeometryMode.ZPlane
+		var Text = "Energy"
+		var Font = "5c91cd6a5d324692:IMMORTAL"
+		var FontSize = 128
+		var PixelsPerUnit = 512
+		var TextAlign = TextAlign.Center
+	}
+	Hierarchy 
+	{
+		Cog [Id:0x5ca5914ff2a222f1]
+		{
+			var Name = "Sprite"
+			Transform 
+			{
+				var Translation = Real3{0.00648593903, -0.0389797688, -0.100000024}
+				var Scale = Real3{1, 0.300000012, 1}
+				var Rotation = Quaternion{0, 0, 0, 1}
+			}
+			Sprite 
+			{
+				var Visible = true
+				var ViewCulling = true
+				var VisibilityEvents = true
+				var OverrideBoundingBox = false
+				var LocalAabbCenter = Real3{0, 0, 0}
+				var LocalAabbHalfExtents = Real3{1, 1, 1}
+				var GroupSortValue = 0
+				var Material = "582c575af53d18c9:AlphaSprite"
+				var VertexColor = Real4{0.540000021, 0.682999969, 0.800000012, 0.570000052}
+				var GeometryMode = SpriteGeometryMode.ZPlane
+				var SpriteSource = "5275aa4d802dd6dc:Square"
+				var FlipX = false
+				var FlipY = false
+				var AnimationActive = true
+				var AnimationSpeed = 1
+				var StartFrame = 0
+			}
+		}
+		Cog [Id:0x5ca59145f0c89664]
+		{
+			var Name = "HUDMeter"
+			Transform 
+			{
+				var Translation = Real3{0.00453090668, 0.236427069, -0.5}
+				var Scale = Real3{2, 1.60000002, 1}
+				var Rotation = Quaternion{0, 0, 0, 1}
+			}
+			Sprite 
+			{
+				var Visible = true
+				var ViewCulling = true
+				var VisibilityEvents = true
+				var OverrideBoundingBox = false
+				var LocalAabbCenter = Real3{0, 0, 0}
+				var LocalAabbHalfExtents = Real3{1, 1, 1}
+				var GroupSortValue = 0
+				var Material = "582c575af53d18c9:AlphaSprite"
+				var VertexColor = Real4{1, 1, 1, 1}
+				var GeometryMode = SpriteGeometryMode.ZPlane
+				var SpriteSource = "5cb6e042ebea72b6:HUDMeter"
+				var FlipX = false
+				var FlipY = false
+				var AnimationActive = true
+				var AnimationSpeed = 1
+				var StartFrame = 0
+			}
+		}
+		Cog [Id:0x5ca59158f6cd3b81]
+		{
+			var Name = "MoveMeter"
+			Transform 
+			{
+				var Translation = Real3{0.0031709671, -0.367109537, -1.29999995}
+				var Scale = Real3{0.931602061, 0.0400000028, 1}
+				var Rotation = Quaternion{0, 0, 0, 1}
+			}
+			Sprite 
+			{
+				var Visible = true
+				var ViewCulling = true
+				var VisibilityEvents = true
+				var OverrideBoundingBox = false
+				var LocalAabbCenter = Real3{0, 0, 0}
+				var LocalAabbHalfExtents = Real3{1, 1, 1}
+				var GroupSortValue = 0
+				var Material = "582c575af53d18c9:AlphaSprite"
+				var VertexColor = Real4{0.553125024, 0.625, 0.625, 0.88499999}
+				var GeometryMode = SpriteGeometryMode.ZPlane
+				var SpriteSource = "5275aa4d802dd6dc:Square"
+				var FlipX = false
+				var FlipY = false
+				var AnimationActive = true
+				var AnimationSpeed = 1
+				var StartFrame = 0
+			}
+		}
+		Cog [Id:0x5ca59126fb8dd36c]
+		{
+			var Name = "PlayerMoveResource"
+			Transform 
+			{
+				var Translation = Real3{0.712732315, -0.882950306, -1.39999998}
+				var Scale = Real3{0.320000023, 0.908399343, 1}
+				var Rotation = Quaternion{0, 0, 0.707106829, 0.707106829}
+			}
+			Sprite 
+			{
+				var Visible = true
+				var ViewCulling = true
+				var VisibilityEvents = true
+				var OverrideBoundingBox = false
+				var LocalAabbCenter = Real3{0, 0, 0}
+				var LocalAabbHalfExtents = Real3{1, 1, 1}
+				var GroupSortValue = 0
+				var Material = "582c575af53d18c9:AlphaSprite"
+				var VertexColor = Real4{0.88499999, 0.453120023, 0.177000046, 1}
+				var GeometryMode = SpriteGeometryMode.ZPlane
+				var SpriteSource = "5275aa4d802dd6dc:Square"
+				var FlipX = false
+				var FlipY = false
+				var AnimationActive = true
+				var AnimationSpeed = 1
+				var StartFrame = 0
+			}
+			Area 
+			{
+				var Size = Real2{5, 1}
+				var Origin = Location.CenterLeft
+			}
+		}
+	}
+}

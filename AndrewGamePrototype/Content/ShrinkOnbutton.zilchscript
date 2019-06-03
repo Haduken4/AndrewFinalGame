@@ -1,0 +1,30 @@
+class ShrinkOnbutton : ZilchComponent
+{
+  [Dependency]
+  var ShrinkOnHit : ShrinkOnHit;
+  [Property]
+  var ButtonToScale : Keys = Keys.E;
+  [Property]
+  var OBTS : Keys = Keys.Q;
+  [Property]
+  var Center : Boolean = false;
+  function Initialize(init : CogInitializer)
+  {
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    if(Zero.Keyboard.KeyIsPressed(this.ButtonToScale))
+    {
+      this.ShrinkOnHit.Collided = true;
+    }
+    else if(this.Center)
+    {
+      if(Zero.Keyboard.KeyIsPressed(this.ButtonToScale) || Zero.Keyboard.KeyIsPressed(this.OBTS))
+      {
+        this.ShrinkOnHit.Collided = true;
+      }
+    }
+  }
+}

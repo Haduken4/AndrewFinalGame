@@ -1,0 +1,26 @@
+class ShrinkAfterTime : ZilchComponent
+{
+  [Dependency]
+  var ShrinkOnHit : ShrinkOnHit;
+  
+  [Property]
+  var TimeBetweenScale : Real = 1;
+  
+  var Timer : Real = 0;
+  
+  function Initialize(init : CogInitializer)
+  {
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    this.Timer += event.Dt;
+    
+    if(this.Timer >= this.TimeBetweenScale)
+    {
+      this.ShrinkOnHit.Collided = true;
+      this.Timer = 0;
+    }
+  }
+}
