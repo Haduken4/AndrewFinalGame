@@ -171,6 +171,8 @@ class PlayerShooting : ZilchComponent
           //this turns on the bool so that the current projectile will be tracked
           this.BBool = true;
           this.GameSession.GameVars.BulletArray.Add(this.CurrProjectile);
+          
+          Console.WriteLine(this.CurrProjectile.Sprite.FlipX);
         }
         //this sets the active bool to false so that you can not shoot again this phase
         this.Active = false;

@@ -23,6 +23,16 @@ class FaceVelocityDirection : ZilchComponent
       var angle = Math.ATan2(dir.Y, dir.X);
       
       this.Owner.Transform.SetEulerAnglesXYZ(0, 0, angle);
+      
+      //if we're moving left flip our Y
+      if(dir.X < 0)
+      {
+        this.Owner.Sprite.FlipY = true;
+      }
+      else
+      {
+        this.Owner.Sprite.FlipY = false;
+      }
     }
     
   }
