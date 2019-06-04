@@ -259,6 +259,8 @@ class DestructionRenderer : ZilchComponent
     // by default, but we could change it if we wanted it to be something different.
     destructibleSettings.DepthSettings.StencilCompareFunc = TextureCompareFunc.Equal;
     
+    destructibleSettings.DepthSettings.StencilFailOp = StencilOp.Keep;
+    
     // That's it for the render settings preparations. Now we can proceed with actual
     // render passes!
     
