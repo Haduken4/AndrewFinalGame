@@ -23,6 +23,7 @@ class LobBulletBehavior : ZilchComponent
       this.DropCount -= 1;
       //create the projectile at the position
       this.CurrProjectile = this.Space.CreateAtPosition(this.DroppedProjectile, this.Owner.Transform.WorldTranslation);
+      this.GameSession.GameVars.BulletArray.Add(this.CurrProjectile);
       //give the bullet downward velocity
       this.CurrProjectile.RigidBody.Velocity = Real3(0, -10, 0);
     }

@@ -5,7 +5,7 @@ Cog
 	Transform 
 	{
 		var Translation = Real3{0, 0, 0}
-		var Scale = Real3{4, 4, 1}
+		var Scale = Real3{3.5, 3.5, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
 	Sprite 
@@ -38,7 +38,7 @@ Cog
 	}
 	Health 
 	{
-		var MaxHealth = 2
+		var MaxHealth = 5
 		var HurtSound = "5c6ddf9ac25944d6:Plantshot"
 	}
 	ShrinkOnHit 

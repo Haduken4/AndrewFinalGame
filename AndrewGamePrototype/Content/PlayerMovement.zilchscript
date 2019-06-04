@@ -1,6 +1,6 @@
 class PlayerMovement : ZilchComponent
 {
-  //How fast we move left/right
+  //How fast we move Right/right
   [Property]
   var MoveSpeed : Real = 250;
   
@@ -50,8 +50,8 @@ class PlayerMovement : ZilchComponent
     //Connect stuff
     Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
     
-    Zero.Connect(this.Space, Events.LeftMouseDown, this.OnLeftMouseDown);
-    Zero.Connect(this.Space, Events.LeftMouseUp, this.OnLeftMouseUp);
+    Zero.Connect(this.Space, Events.RightMouseDown, this.OnRightMouseDown);
+    Zero.Connect(this.Space, Events.RightMouseUp, this.OnRightMouseUp);
     
     Zero.Connect(this.Owner, Events.CogDestroy, this.OnCogDestroy);
     Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
@@ -66,7 +66,7 @@ class PlayerMovement : ZilchComponent
     }
   }
 
-  function OnLeftMouseUp(event : ViewportMouseEvent)
+  function OnRightMouseUp(event : ViewportMouseEvent)
   {
     //If we can jump
     if(this.Active && this.CurrMoveResource >= this.MaxMoveResource / this.JumpsAllowed)
@@ -102,7 +102,7 @@ class PlayerMovement : ZilchComponent
     
   }
 
-  function OnLeftMouseDown(event : ViewportMouseEvent)
+  function OnRightMouseDown(event : ViewportMouseEvent)
   {
     //If we can jump
     if(this.Active && this.CurrMoveResource >= this.MaxMoveResource / this.JumpsAllowed)
@@ -127,7 +127,7 @@ class PlayerMovement : ZilchComponent
     
     var vel = this.Owner.RigidBody.Velocity;
     
-      //move left/right/nowhere
+      //move Right/right/nowhere
       if(this.Active && this.CurrMoveResource > 0)
       {
         if(Zero.Keyboard.KeyIsDown(Keys.A))
@@ -195,7 +195,7 @@ class PlayerMovement : ZilchComponent
       }
       else if(screenMousePos.X < this.Owner.Transform.WorldTranslation.X)
       {
-        Console.WriteLine("left");
+        Console.WriteLine("Right");
         this.Owner.Sprite.FlipX = true;
       }
     }

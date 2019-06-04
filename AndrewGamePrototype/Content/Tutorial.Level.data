@@ -93,7 +93,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{6.59751177, -0.840957522, 23.0808125}
+			var Translation = Real3{13.7672215, -4.67439747, 23.0808125}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -146,7 +146,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 60.0859222
+			var Size = 22.1043968
 		}
 		EditorCameraController 
 		{
@@ -155,7 +155,7 @@ Level
 			var LookDistance = 24.428051
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{6.59751177, -0.840957522, -1.34723771}
+			var LookTarget = Real3{13.7672215, -4.67439747, -1.34723771}
 			var MoveSensitivity = 1
 		}
 	}
@@ -856,7 +856,7 @@ Level
 		var Name = "Jumping"
 		Transform 
 		{
-			var Translation = Real3{13.4144516, -6.66270351, -2}
+			var Translation = Real3{13.4144516, -6.66270351, 2}
 			var Scale = Real3{2, 2, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
@@ -961,7 +961,7 @@ Level
 					var VertexColor = Real4{1, 1, 1, 1}
 					var GeometryMode = SpriteGeometryMode.ZPlane
 					var SpriteSource = "5caacc61057e481f:MouseLeftClick"
-					var FlipX = false
+					var FlipX = true
 					var FlipY = false
 					var AnimationActive = true
 					var AnimationSpeed = 1
@@ -1163,7 +1163,7 @@ Level
 							var Material = "582c575af53d18c9:AlphaSprite"
 							var VertexColor = Real4{0.866666734, 0.866666734, 0.866666734, 1}
 							var GeometryMode = SpriteGeometryMode.ZPlane
-							var Text = "Left Click + Moving Phase"
+							var Text = "Right Click + Moving Phase"
 							var Font = "5c91cd6a5d324692:IMMORTAL"
 							var FontSize = 32
 							var PixelsPerUnit = 1080
@@ -2592,7 +2592,7 @@ Level
 			Cog [Id:0x5caacdc3dd0ca078][LocallyRemoved]
 			{
 			}
-			Cog [Id:0x5caacdc3dd0ca1f3][LocallyRemoved]
+			Cog [Id:0x5caacdc3dd0ca0e9][LocallyRemoved]
 			{
 			}
 			Cog [Id:0x5caacdc3dd0ca0a9][LocallyRemoved]
@@ -2601,16 +2601,16 @@ Level
 			Cog [Id:0x5caacdc3dd0ca17b][LocallyRemoved]
 			{
 			}
-			Cog [Id:0x5caacdc3dd0ca0d4][LocallyRemoved]
+			Cog [Id:0x5caacdc3dd0ca102][LocallyRemoved]
 			{
 			}
-			Cog [Id:0x5caacdc3dd0ca0e9][LocallyRemoved]
+			Cog [Id:0x5caacdc3dd0ca1f3][LocallyRemoved]
 			{
 			}
 			Cog [Id:0x5caacdc3dd0ca146][LocallyRemoved]
 			{
 			}
-			Cog [Id:0x5caacdc3dd0ca102][LocallyRemoved]
+			Cog [Id:0x5caacdc3dd0ca0d4][LocallyRemoved]
 			{
 			}
 		}

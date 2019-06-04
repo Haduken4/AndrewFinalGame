@@ -93,9 +93,9 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{2.18355012, 10.129776, 20}
+			var Translation = Real3{-33.1172791, 0.797084451, 20.8539715}
 			var Scale = Real3{1, 1, 1}
-			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
+			var Rotation = Quaternion{-0.0366432182, 0.00523248408, 0.000191865969, 0.999314725}
 		}
 		CameraViewport 
 		{
@@ -146,16 +146,16 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 54.3711853
+			var Size = 8.98754215
 		}
 		EditorCameraController 
 		{
 			var ControlMode = ControlMode.ZPlane
 			var Previous3DMode = ControlMode.Orbit
 			var LookDistance = 20
-			var VerticalAngle = 0
-			var HorizontalAngle = 0
-			var LookTarget = Real3{2.18355012, 10.129776, 5.58858062e-07}
+			var VerticalAngle = 0.0733038485
+			var HorizontalAngle = -0.0104720825
+			var LookTarget = Real3{-33.3261528, -0.667679906, 0.908778131}
 			var MoveSensitivity = 1
 		}
 	}
@@ -463,7 +463,7 @@ Level
 			var Material = "582c575af53d18c9:AlphaSprite"
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
-			var SpriteSource = "5cab3c556b13c5b6:RecoloredIdleFrogAni_1"
+			var SpriteSource = "5ca7e13a4ba6ac85:RecoloredIdleFrogAni_2"
 			var FlipX = true
 			var FlipY = false
 			var AnimationActive = true
@@ -524,7 +524,7 @@ Level
 		AnimationHandler 
 		{
 			var DamagedSprite = "5cab3c9950dc5caf:RecoloredDamagedFrogAni_1"
-			var IdleSprite = "5cab3c556b13c5b6:RecoloredIdleFrogAni_1"
+			var IdleSprite = "5ca7e13a4ba6ac85:RecoloredIdleFrogAni_2"
 			var AttackSprite = "5ca8188c8ee8d305:AttackFrogAniRecolored"
 		}
 		CloudEffect 
@@ -955,7 +955,7 @@ Level
 		}
 		ItemSpawn 
 		{
-			var ChanceToSpawn = 60
+			var ChanceToSpawn = 75
 		}
 	}
 	Cog [InheritId:"5c85da8abb1395cf:WeaponSpawner"][ContextId:24]
@@ -968,7 +968,7 @@ Level
 		}
 		ItemSpawn 
 		{
-			var ChanceToSpawn = 60
+			var ChanceToSpawn = 75
 		}
 	}
 	Cog [InheritId:"5c85da8abb1395cf:WeaponSpawner"][ContextId:25]
@@ -981,7 +981,7 @@ Level
 		}
 		ItemSpawn 
 		{
-			var ChanceToSpawn = 60
+			var ChanceToSpawn = 85
 		}
 	}
 	Cog [InheritId:"5c85da8abb1395cf:WeaponSpawner"][ContextId:26]
@@ -994,7 +994,7 @@ Level
 		}
 		ItemSpawn 
 		{
-			var ChanceToSpawn = 60
+			var ChanceToSpawn = 75
 		}
 	}
 	Cog [InheritId:"5c85da8abb1395cf:WeaponSpawner"][ContextId:27]
@@ -1007,7 +1007,7 @@ Level
 		}
 		ItemSpawn 
 		{
-			var ChanceToSpawn = 60
+			var ChanceToSpawn = 85
 		}
 	}
 	Cog [InheritId:"5c85da8abb1395cf:WeaponSpawner"][ContextId:28]
@@ -1020,7 +1020,7 @@ Level
 		}
 		ItemSpawn 
 		{
-			var ChanceToSpawn = 60
+			var ChanceToSpawn = 75
 		}
 	}
 	Cog [ContextId:29]

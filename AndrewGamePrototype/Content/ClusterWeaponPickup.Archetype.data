@@ -4,7 +4,7 @@ Cog
 	var Name = "ClusterWeapon"
 	Transform 
 	{
-		var Translation = Real3{-0.00373005867, 0.137868226, -0.498896539}
+		var Translation = Real3{0, 0, 0}
 		var Scale = Real3{0.75, 0.75, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
@@ -43,7 +43,7 @@ Cog
 		{
 			var Icon = "5c505c76e36195b5:WaterDropsMultiSymbol"
 			var Projectile = "5c95acf71cd8e968:ClusterBullet"
-			var ProjectileCount = 5
+			var ProjectileCount = 3
 			var SpreadCone = 0.100000001
 			var ProjectileSpeed = 30
 			var SpeedVariation = 1.5
@@ -80,7 +80,7 @@ Cog
 			}
 			SpriteParticleSystem 
 			{
-				var VertexColor = Real4{0, 0.880000114, 1, 1}
+				var VertexColor = Real4{0.774999976, 0.97299999, 1, 1}
 				var SpriteSource = "5c8dce76acf2622a:WeaponRune2"
 			}
 			SphericalParticleEmitter 
@@ -90,9 +90,42 @@ Cog
 				var RandomVelocity = Real3{2, 2, 2}
 				var TangentVelocity = Real3{0, 0, 0}
 			}
+			ParticleColorAnimator 
+			{
+				var TimeGradient = "null"
+			}
 			SelectionIcon 
 			{
 				var Visible = false
+			}
+		}
+		Cog [Id:0x5ca7d9d5dbe838af]
+		{
+			var Name = "WaterDropsMultiSymbol"
+			Transform 
+			{
+				var Translation = Real3{0.0589294434, -0.0589294434, 0.850000024}
+				var Scale = Real3{1, 1, 1}
+				var Rotation = Quaternion{0, 0, 0, 1}
+			}
+			Sprite 
+			{
+				var Visible = true
+				var ViewCulling = true
+				var VisibilityEvents = true
+				var OverrideBoundingBox = false
+				var LocalAabbCenter = Real3{0, 0, 0}
+				var LocalAabbHalfExtents = Real3{1, 1, 1}
+				var GroupSortValue = 0
+				var Material = "582c575af53d18c9:AlphaSprite"
+				var VertexColor = Real4{1, 1, 1, 1}
+				var GeometryMode = SpriteGeometryMode.ZPlane
+				var SpriteSource = "5c505c76e36195b5:WaterDropsMultiSymbol"
+				var FlipX = false
+				var FlipY = false
+				var AnimationActive = true
+				var AnimationSpeed = 1
+				var StartFrame = 0
 			}
 		}
 	}

@@ -90,5 +90,34 @@ Cog
 				var Visible = false
 			}
 		}
+		Cog [Id:0x5ca7d806fba4c5d5]
+		{
+			var Name = "PlantFlowerSymbol"
+			Transform 
+			{
+				var Translation = Real3{0.0399589539, -0.0457324982, 1}
+				var Scale = Real3{1, 1, 1}
+				var Rotation = Quaternion{0, 0, 0, 1}
+			}
+			Sprite 
+			{
+				var Visible = true
+				var ViewCulling = true
+				var VisibilityEvents = true
+				var OverrideBoundingBox = false
+				var LocalAabbCenter = Real3{0, 0, 0}
+				var LocalAabbHalfExtents = Real3{1, 1, 1}
+				var GroupSortValue = 0
+				var Material = "582c575af53d18c9:AlphaSprite"
+				var VertexColor = Real4{1, 1, 1, 1}
+				var GeometryMode = SpriteGeometryMode.ZPlane
+				var SpriteSource = "5c505c76e3616cb3:PlantFlowerSymbol"
+				var FlipX = false
+				var FlipY = false
+				var AnimationActive = true
+				var AnimationSpeed = 1
+				var StartFrame = 0
+			}
+		}
 	}
 }

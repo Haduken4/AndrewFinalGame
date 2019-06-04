@@ -4,7 +4,7 @@ Cog
 	var Name = "ExplosionWeapon"
 	Transform 
 	{
-		var Translation = Real3{-0.0419518948, 0.151932001, -0.6190027}
+		var Translation = Real3{0, 0, 0}
 		var Scale = Real3{0.75, 0.75, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
@@ -93,6 +93,35 @@ Cog
 			SelectionIcon 
 			{
 				var Visible = false
+			}
+		}
+		Cog [Id:0x5ca7d8b10d931c75]
+		{
+			var Name = "BigExplosionSymbol"
+			Transform 
+			{
+				var Translation = Real3{0.0229377747, 0.0435876846, 1.06282234}
+				var Scale = Real3{1, 1, 1}
+				var Rotation = Quaternion{0, 0, 0, 1}
+			}
+			Sprite 
+			{
+				var Visible = true
+				var ViewCulling = true
+				var VisibilityEvents = true
+				var OverrideBoundingBox = false
+				var LocalAabbCenter = Real3{0, 0, 0}
+				var LocalAabbHalfExtents = Real3{1, 1, 1}
+				var GroupSortValue = 0
+				var Material = "582c575af53d18c9:AlphaSprite"
+				var VertexColor = Real4{1, 1, 1, 1}
+				var GeometryMode = SpriteGeometryMode.ZPlane
+				var SpriteSource = "5c505c76e361c33d:BigExplosionSymbol"
+				var FlipX = false
+				var FlipY = false
+				var AnimationActive = true
+				var AnimationSpeed = 1
+				var StartFrame = 0
 			}
 		}
 	}
