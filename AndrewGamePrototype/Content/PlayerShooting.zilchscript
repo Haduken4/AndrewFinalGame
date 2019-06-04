@@ -186,42 +186,6 @@ class PlayerShooting : ZilchComponent
   {
     if(this.Active)
     {
-      //go left in weapon array
-      if(Zero.Keyboard.KeyIsPressed(Keys.Q))
-      {
-        if(this.Weapons.Count != 1)
-        {
-          this.Space.SoundSpace.PlayCue(this.SwitchSound);
-        }
-        --this.CurrWeapon;
-        //wrap to right if out of bounds
-        if(this.CurrWeapon < 0)
-        {
-          this.CurrWeapon = this.Weapons.Count -1;
-        }
-        this.Weapon = this.Weapons[this.CurrWeapon];
-        
-        this.GameSession.FindSpaceByName("HUDSpace").FindObjectByName("LevelSettings").HUDManager.UpdateWeapons();
-        
-      }
-      //go right in weapon array
-      if(Zero.Keyboard.KeyIsPressed(Keys.E))
-      {
-        if(this.Weapons.Count != 1)
-        {
-          this.Space.SoundSpace.PlayCue(this.SwitchSound);
-        }
-        
-        ++this.CurrWeapon;
-        //wrap to left if out of bounds
-        if(this.CurrWeapon >= this.Weapons.Count)
-        {
-          this.CurrWeapon = 0;
-        }
-        this.Weapon = this.Weapons[this.CurrWeapon];
-        
-        this.GameSession.FindSpaceByName("HUDSpace").FindObjectByName("LevelSettings").HUDManager.UpdateWeapons();
-      }
       //draw aiming line
       if(Zero.Mouse.IsButtonDown(MouseButtons.Left))
       {
@@ -287,17 +251,55 @@ class PlayerShooting : ZilchComponent
     //this is for switchign after the bullet gets destroyed
     if(this.BBool && this.GameSession.GameVars.BulletArray.Count == 0)
     {
-        //Add to the timer 
-        this.EndTimer += event.Dt;
-        
-        if(this.EndTimer >= 1)
-        {
-          //changes whos turn it is
-          this.LevelSettings.PlayerTurnManager.TurnBool = true;
-          //turn off the bools
-          this.BBool = false;
-        }
+      //Add to the timer 
+      this.EndTimer += event.Dt;
+      
+      if(this.EndTimer >= 1)
+      {
+        //changes whos turn it is
+        this.LevelSettings.PlayerTurnManager.TurnBool = true;
+        //turn off the bools
+        this.BBool = false;
+      }
     }
+    
+    //go left in weapon array
+    if(Zero.Keyboard.KeyIsPressed(Keys.Q))
+    {
+      if(this.Weapons.Count != 1)
+      {
+        this.Space.SoundSpace.PlayCue(this.SwitchSound);
+      }
+      --this.CurrWeapon;
+      //wrap to right if out of bounds
+      if(this.CurrWeapon < 0)
+      {
+        this.CurrWeapon = this.Weapons.Count -1;
+      }
+      this.Weapon = this.Weapons[this.CurrWeapon];
+      
+      this.GameSession.FindSpaceByName("HUDSpace").FindObjectByName("LevelSettings").HUDManager.UpdateWeapons();
+      
+    }
+    //go right in weapon array
+    if(Zero.Keyboard.KeyIsPressed(Keys.E))
+    {
+      if(this.Weapons.Count != 1)
+      {
+        this.Space.SoundSpace.PlayCue(this.SwitchSound);
+      }
+      
+      ++this.CurrWeapon;
+      //wrap to left if out of bounds
+      if(this.CurrWeapon >= this.Weapons.Count)
+      {
+        this.CurrWeapon = 0;
+      }
+      this.Weapon = this.Weapons[this.CurrWeapon];
+      
+      this.GameSession.FindSpaceByName("HUDSpace").FindObjectByName("LevelSettings").HUDManager.UpdateWeapons();
+    }
+    
   }
   
   function Activate()
