@@ -39,7 +39,8 @@ Cog
 	}
 	DamageOnCollide 
 	{
-		var Damage = 2.5
+		var Damage = 2
+		var PlantDamage = 2.5
 		var DestroyMe = true
 	}
 	SphereCollider 

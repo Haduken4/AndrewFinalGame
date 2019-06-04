@@ -4,8 +4,13 @@ class DamageOnCollide : ZilchComponent
   [Property]
   var Damage : Real = 1.0;
   
+  //The amount of damage to do to the plant obeject
+  [Property]
+  var PlantDamage : Real = 1.0;
+  
   [Property]
   var DestroyMe : Boolean = true;
+  
   
   function Initialize(init : CogInitializer)
   {
@@ -16,15 +21,32 @@ class DamageOnCollide : ZilchComponent
   {
     if(!this.Owner.MarkedForDestruction)
     {
-      //damage other object
-      if(event.OtherObject.Health != null)
+      if(event.OtherObject.Collider.CollisionGroup.Name != "Plant")
       {
-        event.OtherObject.Health.ApplyDamage(this.Damage);
-        if(this.DestroyMe)
+        //damage other object
+        if(event.OtherObject.Health != null)
         {
-          Console.WriteLine("???");
-          this.Space.FindObjectByName("GameCamera").ScreenShake.TriggerScreenShake(0.1);
-          this.Owner.Destroy();
+          event.OtherObject.Health.ApplyDamage(this.Damage);
+          if(this.DestroyMe)
+          {
+            Console.WriteLine("???");
+            this.Space.FindObjectByName("GameCamera").ScreenShake.TriggerScreenShake(0.1);
+            this.Owner.Destroy();
+          }
+        }
+      }
+      else 
+      {
+        //damage other object
+        if(event.OtherObject.Health != null)
+        {
+          event.OtherObject.Health.ApplyDamage(this.PlantDamage);
+          if(this.DestroyMe)
+          {
+            Console.WriteLine("???");
+            this.Space.FindObjectByName("GameCamera").ScreenShake.TriggerScreenShake(0.1);
+            this.Owner.Destroy();
+          }
         }
       }
     }

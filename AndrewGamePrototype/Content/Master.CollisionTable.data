@@ -10,6 +10,7 @@ CollisionTable
 		"5caf61d07891df85:Zap"
 		"5c098e40de85b0fc:PlayerBullet"
 		"5c098e4fdd820ac1:Player"
+		"5cadbc93b25ecbb9:Plant"
 	}
 	var CollisionFilters = Array
 	{
