@@ -89,6 +89,10 @@ class PlayerMovement : ZilchComponent
       
       this.Space.SoundSpace.PlayCue(this.SoundToPlay);
       
+      //Reset time scale in case we changed it earlier
+      this.Space.TimeSpace.TimeScale = 1.0;
+      
+      
       this.LockMovement = true;
       
       this.MouseIsDown = false;
@@ -104,6 +108,11 @@ class PlayerMovement : ZilchComponent
     if(this.Active && this.CurrMoveResource >= this.MaxMoveResource / this.JumpsAllowed)
     {
       this.MouseIsDown = true;
+      
+      if(this.Owner.Collider.Contacts.IsEmpty)
+      {
+        this.Space.TimeSpace.TimeScale = 0.1;
+      }
     }
   }
 

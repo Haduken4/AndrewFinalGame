@@ -103,25 +103,36 @@ class PlayerShooting : ZilchComponent
     {
       var object = this.Space.Create(Archetype.CastCircle);
       object.CursorFollow.RotateObject = this.Owner;
+      
+      //If we are shooting in the air
+      if(this.Owner.Collider.Contacts.IsEmpty)
+      {
+        this.Space.TimeSpace.TimeScale = 0.1;
+      }
+      
     }
   }
 
   function OnLeftMouseUp(event : ViewportMouseEvent)
   {
+    
+    //remove cast circle
+    if(this.Space.FindObjectByName("CastCircle") != null)
+    {
+      this.Space.FindObjectByName("CastCircle").Destroy();
+    }
+    
     //checks if we are currently allowed to fire
     if(this.Active)
     {
-      //remove cast circle
-      if(this.Space.FindObjectByName("CastCircle") != null)
-      {
-        this.Space.FindObjectByName("CastCircle").Destroy();
-      }
+      
+      //Reset time scale in case we changed it earlier
+      this.Space.TimeSpace.TimeScale = 1.0;
       
       //gets the mouse position to know where to fire the bullet
       var mousePos = this.Space.FindObjectByName("GameCamera").CameraViewport.ScreenToWorldZPlane(event.Position, 0);
       //gets the direction of the mouse
       var dir = mousePos - this.Owner.Transform.WorldTranslation;
-
       var angleToMouse = Math.ATan2(dir.Y, dir.X);
       
       var normDir = Math.Normalize(Real3(dir.XY, 0)) * 2;
