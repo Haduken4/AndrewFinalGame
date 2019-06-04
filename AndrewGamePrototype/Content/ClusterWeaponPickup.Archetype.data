@@ -45,7 +45,7 @@ Cog
 			var Projectile = "5c95acf71cd8e968:ClusterBullet"
 			var ProjectileCount = 5
 			var SpreadCone = 0.100000001
-			var ProjectileSpeed = 35
+			var ProjectileSpeed = 30
 			var SpeedVariation = 1.5
 			var SpeedBool = true
 			var ShootSound = "5c91bbdf53d15d39:FrogBurp"
