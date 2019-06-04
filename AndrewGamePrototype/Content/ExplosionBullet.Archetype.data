@@ -40,13 +40,14 @@ Cog
 	CustomCollisionVariables 
 	{
 		var Explodes = true
-		var ExplosionRadius = 3.5
+		var DieOnExplode = true
+		var ExplosionRadius = 0
 		var MaxSlope = 30
 	}
 	DamageOnCollide 
 	{
-		var Damage = 3.32999992
-		var PlantDamage = 2.5
+		var Damage = 0
+		var PlantDamage = 0
 		var DestroyMe = true
 	}
 	SphereCollider 

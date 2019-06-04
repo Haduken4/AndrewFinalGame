@@ -40,7 +40,8 @@ Cog
 	CustomCollisionVariables 
 	{
 		var Explodes = true
-		var ExplosionRadius = 2
+		var DieOnExplode = true
+		var ExplosionRadius = 0
 		var MaxSlope = 30
 	}
 	DamageOnCollide 

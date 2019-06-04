@@ -168,7 +168,7 @@ class DestructableCustomCollision : ZilchComponent
     }
     
     //Check collisions
-    for(var i = 0; i < extentPoints.Count; ++i)
+    for(var i = 0; i < extentPoints.Count && !object.MarkedForDestruction; ++i)
     {
       if(colliding[i])
       {
@@ -182,10 +182,29 @@ class DestructableCustomCollision : ZilchComponent
         //If the other object explodes, explode it
         if(object.CustomCollisionVariables.Explodes)
         {
-          this.DestructionCenterArray.Add(object.Transform.WorldTranslation);
-          this.DestructionRadiusArray.Add(object.CustomCollisionVariables.ExplosionRadius);
+          if(object.CustomCollisionVariables.ExplosionRadius != 0)
+          {
+            if(object.CustomCollisionVariables.ObjectsExplodedOn.FindFirstIndex(this.Owner) == -1)
+            {
+              
+              this.DestructionCenterArray.Add(object.Transform.WorldTranslation);
+              this.DestructionRadiusArray.Add(object.CustomCollisionVariables.ExplosionRadius);
+              
+              //Spawn a display
+              var display = this.Space.CreateAtPosition(Archetype.DestructionDisplay, object.Transform.WorldTranslation + Real3(0, 0, 0.1));
+              
+              this.Space.SoundSpace.PlayCue(this.ExplodeSound);
+              
+              display.Transform.WorldScale = Real3(Real2(2, 2) * object.CustomCollisionVariables.ExplosionRadius, 1);
+              
+              object.CustomCollisionVariables.ObjectsExplodedOn.Add(this.Owner);
+            }
+          }
           
-          object.Destroy();
+          if(object.CustomCollisionVariables.DieOnExplode)
+          {
+            object.Destroy();
+          }
         }
         
         //object.Transform.WorldTranslation = object.CustomCollisionVariables.LastFramePos;
@@ -391,8 +410,6 @@ class DestructableCustomCollision : ZilchComponent
         //Check if the furthest point away on the circle from us and the center of the circle are colliding with us at all
         if(!this.IsPointColliding(this.DestructionCenterArray[closestIndex] + (dir * this.DestructionRadiusArray[closestIndex])))
         {
-          
-          Console.WriteLine("why");
           return;
         }
       }
@@ -400,17 +417,32 @@ class DestructableCustomCollision : ZilchComponent
       //If the other object explodes, explode it
       if(object.CustomCollisionVariables.Explodes)
       {
-        this.DestructionCenterArray.Add(object.Transform.WorldTranslation);
-        this.DestructionRadiusArray.Add(object.CustomCollisionVariables.ExplosionRadius);
+        if(object.CustomCollisionVariables.ExplosionRadius != 0)
+        {
+          
+          //If the object didn't already explode on us
+          if(object.CustomCollisionVariables.ObjectsExplodedOn.FindFirstIndex(this.Owner) == -1)
+          {
+            
+            this.DestructionCenterArray.Add(object.Transform.WorldTranslation);
+            this.DestructionRadiusArray.Add(object.CustomCollisionVariables.ExplosionRadius);
+            
+            //Spawn a display
+            var display = this.Space.CreateAtPosition(Archetype.DestructionDisplay, object.Transform.WorldTranslation + Real3(0, 0, 0.1));
+            
+            this.Space.SoundSpace.PlayCue(this.ExplodeSound);
+            
+            display.Transform.WorldScale = Real3(Real2(2, 2) * object.CustomCollisionVariables.ExplosionRadius, 1);
+            
+            object.CustomCollisionVariables.ObjectsExplodedOn.Add(this.Owner);
+          }
+        }
         
-        //Spawn a display
-        var display = this.Space.CreateAtPosition(Archetype.DestructionDisplay, object.Transform.WorldTranslation + Real3(0, 0, 0.1));
-        
-        this.Space.SoundSpace.PlayCue(this.ExplodeSound);
-        
-        display.Transform.WorldScale = Real3(Real2(2, 2) * object.CustomCollisionVariables.ExplosionRadius, 1);
-        
-        object.Destroy();
+        //If the object dies when exploding, destroy it
+        if(object.CustomCollisionVariables.DieOnExplode)
+        {
+          object.Destroy();
+        }
       }
       
       //Reset pos to last frame pos

@@ -4,6 +4,10 @@ class CustomCollisionVariables : ZilchComponent
   [Property]
   var Explodes : Boolean = false;
   
+  //If this is true, we will die when exploding on destructable terrain
+  [Property]
+  var DieOnExplode : Boolean = true;
+  
   //Radius of our explosion if we explode
   [Property]
   var ExplosionRadius : Real = 5;
@@ -15,10 +19,15 @@ class CustomCollisionVariables : ZilchComponent
   //Stores our position from the last frame
   var LastFramePos : Real3 = Real3();
   
+  //Stores all objects we exploded on (used for exploding onto multiple destructable objects within the same radius)
+  var ObjectsExplodedOn : Array[Cog] = Array[Cog]();
+  
   
   function Initialize(init : CogInitializer)
   {
     Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    
+    Console.WriteLine(this.ObjectsExplodedOn.FindFirstIndex(this.Owner));
   }
 
   function OnLogicUpdate(event : UpdateEvent)

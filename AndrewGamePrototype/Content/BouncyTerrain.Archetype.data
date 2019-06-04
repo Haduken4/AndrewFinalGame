@@ -4,8 +4,8 @@ Cog
 	var Name = "BouncyBall"
 	Transform 
 	{
-		var Translation = Real3{0, 0, 0}
-		var Scale = Real3{1, 1, 1}
+		var Translation = Real3{-5.56212234, 19.8940659, 0}
+		var Scale = Real3{5, 5, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
 	Sprite 
@@ -20,7 +20,7 @@ Cog
 		var Material = "582c575af53d18c9:AlphaSprite"
 		var VertexColor = Real4{1, 1, 1, 1}
 		var GeometryMode = SpriteGeometryMode.ZPlane
-		var SpriteSource = "5cb6e5ab4db4be34:GiantFruit"
+		var SpriteSource = "5caa09b3e47e95f3:GiantFruit_0"
 		var FlipX = false
 		var FlipY = false
 		var AnimationActive = true
@@ -33,7 +33,7 @@ Cog
 		var SendsEvents = true
 		var Material = "5c0f9844b84cbbe5:Bouncy"
 		var CollisionGroup = "4e740859314e5515:DefaultGroup"
-		var Offset = Real3{0, 0, 0}
-		var Radius = 0.5
+		var Offset = Real3{0, -0.0500000007, 0}
+		var Radius = 0.550000012
 	}
 }

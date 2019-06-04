@@ -32,8 +32,8 @@ Cog
 	}
 	DamageOnCollide 
 	{
-		var Damage = 1
-		var PlantDamage = 1.5
+		var Damage = 2
+		var PlantDamage = 0.75
 		var DestroyMe = false
 	}
 	SphereCollider 
@@ -44,5 +44,22 @@ Cog
 		var CollisionGroup = "5c098e40de85b0fc:PlayerBullet"
 		var Offset = Real3{0, 0, 0}
 		var Radius = 0.5
+	}
+	CustomCollisionVariables 
+	{
+		var Explodes = true
+		var DieOnExplode = false
+		var ExplosionRadius = 2
+		var MaxSlope = 30
+	}
+	RigidBody 
+	{
+		var Velocity = Real3{0, 0, 0}
+		var AngularVelocity = Real3{0, 0, 0}
+		var DynamicState = RigidBodyDynamicState.Kinematic
+		var AllowSleep = true
+		var Asleep = false
+		var RotationLocked = false
+		var Mode2D = Mode2DStates.InheritFromSpace
 	}
 }
